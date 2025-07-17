@@ -8,9 +8,10 @@ import TechnologyStats from "./components/Technology";
 import StatsSection from "./components/Statsdata";
 import ContactForm from "./components/Contact";
 import Footer from "../main/Footer";
+import { motion } from "framer-motion";
 
 // Animation Variants (kept as is, assuming they are correct)
-const containerVariants = {
+const containerVariant = {
   hidden: {},
   visible: {
     transition: {
@@ -54,15 +55,22 @@ const OverOns = () => {
               {/* Centered Yellow Glow */}
               <span
                 className="
-                absolute top-1/2 left-1/2 
-                -translate-x-1/2 -translate-y-1/2
-                w-[400px] h-[400px]
-                bg-[#FFC003] opacity-10 blur-3xl rounded-full
-                z-10 pointer-events-none"
+              absolute top-1/2 left-1/2 
+              -translate-x-1/2 -translate-y-1/2
+              w-[400px] h-[400px]
+              bg-[#FFC003] opacity-10 blur-3xl rounded-full
+              z-10 pointer-events-none"
               />
             </div>
-            <div className="absolute top-44">
-              <h1
+
+            {/* Animated Content */}
+            <motion.div
+              className="absolute top-44"
+              variants={containerVariant}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.h1
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
@@ -72,25 +80,28 @@ const OverOns = () => {
                   Expert
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
-              </h1>
-              <button className="border text-white flex gap-3 px-5 py-2 rounded-3xl mt-16">
+              </motion.h1>
+
+              <motion.button
+                className="border text-white flex gap-3 px-5 py-2 rounded-3xl mt-16"
+                variants={fadeUpVariant}
+                transition={{ delay: 0.5 }}
+              >
                 <Link to="/" className="text-orange-500">
                   Home
                 </Link>
                 <span className="text-orange-500">&gt;&gt;</span>
                 <Link className="text-blue-600">Over Ons</Link>
-              </button>
-            </div>
-
-            {/* section-2 */}
+              </motion.button>
+            </motion.div>
           </PageWrapper>
         </div>
         <OveronsAccess />
-        <WhatWeDo/>
-        <TechnologyStats/>
-        <StatsSection/>
-        <ContactForm/>
-        <Footer/>
+        <WhatWeDo />
+        <TechnologyStats />
+        <StatsSection />
+        <ContactForm />
+        <Footer />
       </div>
     </>
   );
