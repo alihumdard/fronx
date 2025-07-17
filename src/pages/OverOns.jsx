@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import OveronsAccess from "./components/Overons-Access";
 import WhatWeDo from "./components/WhatWeDo";
 import TechnologyStats from "./components/Technology";
+import StatsSection from "./components/Statsdata";
+import ContactForm from "./components/Contact";
+import Footer from "../main/Footer";
 
 // Animation Variants (kept as is, assuming they are correct)
 const containerVariants = {
@@ -85,6 +88,9 @@ const OverOns = () => {
         <OveronsAccess />
         <WhatWeDo/>
         <TechnologyStats/>
+        <StatsSection/>
+        <ContactForm/>
+        <Footer/>
       </div>
     </>
   );
