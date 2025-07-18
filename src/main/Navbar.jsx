@@ -125,7 +125,8 @@ const Navbar = () => {
                     animate="animate"
                     transition={{ delay: 0.15 }}
                   >
-                    <a
+                    <Link
+                    to="/services"
                       href="#"
                       className={`px-2 py-1 block w-full text-start pl-4 sm:pl-0 ${
                         isMobileMenuOpen
@@ -134,7 +135,7 @@ const Navbar = () => {
                       }`}
                     >
                       Services
-                    </a>
+                    </Link>
                   </motion.li>
 
                   {/* Blog */}
