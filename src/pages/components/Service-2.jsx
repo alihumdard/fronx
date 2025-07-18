@@ -32,6 +32,8 @@ import {
   SiFigma,
 } from "react-icons/si";
 import { motion } from "framer-motion";
+import URLS from "../../config/urls.config";
+import { Link } from "react-router-dom";
 
 const techColorMap = {
   Python: "#306998",
@@ -70,6 +72,7 @@ const servicesData = [
     id: "website-development",
     icon: FaCode,
     title: "Website Development",
+    url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
     description:
       "Boost your business with custom web and mobile solutions, delivering scalable, user-friendly platforms to enhance engagement and drive growth.",
     techStackIcons: [
@@ -220,7 +223,7 @@ const Service2 = () => {
   const activeService = servicesData.find((s) => s.id === activeServiceId);
 
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
+    <section className="relative py-16 md:py-32 overflow-hidden">
       {/* Background image */}
      
       <PageWrapper>
@@ -324,12 +327,13 @@ const Service2 = () => {
                       );
                     })}
                   </div>
-                  <a
+                  <Link
+                  to={activeService.url}
                     href="#"
                     className="inline-block mt-10 self-start bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-md hover:opacity-90 transition-opacity"
                   >
                     {activeService.buttonText}
-                  </a>
+                  </Link>
                 </>
               ) : (
                 <div className="text-center text-gray-400 text-xl">

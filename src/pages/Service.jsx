@@ -44,7 +44,7 @@ const Service = () => {
             <div>
               {/* Background Image */}
               <img
-                src="/images/bg-2.png"
+                src="/images/bg-overlay.png"
                 alt="Hero Background"
                 className="absolute inset-0 w-full h-full object-cover z-0"
                 onError={(e) => {
@@ -84,22 +84,136 @@ const Service = () => {
                 </span>
               </motion.h1>
 
-              <motion.button
-                className="border text-white flex gap-3 px-5 py-2 rounded-3xl mt-16"
+                <motion.div
+                className="mt-10 sm:mt-16 flex justify-start"
                 variants={fadeUpVariant}
                 transition={{ delay: 0.5 }}
               >
-                <Link to="/" className="text-orange-500">
-                  Home
-                </Link>
-                <span className="text-orange-500">&gt;&gt;</span>
-                <Link className="text-blue-600">Over Ons</Link>
-              </motion.button>
+                <div
+                  className="
+                  flex flex-wrap lg:flex-nowrap items-center 
+                  gap-2 lg:gap-3 
+                  px-4 sm:px-6 py-2 sm:py-3 
+                  border border-white/30 
+                  rounded-full text-sm sm:text-base 
+                  text-white bg-white/5 hover:bg-white/10 
+                  transition-all duration-300
+                "
+                >
+                  <Link
+                    to="/"
+                    className="text-orange-400 hover:text-orange-300 transition-colors"
+                  >
+                    Home
+                  </Link>
+                  <span className="text-orange-400">››</span>
+                  <Link
+                    className="text-blue-500 hover:text-blue-600 transition-colors"
+                  >
+                    Services
+                  </Link>
+                </div>
+              </motion.div>
             </motion.div>
           </PageWrapper>
         </div>
-        <Service2/>
-        <SwiperService/>
+
+        <Service2 />
+        <SwiperService />
+
+        <motion.div
+          className="bg-cover bg-center text-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 rounded-lg shadow-lg my-20 flex flex-col lg:flex-row items-center lg:items-start"
+          style={{ backgroundImage: "url('/images/Home.png')" }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          {/* Left Content */}
+          <motion.div
+            className="w-full lg:w-[60%] mb-8 lg:mb-0 text-center lg:text-left"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.h2
+              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              Transform Your Business Today <br /> Speak with Our Experts!
+            </motion.h2>
+
+            <motion.p
+              className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed mb-6 py-4"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              Ready to take your business to the next level with cutting-edge IT
+              <br />
+              solutions? Our team is here to help you transform.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              <div className="relative w-full sm:w-auto bg-white rounded-full shadow-lg flex items-center max-w-md p-1">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="flex-1 px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base text-gray-700 bg-transparent outline-none placeholder-gray-500 rounded-full"
+                  aria-label="Email Address"
+                />
+                <button
+                  className="flex items-center justify-center px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-700 text-white text-sm sm:text-lg font-semibold rounded-full shadow-md hover:shadow-xl transition"
+                  aria-label="Subscribe"
+                >
+                  Subscribe
+                  <svg
+                    className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Image */}
+          <motion.div
+            className="w-full lg:w-[40%] flex justify-center items-center mt-8 lg:mt-0"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src="/images/service-banner.png"
+              alt="Fronx Circle"
+              className="w-[80%] max-w-[300px] sm:max-w-sm md:max-w-md lg:max-w-full"
+            />
+          </motion.div>
+        </motion.div>
+
+        <ContactForm />
         <Footer />
       </div>
     </>

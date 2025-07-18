@@ -42,7 +42,7 @@ const OverOns = () => {
             <div>
               {/* Background Image */}
               <img
-                src="/images/bg-2.png"
+                src="/images/bg-overlay.png"
                 alt="Hero Background"
                 className="absolute inset-0 w-full h-full object-cover z-0"
                 onError={(e) => {
@@ -82,17 +82,36 @@ const OverOns = () => {
                 </span>
               </motion.h1>
 
-              <motion.button
-                className="border text-white flex gap-3 px-5 py-2 rounded-3xl mt-16"
+               <motion.div
+                className="mt-10 sm:mt-16 flex justify-start"
                 variants={fadeUpVariant}
                 transition={{ delay: 0.5 }}
               >
-                <Link to="/" className="text-orange-500">
-                  Home
-                </Link>
-                <span className="text-orange-500">&gt;&gt;</span>
-                <Link className="text-blue-600">Over Ons</Link>
-              </motion.button>
+                <div
+                  className="
+                  flex flex-wrap lg:flex-nowrap items-center 
+                  gap-2 lg:gap-3 
+                  px-4 sm:px-6 py-2 sm:py-3 
+                  border border-white/30 
+                  rounded-full text-sm sm:text-base 
+                  text-white bg-white/5 hover:bg-white/10 
+                  transition-all duration-300
+                "
+                >
+                  <Link
+                    to="/"
+                    className="text-orange-400 hover:text-orange-300 transition-colors"
+                  >
+                    Home
+                  </Link>
+                  <span className="text-orange-400">››</span>
+                  <Link
+                    className="text-blue-600 hover:text-blue-600 transition-colors"
+                  >
+                    Over Ons
+                  </Link>
+                </div>
+              </motion.div>
             </motion.div>
           </PageWrapper>
         </div>

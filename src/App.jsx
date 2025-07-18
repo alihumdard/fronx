@@ -1,20 +1,25 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import OverOns from "./pages/OverOns";
-import Service from "./pages/Service";
+import { useRoutes } from "./routes";
+import ScrollToTop from "./main/ScrollToTop";
 
 const App = () => {
+  const routes = useRoutes();
+
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/over-ons" element={<OverOns />} />
-          <Route path="/services" element={<Service />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      {/* Main content */}
+      <ScrollToTop />
+      <div className="min-h-screen flex flex-col justify-between">
+        <main className="flex-grow">
+          <Routes>
+            {routes.map(({ path, element: Element }) => (
+              <Route key={path} path={path} element={<Element />} />
+            ))}
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 };
 
