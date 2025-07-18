@@ -99,7 +99,7 @@ const Service = () => {
           </PageWrapper>
         </div>
         <Service2/>
-        {/* <SwiperService/> */}
+        <SwiperService/>
         <Footer />
       </div>
     </>
