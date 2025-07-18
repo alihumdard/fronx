@@ -1,12 +1,12 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import PageWrapper from '../../main/Pagewraper'; // Adjust path if needed
+import React from "react";
+import { motion } from "framer-motion";
+import PageWrapper from "../../main/Pagewraper"; // Adjust path if needed
 
 const statsData = [
-  { value: '2000+', description: 'Delivered Projects' },
-  { value: '500+', description: 'Companies Served' },
-  { value: '5+', description: 'Award Won' },
-  { value: '1200+', description: 'Employees Worldwide' },
+  { value: "2000+", description: "Delivered Projects" },
+  { value: "500+", description: "Companies Served" },
+  { value: "5+", description: "Award Won" },
+  { value: "1200+", description: "Employees Worldwide" },
 ];
 
 // Animation variants
@@ -17,7 +17,7 @@ const fadeUpVariant = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -26,6 +26,12 @@ const StatsSection = () => {
   return (
     <section className="bg-white py-16 md:py-24">
       <PageWrapper>
+        <h1 className="text-3xl sm:text-4xl pl-16 pb-10 font-bold text-start mb-8">
+          <span className="">
+            Why Choose Fronx Solutions
+          </span>
+        </h1>
+
         <div className="flex flex-col md:flex-row justify-around items-center gap-8 md:gap-4 lg:gap-8">
           {statsData.map((stat, index) => (
             <motion.div
@@ -50,9 +56,9 @@ const StatsSection = () => {
               <div
                 className="absolute ml-20 w-3 h-3 rounded-full bg-[#6C62D6]"
                 style={{
-                  bottom: '10%',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
+                  bottom: "10%",
+                  left: "50%",
+                  transform: "translateX(-50%)",
                 }}
               ></div>
             </motion.div>

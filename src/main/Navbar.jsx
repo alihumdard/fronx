@@ -3,6 +3,7 @@ import PageWrapper from "./Pagewraper";
 import DropdownMenu from "./DropdownMenu";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import URLS from "../config/urls.config";
 
 const Navbar = () => {
   const [isFrench, setIsFrench] = useState(false);
@@ -39,6 +40,7 @@ const Navbar = () => {
               transition={{ duration: 0.3 }}
               className="flex items-center"
             >
+              <Link to="/">
               <img
                 src={
                   isMobileMenuOpen ? "/images/logo-2.png" : "/images/logo.png"
@@ -46,6 +48,7 @@ const Navbar = () => {
                 alt="Logo"
                 className="h-8 lg:h-10 w-auto transition-all duration-300"
               />
+              </Link>
             </motion.div>
             {/* Hamburger Icon */}
             <button
@@ -106,7 +109,7 @@ const Navbar = () => {
                     transition={{ delay: 0.1 }}
                   >
                     <Link
-                    to="/over-ons"
+                    to={URLS.OVERONS}
                       href="#"
                       className={`px-2 py-1 block w-full text-start pl-4 sm:pl-0 ${
                         isMobileMenuOpen
@@ -126,7 +129,7 @@ const Navbar = () => {
                     transition={{ delay: 0.15 }}
                   >
                     <Link
-                    to="/services"
+                    to={URLS.SERVICES}
                       href="#"
                       className={`px-2 py-1 block w-full text-start pl-4 sm:pl-0 ${
                         isMobileMenuOpen
