@@ -10,18 +10,17 @@ import {
   FaClipboardList, // For Planning & Strategy
   FaLaptopCode, // For Design And Development
   FaVial, // For Testing & Quality Assurance (FaFlask could also work)
-  FaCloudUploadAlt, // For Deployment
+  FaCloudUploadAlt,
+  FaAndroid,
+  FaApple,
+  FaPalette, // For Deployment
 } from "react-icons/fa";
 import {
-  FaWordpressSimple, // For WordPress
-  FaPhp, // For Laravel/PHP
-  FaReact, // For React.js/Next.js
-  FaCode, // Generic for Website Redesign
-  FaServer, // Generic for API Integration
-  FaFileAlt, // Generic for Landing Page Development
+  FaReact, 
 } from "react-icons/fa";
 import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
 import StatsSection from "../Statsdata";
+import { FaFlutter } from "react-icons/fa6";
 
 const processSteps = [
   {
@@ -50,72 +49,65 @@ const processSteps = [
   },
 ];
 
-const webServicesData = [
+const appservicedata = [
   {
-    id: "wordpress",
-    icon: FaWordpressSimple,
-    title: "WordPress Development",
+    id: "flutter app development",
+    icon: FaFlutter, // Changed from FaWordpressSimple to FaFlutter
+    title: "Flutter App Development",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Easy-to-use navigation that helps users find what they need quickly, easily, and effortlessly.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework's grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework's grid system and UI components.",
   },
   {
-    id: "laravel-php",
-    icon: FaPhp,
-    title: "Laravel/PHP Web Apps",
+    id: "react native development",
+    icon: FaReact, // Changed from FaPhp to FaReact (React Native uses React)
+    title: "React Native Development",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
   },
   {
-    id: "react-nextjs",
-    icon: FaReact, // Could use SiNextdotjs for combined icon
-    title: "React.js / Next.js Web Apps",
+    id: "android app development",
+    icon: FaAndroid, // Changed from FaReact to FaAndroid
+    title: "Android App Development",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
   },
   {
-    id: "website-redesign",
-    icon: FaCode, // Generic B icon equivalent
-    title: "Website Redesign/Optimization",
+    id: "ios app development",
+    icon: FaApple, // Changed from FaCode to FaApple (for iOS)
+    title: "IOS App Development",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Designing with the user's needs, preferences, and behaviors at the core of every decision.",
   },
   {
-    id: "api-integration",
-    icon: FaServer, // Generic B icon equivalent
-    title: "API Integration",
+    id: "app ui design",
+    icon: FaPalette, // Changed from FaServer to FaPalette (more design-related)
+    title: "APP UI Design",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-  },
-  {
-    id: "landing-page",
-    icon: FaFileAlt, // Generic B icon equivalent
-    title: "Landing Page Development",
-    shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Creating intuitive interactions that make navigating and using the product simple and enjoyable.",
   },
 ];
 
 const features = [
   {
     icon: <FaBolt className="text-orange-400 text-3xl" />,
-    title: "Effective",
+    title: "User-friendly Interface",
     desc: "We design our apps with a strong focus on the user experience. Featuring intuitive interfaces, our apps make navigation simple and efficient, allowing users to find what they need quickly. This seamless interaction boosts both satisfaction and usability.",
   },
   {
     icon: <FaCogs className="text-orange-400 text-3xl" />,
-    title: "Dynamic",
+    title: "Improve Stability",
     desc: "Our apps prioritize experience, featuring intuitive interfaces that ensure smooth and effortless navigation. Users can quickly find the content they need, resulting in greater satisfaction. This seamless interaction boosts both satisfaction and usability.",
   },
   {
     icon: <FaLock className="text-orange-400 text-3xl" />,
-    title: "Affordable",
+    title: "Resilience",
     desc: "Our app places a strong emphasis on user data security by using advanced encryption, multi-factor authentication, and a robust, industry-standard security framework to prevent unauthorized access and reliably protect all information.",
   },
   {
     icon: <FaChartLine className="text-orange-400 text-3xl" />,
-    title: "Scale Your Business",
+    title: "Socialization",
     desc: "Our app seamlessly integrates with popular social platforms, enabling users to log in using their social accounts, share content easily, and connect with others—greatly enhancing overall community interaction and user engagement.",
   },
 ];
@@ -147,7 +139,7 @@ export const staggerContainer = {
     },
   },
 };
-const Serviceweb = () => {
+const Appweb = () => {
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -161,89 +153,82 @@ const Serviceweb = () => {
         <Navbar />
 
         {/* Background Image */}
-        <div className="relative h-[500px] overflow-visible">
-          <PageWrapper>
-            <div>
-              {/* Background Image */}
-              <img
-                src="/images/bg-2.png"
-                alt="Hero Background"
-                className="absolute inset-0 w-full h-full object-cover z-0"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://placehold.co/1920x1080/000000/FFFFFF?text=Background+Image";
-                }}
-              />
+       <div className="relative h-[500px] overflow-visible">
+  <PageWrapper>
+    <div>
+      {/* Background Image */}
+      <img
+        src="/images/bg-2.png"
+        alt="Hero Background"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src =
+            "https://placehold.co/1920x1080/000000/FFFFFF?text=Background+Image";
+        }}
+      />
 
-              {/* Centered Yellow Glow */}
-              <span
-                className="
-              absolute top-1/2 left-1/2 
-              -translate-x-1/2 -translate-y-1/2
-              w-[400px] h-[400px]
-              bg-[#FFC003] opacity-10 blur-3xl rounded-full
-              z-10 pointer-events-none"
-              />
-            </div>
+      {/* Centered Yellow Glow */}
+      <span
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+        w-[400px] h-[400px] bg-[#FFC003] opacity-10 blur-3xl rounded-full
+        z-10 pointer-events-none"
+      />
+    </div>
 
-            {/* Animated Content */}
-            <motion.div
-              className="absolute top-44"
-              variants={containerVariant}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.h1
-                className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
-                variants={fadeUpVariant}
-              >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
-                <span className="mt-3 relative inline-block">
-                  Expert
-                  <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
-                </span>
-              </motion.h1>
+    {/* Animated Content */}
+    <motion.div
+      className="absolute top-44"
+      variants={containerVariant}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.h1
+        className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
+        variants={fadeUpVariant}
+      >
+        Empowering IT Consulting <br />
+        <span className="mt-3">With </span>
+        <span className="mt-3 relative inline-block">
+          Expert
+          <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
+        </span>
+      </motion.h1>
 
-              <motion.div
-                className="mt-10 sm:mt-16 flex justify-start"
-                variants={fadeUpVariant}
-                transition={{ delay: 0.5 }}
-              >
-                <div
-                  className="
-                  flex flex-wrap lg:flex-nowrap items-center 
-                  gap-2 lg:gap-3 
-                  px-4 sm:px-6 py-2 sm:py-3 
-                  border border-white/30 
-                  rounded-full text-sm sm:text-base 
-                  text-white bg-white/5 hover:bg-white/10 
-                  transition-all duration-300
-                "
-                >
-                  <Link
-                    to="/"
-                    className="text-orange-400 hover:text-orange-300 transition-colors"
-                  >
-                    Home
-                  </Link>
-                  <span className="text-orange-400">››</span>
-                  <Link
-                    to={URLS.SERVICES}
-                    className="text-orange-400 hover:text-orange-300 transition-colors"
-                  >
-                    Services
-                  </Link>
-                  <span className="text-orange-400">››</span>
-                  <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Website Development
-                  </Link>
-                </div>
-              </motion.div>
-            </motion.div>
-          </PageWrapper>
+      <motion.div
+        className="mt-10 sm:mt-16 flex justify-start"
+        variants={fadeUpVariant}
+        transition={{ delay: 0.5 }}
+      >
+        <div
+          className="flex flex-wrap lg:flex-nowrap items-center 
+          gap-2 lg:gap-3 px-4 sm:px-6 py-2 sm:py-3 
+          border border-white/30 rounded-full text-sm sm:text-base 
+          text-white bg-white/5 hover:bg-white/10 transition-all duration-300"
+        >
+          <Link
+            to="/"
+            className="text-orange-400 hover:text-orange-300 transition-colors"
+          >
+            Home
+          </Link>
+          <span className="text-orange-400">››</span>
+          <Link
+            to={URLS.SERVICES}
+            className="text-orange-400 hover:text-orange-300 transition-colors"
+          >
+            Services
+          </Link>
+          <span className="text-orange-400">››</span>
+          <Link className="text-blue-400 hover:text-blue-300 transition-colors">
+            Mobile Development
+          </Link>
         </div>
+      </motion.div>
+    </motion.div>
+  </PageWrapper>
+</div>
+
 
         <section className="bg-white py-16 md:py-24 px-5">
           <PageWrapper>
@@ -256,10 +241,10 @@ const Serviceweb = () => {
               className="text-start px-4 sm:px-6 mb-12"
             >
               <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                Website Development Process
+                Mobile Development Process
               </span>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-4xl">
-                Cutting-Edge Technology Solutions
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-5xl">
+              Turning Your Vision into a ,Mobile Solution
               </h2>
             </motion.div>
 
@@ -319,9 +304,9 @@ const Serviceweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Our Web Development Services
+                Our APP Development Services
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
                 Turning your vision into reality with Fronxsolutions premium
                 custom software solutions.
               </p>
@@ -335,7 +320,7 @@ const Serviceweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {webServicesData.map((service) => {
+              {appservicedata.map((service) => {
                 const IconComponent = service.icon;
                 const isExpanded = expandedCard === service.id;
                 const descriptionToShow =
@@ -350,7 +335,7 @@ const Serviceweb = () => {
                     className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col"
                   >
                     {/* Icon */}
-                    <div className="bg-orange-100 p-3 rounded-md inline-block mb-4 self-start">
+                    <div className="bg-gray-50 p-3 rounded-md inline-block mb-4 self-start">
                       {IconComponent && (
                         <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
                       )}
@@ -401,7 +386,7 @@ const Serviceweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                Website Development Features
+                Mobile App Development Features
               </h2>
               <p className="text-gray-300 mb-12 max-w-3xl">
                 Explore the elements that make our designs intuitive, engaging,
@@ -441,4 +426,4 @@ const Serviceweb = () => {
   );
 };
 
-export default Serviceweb;
+export default Appweb;

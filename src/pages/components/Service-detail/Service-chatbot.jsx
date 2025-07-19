@@ -7,116 +7,101 @@ import ContactForm from "../Contact";
 import Footer from "../../../main/Footer";
 import URLS from "../../../config/urls.config";
 import {
-  FaClipboardList, // For Planning & Strategy
-  FaLaptopCode, // For Design And Development
-  FaVial, // For Testing & Quality Assurance (FaFlask could also work)
-  FaCloudUploadAlt, // For Deployment
+  FaClipboardList,
+  FaLaptopCode,
+  FaVial,
+  FaCloudUploadAlt,
+  FaRobot,
+  FaComments,
+  FaTools,
+  FaMicrochip,
+  FaBrain,
+  FaHeartbeat,
 } from "react-icons/fa";
-import {
-  FaWordpressSimple, // For WordPress
-  FaPhp, // For Laravel/PHP
-  FaReact, // For React.js/Next.js
-  FaCode, // Generic for Website Redesign
-  FaServer, // Generic for API Integration
-  FaFileAlt, // Generic for Landing Page Development
-} from "react-icons/fa";
-import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
 import StatsSection from "../Statsdata";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const processSteps = [
   {
     icon: FaClipboardList,
-    title: "Planning & Strategy",
+    title: "Data Collection ",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
   {
     icon: FaLaptopCode,
-    title: "Design And Development",
+    title: "Model Design and Training",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
   {
     icon: FaVial, // Or FaFlask
-    title: "Testing & Quality Assurance",
+    title: "Evaluation and Optimization",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
   {
     icon: FaCloudUploadAlt,
-    title: "Deployment",
+    title: "Deployment and Monitoring",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
 ];
 
-const webServicesData = [
+const appservicedata = [
   {
-    id: "wordpress",
-    icon: FaWordpressSimple,
-    title: "WordPress Development",
+    id: "website chatbot development",
+    icon: FaComments, // Chat icon
+    title: "Website Chatbot Development",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Easy-to-use navigation that helps users find what they need quickly, easily, and effortlessly.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Complete WooCommerce store setup including product configuration, payment integration, and theme customization for your e-commerce business.",
   },
   {
-    id: "laravel-php",
-    icon: FaPhp,
-    title: "Laravel/PHP Web Apps",
+    id: "open ai/gpt chatbot for support/sales",
+    icon: FaRobot, // AI Robot icon
+    title: "Open AI/GPT Chatbot for Support/Sales",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
   },
   {
-    id: "react-nextjs",
-    icon: FaReact, // Could use SiNextdotjs for combined icon
-    title: "React.js / Next.js Web Apps",
+    id: "ai powered saas tool integration",
+    icon: FaTools, // Tools icon for integration
+    title: "AI Powered SaaS Tool Integration",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-  },
-  {
-    id: "website-redesign",
-    icon: FaCode, // Generic B icon equivalent
-    title: "Website Redesign/Optimization",
-    shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-  },
-  {
-    id: "api-integration",
-    icon: FaServer, // Generic B icon equivalent
-    title: "API Integration",
-    shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-  },
-  {
-    id: "landing-page",
-    icon: FaFileAlt, // Generic B icon equivalent
-    title: "Landing Page Development",
-    shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
   },
 ];
 
 const features = [
   {
-    icon: <FaBolt className="text-orange-400 text-3xl" />,
-    title: "Effective",
-    desc: "We design our apps with a strong focus on the user experience. Featuring intuitive interfaces, our apps make navigation simple and efficient, allowing users to find what they need quickly. This seamless interaction boosts both satisfaction and usability.",
+    icon: <FaMicrochip className="text-orange-400 text-3xl" />,
+    title: "IOT",
+    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
   },
   {
-    icon: <FaCogs className="text-orange-400 text-3xl" />,
-    title: "Dynamic",
-    desc: "Our apps prioritize experience, featuring intuitive interfaces that ensure smooth and effortless navigation. Users can quickly find the content they need, resulting in greater satisfaction. This seamless interaction boosts both satisfaction and usability.",
+    icon: <FaBrain className="text-orange-400 text-3xl" />,
+    title: "AI Diagnostics",
+    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
   },
   {
-    icon: <FaLock className="text-orange-400 text-3xl" />,
-    title: "Affordable",
-    desc: "Our app places a strong emphasis on user data security by using advanced encryption, multi-factor authentication, and a robust, industry-standard security framework to prevent unauthorized access and reliably protect all information.",
+    icon: <FaHeartbeat className="text-orange-400 text-3xl" />,
+    title: "Smart Health Care",
+    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
   },
   {
-    icon: <FaChartLine className="text-orange-400 text-3xl" />,
-    title: "Scale Your Business",
-    desc: "Our app seamlessly integrates with popular social platforms, enabling users to log in using their social accounts, share content easily, and connect with others—greatly enhancing overall community interaction and user engagement.",
+    icon: <FaMicrochip className="text-orange-400 text-3xl" />,
+    title: "IOT",
+    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
+  },
+  {
+    icon: <FaBrain className="text-orange-400 text-3xl" />,
+    title: "AI Diagnostics",
+    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
   },
 ];
 
@@ -147,7 +132,7 @@ export const staggerContainer = {
     },
   },
 };
-const Serviceweb = () => {
+const chatbot = () => {
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -178,12 +163,9 @@ const Serviceweb = () => {
 
               {/* Centered Yellow Glow */}
               <span
-                className="
-              absolute top-1/2 left-1/2 
-              -translate-x-1/2 -translate-y-1/2
-              w-[400px] h-[400px]
-              bg-[#FFC003] opacity-10 blur-3xl rounded-full
-              z-10 pointer-events-none"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+        w-[400px] h-[400px] bg-[#FFC003] opacity-10 blur-3xl rounded-full
+        z-10 pointer-events-none"
               />
             </div>
 
@@ -212,15 +194,10 @@ const Serviceweb = () => {
                 transition={{ delay: 0.5 }}
               >
                 <div
-                  className="
-                  flex flex-wrap lg:flex-nowrap items-center 
-                  gap-2 lg:gap-3 
-                  px-4 sm:px-6 py-2 sm:py-3 
-                  border border-white/30 
-                  rounded-full text-sm sm:text-base 
-                  text-white bg-white/5 hover:bg-white/10 
-                  transition-all duration-300
-                "
+                  className="flex flex-wrap lg:flex-nowrap items-center 
+          gap-2 lg:gap-3 px-4 sm:px-6 py-2 sm:py-3 
+          border border-white/30 rounded-full text-sm sm:text-base 
+          text-white bg-white/5 hover:bg-white/10 transition-all duration-300"
                 >
                   <Link
                     to="/"
@@ -237,7 +214,7 @@ const Serviceweb = () => {
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Website Development
+                    AI & Chatbot Solutions
                   </Link>
                 </div>
               </motion.div>
@@ -245,7 +222,7 @@ const Serviceweb = () => {
           </PageWrapper>
         </div>
 
-        <section className="bg-white py-16 md:py-24 px-5">
+        <section className="bg-white py-16 md:py-24 md:px-5">
           <PageWrapper>
             {/* Header */}
             <motion.div
@@ -255,16 +232,19 @@ const Serviceweb = () => {
               transition={{ duration: 0.6 }}
               className="text-start px-4 sm:px-6 mb-12"
             >
-              <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                Website Development Process
-              </span>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-4xl">
-                Cutting-Edge Technology Solutions
+             <div className="flex justify-center md:justify-start">
+  <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
+    AI & Chatbot Development Process
+  </span>
+</div>
+
+              <h2 className="text-2xl sm:text-4xl text-center md:text-start lg:text-5xl mt-6 font-bold text-gray-800 max-w-5xl">
+                The Way We Build AI & Chatbot Applications
               </h2>
             </motion.div>
 
             {/* Process Steps */}
-            <div className="relative flex flex-col items-center lg:flex-row justify-center gap-10 px-4 sm:px-6 mt-16">
+            <div className="relative flex flex-col items-center lg:flex-row justify-center px-4 sm:px-6 mt-16">
               {/* Dotted Line for Desktop */}
               <motion.div
                 initial={{ opacity: 0 }}
@@ -318,13 +298,10 @@ const Serviceweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Our Web Development Services
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
+                Experience the Future of Enterprise Solutions with Our AI
+                Development Services
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                Turning your vision into reality with Fronxsolutions premium
-                custom software solutions.
-              </p>
             </motion.div>
 
             {/* Services Grid */}
@@ -335,7 +312,7 @@ const Serviceweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {webServicesData.map((service) => {
+              {appservicedata.map((service) => {
                 const IconComponent = service.icon;
                 const isExpanded = expandedCard === service.id;
                 const descriptionToShow =
@@ -350,7 +327,7 @@ const Serviceweb = () => {
                     className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col"
                   >
                     {/* Icon */}
-                    <div className="bg-orange-100 p-3 rounded-md inline-block mb-4 self-start">
+                    <div className="bg-gray-50 p-3 rounded-md inline-block mb-4 self-start">
                       {IconComponent && (
                         <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
                       )}
@@ -400,13 +377,9 @@ const Serviceweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                Website Development Features
+              <h2 className="text-3xl lg:text-4xl text-center font-bold mb-16">
+                Industries We Serve
               </h2>
-              <p className="text-gray-300 mb-12 max-w-3xl">
-                Explore the elements that make our designs intuitive, engaging,
-                and results-driven.
-              </p>
             </motion.div>
 
             {/* Feature Cards */}
@@ -415,21 +388,57 @@ const Serviceweb = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="w-full"
             >
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeUpVariant}
-                  className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-xl transition-all duration-300 h-full"
-                >
-                  <div className="mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm">{feature.desc}</p>
-                </motion.div>
-              ))}
+              <Swiper
+                spaceBetween={20}
+                pagination={{
+                  clickable: true,
+                  bulletClass: "swiper-pagination-bullet custom-bullet",
+                  bulletActiveClass: "swiper-pagination-bullet-active",
+                }}
+                breakpoints={{
+                  0: { slidesPerView: 1 },
+                  640: { slidesPerView: 1 },
+                  768: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 },
+                }}
+                modules={[Pagination]}
+                className="pb-10"
+              >
+                {features.map((feature, index) => (
+                  <SwiperSlide key={index}>
+                    <motion.div
+                      variants={fadeUpVariant}
+                      className="bg-white/5 hover:bg-white/10 mb-10 backdrop-blur-sm border border-white/10 p-6 rounded-xl transition-all duration-300 h-full"
+                    >
+                      <div className="mb-4">{feature.icon}</div>
+                      <h3 className="text-xl font-semibold mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm">{feature.desc}</p>
+                    </motion.div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              {/* Inline style for Swiper pagination */}
+              <style jsx="true">{`
+                .swiper-pagination-bullet {
+                  background-color: #fb923c !important; /* yellow-400 */
+                  width: 14px !important;
+                  height: 6px !important;
+                  border-radius: 9999px !important;
+                  opacity: 0.6;
+                  margin: 0 4px !important;
+                  transition: all 0.3s ease;
+                }
+
+                .swiper-pagination-bullet-active {
+                  opacity: 1;
+                  transform: scale(1.2);
+                }
+              `}</style>
             </motion.div>
           </div>
         </div>
@@ -441,4 +450,4 @@ const Serviceweb = () => {
   );
 };
 
-export default Serviceweb;
+export default chatbot;

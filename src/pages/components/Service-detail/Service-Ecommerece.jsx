@@ -10,113 +10,103 @@ import {
   FaClipboardList, // For Planning & Strategy
   FaLaptopCode, // For Design And Development
   FaVial, // For Testing & Quality Assurance (FaFlask could also work)
-  FaCloudUploadAlt, // For Deployment
+  FaCloudUploadAlt,
+  FaNetworkWired,
+  FaShoppingBasket,
+  FaRobot,
 } from "react-icons/fa";
 import {
-  FaWordpressSimple, // For WordPress
-  FaPhp, // For Laravel/PHP
-  FaReact, // For React.js/Next.js
-  FaCode, // Generic for Website Redesign
-  FaServer, // Generic for API Integration
-  FaFileAlt, // Generic for Landing Page Development
+  FaWordpress,
+  FaShopify,
+  FaCreditCard,
+  FaShoppingCart,
+  FaBoxes,
 } from "react-icons/fa";
-import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
 import StatsSection from "../Statsdata";
+import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
+
 
 const processSteps = [
   {
     icon: FaClipboardList,
-    title: "Planning & Strategy",
+    title: "Planning & Research",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
   {
     icon: FaLaptopCode,
-    title: "Design And Development",
+    title: "Design & Store Setup",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
   {
     icon: FaVial, // Or FaFlask
-    title: "Testing & Quality Assurance",
+    title: "Development & Integration",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
   {
     icon: FaCloudUploadAlt,
-    title: "Deployment",
+    title: "Testing & Launch",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
 ];
 
-const webServicesData = [
+const appservicedata = [
   {
-    id: "wordpress",
-    icon: FaWordpressSimple,
-    title: "WordPress Development",
+    id: "woocommerce store setup",
+    icon: FaWordpress, // WooCommerce is a WordPress plugin
+    title: "WooCommerce Store Setup",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Easy-to-use navigation that helps users find what they need quickly, easily, and effortlessly.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Complete WooCommerce store setup including product configuration, payment integration, and theme customization for your e-commerce business.",
   },
   {
-    id: "laravel-php",
-    icon: FaPhp,
-    title: "Laravel/PHP Web Apps",
+    id: "shopify store development",
+    icon: FaShopify, // Official Shopify icon
+    title: "Shopify Store Development",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
   },
   {
-    id: "react-nextjs",
-    icon: FaReact, // Could use SiNextdotjs for combined icon
-    title: "React.js / Next.js Web Apps",
+    id: "payment gateway integration",
+    icon: FaCreditCard, // Represents payments
+    title: "Payment Gateway Integration",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Secure integration of payment processors for smooth and reliable transactions.",
   },
   {
-    id: "website-redesign",
-    icon: FaCode, // Generic B icon equivalent
-    title: "Website Redesign/Optimization",
+    id: "custom e-commerce portals",
+    icon: FaShoppingCart, // Represents e-commerce
+    title: "Custom E-Commerce Portals",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Tailored online shopping solutions designed for your specific business needs.",
   },
   {
-    id: "api-integration",
-    icon: FaServer, // Generic B icon equivalent
-    title: "API Integration",
+    id: "product management system",
+    icon: FaBoxes, // Represents product inventory
+    title: "Product Management System",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-  },
-  {
-    id: "landing-page",
-    icon: FaFileAlt, // Generic B icon equivalent
-    title: "Landing Page Development",
-    shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Comprehensive tools to manage your product catalog, inventory, and listings.",
   },
 ];
-
 const features = [
   {
-    icon: <FaBolt className="text-orange-400 text-3xl" />,
-    title: "Effective",
-    desc: "We design our apps with a strong focus on the user experience. Featuring intuitive interfaces, our apps make navigation simple and efficient, allowing users to find what they need quickly. This seamless interaction boosts both satisfaction and usability.",
+    icon: <FaNetworkWired className="text-orange-400 text-3xl" />,
+    title: "Business-to-Business",
+    desc: "Shift your offline territory to a more rigid online Ecommerce platform to target larger audiences.",
   },
   {
-    icon: <FaCogs className="text-orange-400 text-3xl" />,
-    title: "Dynamic",
-    desc: "Our apps prioritize experience, featuring intuitive interfaces that ensure smooth and effortless navigation. Users can quickly find the content they need, resulting in greater satisfaction. This seamless interaction boosts both satisfaction and usability.",
+    icon: <FaShoppingBasket className="text-orange-400 text-3xl" />,
+    title: "Business-to-Consumer",
+    desc: "Reach out to more prospects locally and globally by introducing your brand to an online community.",
   },
   {
-    icon: <FaLock className="text-orange-400 text-3xl" />,
-    title: "Affordable",
-    desc: "Our app places a strong emphasis on user data security by using advanced encryption, multi-factor authentication, and a robust, industry-standard security framework to prevent unauthorized access and reliably protect all information.",
-  },
-  {
-    icon: <FaChartLine className="text-orange-400 text-3xl" />,
-    title: "Scale Your Business",
-    desc: "Our app seamlessly integrates with popular social platforms, enabling users to log in using their social accounts, share content easily, and connect with others—greatly enhancing overall community interaction and user engagement.",
+    icon: <FaRobot className="text-orange-400 text-3xl" />,
+    title: "Complete Automation",
+    desc: "Streamline business processes with ecommerce and focus on things that help in business growth.",
   },
 ];
 
@@ -147,7 +137,7 @@ export const staggerContainer = {
     },
   },
 };
-const Serviceweb = () => {
+const Ecommerece = () => {
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -178,12 +168,9 @@ const Serviceweb = () => {
 
               {/* Centered Yellow Glow */}
               <span
-                className="
-              absolute top-1/2 left-1/2 
-              -translate-x-1/2 -translate-y-1/2
-              w-[400px] h-[400px]
-              bg-[#FFC003] opacity-10 blur-3xl rounded-full
-              z-10 pointer-events-none"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+        w-[400px] h-[400px] bg-[#FFC003] opacity-10 blur-3xl rounded-full
+        z-10 pointer-events-none"
               />
             </div>
 
@@ -212,15 +199,10 @@ const Serviceweb = () => {
                 transition={{ delay: 0.5 }}
               >
                 <div
-                  className="
-                  flex flex-wrap lg:flex-nowrap items-center 
-                  gap-2 lg:gap-3 
-                  px-4 sm:px-6 py-2 sm:py-3 
-                  border border-white/30 
-                  rounded-full text-sm sm:text-base 
-                  text-white bg-white/5 hover:bg-white/10 
-                  transition-all duration-300
-                "
+                  className="flex flex-wrap lg:flex-nowrap items-center 
+          gap-2 lg:gap-3 px-4 sm:px-6 py-2 sm:py-3 
+          border border-white/30 rounded-full text-sm sm:text-base 
+          text-white bg-white/5 hover:bg-white/10 transition-all duration-300"
                 >
                   <Link
                     to="/"
@@ -237,7 +219,7 @@ const Serviceweb = () => {
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Website Development
+                    E-Commerece Solutions
                   </Link>
                 </div>
               </motion.div>
@@ -256,10 +238,10 @@ const Serviceweb = () => {
               className="text-start px-4 sm:px-6 mb-12"
             >
               <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                Website Development Process
+                E-Commerece Solutions Process
               </span>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-4xl">
-                Cutting-Edge Technology Solutions
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-5xl">
+                E-Commerce Development Process
               </h2>
             </motion.div>
 
@@ -319,9 +301,9 @@ const Serviceweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Our Web Development Services
+                Our E-Commerce Development Services
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
                 Turning your vision into reality with Fronxsolutions premium
                 custom software solutions.
               </p>
@@ -335,7 +317,7 @@ const Serviceweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {webServicesData.map((service) => {
+              {appservicedata.map((service) => {
                 const IconComponent = service.icon;
                 const isExpanded = expandedCard === service.id;
                 const descriptionToShow =
@@ -350,7 +332,7 @@ const Serviceweb = () => {
                     className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col"
                   >
                     {/* Icon */}
-                    <div className="bg-orange-100 p-3 rounded-md inline-block mb-4 self-start">
+                    <div className="bg-gray-50 p-3 rounded-md inline-block mb-4 self-start">
                       {IconComponent && (
                         <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
                       )}
@@ -400,12 +382,12 @@ const Serviceweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                Website Development Features
+              <h2 className="text-3xl lg:text-4xl text-center font-bold mb-4">
+                Our E-Commerce Solutions
               </h2>
-              <p className="text-gray-300 mb-12 max-w-3xl">
-                Explore the elements that make our designs intuitive, engaging,
-                and results-driven.
+              <p className="text-gray-300 mb-12 max-w-3xl mx-auto text-center">
+                Achieve your business goals with our Fronx methodology, renowned
+                for its structure, planning, and consistent results.
               </p>
             </motion.div>
 
@@ -415,7 +397,7 @@ const Serviceweb = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {features.map((feature, index) => (
                 <motion.div
@@ -441,4 +423,4 @@ const Serviceweb = () => {
   );
 };
 
-export default Serviceweb;
+export default Ecommerece;

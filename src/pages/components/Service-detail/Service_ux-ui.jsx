@@ -7,115 +7,96 @@ import ContactForm from "../Contact";
 import Footer from "../../../main/Footer";
 import URLS from "../../../config/urls.config";
 import {
-  FaClipboardList, // For Planning & Strategy
-  FaLaptopCode, // For Design And Development
-  FaVial, // For Testing & Quality Assurance (FaFlask could also work)
-  FaCloudUploadAlt, // For Deployment
-} from "react-icons/fa";
-import {
-  FaWordpressSimple, // For WordPress
-  FaPhp, // For Laravel/PHP
-  FaReact, // For React.js/Next.js
-  FaCode, // Generic for Website Redesign
-  FaServer, // Generic for API Integration
-  FaFileAlt, // Generic for Landing Page Development
+  FaSearch,
+  FaProjectDiagram,
+  FaRocket,
+  FaFigma,
+  FaMobileAlt,
+  FaPencilRuler,
+  FaLayerGroup, // For Deployment
 } from "react-icons/fa";
 import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
 import StatsSection from "../Statsdata";
 
 const processSteps = [
   {
-    icon: FaClipboardList,
-    title: "Planning & Strategy",
+    icon: FaSearch, // Better for "Research" than clipboard
+    title: "Research & Direction",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
   {
-    icon: FaLaptopCode,
-    title: "Design And Development",
+    icon: FaProjectDiagram, // Represents "Flow Design" better than a laptop
+    title: "Framework & Flow Design",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
   {
-    icon: FaVial, // Or FaFlask
-    title: "Testing & Quality Assurance",
+    icon: FaCogs, // Represents refinement and adjustments
+    title: "Prototyping & Refinement",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
   {
-    icon: FaCloudUploadAlt,
-    title: "Deployment",
+    icon: FaRocket, // More dynamic than cloud upload for "Execution & Delivery"
+    title: "Execution & Delivery",
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
   },
 ];
 
-const webServicesData = [
+const uiux_service = [
   {
-    id: "wordpress",
-    icon: FaWordpressSimple,
-    title: "WordPress Development",
+    id: "website ui design",
+    icon: FaFigma, // Best for "Website UI Design (Figma)"
+    title: "Website UI Design (Figma)",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Easy-to-use navigation that helps users find what they need quickly, easily, and effortlessly.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework's grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework's grid system and UI components.",
   },
   {
-    id: "laravel-php",
-    icon: FaPhp,
-    title: "Laravel/PHP Web Apps",
+    id: "mobile app ui design",
+    icon: FaMobileAlt, // Represents mobile design better than React
+    title: "Mobile App UI Design",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
   },
   {
-    id: "react-nextjs",
-    icon: FaReact, // Could use SiNextdotjs for combined icon
-    title: "React.js / Next.js Web Apps",
+    id: "wireframing & prototyping",
+    icon: FaPencilRuler, // Perfect for wireframing (design drafting)
+    title: "Wireframing & Prototyping",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Designing with the user's needs, preferences, and behaviors at the core of every decision.",
   },
   {
-    id: "website-redesign",
-    icon: FaCode, // Generic B icon equivalent
-    title: "Website Redesign/Optimization",
+    id: "design system creation",
+    icon: FaLayerGroup, // Represents structured design systems
+    title: "Design System Creation",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-  },
-  {
-    id: "api-integration",
-    icon: FaServer, // Generic B icon equivalent
-    title: "API Integration",
-    shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-  },
-  {
-    id: "landing-page",
-    icon: FaFileAlt, // Generic B icon equivalent
-    title: "Landing Page Development",
-    shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Enhancing design and performance through real user data and detailed behavior analysis.",
   },
 ];
 
 const features = [
   {
     icon: <FaBolt className="text-orange-400 text-3xl" />,
-    title: "Effective",
+    title: "User-friendly Interface",
     desc: "We design our apps with a strong focus on the user experience. Featuring intuitive interfaces, our apps make navigation simple and efficient, allowing users to find what they need quickly. This seamless interaction boosts both satisfaction and usability.",
   },
   {
     icon: <FaCogs className="text-orange-400 text-3xl" />,
-    title: "Dynamic",
+    title: "Improve Stability",
     desc: "Our apps prioritize experience, featuring intuitive interfaces that ensure smooth and effortless navigation. Users can quickly find the content they need, resulting in greater satisfaction. This seamless interaction boosts both satisfaction and usability.",
   },
   {
     icon: <FaLock className="text-orange-400 text-3xl" />,
-    title: "Affordable",
+    title: "Resilience",
     desc: "Our app places a strong emphasis on user data security by using advanced encryption, multi-factor authentication, and a robust, industry-standard security framework to prevent unauthorized access and reliably protect all information.",
   },
   {
     icon: <FaChartLine className="text-orange-400 text-3xl" />,
-    title: "Scale Your Business",
+    title: "Socialization",
     desc: "Our app seamlessly integrates with popular social platforms, enabling users to log in using their social accounts, share content easily, and connect with others—greatly enhancing overall community interaction and user engagement.",
   },
 ];
@@ -138,6 +119,22 @@ const fadeUpVariant = {
     transition: { duration: 0.8, ease: "easeOut" },
   },
 };
+const circleVariant = {
+  hidden: { opacity: 0, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.7, ease: "easeOut", delay: 1 },
+  },
+};
+const cardVariant = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: (i) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
+  }),
+};
 export const staggerContainer = {
   hidden: {},
   visible: {
@@ -147,7 +144,7 @@ export const staggerContainer = {
     },
   },
 };
-const Serviceweb = () => {
+const uxui = () => {
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -237,7 +234,7 @@ const Serviceweb = () => {
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Website Development
+                    UX/UI Design
                   </Link>
                 </div>
               </motion.div>
@@ -256,10 +253,10 @@ const Serviceweb = () => {
               className="text-start px-4 sm:px-6 mb-12"
             >
               <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                Website Development Process
+                UX/UI Design Process
               </span>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-4xl">
-                Cutting-Edge Technology Solutions
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-5xl">
+                The Way We Build UX/UI
               </h2>
             </motion.div>
 
@@ -288,7 +285,7 @@ const Serviceweb = () => {
                     {/* Icon Box */}
                     <div className="bg-gray-100 p-4 rounded-xl mb-4 shadow-sm">
                       {IconComponent && (
-                        <IconComponent className="w-10 h-10 text-orange-500" />
+                        <IconComponent className="w-8 h-8 text-orange-500" />
                       )}
                     </div>
 
@@ -319,23 +316,23 @@ const Serviceweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Our Web Development Services
+                Strategic & Impactful UI/UX Design Services
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                Turning your vision into reality with Fronxsolutions premium
-                custom software solutions.
+              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+                Crafting seamless, user-focused experiences that drive
+                engagement, usability, and growth.
               </p>
             </motion.div>
 
             {/* Services Grid */}
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {webServicesData.map((service) => {
+              {uiux_service.map((service) => {
                 const IconComponent = service.icon;
                 const isExpanded = expandedCard === service.id;
                 const descriptionToShow =
@@ -350,7 +347,7 @@ const Serviceweb = () => {
                     className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col"
                   >
                     {/* Icon */}
-                    <div className="bg-orange-100 p-3 rounded-md inline-block mb-4 self-start">
+                    <div className="bg-gray-50 p-3 rounded-md inline-block mb-4 self-start">
                       {IconComponent && (
                         <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
                       )}
@@ -391,48 +388,113 @@ const Serviceweb = () => {
           </PageWrapper>
         </section>
 
-        <div className="bg-[url('/images/bg.png')] bg-cover bg-center bg-no-repeat py-16 px-6 lg:px-20 text-white">
-          <div className="max-w-7xl mx-auto">
-            {/* Heading */}
-            <motion.div
-              variants={fadeUpVariant}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                Website Development Features
-              </h2>
-              <p className="text-gray-300 mb-12 max-w-3xl">
-                Explore the elements that make our designs intuitive, engaging,
-                and results-driven.
-              </p>
-            </motion.div>
+        <div className="relative">
+          <section className="relative min-h-[600px] py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <PageWrapper>
+              {/* Background Image */}
+              <div className="absolute inset-0 -z-10">
+                <img
+                  src="/images/bg.png"
+                  alt="Background"
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/50"></div>
+              </div>
 
-            {/* Feature Cards */}
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-            >
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeUpVariant}
-                  className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-xl transition-all duration-300 h-full"
-                >
-                  <div className="mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm">{feature.desc}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+              {/* Content Container */}
+              <div className="max-w-6xl mx-auto relative z-10">
+                {/* Header Section */}
+                <div className="text-center mb-12 px-4">
+                  <motion.h1
+                    className="text-3xl md:text-4xl font-bold text-white mb-4"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                  >
+                    What Makes Our UI/UX Design Stand Out
+                  </motion.h1>
+                  <motion.p
+                    className="text-lg text-white/90 max-w-2xl mx-auto"
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    Explore the elements that make our designs intuitive,
+                    engaging, and results-driven.
+                  </motion.p>
+                </div>
+
+                {/* Features Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+                  {[
+                    {
+                      title: "Focused on User Experience",
+                      description:
+                        "Our designs are shaped by a strong focus on user needs, actions, and goals at every step. The result is smooth, intuitive, and engaging digital experiences.",
+                      margin: "md:mr-36 mr-0",
+                    },
+                    {
+                      title: "Layout Planning",
+                      description:
+                        "Layout planning is the process of creating a basic, low-fidelity visual guide that outlines the structure and layout of a digital interface.",
+                      margin: "md:ml-36 ml-0",
+                    },
+                    {
+                      title: "Interface Aesthetics",
+                      description:
+                        "We design clean, engaging interfaces that reflect your brand and improve the user experience through thoughtful visual choices.",
+                      margin: "md:mr-36 mr-0",
+                    },
+                    {
+                      title: "User Experience Testing",
+                      description:
+                        "We test real user interactions to identify issues, improve functionality, and ensure the product is easy to use, efficient, and enjoyable.",
+                      margin: "md:ml-36 ml-0",
+                    },
+                  ].map((feature, index) => (
+                    <React.Fragment key={index}>
+                      {index === 2 && (
+                        <div className="hidden md:block md:col-span-2 my-2">
+                          <div className="border-t border-white/20"></div>
+                        </div>
+                      )}
+                      <motion.div
+                        className={`bg-white/10 backdrop-blur-lg p-6 md:p-8 rounded-xl border border-white/20 hover:border-white/30 transition-all hover:shadow-lg ${feature.margin}`}
+                        variants={cardVariant}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        custom={index}
+                      >
+                        <h2 className="text-xl font-semibold text-white mb-4">
+                          {feature.title}
+                        </h2>
+                        <p className="text-white/80">{feature.description}</p>
+                      </motion.div>
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
+            </PageWrapper>
+          </section>
+
+          {/* Floating Circle Image with Animation */}
+          <motion.div
+            className="absolute hidden md:block md:top-[290px] md:left-[43%] md:-translate-x-1/2 z-40 border-4 border-orange-400 rounded-full w-40 h-40 lg:w-60 lg:h-60"
+            variants={circleVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <img
+              src="/images/circle.png"
+              className="w-full h-full object-cover rounded-full"
+              alt="Decorative circle"
+            />
+          </motion.div>
         </div>
+
         <StatsSection />
         <ContactForm />
         <Footer />
@@ -441,4 +503,4 @@ const Serviceweb = () => {
   );
 };
 
-export default Serviceweb;
+export default uxui;
