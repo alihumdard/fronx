@@ -92,6 +92,7 @@ const servicesData = [
     id: "mobile-app-development",
     icon: FaMobileAlt,
     title: "Mobile App Development",
+    url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
     description:
       "Crafting intuitive and high-performance mobile applications for iOS and Android.",
     techStackIcons: [
@@ -108,6 +109,7 @@ const servicesData = [
     id: "ui-ux-design",
     icon: FaPalette,
     title: "UI/UX Design",
+    url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
     description:
       "Designing captivating and user-centric interfaces focusing on aesthetics and usability.",
     techStackIcons: [
@@ -121,6 +123,7 @@ const servicesData = [
     id: "e-commerce-solutions",
     icon: FaShoppingCart,
     title: "E-Commerce Solutions",
+    url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
     description:
       "Building secure e-commerce platforms that drive sales and enhance user experience.",
     techStackIcons: [
@@ -136,6 +139,7 @@ const servicesData = [
     id: "digital-marketing",
     icon: FaBullhorn,
     title: "Digital Marketing",
+    url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
     description:
       "Boost your online presence, drive traffic, and convert leads into loyal customers.",
     techStackIcons: [
@@ -149,6 +153,7 @@ const servicesData = [
     id: "custom-software-development",
     icon: FaCogs,
     title: "Custom Software Development",
+    url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
     description:
       "Tailored solutions to meet your unique business needs and enhance efficiency.",
     techStackIcons: [
@@ -165,6 +170,7 @@ const servicesData = [
     id: "ai-chatbot-solutions",
     icon: FaRobot,
     title: "AI & Chatbot Solutions",
+    url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
     description:
       "Automate customer support and streamline interactions with AI and chatbots.",
     techStackIcons: [
@@ -178,6 +184,7 @@ const servicesData = [
     id: "maintenance-support",
     icon: FaTools,
     title: "Maintenance & Support",
+    url: URLS.SERVICE_DETAIL.MAINTENENCE,
     description:
       "Keep applications running smoothly with updates and dedicated technical support.",
     techStackIcons: [
@@ -191,6 +198,7 @@ const servicesData = [
     id: "search-engine-optimization",
     icon: FaSearch,
     title: "Search/Engine Optimization",
+    url: URLS.SERVICE_DETAIL.SEO,
     description:
       "Improve visibility on search engines to attract more traffic and leads.",
     techStackIcons: [

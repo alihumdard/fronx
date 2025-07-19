@@ -26,10 +26,8 @@ const StatsSection = () => {
   return (
     <section className="bg-white py-16 md:py-24">
       <PageWrapper>
-        <h1 className="text-3xl sm:text-4xl pl-16 pb-10 font-bold text-start mb-8">
-          <span className="">
-            Why Choose Fronx Solutions
-          </span>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-start mb-6 px-4 sm:px-8 md:px-12 lg:px-16 pb-6 sm:pb-8">
+          Why Choose Fronx Solutions
         </h1>
 
         <div className="flex flex-col md:flex-row justify-around items-center gap-8 md:gap-4 lg:gap-8">

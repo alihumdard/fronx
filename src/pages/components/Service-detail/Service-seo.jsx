@@ -7,116 +7,96 @@ import ContactForm from "../Contact";
 import Footer from "../../../main/Footer";
 import URLS from "../../../config/urls.config";
 import {
-  FaClipboardList, // For Planning & Strategy
-  FaLaptopCode, // For Design And Development
-  FaVial, // For Testing & Quality Assurance (FaFlask could also work)
-  FaCloudUploadAlt, // For Deployment
+  FaComments,
+  FaTools,
+  FaMicrochip,
+  FaBrain,
+  FaHeartbeat,
+  FaSearch,
+  FaLightbulb,
+  FaDraftingCompass,
+  FaCogs,
+  FaChartLine,
+  FaFileAlt,
+  FaShareAlt,
+  FaPenNib,
+  FaLink,
 } from "react-icons/fa";
-import {
-  FaWordpressSimple, // For WordPress
-  FaPhp, // For Laravel/PHP
-  FaReact, // For React.js/Next.js
-  FaCode, // Generic for Website Redesign
-  FaServer, // Generic for API Integration
-  FaFileAlt, // Generic for Landing Page Development
-} from "react-icons/fa";
-import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
 import StatsSection from "../Statsdata";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const processSteps = [
   {
-    icon: FaClipboardList,
-    title: "Planning & Strategy",
+    icon: FaLightbulb, // Research
+    title: "Research",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "With our strategies you will be able to form valuable connections with your target audience",
   },
   {
-    icon: FaLaptopCode,
-    title: "Design And Development",
+    icon: FaDraftingCompass, // Planning
+    title: "Planning",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Our team will come up with a unique plan that will grow your website and help your audience",
   },
   {
-    icon: FaVial, // Or FaFlask
-    title: "Testing & Quality Assurance",
+    icon: FaCogs, // Execution
+    title: "Execution",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "The team will start the work of fixing, developing and improving your website",
   },
   {
-    icon: FaCloudUploadAlt,
-    title: "Deployment",
+    icon: FaChartLine, // Analysis
+    title: "Analysis",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Our team will regularly report insightful data about your website after a thorough evaluation",
   },
 ];
 
-const webServicesData = [
+const appservicedata = [
   {
-    id: "wordpress",
-    icon: FaWordpressSimple,
-    title: "WordPress Development",
+    id: "keyword research",
+    icon: FaSearch, // Magnifying glass for research
+    title: "Keyword Research",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Complete WooCommerce store setup including product configuration, payment integration, and theme customization for your e-commerce business.",
   },
   {
-    id: "laravel-php",
-    icon: FaPhp,
-    title: "Laravel/PHP Web Apps",
+    id: "on-page seo",
+    icon: FaFileAlt, // Represents content/page optimization
+    title: "On-Page SEO",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
-    id: "react-nextjs",
-    icon: FaReact, // Could use SiNextdotjs for combined icon
-    title: "React.js / Next.js Web Apps",
+    id: "off-page seo",
+    icon: FaShareAlt, // Represents external sharing/backlinking
+    title: "Off-Page SEO",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
-    id: "website-redesign",
-    icon: FaCode, // Generic B icon equivalent
-    title: "Website Redesign/Optimization",
+    id: "technical seo",
+    icon: FaTools, // Technical settings/tools
+    title: "Technical SEO",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
-    id: "api-integration",
-    icon: FaServer, // Generic B icon equivalent
-    title: "API Integration",
+    id: "content creation",
+    icon: FaPenNib, // Writing/content icon
+    title: "Content Creation",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
-    id: "landing-page",
-    icon: FaFileAlt, // Generic B icon equivalent
-    title: "Landing Page Development",
+    id: "link building",
+    icon: FaLink, // Chain link icon
+    title: "Link Building",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-  },
-];
-
-const features = [
-  {
-    icon: <FaBolt className="text-orange-400 text-3xl" />,
-    title: "Effective",
-    desc: "We design our apps with a strong focus on the user experience. Featuring intuitive interfaces, our apps make navigation simple and efficient, allowing users to find what they need quickly. This seamless interaction boosts both satisfaction and usability.",
-  },
-  {
-    icon: <FaCogs className="text-orange-400 text-3xl" />,
-    title: "Dynamic",
-    desc: "Our apps prioritize experience, featuring intuitive interfaces that ensure smooth and effortless navigation. Users can quickly find the content they need, resulting in greater satisfaction. This seamless interaction boosts both satisfaction and usability.",
-  },
-  {
-    icon: <FaLock className="text-orange-400 text-3xl" />,
-    title: "Affordable",
-    desc: "Our app places a strong emphasis on user data security by using advanced encryption, multi-factor authentication, and a robust, industry-standard security framework to prevent unauthorized access and reliably protect all information.",
-  },
-  {
-    icon: <FaChartLine className="text-orange-400 text-3xl" />,
-    title: "Scale Your Business",
-    desc: "Our app seamlessly integrates with popular social platforms, enabling users to log in using their social accounts, share content easily, and connect with others—greatly enhancing overall community interaction and user engagement.",
   },
 ];
 
@@ -147,7 +127,7 @@ export const staggerContainer = {
     },
   },
 };
-const Serviceweb = () => {
+const SEO = () => {
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -178,12 +158,9 @@ const Serviceweb = () => {
 
               {/* Centered Yellow Glow */}
               <span
-                className="
-              absolute top-1/2 left-1/2 
-              -translate-x-1/2 -translate-y-1/2
-              w-[400px] h-[400px]
-              bg-[#FFC003] opacity-10 blur-3xl rounded-full
-              z-10 pointer-events-none"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+        w-[400px] h-[400px] bg-[#FFC003] opacity-10 blur-3xl rounded-full
+        z-10 pointer-events-none"
               />
             </div>
 
@@ -212,15 +189,10 @@ const Serviceweb = () => {
                 transition={{ delay: 0.5 }}
               >
                 <div
-                  className="
-                  flex flex-wrap lg:flex-nowrap items-center 
-                  gap-2 lg:gap-3 
-                  px-4 sm:px-6 py-2 sm:py-3 
-                  border border-white/30 
-                  rounded-full text-sm sm:text-base 
-                  text-white bg-white/5 hover:bg-white/10 
-                  transition-all duration-300
-                "
+                  className="flex flex-wrap lg:flex-nowrap items-center 
+          gap-2 lg:gap-3 px-4 sm:px-6 py-2 sm:py-3 
+          border border-white/30 rounded-full text-sm sm:text-base 
+          text-white bg-white/5 hover:bg-white/10 transition-all duration-300"
                 >
                   <Link
                     to="/"
@@ -237,7 +209,7 @@ const Serviceweb = () => {
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Website Development
+                    Search Engine Optimization (SEO)
                   </Link>
                 </div>
               </motion.div>
@@ -245,7 +217,7 @@ const Serviceweb = () => {
           </PageWrapper>
         </div>
 
-        <section className="bg-white py-16 md:py-24 px-5">
+        <section className="bg-white py-16 md:py-24 md:px-5">
           <PageWrapper>
             {/* Header */}
             <motion.div
@@ -255,16 +227,19 @@ const Serviceweb = () => {
               transition={{ duration: 0.6 }}
               className="text-start px-4 sm:px-6 mb-12"
             >
-              <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                Website Development Process
-              </span>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-4xl">
-                Cutting-Edge Technology Solutions
+              <div className="flex justify-center md:justify-start">
+                <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
+                  Search Engine Optimization (SEO)
+                </span>
+              </div>
+
+              <h2 className="text-2xl sm:text-4xl text-center md:text-start  mt-6 font-bold text-gray-800 max-w-5xl">
+                Result-Driven SEO Services – Rise to the Top!
               </h2>
             </motion.div>
 
             {/* Process Steps */}
-            <div className="relative flex flex-col items-center lg:flex-row justify-center gap-10 px-4 sm:px-6 mt-16">
+            <div className="relative flex flex-col items-center lg:flex-row justify-center px-4 sm:px-6 mt-16">
               {/* Dotted Line for Desktop */}
               <motion.div
                 initial={{ opacity: 0 }}
@@ -318,11 +293,11 @@ const Serviceweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Our Web Development Services
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
+                SEO Services to Grow Your Business
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                Turning your vision into reality with Fronxsolutions premium
+              <p className="text-center text-gray-600">
+                Turning your vision into reality with Fronx solutions premium
                 custom software solutions.
               </p>
             </motion.div>
@@ -335,7 +310,7 @@ const Serviceweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {webServicesData.map((service) => {
+              {appservicedata.map((service) => {
                 const IconComponent = service.icon;
                 const isExpanded = expandedCard === service.id;
                 const descriptionToShow =
@@ -350,7 +325,7 @@ const Serviceweb = () => {
                     className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col"
                   >
                     {/* Icon */}
-                    <div className="bg-orange-100 p-3 rounded-md inline-block mb-4 self-start">
+                    <div className="bg-gray-50 p-3 rounded-md inline-block mb-4 self-start">
                       {IconComponent && (
                         <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
                       )}
@@ -391,47 +366,131 @@ const Serviceweb = () => {
           </PageWrapper>
         </section>
 
-        <div className="bg-[url('/images/bg.png')] bg-cover bg-center bg-no-repeat py-16 px-6 lg:px-20 text-white">
-          <div className="max-w-7xl mx-auto">
-            {/* Heading */}
-            <motion.div
-              variants={fadeUpVariant}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                Website Development Features
-              </h2>
-              <p className="text-gray-300 mb-12 max-w-3xl">
-                Explore the elements that make our designs intuitive, engaging,
-                and results-driven.
-              </p>
-            </motion.div>
+        <div className="">
+          <PageWrapper>
+            <div className="flex flex-col lg:flex-row pt-20">
+              {/* Left Section */}
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="px-4 py-16 w-full lg:w-1/2 sm:px-6 lg:px-8 flex items-center"
+              >
+                <div className="max-w-3xl mx-auto">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-black mb-10">
+                    Expertise for Your Digital <br /> Growth Journey
+                  </h2>
 
-            {/* Feature Cards */}
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-            >
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeUpVariant}
-                  className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-xl transition-all duration-300 h-full"
-                >
-                  <div className="mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm">{feature.desc}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+                  <div className="space-y-2">
+                    <p className="text-gray-600">
+                      For businesses targeting local audiences, our SEO services
+                      in Pakistan go beyond the basics. We fine-tune your Google
+                      My Business profile, build rock-solid local citations, and
+                      optimize for hyper-local search dominance.
+                    </p>
+                    <p className="text-gray-600">
+                      The result? Your business doesn’t just show up it shines
+                      in local search results, guiding eager customers straight
+                      to your door.
+                    </p>
+                    <p className="text-gray-600">
+                      To complement your local SEO strategy, we also offer
+                      comprehensive 
+                      <span className="text-orange-600 pr-2">
+                        SMM solutions
+                      </span>
+                      that help amplify your brand’s voice and engage your local
+                      audience across platforms.
+                    </p>
+                    <p className="text-gray-600">
+                      With years of hands-on experience, we’ve earned our
+                      reputation as a premier SEO services provider in Pakistan.
+                      Our team of seasoned professionals works tirelessly to
+                      fine-tune your search engine rankings.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Right Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="w-full lg:w-1/2 flex flex-col justify-center px-6 py-16"
+              >
+                <img
+                  src="/images/seo-1.png"
+                  alt="Expertise Visual"
+                  className="w-full max-w-xl rounded-lg"
+                />
+              </motion.div>
+            </div>
+
+            <div className="flex flex-col lg:flex-row pt-10">
+              {/* Left Section */}
+
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="w-full lg:w-1/2 flex flex-col justify-center px-6 py-16"
+              >
+                <img
+                  src="/images/seo-2.png"
+                  alt="Expertise Visual"
+                  className="w-full max-w-xl rounded-lg"
+                />
+              </motion.div>
+              {/* Right Section */}
+
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="px-4 py-16 w-full lg:w-1/2 sm:px-6 lg:px-8 flex items-center"
+              >
+                <div className="max-w-3xl mx-auto">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-black mb-10">
+                    Expertise for Your Digital <br /> Growth Journey
+                  </h2>
+
+                  <div className="space-y-2">
+                    <p className="text-gray-600">
+                      For businesses targeting local audiences, our SEO services
+                      in Pakistan go beyond the basics. We fine-tune your Google
+                      My Business profile, build rock-solid local citations, and
+                      optimize for hyper-local search dominance.
+                    </p>
+                    <p className="text-gray-600">
+                      The result? Your business doesn’t just show up it shines
+                      in local search results, guiding eager customers straight
+                      to your door.
+                    </p>
+                    <p className="text-gray-600">
+                      To complement your local SEO strategy, we also offer
+                      comprehensive 
+                      <span className="text-orange-600 pr-2">
+                        SMM solutions
+                      </span>
+                      that help amplify your brand’s voice and engage your local
+                      audience across platforms.
+                    </p>
+                    <p className="text-gray-600">
+                      With years of hands-on experience, we’ve earned our
+                      reputation as a premier SEO services provider in Pakistan.
+                      Our team of seasoned professionals works tirelessly to
+                      fine-tune your search engine rankings.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </PageWrapper>
         </div>
         <StatsSection />
         <ContactForm />
@@ -441,4 +500,4 @@ const Serviceweb = () => {
   );
 };
 
-export default Serviceweb;
+export default SEO;
