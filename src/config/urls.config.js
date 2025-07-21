@@ -2,6 +2,9 @@ const URLS = {
   HOME: "/",
   OVERONS: "/over-ons",
   SERVICES: "/services",
+  BOLG: "/blog",
+  BlogDetail: "/BlogDetail",
+  CONTACT: "/contact-us",
 
   SERVICE_DETAIL: {
     WEB_DEVELOPMENT: "/web-development",

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import URLS from '../config/urls.config';
+import { Link } from 'react-router-dom';
 
 const serviceCategories = [
     {
         title: "Website Development",
+        url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
         items: [
             "Wordpress Development",
             "Laravel/PHP Web Apps",
@@ -14,6 +17,7 @@ const serviceCategories = [
     },
     {
         title: "Mobile Development",
+        url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
         items: [
             "Flutter App Development",
             "React Native Development",
@@ -24,6 +28,7 @@ const serviceCategories = [
     },
     {
         title: "UX/UI Design Services",
+        url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
         items: [
             "Website UI Design (Figma)",
             "Mobile App U Design",
@@ -33,6 +38,7 @@ const serviceCategories = [
     },
     {
         title: "E-Commerce Solution",
+        url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
         items: [
             "WooCommerce Store Setup",
             "Shopify Development",
@@ -43,6 +49,7 @@ const serviceCategories = [
     },
     {
         title: "Digital Marketing",
+        url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
         items: [
             "Google Ads Setup",
             "Social Media Marketing",
@@ -52,6 +59,7 @@ const serviceCategories = [
     },
     {
         title: "SEO",
+        url: URLS.SERVICE_DETAIL.SEO,
         items: [
             "Keyword Research",
             "On-Page SEO",
@@ -62,6 +70,7 @@ const serviceCategories = [
     },
     {
         title: "Software Development",
+        url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
         items: [
             "CRM System Development",
             "Booking or Inventory System",
@@ -71,6 +80,7 @@ const serviceCategories = [
     },
     {
         title: "Maintenance & Support",
+        url: URLS.SERVICE_DETAIL.MAINTENENCE,
         items: [
             "Website UI Design (Figma)",
             "Mobile App U Design",
@@ -80,6 +90,7 @@ const serviceCategories = [
     },
     {
         title: "AI & Chatbot Solution",
+        url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
         items: [
             "Website Chatbot Development",
             "Open AI/GPT Chatbot for Support/Sale",
@@ -172,9 +183,9 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                                         onClick={mobile ? () => toggleCategoryDropdown(catIndex) : undefined}
                                         className={`flex justify-between items-center w-full py-2 ${mobile ? 'text-gray-800' : ''}`}
                                     >
-                                        <h3 className="text-lg font-semibold bg-gradient-to-r from-[#6931CF] to-[#1A61EA] bg-clip-text text-transparent whitespace-nowrap">
+                                        <Link to={category.url} className="text-lg font-semibold bg-gradient-to-r from-[#6931CF] to-[#1A61EA] bg-clip-text text-transparent whitespace-nowrap">
                                             {category.title}
-                                        </h3>
+                                        </Link>
                                         {mobile && ( // Show arrow only on mobile
                                             <svg
                                                 className={`ml-2 h-5 w-5 text-gray-600 transform transition-transform duration-200 ${

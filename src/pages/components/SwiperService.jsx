@@ -46,7 +46,7 @@ const SwiperService = () => {
       <div className="bg-gray-100 pb-10 pt-6 md:px-10 relative">
         <Swiper
           ref={swiperRef}
-          modules={[Navigation, Pagination]}
+          modules={[Navigation]}
           spaceBetween={30}
           pagination={{ clickable: true }}
           className="relative group"

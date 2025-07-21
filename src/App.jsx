@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useRoutes } from "./routes";
 import ScrollToTop from "./main/ScrollToTop";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const App = () => {
   const routes = useRoutes();
