@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../../main/Navbar";
 import PageWrapper from "../../main/Pagewraper";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import URLS from "../../config/urls.config";
 
 // Animation Variants (kept as is, assuming they are correct)
 const containerVariants = {
@@ -100,18 +102,18 @@ const Hero = () => {
                 className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 md:mb-8 w-full justify-center lg:justify-start" // Stack on mobile, row on sm+, centered on mobile, left on desktop
                 variants={fadeUpVariant}
               >
-                <a
-                  href="#achievements"
+                <Link
+                  to={URLS.CONTACT}
                   className="bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-lg hover:opacity-90 transition-opacity whitespace-nowrap text-center" // Responsive padding/font, centered text
                 >
                   BOOK A FREE CONSULTATION
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to={URLS.SERVICES}
                   className="border border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white hover:text-[#6931CF] transition-colors whitespace-nowrap text-center" // Responsive padding/font, centered text
                 >
                   Explore Service
-                </a>
+                </Link>
               </motion.div>
 
               {/* Small Note */}

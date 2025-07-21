@@ -1,3 +1,5 @@
+import Blog from "../../pages/Blog";
+import BlogDetail from "../../pages/components/blog-detail/BlogDetail";
 import Appweb from "../../pages/components/Service-detail/Service-App";
 import chatbot from "../../pages/components/Service-detail/Service-chatbot";
 import Ecommerece from "../../pages/components/Service-detail/Service-Ecommerece";
@@ -7,6 +9,7 @@ import SEO from "../../pages/components/Service-detail/Service-seo";
 import Software from "../../pages/components/Service-detail/Service-software";
 import Serviceweb from "../../pages/components/Service-detail/Service-web";
 import uxui from "../../pages/components/Service-detail/Service_ux-ui";
+import Contact from "../../pages/Contact";
 import Home from "../../pages/Home";
 import OverOns from "../../pages/OverOns";
 import Service from "../../pages/Service";
@@ -56,8 +59,20 @@ export const publicRoutes = [
     path: "/maintenence",
     element: Maintenence,
   },
-    {
+  {
     path: "/seo",
     element: SEO,
+  },
+  {
+    path: "/blog",
+    element: Blog,
+  },
+  {
+    path: "/BlogDetail",
+    element: BlogDetail,
+  },
+    {
+    path: "/contact-us",
+    element: Contact,
   },
 ];

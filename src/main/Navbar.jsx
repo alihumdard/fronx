@@ -148,8 +148,8 @@ const Navbar = () => {
                     animate="animate"
                     transition={{ delay: 0.2 }}
                   >
-                    <a
-                      href="#"
+                    <Link
+                    to={URLS.BOLG}
                       className={`px-2 py-1 block w-full text-start pl-4 sm:pl-0 ${
                         isMobileMenuOpen
                           ? "text-gray-800 hover:text-blue-600"
@@ -157,7 +157,7 @@ const Navbar = () => {
                       }`}
                     >
                       Blog
-                    </a>
+                    </Link>
                   </motion.li>
 
                   {/* Portfolio */}
@@ -223,12 +223,12 @@ const Navbar = () => {
                   isMobileMenuOpen ? "block" : "hidden"
                 } lg:flex items-center space-x-4`}
               >
-                <a
-                  href="#"
+                <Link
+                  to={URLS.CONTACT}
                   className="bg-blue-600 text-white px-4 py-1.5 lg:px-5 lg:py-2 rounded-full font-semibold shadow hover:bg-blue-700 transition text-sm lg:text-base"
                 >
                   Contact Us
-                </a>
+                </Link>
               </motion.div>
             )}
           </AnimatePresence>
