@@ -71,22 +71,32 @@ const OveronsAccess = () => {
             {steps.map((item, index) => (
               <motion.div
                 key={index}
-                className="bg-[#F8FAFC] p-6 rounded-xl shadow-sm text-left relative z-20"
+                className="bg-[#F8FAFC] hover:shadow-xl ease-in-out p-6 rounded-xl shadow-sm text-left relative z-20"
                 custom={index}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUpVariant}
               >
-                <div className="flex items-center mb-4 group hover:cursor-pointer">
-                  <div className="flex transform transition-all duration-500 group-hover:translate-x-2">
-                    <div className="w-4 h-8 rounded-l-full bg-[#3F00F8]" />
-                    <div className="w-4 h-8 rounded-r-full bg-[#A530F9]" />
-                  </div>
-                  <span className="ml-3 bg-white text-black text-sm font-semibold px-3 py-1 rounded-full shadow transform transition-all duration-500 group-hover:translate-x-2">
-                    {item.step}
-                  </span>
-                </div>
+               <div className="flex items-center mb-4 group hover:cursor-pointer relative">
+  {/* Colored bar container */}
+  <div className="flex transform transition-all duration-500 group-hover:translate-x-2">
+    <div className="w-4 h-8 rounded-l-full bg-[#3F00F8]" />
+    <div className="w-4 h-8 rounded-r-full bg-[#A530F9]" />
+  </div>
+
+  {/* Step badge with background animation */}
+  <span className="relative ml-3 text-sm font-semibold text-black px-3 py-1 rounded-full shadow z-10 overflow-hidden">
+    {/* Hover background animation */}
+    <span className="absolute inset-0 bg-[#3F00F8] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+
+    {/* Text (should be above the background layer) */}
+    <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+      {item.step}
+    </span>
+  </span>
+</div>
+
                 <h3 className="text-lg font-bold text-black mb-2">
                   {item.title}
                 </h3>

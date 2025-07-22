@@ -1,23 +1,37 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import PageWrapper from "./Pagewraper";
 import DropdownMenu from "./DropdownMenu";
-import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
 import URLS from "../config/urls.config";
 
 const Navbar = () => {
+  const location = useLocation();
   const [isFrench, setIsFrench] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleLanguage = () => setIsFrench(!isFrench);
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-  // Fade-up animation variants
   const fadeUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: 20 },
   };
+
+  // Active link style helper
+  const getLinkClasses = (path) =>
+    `px-2 py-1 block w-full text-start pl-4 sm:pl-0 ${
+      isMobileMenuOpen
+        ? "hover:text-blue-600"
+        : ""
+    } ${
+      location.pathname === path
+        ? "bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-transparent bg-clip-text border-b-2 border-blue-500"
+        : isMobileMenuOpen
+        ? "text-gray-800"
+        : "text-white"
+    }`;
 
   return (
     <motion.nav
@@ -30,7 +44,7 @@ const Navbar = () => {
     >
       <PageWrapper>
         <div className="flex flex-col lg:flex-row items-center justify-between py-3 lg:py-5">
-          {/* Logo & Mobile Toggle */}
+          {/* Logo + Mobile Menu */}
           <div className="flex items-center justify-between w-full lg:w-auto mb-2 lg:mb-0">
             <motion.div
               key={isMobileMenuOpen ? "logo-2" : "logo-1"}
@@ -41,16 +55,16 @@ const Navbar = () => {
               className="flex items-center"
             >
               <Link to="/">
-              <img
-                src={
-                  isMobileMenuOpen ? "/images/logo-2.png" : "/images/logo.png"
-                }
-                alt="Logo"
-                className="h-8 lg:h-10 w-auto transition-all duration-300"
-              />
+                <img
+                  src={
+                    isMobileMenuOpen ? "/images/logo-2.png" : "/images/logo.png"
+                  }
+                  alt="Logo"
+                  className="h-8 lg:h-10 w-auto transition-all duration-300"
+                />
               </Link>
             </motion.div>
-            {/* Hamburger Icon */}
+
             <button
               className="lg:hidden focus:outline-none"
               onClick={toggleMobileMenu}
@@ -93,86 +107,48 @@ const Navbar = () => {
               >
                 <ul className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 xl:space-x-8 w-full lg:w-auto">
                   <li>
-                    <DropdownMenu
-                      mobile={isMobileMenuOpen}
-                      textColorClass={
-                        isMobileMenuOpen ? "text-gray-800" : "text-white"
-                      }
-                    />
+                    <Link to={URLS.HOME} className={getLinkClasses(URLS.HOME)}>
+                      Home
+                    </Link>
                   </li>
 
-                  {/* Over Ons */}
-                  <motion.li
-                    variants={fadeUp}
-                    initial="initial"
-                    animate="animate"
-                    transition={{ delay: 0.1 }}
-                  >
+                  <motion.li variants={fadeUp} initial="initial" animate="animate" transition={{ delay: 0.1 }}>
                     <Link
-                    to={URLS.OVERONS}
-                      href="#"
-                      className={`px-2 py-1 block w-full text-start pl-4 sm:pl-0 ${
-                        isMobileMenuOpen
-                          ? "text-gray-800 hover:text-blue-600"
-                          : "text-white hover:text-gray-300"
-                      }`}
+                      to={URLS.OVERONS}
+                      className={getLinkClasses(URLS.OVERONS)}
                     >
                       Over Ons
                     </Link>
                   </motion.li>
 
-                  {/* Services */}
-                  <motion.li
-                    variants={fadeUp}
-                    initial="initial"
-                    animate="animate"
-                    transition={{ delay: 0.15 }}
-                  >
-                    <Link
-                    to={URLS.SERVICES}
-                      href="#"
-                      className={`px-2 py-1 block w-full text-start pl-4 sm:pl-0 ${
-                        isMobileMenuOpen
-                          ? "text-gray-800 hover:text-blue-600"
-                          : "text-white hover:text-gray-300"
-                      }`}
-                    >
-                      Services
+                  <motion.li variants={fadeUp} initial="initial" animate="animate" transition={{ delay: 0.15 }}>
+                    <Link to={URLS.SERVICES}>
+                      <DropdownMenu
+                        mobile={isMobileMenuOpen}
+                        textColorClass={
+                          location.pathname === URLS.SERVICES
+                            ? "text-transparent bg-gradient-to-r from-[#6931CF] to-[#1A61EA] bg-clip-text border-b-2 border-blue-500"
+                            : isMobileMenuOpen
+                            ? "text-gray-800"
+                            : "text-white"
+                        }
+                      />
                     </Link>
                   </motion.li>
 
-                  {/* Blog */}
-                  <motion.li
-                    variants={fadeUp}
-                    initial="initial"
-                    animate="animate"
-                    transition={{ delay: 0.2 }}
-                  >
-                    <Link
-                    to={URLS.BOLG}
-                      className={`px-2 py-1 block w-full text-start pl-4 sm:pl-0 ${
-                        isMobileMenuOpen
-                          ? "text-gray-800 hover:text-blue-600"
-                          : "text-white hover:text-gray-300"
-                      }`}
-                    >
+                  <motion.li variants={fadeUp} initial="initial" animate="animate" transition={{ delay: 0.2 }}>
+                    <Link to={URLS.BOLG} className={getLinkClasses(URLS.BOLG)}>
                       Blog
                     </Link>
                   </motion.li>
 
-                  {/* Portfolio */}
-                  <motion.li
-                    variants={fadeUp}
-                    initial="initial"
-                    animate="animate"
-                    transition={{ delay: 0.25 }}
-                  >
+                  <motion.li variants={fadeUp} initial="initial" animate="animate" transition={{ delay: 0.25 }}>
                     <a
                       href="#"
                       className={`px-2 py-1 block w-full text-start pl-4 sm:pl-0 ${
                         isMobileMenuOpen
                           ? "text-gray-800 hover:text-blue-600"
-                          : "text-white hover:text-gray-300"
+                          : "text-white "
                       }`}
                     >
                       Portfolio

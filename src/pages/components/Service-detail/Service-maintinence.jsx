@@ -323,7 +323,7 @@ const Maintenence = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
+              <h2 id="maintinence-development-process" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
                 Stay Secure and Optimized with Expert Support
               </h2>
               <p className="text-center text-gray-600">

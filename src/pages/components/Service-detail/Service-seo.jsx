@@ -293,7 +293,7 @@ const SEO = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
+              <h2 id="seo-development-process" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
                 SEO Services to Grow Your Business
               </h2>
               <p className="text-center text-gray-600">

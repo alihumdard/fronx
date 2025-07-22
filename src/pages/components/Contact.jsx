@@ -1,38 +1,10 @@
 import React from 'react';
 import PageWrapper from '../../main/Pagewraper';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
-import { motion } from 'framer-motion';
-
-// Framer Motion Variants
-const containerVariant = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 }
-  }
-};
-
-const staggerVariant = {
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    }
-  }
-};
-
-const childVariant = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
-};
 
 const ContactForm = () => {
   return (
-    <motion.section
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={containerVariant}
+    <section
       className="relative py-16 md:py-24 text-white"
       style={{
         backgroundImage: 'url(/images/bg.png)',
@@ -44,12 +16,9 @@ const ContactForm = () => {
       <div className="absolute inset-0 opacity-80 bg-black"></div>
 
       <PageWrapper>
-        <motion.div
-          className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-          variants={staggerVariant}
-        >
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Contact Info Column */}
-          <motion.div variants={childVariant}>
+          <div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
               Let's start a project together!
             </h2>
@@ -91,13 +60,10 @@ const ContactForm = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Form Column */}
-          <motion.div
-            variants={childVariant}
-            className="bg-white bg-opacity-5 p-8 md:p-10 rounded-xl shadow-lg border border-gray-700"
-          >
+          <div className="bg-white bg-opacity-5 p-8 md:p-10 rounded-xl shadow-lg border border-gray-700">
             <form className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
                 { id: "firstName", placeholder: "First Name" },
@@ -106,7 +72,7 @@ const ContactForm = () => {
                 { id: "mobileNumber", placeholder: "Mobile Number", type: "tel" },
                 { id: "currentWebsite", placeholder: "Current Website?", colSpan: true },
                 { id: "iWouldLike", placeholder: "I Would Like...", colSpan: true },
-              ].map(({ id, placeholder, type = "text", colSpan }, index) => (
+              ].map(({ id, placeholder, type = "text", colSpan }) => (
                 <div key={id} className={`${colSpan ? "sm:col-span-2" : ""}`}>
                   <label htmlFor={id} className="sr-only">{placeholder}</label>
                   <input
@@ -139,10 +105,10 @@ const ContactForm = () => {
                 </button>
               </div>
             </form>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </PageWrapper>
-    </motion.section>
+    </section>
   );
 };
 

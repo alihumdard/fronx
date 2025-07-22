@@ -249,23 +249,32 @@ const ProjectGridSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 relative"
+              className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 relative group hover:shadow-2xl transition duration-300"
             >
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-56 object-cover"
               />
-              <div className="absolute top-4 left-4 bg-white px-3 py-2 rounded-md shadow-sm flex items-center space-x-2 text-gray-700 text-xs font-medium">
-                <FaCalendarAlt className="w-3 h-3 text-gray-500" />
-                <span>{project.date}</span>
-              </div>
-              <div className="p-5 flex flex-col justify-between">
-                <p className="text-gray-800 text-lg font-semibold mb-4 pr-12 leading-tight">
+
+              <div className="p-5 flex flex-col justify-between relative">
+                {/* Date Badge */}
+                <div className="absolute bottom-24 left-4 bg-white px-3 py-2 rounded-md shadow-md flex items-center space-x-2 text-gray-700 text-xs font-medium">
+                  <FaCalendarAlt className="w-3 h-3 text-gray-500" />
+                  <span>{project.date}</span>
+                </div>
+
+                {/* Title */}
+                <p className="text-gray-800 pt-10 text-lg font-semibold mb-4 pr-12 leading-tight">
                   {project.title}
                 </p>
-                <Link to={URLS.BlogDetail} className="absolute bottom-5 right-5 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors">
-                  <FaArrowRight className="w-5 h-5" />
+
+                {/* Arrow Button with Rotation Only */}
+                <Link
+                  to={URLS.BlogDetail}
+                  className="absolute bottom-5 right-5 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors group"
+                >
+                  <FaArrowRight className="w-5 h-5 transform transition-transform duration-300 ease-in-out group-hover:-rotate-45" />
                 </Link>
               </div>
             </motion.div>

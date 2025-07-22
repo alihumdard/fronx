@@ -245,68 +245,69 @@ const Serviceweb = () => {
           </PageWrapper>
         </div>
 
-        <section className="bg-white py-16 md:py-24 px-5">
-          <PageWrapper>
-            {/* Header */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-start px-4 sm:px-6 mb-12"
-            >
-              <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                Website Development Process
-              </span>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-4xl">
-                Cutting-Edge Technology Solutions
-              </h2>
-            </motion.div>
-
-            {/* Process Steps */}
-            <div className="relative flex flex-col items-center lg:flex-row justify-center gap-10 px-4 sm:px-6 mt-16">
-              {/* Dotted Line for Desktop */}
+          <section className="bg-white py-16 md:py-24 px-5">
+            <PageWrapper>
+              {/* Header */}
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="absolute top-20 lg:top-24 hidden lg:block w-full h-0.5 border-t-2 border-dashed border-gray-300 z-0"
-              ></motion.div>
+                transition={{ duration: 0.6 }}
+                className="text-start px-4 sm:px-6 mb-12"
+              >
+                <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
+                  Website Development Process
+                </span>
+                <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-4xl">
+                  Cutting-Edge Technology Solutions
+                </h2>
+              </motion.div>
 
-              {processSteps.map((step, index) => {
-                const IconComponent = step.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2, duration: 0.6 }}
-                    className="relative bg-white p-6 rounded-xl text-center flex flex-col items-center z-10 w-full max-w-sm"
-                  >
-                    {/* Icon Box */}
-                    <div className="bg-gray-100 p-4 rounded-xl mb-4 shadow-sm">
-                      {IconComponent && (
-                        <IconComponent className="w-10 h-10 text-orange-500" />
-                      )}
-                    </div>
+              {/* Process Steps */}
+              <div className="relative flex flex-col items-center lg:flex-row justify-center gap-10 px-4 sm:px-6 mt-16">
+                {/* Dotted Line for Desktop */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                  className="absolute top-20 lg:top-24 hidden lg:block w-full h-0.5 border-t-2 border-dashed border-gray-300 z-0"
+                ></motion.div>
 
-                    {/* Title */}
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
-                      {step.title}
-                    </h3>
+                {processSteps.map((step, index) => {
+                  const IconComponent = step.icon;
+                  return (
+                    <motion.div
+                  
+                      key={index}
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.2, duration: 0.6 }}
+                      className="relative bg-white p-6 rounded-xl text-center flex flex-col items-center z-10 w-full max-w-sm"
+                    >
+                      {/* Icon Box */}
+                      <div className="bg-gray-100 p-4 rounded-xl mb-4 shadow-sm">
+                        {IconComponent && (
+                          <IconComponent className="w-10 h-10 text-orange-500" />
+                        )}
+                      </div>
 
-                    {/* Description */}
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                      {step.description}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </PageWrapper>
-        </section>
+                      {/* Title */}
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+                        {step.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        {step.description}
+                      </p>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </PageWrapper>
+          </section>
 
         <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-20 md:py-24">
           <PageWrapper>
@@ -318,7 +319,7 @@ const Serviceweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+              <h2 id="web-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Our Web Development Services
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
@@ -345,6 +346,7 @@ const Serviceweb = () => {
 
                 return (
                   <motion.div
+                  
                     key={service.id}
                     variants={fadeUpVariant}
                     className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col"

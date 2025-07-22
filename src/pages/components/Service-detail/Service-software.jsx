@@ -294,7 +294,7 @@ const Software = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+              <h2 id="software-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Our E-Commerce Development Services
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
@@ -410,23 +410,23 @@ const Software = () => {
             </div>
 
             {/* Right Image */}
-        <motion.div
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6, delay: 0.3 }}
-  className="w-full lg:w-[40%] flex justify-center"
->
-  <motion.img
-    src="/images/software.png"
-    alt="Software Illustration"
-    className="w-[80%] max-w-md"
-    initial={{ scale: 0.9 }}
-    whileInView={{ scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6, delay: 0.5 }}
-  />
-</motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="w-full lg:w-[40%] flex justify-center"
+            >
+              <motion.img
+                src="/images/software.png"
+                alt="Software Illustration"
+                className="w-[80%] max-w-md"
+                initial={{ scale: 0.9 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              />
+            </motion.div>
           </div>
         </div>
 

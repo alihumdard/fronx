@@ -315,7 +315,7 @@ const uxui = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+              <h2 id="uiux-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Strategic & Impactful UI/UX Design Services
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">

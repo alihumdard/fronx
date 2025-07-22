@@ -60,22 +60,34 @@ const Hero = () => {
             >
               {/* Tags */}
               <motion.div
-                className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mb-6 md:mb-8" // Adjusted gap and mb for better mobile spacing
+                className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mb-6 md:mb-8"
                 variants={fadeUpVariant}
               >
-                {[
-                  "Web Development",
-                  "Application Development",
-                  "SEO & Consulting",
-                ].map((tag, index) => (
+                <Link to={URLS.SERVICE_DETAIL.WEB_DEVELOPMENT}>
                   <motion.span
-                    key={index}
-                    className="bg-white text-black font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm whitespace-nowrap" // Adjusted font and padding for smaller screens
+                    className="bg-white text-black font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm whitespace-nowrap"
                     variants={fadeUpVariant}
                   >
-                    {tag}
+                    Web Development
                   </motion.span>
-                ))}
+                </Link>
+                <Link to={URLS.SERVICE_DETAIL.APP_DEVELOPMENT}>
+                  <motion.span
+                    className="bg-white text-black font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm whitespace-nowrap"
+                    variants={fadeUpVariant}
+                  >
+                    Application Development
+                  </motion.span>
+                </Link>
+
+                <Link to={URLS.SERVICE_DETAIL.SEO}>
+                  <motion.span
+                    className="bg-white text-black font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm whitespace-nowrap"
+                    variants={fadeUpVariant}
+                  >
+                    SEO & Consulting
+                  </motion.span>
+                </Link>
               </motion.div>
 
               {/* Main Heading */}
