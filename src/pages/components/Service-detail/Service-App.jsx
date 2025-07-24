@@ -63,6 +63,8 @@ const appservicedata = [
     title: "React Native Development",
     shortDescription:
       "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "android app development",
@@ -70,6 +72,8 @@ const appservicedata = [
     title: "Android App Development",
     shortDescription:
       "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "ios app development",
@@ -77,6 +81,8 @@ const appservicedata = [
     title: "IOS App Development",
     shortDescription:
       "Designing with the user's needs, preferences, and behaviors at the core of every decision.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "app ui design",
@@ -84,6 +90,8 @@ const appservicedata = [
     title: "APP UI Design",
     shortDescription:
       "Creating intuitive interactions that make navigating and using the product simple and enjoyable.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
 ];
 

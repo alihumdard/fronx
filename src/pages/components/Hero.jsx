@@ -20,7 +20,7 @@ const fadeUpVariant = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
+    transition: { duration: 1.1, ease: "easeOut" },
   },
 };
 
@@ -116,13 +116,13 @@ const Hero = () => {
               >
                 <Link
                   to={URLS.CONTACT}
-                  className="bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-lg hover:opacity-90 transition-opacity whitespace-nowrap text-center" // Responsive padding/font, centered text
+                  className="bg-gradient-to-r from-[#6931CF] to-[#1A61EA] btn-animate text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-lg hover:opacity-90 transition-opacity whitespace-nowrap text-center" // Responsive padding/font, centered text
                 >
                   BOOK A FREE CONSULTATION
                 </Link>
                 <Link
                   to={URLS.SERVICES}
-                  className="border border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white hover:text-[#6931CF] transition-colors whitespace-nowrap text-center" // Responsive padding/font, centered text
+                  className="border btn-animate border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg  hover:text-[#6931CF] transition-colors whitespace-nowrap text-center" // Responsive padding/font, centered text
                 >
                   Explore Service
                 </Link>

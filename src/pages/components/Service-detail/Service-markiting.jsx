@@ -65,6 +65,8 @@ const marketing = [
     title: "Social Media Marketing",
     shortDescription:
       "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "content marketing",
@@ -72,6 +74,8 @@ const marketing = [
     title: "Content Marketing",
     shortDescription:
       "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "email marketing",
@@ -79,23 +83,8 @@ const marketing = [
     title: "Email Marketing",
     shortDescription:
       "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
-  },
-];
-const features = [
-  {
-    icon: <FaNetworkWired className="text-orange-400 text-3xl" />,
-    title: "Business-to-Business",
-    desc: "Shift your offline territory to a more rigid online Ecommerce platform to target larger audiences.",
-  },
-  {
-    icon: <FaShoppingBasket className="text-orange-400 text-3xl" />,
-    title: "Business-to-Consumer",
-    desc: "Reach out to more prospects locally and globally by introducing your brand to an online community.",
-  },
-  {
-    icon: <FaRobot className="text-orange-400 text-3xl" />,
-    title: "Complete Automation",
-    desc: "Streamline business processes with ecommerce and focus on things that help in business growth.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
 ];
 

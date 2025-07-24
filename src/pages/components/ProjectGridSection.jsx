@@ -249,32 +249,45 @@ const ProjectGridSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 relative group hover:shadow-2xl transition duration-300"
+              className="relative"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-56 object-cover"
-              />
+              {/* Main Card Container with Rounded Image */}
+              <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, ease: "easeOut" }}
+  className="bg-white rounded-2xl overflow-hidden shadow-md mb-20 hover:shadow-2xl transition-shadow duration-300"
+>
+  <div className="overflow-hidden">
+    <img
+      src={project.image}
+      alt={project.title}
+      className="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out hover:scale-105"
+    />
+  </div>
+</motion.div>
 
-              <div className="p-5 flex flex-col justify-between relative">
-                {/* Date Badge */}
-                <div className="absolute bottom-24 left-4 bg-white px-3 py-2 rounded-md shadow-md flex items-center space-x-2 text-gray-700 text-xs font-medium">
-                  <FaCalendarAlt className="w-3 h-3 text-gray-500" />
+
+              {/* Floating Info Box */}
+              <div className="absolute left-4 right-4 bottom-20 translate-y-1/2 bg-white rounded-xl shadow-lg px-4 py-6 flex flex-col gap-2">
+                {/* Date */}
+                <div className="flex items-center gap-2 text-gray-500 text-sm font-medium">
+                  <FaCalendarAlt className="w-4 h-4" />
                   <span>{project.date}</span>
                 </div>
 
                 {/* Title */}
-                <p className="text-gray-800 pt-10 text-lg font-semibold mb-4 pr-12 leading-tight">
+                <p className="text-gray-800 font-semibold text-xl leading-tight">
                   {project.title}
                 </p>
 
-                {/* Arrow Button with Rotation Only */}
+                {/* Arrow Icon Button */}
                 <Link
                   to={URLS.BlogDetail}
-                  className="absolute bottom-5 right-5 bg-blue-600 text-white rounded-full p-3 shadow-md hover:bg-blue-700 transition-colors group"
+                  className="absolute -top-3 -right-3 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-md transition"
                 >
-                  <FaArrowRight className="w-5 h-5 transform transition-transform duration-300 ease-in-out group-hover:-rotate-45" />
+                  <FaArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </motion.div>

@@ -128,14 +128,15 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
 
   return (
     <li
-      className="relative w-full lg:w-auto"
+      className="relative w-full lg:w-auto "
       onMouseEnter={mobile ? undefined : () => setIsMainDropdownOpen(true)}
       onMouseLeave={mobile ? undefined : () => setIsMainDropdownOpen(false)}
     >
-      <button
+      <Link
+      to={URLS.SERVICES}
         onClick={toggleMainDropdown}
-        className={`py-2 px-4 inline-flex items-center font-medium whitespace-nowrap focus:outline-none
-                                ${mobile ? "block w-full text-left" : ""}
+        className={`inline-flex items-center font-medium whitespace-nowrap focus:outline-none 
+                                ${mobile ? "block w-full text-left " : ""}
                                 ${textColorClass} ${linkHoverClass}`}
         aria-expanded={isMainDropdownOpen ? "true" : "false"}
         aria-controls="main-dropdown-content"
@@ -158,7 +159,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
             }
           />
         </svg>
-      </button>
+      </Link>
 
       <AnimatePresence>
         {isMainDropdownOpen && (
@@ -172,7 +173,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                             ${
                               mobile
                                 ? "relative w-full mt-2 p-4 bg-gray-50 rounded-lg shadow-inner"
-                                : "absolute left-1/2 sm:-left-[450%] top-full mt-3 w-screen max-w-screen-xl -translate-x-1/2 p-8 bg-white rounded-xl shadow-lg"
+                                : "absolute left-1/2 sm:-left-[570%] top-full mt-3 w-screen max-w-screen-xl -translate-x-1/2 p-8 bg-white rounded-xl shadow-lg"
                             }
                             overflow-hidden
                         `}

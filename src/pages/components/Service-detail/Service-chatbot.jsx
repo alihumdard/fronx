@@ -67,6 +67,8 @@ const appservicedata = [
     title: "Open AI/GPT Chatbot for Support/Sales",
     shortDescription:
       "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "ai powered saas tool integration",
@@ -74,6 +76,8 @@ const appservicedata = [
     title: "AI Powered SaaS Tool Integration",
     shortDescription:
       "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
 ];
 

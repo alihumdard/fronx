@@ -2,6 +2,10 @@ import React from "react";
 import PageWrapper from "./Pagewraper";
 import { Link } from "react-router-dom";
 import URLS from "../config/urls.config";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
+import { Autoplay } from "swiper/modules";
 
 function Footer() {
   const companyLogos = [
@@ -19,17 +23,29 @@ function Footer() {
       {/* Company Logos + CTA Section */}
       <header className="relative z-10">
         <PageWrapper>
-          <div className="bg-white shadow-sm py-4 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center">
-            <div className="flex flex-wrap justify-center py-20 md:justify-start items-center gap-x-14 gap-y-4 mt-10 mb-10 w-full">
+          <div className="bg-white shadow-sm py-28 px-6 md:px-12">
+            <Swiper
+              modules={[Autoplay]}
+              autoplay={{ delay: 2000, disableOnInteraction: false }}
+              loop={true}
+              breakpoints={{
+                320: { slidesPerView: 2, spaceBetween: 20 },
+                640: { slidesPerView: 3, spaceBetween: 30 },
+                768: { slidesPerView: 4, spaceBetween: 40 },
+                1024: { slidesPerView: 5, spaceBetween: 40 },
+              }}
+              className="w-full py-10"
+            >
               {companyLogos.map((logo, index) => (
-                <img
-                  key={index}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-6 opacity-70"
-                />
+                <SwiperSlide key={index} className="flex justify-center">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-6 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
           </div>
 
           {/* CTA Banner */}
@@ -56,8 +72,8 @@ function Footer() {
         style={{ backgroundImage: "url('/images/bg.png')" }}
       >
         <PageWrapper>
-          <section className="bg-gradient-to-b from-fronx-dark-bg to-fronx-darkest-bg py-16 px-4 md:px-12 text-white">
-            <ul className="grid grid-cols-2 sm:grid-cols-5 gap-6 text-center">
+          <section className="bg-gradient-to-b from-fronx-dark-bg to-fronx-darkest-bg py-16 px-4 md:px-12 mx-14 text-white overflow-hidden">
+            <div className="whitespace-nowrap animate-marquee flex gap-28">
               {[
                 "Web Development",
                 "App Development",
@@ -65,14 +81,43 @@ function Footer() {
                 "Maintenance",
                 "Digital Marketing",
               ].map((service, index) => (
-                <li
+                <span
                   key={index}
-                  className="text-base sm:text-lg md:text-xl font-semibold"
+                  className="inline-block text-base sm:text-lg md:text-xl font-semibold"
                 >
                   {service}
-                </li>
+                </span>
               ))}
-            </ul>
+              {/* Duplicate items for seamless looping */}
+              {[
+                "Web Development",
+                "App Development",
+                "UX/UI Design",
+                "Maintenance",
+                "Digital Marketing",
+              ].map((service, index) => (
+                <span
+                  key={index + 100}
+                  className="inline-block text-base sm:text-lg md:text-xl font-semibold"
+                >
+                  {service}
+                </span>
+              ))}
+              {[
+                "Web Development",
+                "App Development",
+                "UX/UI Design",
+                "Maintenance",
+                "Digital Marketing",
+              ].map((service, index) => (
+                <span
+                  key={index + 100}
+                  className="inline-block text-base sm:text-lg md:text-xl font-semibold"
+                >
+                  {service}
+                </span>
+              ))}
+            </div>
           </section>
 
           {/* Footer Sections */}
@@ -82,7 +127,8 @@ function Footer() {
               <div className="w-full md:w-1/2 lg:w-1/5">
                 <h2 className="text-3xl font-bold mb-4">FRONX</h2>
                 <p className="text-sm opacity-80 mb-6">
-                  Driving Business Success Through Innovative Technology | Fronx Solutions
+                  Driving Business Success Through Innovative Technology | Fronx
+                  Solutions
                 </p>
                 <div className="flex space-x-3">
                   {["T", "L", "I", "P", "M"].map((item, idx) => (
@@ -101,12 +147,36 @@ function Footer() {
               <div className="w-1/2 md:w-1/4 lg:w-1/6">
                 <h3 className="text-lg font-semibold mb-4">Menu</h3>
                 <ul className="space-y-2 text-sm opacity-80">
-                  <li><Link to={URLS.HOME} className="hover:text-gray-400">Home</Link></li>
-                  <li><Link to={URLS.OVERONS} className="hover:text-gray-400">Over Ons</Link></li>
-                  <li><Link to={URLS.SERVICES} className="hover:text-gray-400">Services</Link></li>
-                  <li><Link to={URLS.BLOG} className="hover:text-gray-400">Blog</Link></li>
-                  <li><Link to="#" className="hover:text-gray-400">Portfolio</Link></li>
-                  <li><Link to={URLS.CONTACT} className="hover:text-gray-400">Contact</Link></li>
+                  <li>
+                    <Link to={URLS.HOME} className="hover:text-gray-400">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={URLS.OVERONS} className="hover:text-gray-400">
+                      Over Ons
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={URLS.SERVICES} className="hover:text-gray-400">
+                      Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={URLS.BLOG} className="hover:text-gray-400">
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="#" className="hover:text-gray-400">
+                      Portfolio
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={URLS.CONTACT} className="hover:text-gray-400">
+                      Contact
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
@@ -114,11 +184,46 @@ function Footer() {
               <div className="w-1/2 md:w-1/4 lg:w-1/6">
                 <h3 className="text-lg font-semibold mb-4">Services</h3>
                 <ul className="space-y-2 text-sm opacity-80">
-                  <li><Link to={URLS.SERVICE_DETAIL.WEB_DEVELOPMENT} className="hover:text-gray-400">Web Design and Development</Link></li>
-                  <li><Link to={URLS.SERVICE_DETAIL.APP_DEVELOPMENT} className="hover:text-gray-400">Mobile Application Development</Link></li>
-                  <li><Link to={URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT} className="hover:text-gray-400">Software Development</Link></li>
-                  <li><Link to={URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT} className="hover:text-gray-400">UI/UX Design</Link></li>
-                  <li><Link to={URLS.SERVICE_DETAIL.SEO} className="hover:text-gray-400">SEO Services</Link></li>
+                  <li>
+                    <Link
+                      to={URLS.SERVICE_DETAIL.WEB_DEVELOPMENT}
+                      className="hover:text-gray-400"
+                    >
+                      Web Design and Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={URLS.SERVICE_DETAIL.APP_DEVELOPMENT}
+                      className="hover:text-gray-400"
+                    >
+                      Mobile Application Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT}
+                      className="hover:text-gray-400"
+                    >
+                      Software Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT}
+                      className="hover:text-gray-400"
+                    >
+                      UI/UX Design
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={URLS.SERVICE_DETAIL.SEO}
+                      className="hover:text-gray-400"
+                    >
+                      SEO Services
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
@@ -126,9 +231,30 @@ function Footer() {
               <div className="w-full md:w-1/4 lg:w-1/6">
                 <h3 className="text-lg font-semibold mb-4">Services</h3>
                 <ul className="space-y-2 text-sm opacity-80">
-                  <li><Link to={URLS.SERVICE_DETAIL.DIGITAL_MARKITING} className="hover:text-gray-400">Digital Marketing</Link></li>
-                  <li><Link to={URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT} className="hover:text-gray-400">AI Chatbot Solution</Link></li>
-                  <li><Link to={URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT} className="hover:text-gray-400">E-Commerce Solutions</Link></li>
+                  <li>
+                    <Link
+                      to={URLS.SERVICE_DETAIL.DIGITAL_MARKITING}
+                      className="hover:text-gray-400"
+                    >
+                      Digital Marketing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT}
+                      className="hover:text-gray-400"
+                    >
+                      AI Chatbot Solution
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT}
+                      className="hover:text-gray-400"
+                    >
+                      E-Commerce Solutions
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>

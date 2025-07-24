@@ -66,6 +66,8 @@ const webServicesData = [
     title: "Laravel/PHP Web Apps",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    longDescription:
+      "Bootstrap development is building responsive, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "react-nextjs",
@@ -73,6 +75,8 @@ const webServicesData = [
     title: "React.js / Next.js Web Apps",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "website-redesign",
@@ -80,6 +84,8 @@ const webServicesData = [
     title: "Website Redesign/Optimization",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "api-integration",
@@ -87,6 +93,8 @@ const webServicesData = [
     title: "API Integration",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "landing-page",
@@ -94,6 +102,8 @@ const webServicesData = [
     title: "Landing Page Development",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
 ];
 
@@ -245,69 +255,69 @@ const Serviceweb = () => {
           </PageWrapper>
         </div>
 
-          <section className="bg-white py-16 md:py-24 px-5">
-            <PageWrapper>
-              {/* Header */}
+        <section className="bg-white py-16 md:py-24 px-5">
+          <PageWrapper>
+            {/* Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-start px-4 sm:px-6 mb-12"
+            >
+              <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
+                Website Development Process
+              </span>
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-4xl">
+                Cutting-Edge Technology Solutions
+              </h2>
+            </motion.div>
+
+            {/* Process Steps */}
+            <div className="relative flex flex-col items-center lg:flex-row justify-center gap-10 px-4 sm:px-6 mt-16">
+              {/* Dotted Line for Desktop */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="text-start px-4 sm:px-6 mb-12"
-              >
-                <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                  Website Development Process
-                </span>
-                <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-4xl">
-                  Cutting-Edge Technology Solutions
-                </h2>
-              </motion.div>
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="absolute top-20 lg:top-24 hidden lg:block w-full h-0.5 border-t-2 border-dashed border-gray-300 z-0"
+              ></motion.div>
 
-              {/* Process Steps */}
-              <div className="relative flex flex-col items-center lg:flex-row justify-center gap-10 px-4 sm:px-6 mt-16">
-                {/* Dotted Line for Desktop */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
-                  className="absolute top-20 lg:top-24 hidden lg:block w-full h-0.5 border-t-2 border-dashed border-gray-300 z-0"
-                ></motion.div>
+              {processSteps.map((step, index) => {
+                const IconComponent = step.icon;
+                return (
+                  <motion.div
 
-                {processSteps.map((step, index) => {
-                  const IconComponent = step.icon;
-                  return (
-                    <motion.div
-                  
-                      key={index}
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.2, duration: 0.6 }}
-                      className="relative bg-white p-6 rounded-xl text-center flex flex-col items-center z-10 w-full max-w-sm"
-                    >
-                      {/* Icon Box */}
-                      <div className="bg-gray-100 p-4 rounded-xl mb-4 shadow-sm">
-                        {IconComponent && (
-                          <IconComponent className="w-10 h-10 text-orange-500" />
-                        )}
-                      </div>
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                    className="relative bg-white p-6 rounded-xl text-center flex flex-col items-center z-10 w-full max-w-sm"
+                  >
+                    {/* Icon Box */}
+                    <div className="bg-gray-100 p-4 rounded-xl mb-4 shadow-sm">
+                      {IconComponent && (
+                        <IconComponent className="w-10 h-10 text-orange-500" />
+                      )}
+                    </div>
 
-                      {/* Title */}
-                      <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
-                        {step.title}
-                      </h3>
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+                      {step.title}
+                    </h3>
 
-                      {/* Description */}
-                      <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                        {step.description}
-                      </p>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </PageWrapper>
-          </section>
+                    {/* Description */}
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                      {step.description}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </PageWrapper>
+        </section>
 
         <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-20 md:py-24">
           <PageWrapper>
@@ -346,7 +356,7 @@ const Serviceweb = () => {
 
                 return (
                   <motion.div
-                  
+
                     key={service.id}
                     variants={fadeUpVariant}
                     className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col"

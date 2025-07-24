@@ -69,6 +69,8 @@ const appservicedata = [
     title: "Shopify Store Development",
     shortDescription:
       "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "payment gateway integration",
@@ -76,6 +78,8 @@ const appservicedata = [
     title: "Payment Gateway Integration",
     shortDescription:
       "Secure integration of payment processors for smooth and reliable transactions.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "custom e-commerce portals",
@@ -83,6 +87,8 @@ const appservicedata = [
     title: "Custom E-Commerce Portals",
     shortDescription:
       "Tailored online shopping solutions designed for your specific business needs.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "product management system",
@@ -90,6 +96,8 @@ const appservicedata = [
     title: "Product Management System",
     shortDescription:
       "Comprehensive tools to manage your product catalog, inventory, and listings.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
 ];
 const features = [

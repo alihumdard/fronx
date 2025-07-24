@@ -72,6 +72,8 @@ const softservicedata = [
     title: "Booking or Inventory System",
     shortDescription:
       "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "saas platform development",
@@ -79,6 +81,8 @@ const softservicedata = [
     title: "Saas Platform Development",
     shortDescription:
       "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "erp or system",
@@ -86,6 +90,8 @@ const softservicedata = [
     title: "ERP or System",
     shortDescription:
       "Tailored online shopping solutions designed for your specific business needs.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
 ];
 
