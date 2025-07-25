@@ -15,9 +15,7 @@ import {
   FaApple,
   FaPalette, // For Deployment
 } from "react-icons/fa";
-import {
-  FaReact, 
-} from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
 import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
 import StatsSection from "../Statsdata";
 import { FaFlutter } from "react-icons/fa6";
@@ -65,6 +63,8 @@ const appservicedata = [
     title: "React Native Development",
     shortDescription:
       "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "android app development",
@@ -72,6 +72,8 @@ const appservicedata = [
     title: "Android App Development",
     shortDescription:
       "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "ios app development",
@@ -79,6 +81,8 @@ const appservicedata = [
     title: "IOS App Development",
     shortDescription:
       "Designing with the user's needs, preferences, and behaviors at the core of every decision.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "app ui design",
@@ -86,6 +90,8 @@ const appservicedata = [
     title: "APP UI Design",
     shortDescription:
       "Creating intuitive interactions that make navigating and using the product simple and enjoyable.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
 ];
 
@@ -153,82 +159,81 @@ const Appweb = () => {
         <Navbar />
 
         {/* Background Image */}
-       <div className="relative h-[500px] overflow-visible">
-  <PageWrapper>
-    <div>
-      {/* Background Image */}
-      <img
-        src="/images/bg-2.png"
-        alt="Hero Background"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src =
-            "https://placehold.co/1920x1080/000000/FFFFFF?text=Background+Image";
-        }}
-      />
+        <div className="relative h-[500px] overflow-visible">
+          <PageWrapper>
+            <div>
+              {/* Background Image */}
+              <img
+                src="/images/bg-2.png"
+                alt="Hero Background"
+                className="absolute inset-0 w-full h-full object-cover z-0"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src =
+                    "https://placehold.co/1920x1080/000000/FFFFFF?text=Background+Image";
+                }}
+              />
 
-      {/* Centered Yellow Glow */}
-      <span
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+              {/* Centered Yellow Glow */}
+              <span
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
         w-[400px] h-[400px] bg-[#FFC003] opacity-10 blur-3xl rounded-full
         z-10 pointer-events-none"
-      />
-    </div>
+              />
+            </div>
 
-    {/* Animated Content */}
-    <motion.div
-      className="absolute top-44"
-      variants={containerVariant}
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.h1
-        className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
-        variants={fadeUpVariant}
-      >
-        Empowering IT Consulting <br />
-        <span className="mt-3">With </span>
-        <span className="mt-3 relative inline-block">
-          Expert
-          <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
-        </span>
-      </motion.h1>
+            {/* Animated Content */}
+            <motion.div
+              className="absolute top-44"
+              variants={containerVariant}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.h1
+                className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
+                variants={fadeUpVariant}
+              >
+                Empowering IT Consulting <br />
+                <span className="mt-3">With </span>
+                <span className="mt-3 relative inline-block">
+                  Expert
+                  <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
+                </span>
+              </motion.h1>
 
-      <motion.div
-        className="mt-10 sm:mt-16 flex justify-start"
-        variants={fadeUpVariant}
-        transition={{ delay: 0.5 }}
-      >
-        <div
-          className="flex flex-wrap lg:flex-nowrap items-center 
+              <motion.div
+                className="mt-10 sm:mt-16 flex justify-start"
+                variants={fadeUpVariant}
+                transition={{ delay: 0.5 }}
+              >
+                <div
+                  className="flex flex-wrap lg:flex-nowrap items-center 
           gap-2 lg:gap-3 px-4 sm:px-6 py-2 sm:py-3 
           border border-white/30 rounded-full text-sm sm:text-base 
           text-white bg-white/5 hover:bg-white/10 transition-all duration-300"
-        >
-          <Link
-            to="/"
-            className="text-orange-400 hover:text-orange-300 transition-colors"
-          >
-            Home
-          </Link>
-          <span className="text-orange-400">››</span>
-          <Link
-            to={URLS.SERVICES}
-            className="text-orange-400 hover:text-orange-300 transition-colors"
-          >
-            Services
-          </Link>
-          <span className="text-orange-400">››</span>
-          <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-            Mobile Development
-          </Link>
+                >
+                  <Link
+                    to="/"
+                    className="text-orange-400 hover:text-orange-300 transition-colors"
+                  >
+                    Home
+                  </Link>
+                  <span className="text-orange-400">››</span>
+                  <Link
+                    to={URLS.SERVICES}
+                    className="text-orange-400 hover:text-orange-300 transition-colors"
+                  >
+                    Services
+                  </Link>
+                  <span className="text-orange-400">››</span>
+                  <Link className="text-blue-400 hover:text-blue-300 transition-colors">
+                    Mobile Development
+                  </Link>
+                </div>
+              </motion.div>
+            </motion.div>
+          </PageWrapper>
         </div>
-      </motion.div>
-    </motion.div>
-  </PageWrapper>
-</div>
-
 
         <section className="bg-white py-16 md:py-24 px-5">
           <PageWrapper>
@@ -244,7 +249,7 @@ const Appweb = () => {
                 Mobile Development Process
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-5xl">
-              Turning Your Vision into a ,Mobile Solution
+                Turning Your Vision into a ,Mobile Solution
               </h2>
             </motion.div>
 
@@ -303,7 +308,7 @@ const Appweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+              <h2 id="app-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Our APP Development Services
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">

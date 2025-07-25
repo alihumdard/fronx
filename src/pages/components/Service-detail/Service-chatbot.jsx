@@ -67,6 +67,8 @@ const appservicedata = [
     title: "Open AI/GPT Chatbot for Support/Sales",
     shortDescription:
       "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "ai powered saas tool integration",
@@ -74,6 +76,8 @@ const appservicedata = [
     title: "AI Powered SaaS Tool Integration",
     shortDescription:
       "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
 ];
 
@@ -232,11 +236,11 @@ const chatbot = () => {
               transition={{ duration: 0.6 }}
               className="text-start px-4 sm:px-6 mb-12"
             >
-             <div className="flex justify-center md:justify-start">
-  <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-    AI & Chatbot Development Process
-  </span>
-</div>
+              <div className="flex justify-center md:justify-start">
+                <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
+                  AI & Chatbot Development Process
+                </span>
+              </div>
 
               <h2 className="text-2xl sm:text-4xl text-center md:text-start lg:text-5xl mt-6 font-bold text-gray-800 max-w-5xl">
                 The Way We Build AI & Chatbot Applications
@@ -298,7 +302,7 @@ const chatbot = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
+              <h2 id="ai-development-process" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
                 Experience the Future of Enterprise Solutions with Our AI
                 Development Services
               </h2>

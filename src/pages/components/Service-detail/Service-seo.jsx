@@ -69,6 +69,8 @@ const appservicedata = [
     title: "On-Page SEO",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "off-page seo",
@@ -76,6 +78,8 @@ const appservicedata = [
     title: "Off-Page SEO",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "technical seo",
@@ -83,6 +87,8 @@ const appservicedata = [
     title: "Technical SEO",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "content creation",
@@ -90,6 +96,8 @@ const appservicedata = [
     title: "Content Creation",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "link building",
@@ -97,6 +105,8 @@ const appservicedata = [
     title: "Link Building",
     shortDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
 ];
 
@@ -293,7 +303,7 @@ const SEO = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
+              <h2 id="seo-development-process" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
                 SEO Services to Grow Your Business
               </h2>
               <p className="text-center text-gray-600">
@@ -396,7 +406,7 @@ const SEO = () => {
                     </p>
                     <p className="text-gray-600">
                       To complement your local SEO strategy, we also offer
-                      comprehensive 
+                      comprehensive
                       <span className="text-orange-600 pr-2">
                         SMM solutions
                       </span>
@@ -473,7 +483,7 @@ const SEO = () => {
                     </p>
                     <p className="text-gray-600">
                       To complement your local SEO strategy, we also offer
-                      comprehensive 
+                      comprehensive
                       <span className="text-orange-600 pr-2">
                         SMM solutions
                       </span>

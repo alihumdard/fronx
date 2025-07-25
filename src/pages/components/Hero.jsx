@@ -20,7 +20,7 @@ const fadeUpVariant = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
+    transition: { duration: 1.1, ease: "easeOut" },
   },
 };
 
@@ -60,22 +60,34 @@ const Hero = () => {
             >
               {/* Tags */}
               <motion.div
-                className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mb-6 md:mb-8" // Adjusted gap and mb for better mobile spacing
+                className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mb-6 md:mb-8"
                 variants={fadeUpVariant}
               >
-                {[
-                  "Web Development",
-                  "Application Development",
-                  "SEO & Consulting",
-                ].map((tag, index) => (
+                <Link to={URLS.SERVICE_DETAIL.WEB_DEVELOPMENT}>
                   <motion.span
-                    key={index}
-                    className="bg-white text-black font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm whitespace-nowrap" // Adjusted font and padding for smaller screens
+                    className="bg-white text-black font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm whitespace-nowrap"
                     variants={fadeUpVariant}
                   >
-                    {tag}
+                    Web Development
                   </motion.span>
-                ))}
+                </Link>
+                <Link to={URLS.SERVICE_DETAIL.APP_DEVELOPMENT}>
+                  <motion.span
+                    className="bg-white text-black font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm whitespace-nowrap"
+                    variants={fadeUpVariant}
+                  >
+                    Application Development
+                  </motion.span>
+                </Link>
+
+                <Link to={URLS.SERVICE_DETAIL.SEO}>
+                  <motion.span
+                    className="bg-white text-black font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm whitespace-nowrap"
+                    variants={fadeUpVariant}
+                  >
+                    SEO & Consulting
+                  </motion.span>
+                </Link>
               </motion.div>
 
               {/* Main Heading */}
@@ -104,13 +116,13 @@ const Hero = () => {
               >
                 <Link
                   to={URLS.CONTACT}
-                  className="bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-lg hover:opacity-90 transition-opacity whitespace-nowrap text-center" // Responsive padding/font, centered text
+                  className="bg-gradient-to-r from-[#6931CF] to-[#1A61EA] btn-animate text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-lg hover:opacity-90 transition-opacity whitespace-nowrap text-center" // Responsive padding/font, centered text
                 >
                   BOOK A FREE CONSULTATION
                 </Link>
                 <Link
                   to={URLS.SERVICES}
-                  className="border border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white hover:text-[#6931CF] transition-colors whitespace-nowrap text-center" // Responsive padding/font, centered text
+                  className="border btn-animate border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg  hover:text-[#6931CF] transition-colors whitespace-nowrap text-center" // Responsive padding/font, centered text
                 >
                   Explore Service
                 </Link>

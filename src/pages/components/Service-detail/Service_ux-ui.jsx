@@ -61,6 +61,8 @@ const uiux_service = [
     title: "Mobile App UI Design",
     shortDescription:
       "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "wireframing & prototyping",
@@ -68,6 +70,8 @@ const uiux_service = [
     title: "Wireframing & Prototyping",
     shortDescription:
       "Designing with the user's needs, preferences, and behaviors at the core of every decision.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "design system creation",
@@ -75,29 +79,8 @@ const uiux_service = [
     title: "Design System Creation",
     shortDescription:
       "Enhancing design and performance through real user data and detailed behavior analysis.",
-  },
-];
-
-const features = [
-  {
-    icon: <FaBolt className="text-orange-400 text-3xl" />,
-    title: "User-friendly Interface",
-    desc: "We design our apps with a strong focus on the user experience. Featuring intuitive interfaces, our apps make navigation simple and efficient, allowing users to find what they need quickly. This seamless interaction boosts both satisfaction and usability.",
-  },
-  {
-    icon: <FaCogs className="text-orange-400 text-3xl" />,
-    title: "Improve Stability",
-    desc: "Our apps prioritize experience, featuring intuitive interfaces that ensure smooth and effortless navigation. Users can quickly find the content they need, resulting in greater satisfaction. This seamless interaction boosts both satisfaction and usability.",
-  },
-  {
-    icon: <FaLock className="text-orange-400 text-3xl" />,
-    title: "Resilience",
-    desc: "Our app places a strong emphasis on user data security by using advanced encryption, multi-factor authentication, and a robust, industry-standard security framework to prevent unauthorized access and reliably protect all information.",
-  },
-  {
-    icon: <FaChartLine className="text-orange-400 text-3xl" />,
-    title: "Socialization",
-    desc: "Our app seamlessly integrates with popular social platforms, enabling users to log in using their social accounts, share content easily, and connect with others—greatly enhancing overall community interaction and user engagement.",
+        longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
 ];
 
@@ -315,7 +298,7 @@ const uxui = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+              <h2 id="uiux-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Strategic & Impactful UI/UX Design Services
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">

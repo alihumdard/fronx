@@ -1,25 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import PageWrapper from "../../main/Pagewraper";
 import { FaStar, FaQuoteRight } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion"; // <-- Import AnimatePresence
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+// Testimonial Data Array
+const ALL_TESTIMONIALS = [
+  {
+    id: 1,
+    quote:
+      "Working with this team was a pleasure. They turned our vague ideas into a stunning visual identity, exceeding expectations. Their focus on detail and openness to feedback made the entire process smooth and satisfying. Their professionalism and creative approach truly stood out.",
+    rating: 5,
+    clientName: "Chris Noth",
+    clientTitle: "Owner Taxfirm",
+    clientAvatar: "/images/Ellipse 27.png",
+  },
+  {
+    id: 2,
+    quote:
+      "An outstanding experience from start to finish. The development team delivered a high-quality product well ahead of schedule. Their communication was excellent, keeping us informed every step of the way. Highly recommend their services for anyone looking for reliable and efficient software development.",
+    rating: 4,
+    clientName: "Alice Smith",
+    clientTitle: "CEO Tech Solutions",
+    clientAvatar: "/images/Ellipse 24.png", // <--- IMPORTANT: Verify this path and file existence
+  },
+  {
+    id: 3,
+    quote:
+      "We are thrilled with the results! The design team captured our vision perfectly and created an intuitive user interface that our customers love. They were responsive to feedback and iterated quickly. A truly talented group of professionals.",
+    rating: 5,
+    clientName: "Bob Johnson",
+    clientTitle: "Product Manager Innovate Co.",
+    clientAvatar: "/images/contact-2.png", // <--- IMPORTANT: Verify this path and file existence
+  },
+  {
+    id: 4,
+    quote:
+      "Their expertise in digital marketing helped us significantly increase our online presence and lead generation. The strategies implemented were effective and measurable. We saw a considerable ROI, and their team was always proactive and insightful.",
+    rating: 4,
+    clientName: "Carol White",
+    clientTitle: "Marketing Director Global Corp",
+    clientAvatar: "/images/Ellipse 26.png", // <--- IMPORTANT: Verify this path and file existence
+  },
+];
 
-// Testimonial Data
-const testimonialData = {
-  quote:
-    "Working with this team was a pleasure. They turned our vague ideas into a stunning visual identity, exceeding expectations. Their focus on detail and openness to feedback made the entire process smooth and satisfying. Their professionalism and creative approach truly stood out.",
-  rating: 5,
-  clientName: "Chris Noth",
-  clientTitle: "Owner Taxfirm",
-  clientAvatar: "/images/Ellipse 27.png",
-  companyLogo: "/images/image.png",
-  otherAvatars: [
-    "/images/Ellipse 27.png",
-    "/images/Ellipse 24.png",
-    "/images/Ellipse 27.png",
-    "/images/Ellipse 26.png",
-  ],
-  mainTeamImage: "/images/testimonial.png",
-};
+// Static assets that do not change when a new testimonial is selected
+const STATIC_MAIN_TEAM_IMAGE = "/images/testimonial.png";
+const STATIC_COMPANY_LOGO = "/images/image.png";
 
 // Variants for animation
 const containerVariants = {
@@ -39,6 +66,12 @@ const itemVariants = {
 };
 
 const Testimonials = () => {
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+  const currentTestimonial = ALL_TESTIMONIALS[currentTestimonialIndex];
+
+  console.log("Current Testimonial Index:", currentTestimonialIndex);
+  console.log("Current Testimonial Data:", currentTestimonial);
+
   return (
     <motion.section
       initial="hidden"
@@ -61,82 +94,132 @@ const Testimonials = () => {
 
         {/* Main Testimonial Layout */}
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-10 lg:gap-12">
-          {/* Left: Team Image */}
+          {/* Left: Team Image (Stays the same) */}
           <motion.div
             variants={itemVariants}
             className="w-full lg:w-1/3 flex justify-center lg:justify-end"
+            whileHover={{ scale: 1.05, y: -5 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <img
-              src={testimonialData.mainTeamImage}
+              src={STATIC_MAIN_TEAM_IMAGE}
               alt="Client Team"
               className="w-full max-w-xs sm:max-w-sm lg:max-w-md h-auto rounded-lg shadow-xl"
             />
           </motion.div>
 
-          {/* Middle: Testimonial Card */}
+          {/* Middle: Testimonial Card (Dynamically updates) */}
+          {/* AnimatePresence is crucial here to manage components entering/exiting with key changes */}
+          <AnimatePresence mode="wait">
+            {" "}
+            {/* mode="wait" ensures old component exits before new enters */}
           <motion.div
-            variants={itemVariants}
-            className="w-full lg:w-1/2 flex-shrink-0 relative"
-          >
-            <FaQuoteRight className="absolute top-5 right-5 text-orange-400 text-3xl opacity-70" />
-            <motion.div
-              variants={itemVariants}
-              className="bg-gray-100 p-6 sm:p-8 rounded-lg shadow-sm"
+  key={currentTestimonial.id}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0, y: -20 }}
+  transition={{ duration: 0.5 }}
+  whileHover={{ scale: 1.02, y: -4 }}
+  className="w-full lg:w-1/2 flex-shrink-0 relative"
+>
+  <FaQuoteRight className="absolute top-5 right-5 text-orange-400 text-3xl opacity-70" />
+  <div className="bg-gray-100 p-6 sm:p-8 rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md">
+    {/* Star Rating */}
+    <div className="flex gap-1 mb-4">
+      {Array.from({ length: currentTestimonial.rating }).map((_, i) => (
+        <FaStar key={i} className="text-orange-400 w-4 h-4" />
+      ))}
+    </div>
+
+    {/* Quote */}
+    <p className="text-gray-700 mb-6 italic text-base sm:text-lg leading-relaxed">
+      "{currentTestimonial.quote}"
+    </p>
+
+    {/* Client Info */}
+    <div className="flex flex-col sm:flex-row justify-between items-center pt-8 gap-4">
+      <div className="flex items-center gap-4">
+        <img
+          src={currentTestimonial.clientAvatar}
+          alt={currentTestimonial.clientName}
+          className="w-14 h-14 rounded-full object-cover border-2 border-orange-400"
+        />
+        <div>
+          <p className="font-bold text-gray-800 text-lg">
+            {currentTestimonial.clientName}
+          </p>
+          <p className="text-gray-500 text-sm">
+            {currentTestimonial.clientTitle}
+          </p>
+        </div>
+      </div>
+
+      {STATIC_COMPANY_LOGO && (
+        <img
+          src={STATIC_COMPANY_LOGO}
+          alt="Company Logo"
+          className="h-10 object-contain"
+        />
+      )}
+    </div>
+  </div>
+</motion.div>
+
+          </AnimatePresence>
+
+          {/* Right: Client Avatars (Clickable to change main testimonial) */}
+          <div className="block lg:hidden w-full">
+            <Swiper
+              spaceBetween={12}
+              slidesPerView={4}
+              loop={true}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              className="w-full"
             >
-              {/* Star Rating */}
-              <motion.div variants={itemVariants} className="flex gap-1 mb-4">
-                {Array.from({ length: testimonialData.rating }).map((_, i) => (
-                  <FaStar key={i} className="text-orange-400 w-4 h-4" />
-                ))}
-              </motion.div>
-
-              {/* Quote */}
-              <p className="text-gray-700 mb-6 italic text-base sm:text-lg leading-relaxed">
-                "{testimonialData.quote}"
-              </p>
-
-              {/* Client Info */}
-              <div className="flex flex-col sm:flex-row justify-between items-center pt-8 gap-4">
-                <div className="flex items-center gap-4">
-                  <img
-                    src={testimonialData.clientAvatar}
-                    alt={testimonialData.clientName}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-orange-400"
+              {ALL_TESTIMONIALS.map((testimonial, index) => (
+                <SwiperSlide key={testimonial.id}>
+                  <motion.img
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                    src={testimonial.clientAvatar}
+                    alt={`Client Avatar ${testimonial.clientName}`}
+                    onClick={() => setCurrentTestimonialIndex(index)}
+                    className={`
+                  w-12 h-12 rounded-full object-cover shadow-md cursor-pointer
+                  ${currentTestimonialIndex === index
+                        ? "border-2 border-orange-500 ring-2 ring-orange-300"
+                        : "border-2 border-gray-200"
+                      }
+                  transition-all duration-300 ease-in-out
+                  mx-auto
+                `}
                   />
-                  <div>
-                    <p className="font-bold text-gray-800 text-lg">
-                      {testimonialData.clientName}
-                    </p>
-                    <p className="text-gray-500 text-sm">
-                      {testimonialData.clientTitle}
-                    </p>
-                  </div>
-                </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
-                {testimonialData.companyLogo && (
-                  <img
-                    src={testimonialData.companyLogo}
-                    alt="Company Logo"
-                    className="h-10 object-contain"
-                  />
-                )}
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right: Client Avatars */}
+          {/* Desktop: Original flex layout */}
           <motion.div
             variants={itemVariants}
-            className="w-full lg:w-1/12 flex justify-center lg:flex-col gap-10 flex-wrap lg:items-center pt-4"
+            className="hidden lg:flex w-full lg:w-1/12 flex-col justify-center gap-10 flex-wrap lg:items-center pt-4"
           >
-            {testimonialData.otherAvatars.map((avatar, index) => (
+            {ALL_TESTIMONIALS.map((testimonial, index) => (
               <motion.img
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.3 }}
-                key={index}
-                src={avatar}
-                alt={`Client Avatar ${index + 1}`}
-                className="w-12 h-12 rounded-full object-cover border-2 border-gray-200 shadow-md"
+                key={testimonial.id}
+                src={testimonial.clientAvatar}
+                alt={`Client Avatar ${testimonial.clientName}`}
+                onClick={() => setCurrentTestimonialIndex(index)}
+                className={`
+              w-12 h-12 rounded-full object-cover shadow-md cursor-pointer
+              ${currentTestimonialIndex === index
+                    ? "border-2 border-orange-500 ring-2 ring-orange-300"
+                    : "border-2 border-gray-200"
+                  }
+              transition-all duration-300 ease-in-out
+            `}
               />
             ))}
           </motion.div>

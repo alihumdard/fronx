@@ -1,8 +1,11 @@
 import React from "react";
 import PageWrapper from "./Pagewraper";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import URLS from "../config/urls.config";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
+import { Autoplay } from "swiper/modules";
 
 function Footer() {
   const companyLogos = [
@@ -15,60 +18,38 @@ function Footer() {
     { src: "/images/company-7.png", alt: "Skullcandy" },
   ];
 
-  const containerVariant = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        when: "beforeChildren",
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariant = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-  };
-
   return (
     <>
       {/* Company Logos + CTA Section */}
-      <motion.header
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={containerVariant}
-        className="relative z-10"
-      >
+      <header className="relative z-10">
         <PageWrapper>
-          <motion.div
-            className="bg-white shadow-sm py-4 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center"
-            variants={itemVariant}
-          >
-            <motion.div
-              className="flex flex-wrap justify-center py-20 md:justify-start items-center gap-x-14 gap-y-4 mt-10 mb-10 w-full"
-              variants={containerVariant}
+          <div className="bg-white shadow-sm py-28 px-6 md:px-12">
+            <Swiper
+              modules={[Autoplay]}
+              autoplay={{ delay: 2000, disableOnInteraction: false }}
+              loop={true}
+              breakpoints={{
+                320: { slidesPerView: 2, spaceBetween: 20 },
+                640: { slidesPerView: 3, spaceBetween: 30 },
+                768: { slidesPerView: 4, spaceBetween: 40 },
+                1024: { slidesPerView: 5, spaceBetween: 40 },
+              }}
+              className="w-full py-10"
             >
               {companyLogos.map((logo, index) => (
-                <motion.img
-                  key={index}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-6 opacity-70"
-                  variants={itemVariant}
-                />
+                <SwiperSlide key={index} className="flex justify-center">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-6 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </SwiperSlide>
               ))}
-            </motion.div>
-          </motion.div>
+            </Swiper>
+          </div>
 
           {/* CTA Banner */}
-          <motion.div
-            className="bg-white justify-between absolute -bottom-16 -left-0 sm:left-[16%] transform -translate-x-1/2 shadow-2xl rounded-xl p-6 md:p-10 flex flex-col md:flex-row items-center max-w-5xl w-full mx-auto"
-            variants={itemVariant}
-          >
+          <div className="bg-white justify-between absolute -bottom-16 left-48 sm:left-[50%] transform -translate-x-1/2 shadow-2xl rounded-xl p-6 md:p-10 flex flex-col md:flex-row items-center max-w-5xl w-full mx-auto">
             <p className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-0 md:mr-8 text-center md:text-left">
               Ready to bring your project to life?
             </p>
@@ -81,28 +62,18 @@ function Footer() {
             >
               Contact Us
             </Link>
-          </motion.div>
+          </div>
         </PageWrapper>
-      </motion.header>
+      </header>
 
       {/* Footer Content */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={containerVariant}
+      <div
         className="min-h-screen relative bg-fronx-light-gray bg-cover bg-center pt-40 bg-no-repeat"
         style={{ backgroundImage: "url('/images/bg.png')" }}
       >
         <PageWrapper>
-          <motion.section
-            className="bg-gradient-to-b from-fronx-dark-bg to-fronx-darkest-bg py-16 px-4 md:px-12 text-white"
-            variants={itemVariant}
-          >
-            <motion.ul
-              className="grid grid-cols-2 sm:grid-cols-5 gap-6 text-center"
-              variants={containerVariant}
-            >
+          <section className="bg-gradient-to-b from-fronx-dark-bg to-fronx-darkest-bg py-16 px-4 md:px-12 mx-14 text-white overflow-hidden">
+            <div className="whitespace-nowrap animate-marquee flex gap-28">
               {[
                 "Web Development",
                 "App Development",
@@ -110,28 +81,50 @@ function Footer() {
                 "Maintenance",
                 "Digital Marketing",
               ].map((service, index) => (
-                <motion.li
+                <span
                   key={index}
-                  className="text-base sm:text-lg md:text-xl font-semibold"
-                  variants={itemVariant}
+                  className="inline-block text-base sm:text-lg md:text-xl font-semibold"
                 >
                   {service}
-                </motion.li>
+                </span>
               ))}
-            </motion.ul>
-          </motion.section>
+              {/* Duplicate items for seamless looping */}
+              {[
+                "Web Development",
+                "App Development",
+                "UX/UI Design",
+                "Maintenance",
+                "Digital Marketing",
+              ].map((service, index) => (
+                <span
+                  key={index + 100}
+                  className="inline-block text-base sm:text-lg md:text-xl font-semibold"
+                >
+                  {service}
+                </span>
+              ))}
+              {[
+                "Web Development",
+                "App Development",
+                "UX/UI Design",
+                "Maintenance",
+                "Digital Marketing",
+              ].map((service, index) => (
+                <span
+                  key={index + 100}
+                  className="inline-block text-base sm:text-lg md:text-xl font-semibold"
+                >
+                  {service}
+                </span>
+              ))}
+            </div>
+          </section>
 
           {/* Footer Sections */}
-          <motion.footer
-            className="text-white pt-12 pb-4 px-4 md:px-12"
-            variants={containerVariant}
-          >
+          <footer className="text-white pt-12 pb-4 px-4 md:px-12">
             <div className="container mx-auto flex flex-wrap justify-between gap-y-10 pb-10 border-b border-gray-700">
               {/* About */}
-              <motion.div
-                className="w-full md:w-1/2 lg:w-1/5"
-                variants={itemVariant}
-              >
+              <div className="w-full md:w-1/2 lg:w-1/5">
                 <h2 className="text-3xl font-bold mb-4">FRONX</h2>
                 <p className="text-sm opacity-80 mb-6">
                   Driving Business Success Through Innovative Technology | Fronx
@@ -139,23 +132,19 @@ function Footer() {
                 </p>
                 <div className="flex space-x-3">
                   {["T", "L", "I", "P", "M"].map((item, idx) => (
-                    <motion.a
+                    <a
                       key={idx}
                       href="#"
                       className="w-8 h-8 flex items-center justify-center bg-[#FF9B4B] rounded text-white text-lg"
-                      variants={itemVariant}
                     >
                       {item}
-                    </motion.a>
+                    </a>
                   ))}
                 </div>
-              </motion.div>
+              </div>
 
               {/* Menu */}
-              <motion.div
-                className="w-1/2 md:w-1/4 lg:w-1/6"
-                variants={itemVariant}
-              >
+              <div className="w-1/2 md:w-1/4 lg:w-1/6">
                 <h3 className="text-lg font-semibold mb-4">Menu</h3>
                 <ul className="space-y-2 text-sm opacity-80">
                   <li>
@@ -189,13 +178,10 @@ function Footer() {
                     </Link>
                   </li>
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Services Column 1 */}
-              <motion.div
-                className="w-1/2 md:w-1/4 lg:w-1/6"
-                variants={itemVariant}
-              >
+              <div className="w-1/2 md:w-1/4 lg:w-1/6">
                 <h3 className="text-lg font-semibold mb-4">Services</h3>
                 <ul className="space-y-2 text-sm opacity-80">
                   <li>
@@ -239,43 +225,46 @@ function Footer() {
                     </Link>
                   </li>
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Services Column 2 */}
-              <motion.div
-                className="w-full md:w-1/4 lg:w-1/6"
-                variants={itemVariant}
-              >
+              <div className="w-full md:w-1/4 lg:w-1/6">
                 <h3 className="text-lg font-semibold mb-4">Services</h3>
                 <ul className="space-y-2 text-sm opacity-80">
-                  <li>g
-                    <Link to={URLS.SERVICE_DETAIL.DIGITAL_MARKITING} className="hover:text-gray-400">
+                  <li>
+                    <Link
+                      to={URLS.SERVICE_DETAIL.DIGITAL_MARKITING}
+                      className="hover:text-gray-400"
+                    >
                       Digital Marketing
                     </Link>
                   </li>
                   <li>
-                    <Link to={URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT} className="hover:text-gray-400">
+                    <Link
+                      to={URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT}
+                      className="hover:text-gray-400"
+                    >
                       AI Chatbot Solution
                     </Link>
                   </li>
                   <li>
-                    <Link to={URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT} className="hover:text-gray-400">
+                    <Link
+                      to={URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT}
+                      className="hover:text-gray-400"
+                    >
                       E-Commerce Solutions
                     </Link>
                   </li>
                 </ul>
-              </motion.div>
+              </div>
             </div>
 
-            <motion.div
-              className="text-center text-xs opacity-60 mt-6"
-              variants={itemVariant}
-            >
+            <div className="text-center text-xs opacity-60 mt-6">
               <p>&copy; 2025 All rights reserved Fronxsolutions</p>
-            </motion.div>
-          </motion.footer>
+            </div>
+          </footer>
         </PageWrapper>
-      </motion.div>
+      </div>
     </>
   );
 }

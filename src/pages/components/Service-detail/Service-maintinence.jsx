@@ -67,6 +67,8 @@ const appservicedata = [
     title: "Open AI/GPT Chatbot for Support/Sales",
     shortDescription:
       "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "hosting migration",
@@ -74,6 +76,8 @@ const appservicedata = [
     title: "Hosting Migration",
     shortDescription:
       "We fix bugs, update plugins/themes, patch security holes, and protect your site from malware or hacking attempts.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "speed optimization",
@@ -81,34 +85,8 @@ const appservicedata = [
     title: "Speed Optimization",
     shortDescription:
       "Designs that adjust smoothly across all screen sizes for a seamless user experience. screen sizes for a seamless ",
-  },
-];
-
-const features = [
-  {
-    icon: <FaMicrochip className="text-orange-400 text-3xl" />,
-    title: "IOT",
-    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
-  },
-  {
-    icon: <FaBrain className="text-orange-400 text-3xl" />,
-    title: "AI Diagnostics",
-    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
-  },
-  {
-    icon: <FaHeartbeat className="text-orange-400 text-3xl" />,
-    title: "Smart Health Care",
-    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
-  },
-  {
-    icon: <FaMicrochip className="text-orange-400 text-3xl" />,
-    title: "IOT",
-    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
-  },
-  {
-    icon: <FaBrain className="text-orange-400 text-3xl" />,
-    title: "AI Diagnostics",
-    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
+    longDescription:
+      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
 ];
 
@@ -323,7 +301,7 @@ const Maintenence = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
+              <h2 id="maintinence-development-process" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
                 Stay Secure and Optimized with Expert Support
               </h2>
               <p className="text-center text-gray-600">

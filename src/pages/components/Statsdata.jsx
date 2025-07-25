@@ -51,14 +51,25 @@ const StatsSection = () => {
               </div>
 
               {/* Small Purple Dot */}
-              <div
-                className="absolute ml-20 w-3 h-3 rounded-full bg-[#6C62D6]"
-                style={{
-                  bottom: "10%",
-                  left: "50%",
-                  transform: "translateX(-50%)",
+              {/* Animated Rotating Dot Around Circle */}
+              <motion.div
+                className="absolute w-full h-full"
+                animate={{ rotate: 360 }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 4,
+                  ease: "linear",
                 }}
-              ></div>
+              >
+                <div
+                  className="w-3 h-3 bg-[#6C62D6] rounded-full absolute"
+                  style={{
+                    top: "0",
+                    left: "35%",
+                    transform: "translateX(-50%)",
+                  }}
+                />
+              </motion.div>
             </motion.div>
           ))}
         </div>
