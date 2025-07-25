@@ -279,10 +279,9 @@ const Services = () => {
                     variants={fadeIn}
                     onClick={() => setActiveServiceId(service.id)}
                     className={`relative flex flex-col items-center justify-center rounded-xl cursor-pointer transition-all duration-300
-                      ${
-                        isActive
-                          ? "border border-orange-600 text-white shadow-lg scale-105"
-                          : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white border-none"
+                      ${isActive
+                        ? "border border-orange-600 text-white shadow-lg scale-105"
+                        : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white border-none"
                       } min-h-[150px] sm:min-h-[170px] text-center`}
                   >
                     {isActive && (
@@ -311,7 +310,7 @@ const Services = () => {
 
             {/* Right Panel: Service Detail */}
             <motion.div
-            id="scroll"
+              id="scroll"
               className="py-8 pl-5 md:py-10 flex flex-col justify-between min-h-[400px] lg:min-h-[500px]"
               initial="hidden"
               whileInView="visible"

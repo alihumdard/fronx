@@ -34,7 +34,7 @@ const fadeUpVariant = {
 const Service = () => {
   return (
     <>
-      <div className="relative h-screen w-full">
+      <div className="relative h-screen w-auto overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 
