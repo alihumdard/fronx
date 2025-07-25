@@ -32,7 +32,7 @@ const fadeUpVariant = {
 const OverOns = () => {
   return (
     <>
-      <div className="relative h-screen w-full">
+      <div className="relative h-screen w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 

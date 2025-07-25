@@ -235,19 +235,21 @@ const Service2 = () => {
       {/* Background image */}
      
       <PageWrapper>
-        <div className="relative z-[2] text-black">
+        <div className="relative z-[2]">
           {/* Heading */}
+
           <motion.div
             className="text-center mb-16"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeIn}
+            custom={0}
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Top Custom Software Development Services
             </h2>
-            <p className="text-lg text-gray-600 mx-auto">
+            <p className="text-lg text-gray-800 mx-auto">
               Turning your vision into reality with Fronxsolutions premium
               custom software solutions.
             </p>
@@ -255,31 +257,36 @@ const Service2 = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Grid: Service Buttons */}
-            <motion.div
+            <motion.a
+              href="#scroll"
               className="grid grid-cols-2 sm:grid-cols-3 gap-6"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               variants={fadeIn}
+              custom={1}
             >
               {servicesData.map((service, index) => {
                 const IconComponent = service.icon;
                 const isActive = service.id === activeServiceId;
                 return (
                   <motion.div
+                    layout
                     key={service.id}
                     custom={index}
                     variants={fadeIn}
                     onClick={() => setActiveServiceId(service.id)}
                     className={`relative flex flex-col items-center justify-center rounded-xl cursor-pointer transition-all duration-300
-                      ${
-                        isActive
-                          ? "border border-gradient-to-br from-orange-500 to-yellow-500 text-gray-700 shadow-lg scale-105"
-                          : "bg-gray-50 text-gray-600 hover:bg-white/20 hover:shadow-xl border-none"
+                      ${isActive
+                        ? "border border-orange-600 shadow-lg scale-105"
+                        : "bg-white/10 text-gray-800 hover:shadow-lg border-none"
                       } min-h-[150px] sm:min-h-[170px] text-center`}
                   >
                     {isActive && (
-                      <div className="absolute inset-0 rounded-xl border-2 border-orange-500 animate-pulse-slow"></div>
+                      <motion.div
+                        layoutId="active-service-border"
+                        className="absolute inset-0 rounded-xl border-2 border-orange-500 animate-pulse-slow"
+                      />
                     )}
                     {IconComponent && (
                       <IconComponent
@@ -297,25 +304,57 @@ const Service2 = () => {
                   </motion.div>
                 );
               })}
-            </motion.div>
+            </motion.a>
 
             {/* Right Panel: Service Detail */}
             <motion.div
+              id="scroll"
               className="py-8 pl-5 md:py-10 flex flex-col justify-between min-h-[400px] lg:min-h-[500px]"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               variants={fadeIn}
+              custom={2}
             >
               {activeService ? (
                 <>
                   <h3 className="text-3xl font-bold mb-4">
                     {activeService.title}
                   </h3>
-                  <p className="text-gray-600 text-lg mb-6 flex-grow">
+                  <p className="text-gray-800 text-lg mb-6 flex-grow">
                     {activeService.description}
                   </p>
-                  <div className="flex flex-wrap gap-4 mb-8">
+                  {/* Mobile Marquee (visible on mobile only) */}
+                  <div className="block md:hidden overflow-hidden my-8">
+                    <div className="flex whitespace-nowrap animate-marquee gap-6">
+                      {[
+                        ...activeService.techStackIcons,
+                        ...activeService.techStackIcons,
+                      ].map((tech, index) => {
+                        const TechIcon = tech.icon;
+                        return (
+                          <div
+                            key={index}
+                            className="flex flex-col items-center text-center min-w-[60px]"
+                          >
+                            <TechIcon
+                              className="w-8 h-8 transition-colors"
+                              title={tech.name}
+                              style={{
+                                color: techColorMap[tech.name] || "#ccc",
+                              }}
+                            />
+                            <span className="text-xs text-gray-800 mt-1">
+                              {tech.name}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Desktop Grid (hidden on mobile) */}
+                  <div className="hidden md:flex flex-wrap gap-4 mb-8">
                     {activeService.techStackIcons.map((tech, index) => {
                       const TechIcon = tech.icon;
                       return (
@@ -335,9 +374,9 @@ const Service2 = () => {
                       );
                     })}
                   </div>
+
                   <Link
-                  to={activeService.url}
-                    href="#"
+                    to={activeService.url}
                     className="inline-block mt-10 self-start bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-md hover:opacity-90 transition-opacity"
                   >
                     {activeService.buttonText}
