@@ -253,20 +253,20 @@ const ProjectGridSection = () => {
             >
               {/* Main Card Container with Rounded Image */}
               <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.5, ease: "easeOut" }}
-  className="bg-white rounded-2xl overflow-hidden shadow-md mb-20 hover:shadow-2xl transition-shadow duration-300"
->
-  <div className="overflow-hidden">
-    <img
-      src={project.image}
-      alt={project.title}
-      className="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out hover:scale-105"
-    />
-  </div>
-</motion.div>
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="bg-white rounded-2xl overflow-hidden shadow-md mb-20 hover:shadow-2xl transition-shadow duration-300"
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out hover:scale-105"
+                  />
+                </div>
+              </motion.div>
 
 
               {/* Floating Info Box */}
@@ -306,7 +306,8 @@ const ProjectGridSection = () => {
             disabled={currentPage === 1}
             className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white disabled:bg-gray-300 disabled:text-gray-500 hover:bg-blue-700 transition-colors focus:outline-none"
           >
-            &lt;
+  <i className="fas fa-chevron-left"></i>
+            
           </button>
 
           {renderPageNumbers().map((number, index) => (
@@ -316,11 +317,10 @@ const ProjectGridSection = () => {
               ) : (
                 <button
                   onClick={() => paginate(number)}
-                  className={`w-10 h-10 flex items-center justify-center rounded-full text-lg font-semibold ${
-                    currentPage === number
+                  className={`w-10 h-10 flex items-center justify-center rounded-full text-lg font-semibold ${currentPage === number
                       ? "bg-blue-600 text-white"
                       : "text-gray-700 hover:bg-gray-100"
-                  } transition-colors focus:outline-none`}
+                    } transition-colors focus:outline-none`}
                 >
                   {number}
                 </button>
@@ -328,13 +328,14 @@ const ProjectGridSection = () => {
             </React.Fragment>
           ))}
 
-          <button
-            onClick={() => paginate(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white disabled:bg-gray-300 disabled:text-gray-500 hover:bg-blue-700 transition-colors focus:outline-none"
-          >
-            &gt;
-          </button>
+         <button
+  onClick={() => paginate(currentPage + 1)}
+  disabled={currentPage === totalPages}
+  className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white disabled:bg-gray-300 disabled:text-gray-500 hover:bg-blue-700 transition-colors focus:outline-none"
+>
+  <i className="fas fa-chevron-right"></i>
+</button>
+
         </motion.div>
       </PageWrapper>
     </motion.section>
