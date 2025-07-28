@@ -45,7 +45,8 @@ const ContactForm = () => {
                 </div>
                 <div className='border-l-2 border-gray-400 pl-5'>
                   <p className="text-sm text-orange-300">Phone</p>
-                  <p className="font-semibold text-lg">+212663737317</p>
+                  <p className="font-semibold text-lg">
+                    +32477277312</p>
                 </div>
               </div>
 
@@ -56,7 +57,7 @@ const ContactForm = () => {
                 </div>
                 <div className='border-l-2 border-gray-400 pl-5'>
                   <p className="text-sm text-orange-300">Address</p>
-                  <p className="font-semibold text-lg">Avenue Louise 54 - Karachi</p>
+                  <p className="font-semibold text-lg">Rue d'Alost 7/11 1000, Brussels</p>
                 </div>
               </div>
             </div>

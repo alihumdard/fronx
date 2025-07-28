@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import URLS from "../config/urls.config";
 import { Link } from "react-router-dom";
+import translations from "../translations";
+import { LanguageProvider, useLanguage } from "../LanguageContext";
 
 const serviceCategories = [
   {
@@ -16,92 +18,93 @@ const serviceCategories = [
     ],
   },
   {
-  title: "Mobile Development",
-  url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
-  items: [
-    { label: "Flutter App Development", hash: "#app-development-process" },
-    { label: "React Native Development", hash: "#app-development-process" },
-    { label: "Android App Development", hash: "#app-development-process" },
-    { label: "IOS App Development", hash: "#app-development-process" },
-    { label: "APP UI Design", hash: "#app-development-process" },
-  ],
-},
-{
-  title: "UX/UI Design Services",
-  url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
-  items: [
-    { label: "Website UI Design (Figma)", hash: "#uiux-development-process" },
-    { label: "Mobile App U Design", hash: "#uiux-development-process" },
-    { label: "Wireframing & Prototyping", hash: "#uiux-development-process" },
-    { label: "Design System Creation", hash: "#uiux-development-process" },
-  ],
-},
-{
-  title: "E-Commerce Solution",
-  url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
-  items: [
-    { label: "WooCommerce Store Setup", hash: "#commerce-development-process" },
-    { label: "Shopify Development", hash: "#commerce-development-process" },
-    { label: "Custom E-Commerce Portal", hash: "#commerce-development-process" },
-    { label: "Product Management System", hash: "#commerce-development-process" },
-    { label: "Payment Gateway Integration", hash: "#commerce-development-process" },
-  ],
-},
-{
-  title: "Digital Marketing",
-  url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
-  items: [
-    { label: "Google Ads Setup", hash: "#markiting-development-process" },
-    { label: "Social Media Marketing", hash: "#markiting-development-process" },
-    { label: "Content Marketing", hash: "#markiting-development-process" },
-    { label: "Email Marketing", hash: "#markiting-development-process" },
-  ],
-},
-{
-  title: "SEO",
-  url: URLS.SERVICE_DETAIL.SEO,
-  items: [
-    { label: "Keyword Research", hash: "#seo-development-process" },
-    { label: "On-Page SEO", hash: "#seo-development-process" },
-    { label: "Off-Page SEO", hash: "#seo-development-process" },
-    { label: "Technical SEO", hash: "#seo-development-process" },
-    { label: "Content Creation", hash: "#seo-development-process" },
-  ],
-},
-{
-  title: "Software Development",
-  url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
-  items: [
-    { label: "CRM System Development", hash: "#software-development-process" },
-    { label: "Booking or Inventory System", hash: "#software-development-process" },
-    { label: "SaaS Platform Development", hash: "#software-development-process" },
-    { label: "ERP System Development", hash: "#software-development-process" },
-  ],
-},
-{
-  title: "Maintenance & Support",
-  url: URLS.SERVICE_DETAIL.MAINTENENCE,
-  items: [
-    { label: "Website UI Design (Figma)", hash: "#maintinence-development-process" },
-    { label: "Mobile App U Design", hash: "#maintinence-development-process" },
-    { label: "Wireframing & Prototyping", hash: "#maintinence-development-process" },
-    { label: "Design System Creation", hash: "#maintinence-development-process" },
-  ],
-},
-{
-  title: "AI & Chatbot Solution",
-  url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
-  items: [
-    { label: "Website Chatbot Development", hash: "#ai-development-process" },
-    { label: "Open AI/GPT Chatbot for Support/Sale", hash: "#ai-development-process" },
-    { label: "AI Powered SaaS Tool Integration", hash: "#ai-development-process" },
-    { label: "AI Powered SaaS Tool Integration", hash: "#ai-development-process" },
-  ],
-},
+    title: "Mobile Development",
+    url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
+    items: [
+      { label: "Flutter App Development", hash: "#app-development-process" },
+      { label: "React Native Development", hash: "#app-development-process" },
+      { label: "Android App Development", hash: "#app-development-process" },
+      { label: "IOS App Development", hash: "#app-development-process" },
+      { label: "APP UI Design", hash: "#app-development-process" },
+    ],
+  },
+  {
+    title: "UX/UI Design Services",
+    url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
+    items: [
+      { label: "Website UI Design (Figma)", hash: "#uiux-development-process" },
+      { label: "Mobile App U Design", hash: "#uiux-development-process" },
+      { label: "Wireframing & Prototyping", hash: "#uiux-development-process" },
+      { label: "Design System Creation", hash: "#uiux-development-process" },
+    ],
+  },
+  {
+    title: "E-Commerce Solution",
+    url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
+    items: [
+      { label: "WooCommerce Store Setup", hash: "#commerce-development-process" },
+      { label: "Shopify Development", hash: "#commerce-development-process" },
+      { label: "Custom E-Commerce Portal", hash: "#commerce-development-process" },
+      { label: "Product Management System", hash: "#commerce-development-process" },
+      { label: "Payment Gateway Integration", hash: "#commerce-development-process" },
+    ],
+  },
+  {
+    title: "Digital Marketing",
+    url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
+    items: [
+      { label: "Google Ads Setup", hash: "#markiting-development-process" },
+      { label: "Social Media Marketing", hash: "#markiting-development-process" },
+      { label: "Content Marketing", hash: "#markiting-development-process" },
+      { label: "Email Marketing", hash: "#markiting-development-process" },
+    ],
+  },
+  {
+    title: "SEO",
+    url: URLS.SERVICE_DETAIL.SEO,
+    items: [
+      { label: "Keyword Research", hash: "#seo-development-process" },
+      { label: "On-Page SEO", hash: "#seo-development-process" },
+      { label: "Off-Page SEO", hash: "#seo-development-process" },
+      { label: "Technical SEO", hash: "#seo-development-process" },
+      { label: "Content Creation", hash: "#seo-development-process" },
+    ],
+  },
+  {
+    title: "Software Development",
+    url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
+    items: [
+      { label: "CRM System Development", hash: "#software-development-process" },
+      { label: "Booking or Inventory System", hash: "#software-development-process" },
+      { label: "SaaS Platform Development", hash: "#software-development-process" },
+      { label: "ERP System Development", hash: "#software-development-process" },
+    ],
+  },
+  {
+    title: "Maintenance & Support",
+    url: URLS.SERVICE_DETAIL.MAINTENENCE,
+    items: [
+      { label: "Website UI Design (Figma)", hash: "#maintinence-development-process" },
+      { label: "Mobile App U Design", hash: "#maintinence-development-process" },
+      { label: "Wireframing & Prototyping", hash: "#maintinence-development-process" },
+      { label: "Design System Creation", hash: "#maintinence-development-process" },
+    ],
+  },
+  {
+    title: "AI & Chatbot Solution",
+    url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
+    items: [
+      { label: "Website Chatbot Development", hash: "#ai-development-process" },
+      { label: "Open AI/GPT Chatbot for Support/Sale", hash: "#ai-development-process" },
+      { label: "AI Powered SaaS Tool Integration", hash: "#ai-development-process" },
+      { label: "AI Powered SaaS Tool Integration", hash: "#ai-development-process" },
+    ],
+  },
 
 ];
 
 const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
+  const { language } = useLanguage();
   const [isMainDropdownOpen, setIsMainDropdownOpen] = useState(false);
   const [openCategoryIndex, setOpenCategoryIndex] = useState(null); // New state for mobile category dropdowns
 
@@ -133,7 +136,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
       onMouseLeave={mobile ? undefined : () => setIsMainDropdownOpen(false)}
     >
       <Link
-      to={URLS.SERVICES}
+        to={URLS.SERVICES}
         onClick={toggleMainDropdown}
         className={`inline-flex items-center font-medium whitespace-nowrap focus:outline-none 
                                 ${mobile ? "block w-full text-left " : ""}
@@ -141,11 +144,10 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
         aria-expanded={isMainDropdownOpen ? "true" : "false"}
         aria-controls="main-dropdown-content"
       >
-        Services
+        {translations[language].services}
         <svg
-          className={`ml-1 h-4 w-4 transform transition-transform duration-200 ${
-            isMainDropdownOpen && mobile ? "rotate-180" : "rotate-0"
-          }`}
+          className={`ml-1 h-4 w-4 transform transition-transform duration-200 ${isMainDropdownOpen && mobile ? "rotate-180" : "rotate-0"
+            }`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -170,20 +172,18 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
             exit={{ opacity: 0, y: mobile ? -10 : 10, scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             className={`
-                            ${
-                              mobile
-                                ? "relative w-full mt-2 p-4 bg-gray-50 rounded-lg shadow-inner"
-                                : "absolute left-1/2 sm:-left-[570%] top-full mt-3 w-screen max-w-screen-xl -translate-x-1/2 p-8 bg-white rounded-xl shadow-lg"
-                            }
+                            ${mobile
+                ? "relative w-full mt-2 p-4 bg-gray-50 rounded-lg shadow-inner"
+                : "absolute left-1/2 sm:-left-[570%] top-full mt-3 w-screen max-w-screen-xl -translate-x-1/2 p-8 bg-white rounded-xl shadow-lg"
+              }
                             overflow-hidden
                         `}
           >
             <div
-              className={`grid ${
-                mobile
+              className={`grid ${mobile
                   ? "grid-cols-1 gap-y-0" // Adjusted gap-y for mobile as categories will have their own spacing
                   : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-8 gap-x-6"
-              }`}
+                }`}
             >
               {serviceCategories.map((category, catIndex) => (
                 <div
@@ -197,9 +197,8 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                         ? () => toggleCategoryDropdown(catIndex)
                         : undefined
                     }
-                    className={`flex justify-between items-center w-full py-2 ${
-                      mobile ? "text-gray-800" : ""
-                    }`}
+                    className={`flex justify-between items-center w-full py-2 ${mobile ? "text-gray-800" : ""
+                      }`}
                   >
                     <Link
                       to={category.url}
@@ -209,11 +208,10 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                     </Link>
                     {mobile && ( // Show arrow only on mobile
                       <svg
-                        className={`ml-2 h-5 w-5 text-gray-600 transform transition-transform duration-200 ${
-                          openCategoryIndex === catIndex
+                        className={`ml-2 h-5 w-5 text-gray-600 transform transition-transform duration-200 ${openCategoryIndex === catIndex
                             ? "rotate-180"
                             : "rotate-0"
-                        }`}
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -240,9 +238,8 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
-                        className={`space-y-2 ${
-                          mobile ? "w-full pl-4 mt-2" : ""
-                        }`} // Indent and add top margin on mobile
+                        className={`space-y-2 ${mobile ? "w-full pl-4 mt-2" : ""
+                          }`} // Indent and add top margin on mobile
                       >
                         {category.items.map((item, itemIndex) => (
                           <li key={itemIndex}>

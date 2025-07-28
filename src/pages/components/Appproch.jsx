@@ -13,37 +13,37 @@ const approachSteps = [
   {
     number: "01",
     icon: FaLightbulb,
-    title: "Understanding and identifying patterns",
+    title: "Needs analysis",
     description:
-      "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
+      "We identify your objectives, your audience and the constraints to properly frame the project.",
   },
   {
     number: "02",
     icon: FaMapMarkedAlt,
-    title: "Mapping schemas and user stories",
+    title: "Research & benchmark",
     description:
-      "Translate data patterns into detailed user stories to ensure our solutions meet specific user needs and business objectives",
+      "Study of trends, competitors and user expectations to inspire design.",
   },
   {
     number: "03",
     icon: FaLaptopCode,
-    title: "Models & Front-end",
+    title: "UI/UX Design",
     description:
-      "Design intuitive mockups and attractive front-end interfaces to deliver engaging, user-friendly, and converting experiences.",
+      "Creation of models and prototypes focused on an optimal user experience.",
   },
   {
     number: "04",
     icon: FaCode,
-    title: "Website development",
+    title: "Development & deployment",
     description:
-      "Build robust, scalable sites with cutting-edge technologies to enhance functionality and deliver exceptional performance.",
+      "Transformation of designs into functional and efficient solutions.",
   },
   {
     number: "05",
     icon: FaCloudUploadAlt,
-    title: "Development & deployment",
+    title: "Testing & optimization",
     description:
-      "Implement a seamless development and deployment process to ensure your digital solutions are launched efficiently and quickly, with minimal disruption.",
+      "Validation through testing, feedback collection and continuous product improvement.",
   },
 ];
 
@@ -76,12 +76,11 @@ const Approach = () => {
     >
       <PageWrapper>
         <motion.div variants={cardVariants} className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Our Proven Approach to Achieving Your Goals
+          <h2 className="text-3xl sm:text-4xl  font-bold mb-4">
+           Our strategic approach to ensuring the success of your projects
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-            Achieve your business goals with our Fronx methodology, renowned for
-            its structure, planning, and consistent results.
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+           Achieve your business goals with the Fronx methodology, recognized for its rigor, strategic planning and sustainable results.
           </p>
         </motion.div>
 

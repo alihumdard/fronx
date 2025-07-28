@@ -4,6 +4,8 @@ import PageWrapper from "../../main/Pagewraper";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import URLS from "../../config/urls.config";
+import { LanguageProvider, useLanguage } from "../../LanguageContext";
+import translations from "../../translations";
 
 // Animation Variants (kept as is, assuming they are correct)
 const containerVariants = {
@@ -25,6 +27,7 @@ const fadeUpVariant = {
 };
 
 const Hero = () => {
+  const { language, toggleLanguage } = useLanguage();
   return (
     <>
       <div className="relative h-screen w-full">
@@ -49,7 +52,7 @@ const Hero = () => {
 
         {/* Hero Content - Adjusted for responsiveness while preserving large screen design */}
         {/* This div controls the overall positioning of the text block */}
-        <div className="relative z-10 flex items-center justify-center min-h-full py-16 lg:justify-start lg:mr-[32%] lg:py-0">
+        <div className="relative z-10 flex items-center justify-center min-h-full py-16 lg:justify-start lg:mr-[28%] lg:py-0">
           <PageWrapper>
             <motion.div
               // This inner div controls the alignment of text and items within the content block
@@ -68,7 +71,7 @@ const Hero = () => {
                     className="bg-white text-black font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm whitespace-nowrap"
                     variants={fadeUpVariant}
                   >
-                    Web Development
+                    {translations[language].webDevelopment}
                   </motion.span>
                 </Link>
                 <Link to={URLS.SERVICE_DETAIL.APP_DEVELOPMENT}>
@@ -76,7 +79,8 @@ const Hero = () => {
                     className="bg-white text-black font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm whitespace-nowrap"
                     variants={fadeUpVariant}
                   >
-                    Application Development
+                    {translations[language].appDevelopment}
+
                   </motion.span>
                 </Link>
 
@@ -85,17 +89,18 @@ const Hero = () => {
                     className="bg-white text-black font-semibold text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm whitespace-nowrap"
                     variants={fadeUpVariant}
                   >
-                    SEO & Consulting
+                    {translations[language].seoCInsulting}
+
                   </motion.span>
                 </Link>
               </motion.div>
 
               {/* Main Heading */}
               <motion.h1
-                className="text-4xl text-white leading-tight sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6" // Responsive font sizes and margin
+                className="text-5xl text-white leading-tight   font-bold mb-4 md:mb-6" // Responsive font sizes and margin
                 variants={fadeUpVariant}
               >
-                Fronx Solutions - Digital Agency
+                {translations[language].web1}
                 <span
                   className="block w-4/5 sm:w-3/5 md:w-1/2 lg:w-3/5 xl:w-2/5 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 mt-2 mx-auto lg:mx-0" // Centered on mobile, left-aligned on desktop
                 ></span>
@@ -106,7 +111,7 @@ const Hero = () => {
                 className="text-2xl text-white sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-semibold mb-6 md:mb-8" // Responsive font sizes and margin
                 variants={fadeUpVariant}
               >
-                Belgium & Morocco
+                {translations[language].web2}
               </motion.p>
 
               {/* Call-to-action Buttons */}
@@ -118,13 +123,14 @@ const Hero = () => {
                   to={URLS.CONTACT}
                   className="bg-gradient-to-r from-[#6931CF] to-[#1A61EA] btn-animate text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-lg hover:opacity-90 transition-opacity whitespace-nowrap text-center" // Responsive padding/font, centered text
                 >
-                  BOOK A FREE CONSULTATION
+                  {translations[language].Herobutton1}
                 </Link>
                 <Link
                   to={URLS.SERVICES}
                   className="border btn-animate border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg  hover:text-[#6931CF] transition-colors whitespace-nowrap text-center" // Responsive padding/font, centered text
                 >
-                  Explore Service
+                  {translations[language].Herobutton2}
+
                 </Link>
               </motion.div>
 
@@ -133,7 +139,7 @@ const Hero = () => {
                 className="text-gray-300 text-sm italic text-center lg:text-left" // Centered on mobile, left-aligned on desktop
                 variants={fadeUpVariant}
               >
-                *Let's build something amazing together.
+                {translations[language].lets}
               </motion.p>
             </motion.div>
           </PageWrapper>
@@ -172,25 +178,22 @@ const Hero = () => {
               What will you get?
             </motion.h2>
             <motion.p
-              className="text-base md:text-lg lg:text-xl text-gray-700 mb-8 md:mb-10 max-w-full lg:max-w-3xl mx-auto lg:mx-0" // Responsive font sizes, centered on mobile, left on desktop
+              className="text-base md:text-md text-gray-700 mb-8 md:mb-10 max-w-full lg:max-w-2xl mx-auto lg:mx-0" // Responsive font sizes, centered on mobile, left on desktop
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              At Fronx Solutions, we transform your digital vision into reality.
-              For over 10 years, we've been crafting customized, fast, and
-              beautiful digital solutions that help businesses across Belgium,
-              Morocco, and Europe stand out in the digital landscape.
+              At Fronx Solutions, we make things simple. For over four years, we've been helping businesses in Belgium and across Europe stand out with customized, fast, beautiful, and effective digital solutions. Whether you're launching a new project or upgrading your current setup, our team is here to bring your vision to life, step by step. Our clients come from a variety of industries, but most run e-commerce businesses, service-based businesses, or are looking to improve their online presence. Whether it's creating an easy-to-use website, developing a custom app, or increasing visibility through smart SEO, our clients trust us to deliver effective digital solutions that truly help them grow. Brands we've worked with include Lemikap, Glamour Cosmetics, and TDSBelgium, all of whom have entrusted us with the realization of their digital vision.
             </motion.p>
             {/* Responsive Stats */}
             <div className="grid grid-cols-2 md:grid-cols-3 md:w-[55%] gap-6 justify-items-center sm:justify-items-center lg:justify-items-start max-w-full sm:max-w-md md:max-w-lg lg:max-w-full mx-auto lg:mx-0">
               {" "}
               {/* Centered grid on mobile, left-aligned on desktop */}
               {[
-                { value: "15+", label: "Years\nExperience" },
-                { value: "50K+", label: "Satisfied\nClients" },
-                { value: "100%", label: "Satisfaction\nRate" },
+                { value: "420+", label: "Delivered projects" },
+                { value: "350+", label: "Companies served" },
+                { value: "4+", label: "Years of experience" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}

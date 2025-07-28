@@ -12,39 +12,39 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqData = [
   {
-    question: "What Type Of Services Do Fronx Solutions Offer?",
+    question: "Why choose Fronx Solutions?",
     answer:
-      "Fronx Solutions Offers A Wide Array Of Services A Business Needs, Including AI Development Services, AI Chatbot Development Services, Machine Learning Development Services, Mobile App Development, ChatGPT Integration, DevOps, UI/UX Design, Web Development, And Digital Marketing Solutions.",
+      "Because we simplify everything, quickly and tailor-made. We listen to your goals, work rigorously, and deliver results that grow your business—without stress or confusion.",
   },
   {
-    question: "How Long Will My Project Take?",
+    question: "I don't know what type of website or app I need. Can you help me?",
     answer:
-      "The timeline for a project varies greatly depending on its complexity, scope, and specific requirements. We work closely with our clients to establish realistic timelines and milestones during the planning phase. After a detailed consultation and understanding your needs, we can provide a more accurate estimate.",
+      "Yes, of course! You don't need to have everything defined. Just tell us what you do and what you want to achieve, and we'll ask the right questions, share ideas, and help you choose what's best for your business.",
   },
   {
-    question: "Can I Afford Your Services?",
+    question: "Can you fix my old site or app?",
     answer:
-      "We believe in providing high-quality solutions that offer great value. Our pricing is competitive and transparent, tailored to the specific needs of each project. We offer various engagement models and can discuss options that fit your budget during a consultation.",
+      "Yes! We can improve or rebuild your current website or application to make it faster, better, and more modern.",
   },
   {
-    question: "Will My Website Or App Work On All Devices?",
+    question: "Can you also create my logo or brand identity?",
     answer:
-      "Absolutely. All our web development and mobile app projects are built with responsiveness and cross-device compatibility in mind. We ensure that your digital solution looks and functions flawlessly on desktops, laptops, tablets, and various mobile phones.",
+      "Yes, we can design a complete identity for your brand — logo, colors, and more.",
   },
   {
-    question: "Do You Offer Support After The Project Is Done?",
+    question: "Can I see some examples of your work?",
     answer:
-      "Yes, we offer comprehensive post-launch support and maintenance services to ensure your digital solutions continue to perform optimally. This includes bug fixes, updates, security patches, and ongoing technical assistance to keep your platform running smoothly.",
+      "Yes! We will be happy to show you websites and apps we have created for other satisfied clients.",
   },
   {
-    question: "Can You Design My Brand Logo Too?",
+    question: "Do you offer solutions for schools, institutions or associations?",
     answer:
-      "While our core expertise lies in software and digital solutions, we do offer design services, including brand identity and logo design, as part of a comprehensive project. We can discuss your branding needs during our initial consultation.",
+      "Yes! We create custom websites and tools for schools, public organizations, and associations. We ensure they fit your goals and budget.",
   },
   {
-    question: "I’m Not Tech-Savvy. Will I Understand What’s Happening?",
+    question: "Can I use the Digitalization Bonus for your services?",
     answer:
-      "Definitely! We pride ourselves on clear communication and keeping our clients informed at every stage of the project. We avoid jargon and explain everything in an easy-to-understand manner, ensuring you always know the progress and what to expect.",
+      "Yes, if you're eligible, you can use the Digitalization Bonus to help finance your project. We'll guide you through the process.",
   },
 ];
 
@@ -53,25 +53,25 @@ const stepsData = [
     icon: FaEnvelope,
     title: "Contact Us",
     description:
-      "Let's talk about your needs, ideas, goals, and objectives. This first discovery meeting will help us better understand your vision and propose a suitable, strategic solution",
+      "Let's talk about your needs, ideas and objectives. This first meeting will help us understand your vision and propose a suitable solution.",
   },
   {
     icon: FaFileAlt,
     title: "Analysis & Proposals",
     description:
-      "After gathering your requirements, we conduct a thorough analysis and prepare tailored proposals that align with your goals and budget.",
+      "We analyze your project and propose a customized solution, accompanied by a clear, detailed quotation.",
   },
   {
     icon: FaLaptopCode,
-    title: "Design & Develop",
+    title: "Design and development",
     description:
-      "Our team will create visually stunning designs and build functional solutions that meet your business objectives and user expectations.",
+      "After validation, we begin the design and development of your project, taking care to respect your expectations, your objectives, and the specifications defined together.",
   },
   {
     icon: FaRocket,
     title: "Launch and follow-up",
     description:
-      "We launch your project and provide continuous support to ensure smooth performance, updates, and improvements.",
+      "Once the project has been finalized, we support you during its launch and provide regular follow-up and maintenance to ensure its lasting success.",
   },
 ];
 

@@ -57,10 +57,10 @@ const Portfolio = () => {
       {/* Header */}
       <motion.div variants={item} className="pt-12 text-center">
         <p className="text-sm font-semibold uppercase tracking-widest opacity-80 mb-2">
-          EMPOWERING INNOVATION
+         Some recently completed projects
         </p>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-          Your Trusted Tech Partner
+         From idea to realization.
         </h2>
         <p className="text-md sm:text-lg max-w-3xl mx-auto px-4">
           Discover how FronxSolutions transforms ideas into cutting-edge digital
