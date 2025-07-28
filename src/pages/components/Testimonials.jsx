@@ -84,11 +84,10 @@ const Testimonials = () => {
         {/* Header */}
         <motion.div variants={itemVariants} className="text-center mb-12">
           <p className="text-gray-600 font-semibold uppercase tracking-widest text-sm mb-2">
-            TESTIMONIALS
+           Testimony
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 max-w-2xl mx-auto">
-            Experience the Difference Through{" "}
-            <span className="block lg:inline">Our Clients’ Eyes</span>
+          <h2 className="text-3xl sm:text-5xl font-bold text-gray-800 max-w-2xl mx-auto">
+           What our customers say
           </h2>
         </motion.div>
 
@@ -113,57 +112,57 @@ const Testimonials = () => {
           <AnimatePresence mode="wait">
             {" "}
             {/* mode="wait" ensures old component exits before new enters */}
-          <motion.div
-  key={currentTestimonial.id}
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  exit={{ opacity: 0, y: -20 }}
-  transition={{ duration: 0.5 }}
-  whileHover={{ scale: 1.02, y: -4 }}
-  className="w-full lg:w-1/2 flex-shrink-0 relative"
->
-  <FaQuoteRight className="absolute top-5 right-5 text-orange-400 text-3xl opacity-70" />
-  <div className="bg-gray-100 p-6 sm:p-8 rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md">
-    {/* Star Rating */}
-    <div className="flex gap-1 mb-4">
-      {Array.from({ length: currentTestimonial.rating }).map((_, i) => (
-        <FaStar key={i} className="text-orange-400 w-4 h-4" />
-      ))}
-    </div>
+            <motion.div
+              key={currentTestimonial.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.02, y: -4 }}
+              className="w-full lg:w-1/2 flex-shrink-0 relative"
+            >
+              <FaQuoteRight className="absolute top-5 right-5 text-orange-400 text-3xl opacity-70" />
+              <div className="bg-gray-100 p-6 sm:p-8 rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md">
+                {/* Star Rating */}
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: currentTestimonial.rating }).map((_, i) => (
+                    <FaStar key={i} className="text-orange-400 w-4 h-4" />
+                  ))}
+                </div>
 
-    {/* Quote */}
-    <p className="text-gray-700 mb-6 italic text-base sm:text-lg leading-relaxed">
-      "{currentTestimonial.quote}"
-    </p>
+                {/* Quote */}
+                <p className="text-gray-700 mb-6 italic text-base sm:text-lg leading-relaxed">
+                  "{currentTestimonial.quote}"
+                </p>
 
-    {/* Client Info */}
-    <div className="flex flex-col sm:flex-row justify-between items-center pt-8 gap-4">
-      <div className="flex items-center gap-4">
-        <img
-          src={currentTestimonial.clientAvatar}
-          alt={currentTestimonial.clientName}
-          className="w-14 h-14 rounded-full object-cover border-2 border-orange-400"
-        />
-        <div>
-          <p className="font-bold text-gray-800 text-lg">
-            {currentTestimonial.clientName}
-          </p>
-          <p className="text-gray-500 text-sm">
-            {currentTestimonial.clientTitle}
-          </p>
-        </div>
-      </div>
+                {/* Client Info */}
+                <div className="flex flex-col sm:flex-row justify-between items-center pt-8 gap-4">
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={currentTestimonial.clientAvatar}
+                      alt={currentTestimonial.clientName}
+                      className="w-14 h-14 rounded-full object-cover border-2 border-orange-400"
+                    />
+                    <div>
+                      <p className="font-bold text-gray-800 text-lg">
+                        {currentTestimonial.clientName}
+                      </p>
+                      <p className="text-gray-500 text-sm">
+                        {currentTestimonial.clientTitle}
+                      </p>
+                    </div>
+                  </div>
 
-      {STATIC_COMPANY_LOGO && (
-        <img
-          src={STATIC_COMPANY_LOGO}
-          alt="Company Logo"
-          className="h-10 object-contain"
-        />
-      )}
-    </div>
-  </div>
-</motion.div>
+                  {STATIC_COMPANY_LOGO && (
+                    <img
+                      src={STATIC_COMPANY_LOGO}
+                      alt="Company Logo"
+                      className="h-10 object-contain"
+                    />
+                  )}
+                </div>
+              </div>
+            </motion.div>
 
           </AnimatePresence>
 

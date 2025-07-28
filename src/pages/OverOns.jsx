@@ -108,7 +108,7 @@ const OverOns = () => {
                   <Link
                     className="text-blue-600 hover:text-blue-600 transition-colors"
                   >
-                    Over Ons
+                    About Us
                   </Link>
                 </div>
               </motion.div>

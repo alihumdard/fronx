@@ -126,9 +126,9 @@ const servicesData = [
     id: "web-dev",
     iconKey: "webDevelopment",
     imageKey: "webDevelopment",
-    title: "Web Development",
+    title: "Website development and maintenance",
     description:
-      "Custom, fast, mobile-friendly websites that reflect your brand and convert visitors into customers...",
+      "Custom, fast, and mobile-friendly websites that reflect your brand and convert visitors...",
   },
   {
     id: "ecommerce",
@@ -136,15 +136,15 @@ const servicesData = [
     imageKey: "eCommerce",
     title: "E-commerce solutions",
     description:
-      "Robust, secure platforms designed to maximize conversions and grow your online store efficiently...",
+      "Powerful online stores that inspire trust, increase sales and build customer loyalty.",
   },
   {
     id: "mobile-app",
     iconKey: "mobileApplication",
     imageKey: "mobileApplication",
-    title: "Mobile Application",
+    title: "Mobile Application Development",
     description:
-      "Intuitive and engaging mobile apps that offer seamless user experiences on Android and iOS...",
+      "Smooth, user-friendly apps that connect your brand to your users, wherever they...",
   },
   {
     id: "digital-marketing",
@@ -152,7 +152,7 @@ const servicesData = [
     imageKey: "digitalMarketing",
     title: "Digital marketing",
     description:
-      "Targeted campaigns and SEO strategies that bring more eyes to your brand and boost engagement...",
+      "Tactical campaigns and content that drive traffic, increase visibility, and grow your...",
   },
   {
     id: "content-writing",
@@ -160,7 +160,7 @@ const servicesData = [
     imageKey: "contentWriting",
     title: "Content writing",
     description:
-      "Compelling, SEO-friendly content that connects with your audience and tells your story right...",
+      "Clear, impactful words that speak your audience's language and inspire them to take action...",
   },
   {
     id: "graphics-design",

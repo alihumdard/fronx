@@ -21,7 +21,7 @@ const testimonials = [
     content: `"The mobile app developed by Fronx Solution exceeded our expectations. Their attention to detail and user experience focus resulted in a 40% increase in user retention. The team was responsive throughout the development process."`,
     author: "Jane Smith",
     position: "CTO of abc.com",
-    image: "/images/swiper.png",
+    image: "/images/men.png",
   },
 ];
 

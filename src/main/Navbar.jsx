@@ -4,14 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageWrapper from "./Pagewraper";
 import DropdownMenu from "./DropdownMenu";
 import URLS from "../config/urls.config";
+import translations from "../translations";
+import { useLanguage } from "../LanguageContext";
 
 const Navbar = () => {
   const location = useLocation();
-  const [isFrench, setIsFrench] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const toggleLanguage = () => setIsFrench(!isFrench);
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   useEffect(() => {
@@ -128,7 +129,7 @@ const Navbar = () => {
                     to={URLS.HOME}
                     className={getDesktopLinkClasses(URLS.HOME)}
                   >
-                    Home
+                    {translations[language].home}
                   </Link>
                 </li>
 
@@ -137,7 +138,7 @@ const Navbar = () => {
                     to={URLS.OVERONS}
                     className={getDesktopLinkClasses(URLS.OVERONS)}
                   >
-                    Over Ons
+                   {translations[language].overOns}
                   </Link>
                 </li>
 
@@ -153,7 +154,7 @@ const Navbar = () => {
                     to={URLS.BOLG}
                     className={getDesktopLinkClasses(URLS.BOLG)}
                   >
-                    Blog
+                  {translations[language].blog}
                   </Link>
                 </li>
 
@@ -162,12 +163,12 @@ const Navbar = () => {
                     href="#"
                     className={`px-2 py-1 ${getTextColor()} hover:text-blue-300`}
                   >
-                    Portfolio
+                   {translations[language].portfolio}
                   </a>
                 </li>
                 <div className="flex items-center space-x-2 rounded-full">
                   <span className={`text-xs font-medium ${getTextColor()}`}>
-                    EN
+                    FR
                   </span>
                   <button
                     onClick={toggleLanguage}
@@ -175,14 +176,14 @@ const Navbar = () => {
                   >
                     <div
                       className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                        isFrench
-                          ? "translate-x-6 bg-gradient-to-r from-[#6931CF] to-[#1A61EA]"
-                          : "translate-x-0 bg-gray-300"
+                         language === "fr"
+                          ? "translate-x-0 bg-gray-300"
+                          : "translate-x-6 bg-gradient-to-r from-[#6931CF] to-[#1A61EA]"
                       }`}
                     ></div>
                   </button>
                   <span className={`text-xs font-medium ${getTextColor()}`}>
-                    FR
+                    EN
                   </span>
                 </div>
               </ul>
@@ -194,7 +195,7 @@ const Navbar = () => {
                 to={URLS.CONTACT}
                 className="btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-2 rounded-full font-semibold shadow"
               >
-                <span className="relative z-[1]">Contact Us</span>
+                <span className="relative z-[1]">{translations[language].contact}</span>
               </Link>
             </div>
           </div>
@@ -242,7 +243,8 @@ const Navbar = () => {
                     className={getMobileLinkClasses(URLS.HOME)}
                     onClick={toggleMobileMenu}
                   >
-                    Home
+                                      {translations[language].home}
+
                   </Link>
                 </li>
                 <li className="border-b-2">
@@ -251,7 +253,8 @@ const Navbar = () => {
                     className={getMobileLinkClasses(URLS.OVERONS)}
                     onClick={toggleMobileMenu}
                   >
-                    Over Ons
+                   {translations[language].overOns}
+
                   </Link>
                 </li>
                 <Link className="border-b-2">
@@ -267,7 +270,8 @@ const Navbar = () => {
                     className={getMobileLinkClasses(URLS.BOLG)}
                     onClick={toggleMobileMenu}
                   >
-                    Blog
+                  {translations[language].blog}
+
                   </Link>
                 </li>
                 <li className="border-b-2">
@@ -276,25 +280,26 @@ const Navbar = () => {
                     className="px-2 py-2 block w-full text-start text-gray-800 hover:text-blue-600"
                     onClick={toggleMobileMenu}
                   >
-                    Portfolio
+                   {translations[language].portfolio}
+
                   </a>
                 </li>
                 <li className="flex justify-start mt-auto pt-4">
                   <div className="flex items-center space-x-2  rounded-full">
-                    <span className="text-blacktext-xs font-medium">EN</span>
+                    <span className="text-blacktext-xs font-medium">FR</span>
                     <button
                       onClick={toggleLanguage}
                       className="w-12 h-6 flex items-center bg-black rounded-full px-1 transition-all duration-300"
                     >
                       <div
                         className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                          isFrench
-                            ? "translate-x-6 bg-gradient-to-r from-[#6931CF] to-[#1A61EA]"
-                            : "translate-x-0 bg-gray-300"
+                          language === "fr"
+                            ? "translate-x-0 bg-gray-300"
+                            : "translate-x-6 bg-gradient-to-r from-[#6931CF] to-[#1A61EA]300"
                         }`}
                       ></div>
                     </button>
-                    <span className="text-black text-xs font-medium">FR</span>
+                    <span className="text-black text-xs font-medium">EN</span>
                   </div>
                 </li>
                 <li className="pt-6">
@@ -303,7 +308,8 @@ const Navbar = () => {
                     className="btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-3 rounded-full font-semibold shadow text-sm w-full text-center block"
                     onClick={toggleMobileMenu}
                   >
-                    <span className="relative z-[1]">Contact Us</span>
+                    <span className="relative z-[1]">                   {translations[language].contact}
+</span>
                   </Link>
                 </li>
               </ul>

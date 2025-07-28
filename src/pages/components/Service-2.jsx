@@ -30,6 +30,10 @@ import {
   SiFlutter,
   SiNextdotjs,
   SiFigma,
+  SiTailwindcss,
+  SiBootstrap,
+  SiMongodb,
+  SiMysql,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 import URLS from "../../config/urls.config";
@@ -74,7 +78,7 @@ const servicesData = [
     title: "Website Development",
     url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
     description:
-      "Boost your business with custom web and mobile solutions, delivering scalable, user-friendly platforms to enhance engagement and drive growth.",
+      "Boost your business with custom web and mobile solutions, delivering scalable, user-friendly platforms to enhance engagement and drive growth. From sleek UI/UX designs to robust backend systems, we tailor every solution to your unique goals.",
     techStackIcons: [
       { icon: FaPython, name: "Python" },
       { icon: SiTypescript, name: "TypeScript" },
@@ -85,6 +89,10 @@ const servicesData = [
       { icon: FaLaravel, name: "Laravel" },
       { icon: FaWordpress, name: "WordPress" },
       { icon: FaShopify, name: "Shopify" },
+      { icon: SiTailwindcss, name: "Tailwind CSS" },
+      { icon: SiBootstrap, name: "Bootstrap" },
+      { icon: SiMongodb, name: "MongoDB" },
+      { icon: SiMysql, name: "MySQL" },
     ],
     buttonText: "Web Development",
   },
@@ -233,7 +241,7 @@ const Service2 = () => {
   return (
     <section className="relative py-16 md:py-32 overflow-hidden">
       {/* Background image */}
-     
+
       <PageWrapper>
         <div className="relative z-[2]">
           {/* Heading */}

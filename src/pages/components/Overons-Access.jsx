@@ -118,18 +118,15 @@ const OveronsAccess = () => {
           viewport={{ once: true }}
         >
           <div className="lg:w-[60%] px-0 lg:p-8 mb-8 lg:mb-0 text-start">
-            <h2 className="text-4xl font-bold mb-4">Our Fronx Solutions</h2>
+            <h2 className="text-4xl font-bold mb-4">About Fronx Solutions</h2>
             <p className="text-lg mb-6">
-              Empowering companies with smart digital solutions.
+              Strengthening businesses with smart digital solutions
             </p>
             <p className="text-gray-300 leading-relaxed mb-4">
-              Fronx Solutions is here to help you grow in technology. Since
-              then, we have expanded throughout Europe and now proudly operate
-              in Belgium...
+              Fronx Solutions began its journey over five years ago in Belgium with a clear mission: to help businesses grow through smart and reliable technology. Since then, we've expanded across Europe and now proudly operate from Belgium, where we harness our creativity, expertise, and passion for digital to empower ever-more ambitious brands.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              From websites to e-commerce platforms and mobile apps – everything
-              we create is designed to move your business forward.
+              We're more than just a technology company. We're your digital growth partner. From impactful websites to scalable e-commerce platforms and engaging mobile apps—everything we create is designed to move your business forward... faster, smarter, and more efficiently.
             </p>
           </div>
 
@@ -193,9 +190,7 @@ const OveronsAccess = () => {
               </svg>
 
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base mb-6">
-                Our mission is simple: to provide businesses with the tools they
-                need to stand out and grow sustainably. Focus on your vision —
-                we’ll handle the digital.
+             Our mission is simple: to provide businesses with the tools they need to stand out, stay competitive, and grow sustainably. Through tailored strategies, creative solutions, and personalized support, we help you stay focused on your vision while we manage your digital transformation.
               </p>
 
               <div className="flex justify-end">
