@@ -116,6 +116,10 @@ const translations = {
     footer6: "Submit",
     ready: "  Ready to bring your project to life?",
     contact: "Contact Us",
+    maintinence: "Maintinence",
+    drive: " Driving Business Success Through Innovative Technology | Fronx Solutions",
+    menu: "Menu",
+    
   },
 
   fr: {
@@ -240,6 +244,8 @@ const translations = {
     footer6: "Soumettre",
     ready: "Prêt à donner vie à votre projet ?",
     contact: "Contactez-nous",
+    maintinence: "Entretien",
+    drive: " Favoriser la réussite des entreprises grâce à des technologies innovantes | Fronx Solutions",
   },
 };
 
