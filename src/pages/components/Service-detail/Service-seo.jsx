@@ -57,56 +57,47 @@ const appservicedata = [
   {
     id: "keyword research",
     icon: FaSearch, // Magnifying glass for research
-    title: "Keyword Research",
+    title: "Smart keyword research",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "We identify the exact words your customers are typing into Google, so your site appears when they need it.",
     longDescription:
-      "Complete WooCommerce store setup including product configuration, payment integration, and theme customization for your e-commerce business.",
+      "Smart keyword research involves analyzing and identifying the exact search terms your potential customers use on platforms like Google. By targeting high-impact keywords with strong search intent, we help improve your site's visibility, attract the right audience, and boost search engine rankings effectively."
   },
   {
     id: "on-page seo",
     icon: FaFileAlt, // Represents content/page optimization
-    title: "On-Page SEO",
+    title: "On-Page & Technical SEO",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "We correct and optimize the structure, speed and content of your site so that it is suitable for both search engines and visitors.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "On-Page and Technical SEO focus on optimizing your website's structure, speed, and content to enhance both user experience and search engine visibility. This includes improving meta tags, headings, internal linking, mobile responsiveness, page load times, and fixing crawl or indexing issues to ensure your site ranks higher and performs better."
   },
   {
     id: "off-page seo",
     icon: FaShareAlt, // Represents external sharing/backlinking
-    title: "Off-Page SEO",
+    title: "SEO Content Creation",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "We write optimized blog posts and web content that builds trust, answers user questions, and improves your ranking over time.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "SEO content creation involves crafting high-quality blog posts, web pages, and articles that are optimized for search engines and valuable to readers. By targeting relevant keywords and addressing user intent, we help build trust, drive organic traffic, and steadily improve your website’s search rankings over time."
   },
   {
     id: "technical seo",
     icon: FaTools, // Technical settings/tools
-    title: "Technical SEO",
+    title: "Local SEO optimization",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "We increase your visibility in local searches with your Google Business listing, localized content, and citations to reach customers near you.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Local SEO optimization focuses on improving your visibility in local search results by enhancing your Google Business Profile, creating localized content, and building consistent local citations. This helps attract nearby customers, increase foot traffic, and strengthen your presence in your target geographic area."
   },
   {
     id: "content creation",
     icon: FaPenNib, // Writing/content icon
-    title: "Content Creation",
+    title: "Creating backlinks",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "We build your site's authority with quality, relevant, and reliable backlinks to improve your ranking and visibility in search results.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-  },
-  {
-    id: "link building",
-    icon: FaLink, // Chain link icon
-    title: "Link Building",
-    shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-    longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Creating backlinks involves acquiring high-quality, relevant links from trusted websites to boost your site’s authority and credibility. These backlinks signal to search engines that your content is valuable, helping improve your search rankings, increase organic traffic, and enhance overall online visibility."
   },
 ];
 
@@ -185,10 +176,9 @@ const SEO = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
-                <span className="mt-3 relative inline-block">
-                  Expert
+                SEO
+                <span className="mt-3 ml-3 relative inline-block">
+                  Service
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -219,7 +209,7 @@ const SEO = () => {
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Search Engine Optimization (SEO)
+                    SEO Service
                   </Link>
                 </div>
               </motion.div>
@@ -304,11 +294,10 @@ const SEO = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="seo-development-process" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
-                SEO Services to Grow Your Business
+                What you get
               </h2>
               <p className="text-center text-gray-600">
-                Turning your vision into reality with Fronx solutions premium
-                custom software solutions.
+                The technologies used in SEO and digital marketing are many and varied, each offering specific benefits and suitable applications.
               </p>
             </motion.div>
 

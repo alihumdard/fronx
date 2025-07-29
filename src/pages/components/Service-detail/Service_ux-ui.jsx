@@ -13,7 +13,10 @@ import {
   FaFigma,
   FaMobileAlt,
   FaPencilRuler,
-  FaLayerGroup, // For Deployment
+  FaLayerGroup,
+  FaMousePointer,
+  FaTabletAlt,
+  FaMagic, // For Deployment
 } from "react-icons/fa";
 import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
 import StatsSection from "../Statsdata";
@@ -48,39 +51,39 @@ const processSteps = [
 const uiux_service = [
   {
     id: "website ui design",
-    icon: FaFigma, // Best for "Website UI Design (Figma)"
-    title: "Website UI Design (Figma)",
+    icon: FaPencilRuler, // from react-icons/fa
+    title: "Custom UI Designs",
     shortDescription:
-      "Easy-to-use navigation that helps users find what they need quickly, easily, and effortlessly.",
+      "We don't copy others. We create designs from A to Z, tailored to your style, brand, and goals.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework's grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework's grid system and UI components.",
+      "Custom UI design focuses on creating unique, user-friendly interfaces tailored to your brand, goals, and audience. From layout to color scheme, every element is crafted from scratch to ensure a seamless and visually compelling user experience that sets you apart from the competition."
   },
   {
     id: "mobile app ui design",
-    icon: FaMobileAlt, // Represents mobile design better than React
-    title: "Mobile App UI Design",
+    icon: FaMousePointer, // from react-icons/fa
+    title: "Simple and user-friendly UX",
     shortDescription:
-      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "We plan every step of the user's journey, from the first visit to the final action... so that navigation on your site is fluid and intuitive.",
+    longDescription:
+      "User-friendly UX design ensures that every step of the user's journey is smooth, intuitive, and enjoyable. By focusing on usability, navigation, and interaction, we create experiences that guide users effortlessly from their first visit to the final action, increasing satisfaction and engagement."
   },
   {
     id: "wireframing & prototyping",
-    icon: FaPencilRuler, // Perfect for wireframing (design drafting)
-    title: "Wireframing & Prototyping",
+    icon: FaTabletAlt, // from react-icons/fa
+    title: "Suitable for all devices",
     shortDescription:
-      "Designing with the user's needs, preferences, and behaviors at the core of every decision.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Your users browse on smartphones, tablets, and computers. Our designs look beautiful and perform well on all screens.",
+    longDescription:
+      "Our designs are fully responsive, ensuring your website looks and functions perfectly on smartphones, tablets, laptops, and desktops. We prioritize a seamless user experience across all screen sizes, delivering consistency, speed, and visual appeal on every device."
   },
   {
     id: "design system creation",
-    icon: FaLayerGroup, // Represents structured design systems
-    title: "Design System Creation",
+    icon: FaMagic, // from react-icons/fa
+    title: "Interactive and intelligent features",
     shortDescription:
-      "Enhancing design and performance through real user data and detailed behavior analysis.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "We integrate buttons, animations, menus and more to make your site or application pleasant to use and easy to understand.",
+    longDescription:
+      "We develop interactive and intelligent features such as dynamic buttons, smooth animations, intuitive menus, and real-time feedback to enhance user engagement. These elements make your website or application not only visually appealing but also easy to navigate and enjoyable to use."
   },
 ];
 
@@ -178,10 +181,10 @@ const uxui = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
+                Expert UI/UX Design Services Belgium | Best <br />
+                <span className="mt-3">UX Designers</span>
                 <span className="mt-3 relative inline-block">
-                  Expert
+                  Brussels
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -217,7 +220,8 @@ const uxui = () => {
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    UX/UI Design
+
+                    Expert UI/UX Design Services Belgium | Best UX Designers Brussels
                   </Link>
                 </div>
               </motion.div>
@@ -299,11 +303,10 @@ const uxui = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="uiux-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Strategic & Impactful UI/UX Design Services
+                What you get
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-                Crafting seamless, user-focused experiences that drive
-                engagement, usability, and growth.
+                The technologies used in UI/UX design are numerous and varied, each providing specific advantages and meeting particular needs:
               </p>
             </motion.div>
 
@@ -394,7 +397,7 @@ const uxui = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                   >
-                    What Makes Our UI/UX Design Stand Out
+                    The benefits of UI/UX design
                   </motion.h1>
                   <motion.p
                     className="text-lg text-white/90 max-w-2xl mx-auto"
@@ -403,8 +406,7 @@ const uxui = () => {
                     transition={{ delay: 0.2 }}
                     viewport={{ once: true }}
                   >
-                    Explore the elements that make our designs intuitive,
-                    engaging, and results-driven.
+                    Strong UI/UX design is essential for creating intuitive, accessible, and engaging digital experiences. Here are the key benefits it brings to custom apps:
                   </motion.p>
                 </div>
 
@@ -412,27 +414,27 @@ const uxui = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
                   {[
                     {
-                      title: "Focused on User Experience",
+                      title: "Seamless User Experience & Visual Design",
                       description:
-                        "Our designs are shaped by a strong focus on user needs, actions, and goals at every step. The result is smooth, intuitive, and engaging digital experiences.",
+                        "Carefully designed interfaces offer easy navigation, clear visual hierarchy, and consistent interactions—ensuring users complete tasks easily, regardless of device or screen size.",
                       margin: "md:mr-36 mr-0",
                     },
                     {
-                      title: "Layout Planning",
+                      title: "Improved perceived performance",
                       description:
-                        "Layout planning is the process of creating a basic, low-fidelity visual guide that outlines the structure and layout of a digital interface.",
+                        "Smart UX choices like loading indicators, lazy loading, and progressive reveals increase perceived speed and responsiveness, maintaining user engagement even during heavy operations.",
                       margin: "md:ml-36 ml-0",
                     },
                     {
-                      title: "Interface Aesthetics",
+                      title: "Trust through usability and privacy",
                       description:
-                        "We design clean, engaging interfaces that reflect your brand and improve the user experience through thoughtful visual choices.",
+                        " Intuitive forms, secure journeys, and transparent data management build trust, encouraging users to interact confidently and return regularly.",
                       margin: "md:mr-36 mr-0",
                     },
                     {
-                      title: "User Experience Testing",
+                      title: "Scalable design systems",
                       description:
-                        "We test real user interactions to identify issues, improve functionality, and ensure the product is easy to use, efficient, and enjoyable.",
+                        "Reusable UI components and well-defined style guides facilitate long-term scalability and maintenance. Designers can quickly adapt to new requirements without sacrificing consistency or quality.",
                       margin: "md:ml-36 ml-0",
                     },
                   ].map((feature, index) => (
@@ -464,7 +466,7 @@ const uxui = () => {
 
           {/* Floating Circle Image with Animation */}
           <motion.div
-            className="absolute hidden md:block md:top-[290px] md:left-[43%] md:-translate-x-1/2 z-40 border-4 border-orange-400 rounded-full w-40 h-40 lg:w-60 lg:h-60"
+            className="absolute hidden md:block md:top-[350px] md:left-[43%] md:-translate-x-1/2 z-40 border-4 border-orange-400 rounded-full w-40 h-40 lg:w-60 lg:h-60"
             variants={circleVariant}
             initial="hidden"
             whileInView="visible"

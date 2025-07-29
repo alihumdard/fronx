@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
+import translations from "../translations";
+import { LanguageProvider, useLanguage } from "../LanguageContext";
 
 function Footer() {
   const companyLogos = [
@@ -17,8 +19,9 @@ function Footer() {
     { src: "/images/company-6.png", alt: "Soriana" },
     { src: "/images/company-7.png", alt: "Skullcandy" },
   ];
-
+  const { language } = useLanguage(); // Get the current language from context
   return (
+    
     <>
       {/* Company Logos + CTA Section */}
       <header className="relative z-10">
@@ -51,7 +54,7 @@ function Footer() {
           {/* CTA Banner */}
           <div className="bg-white justify-between absolute -bottom-16 left-48 sm:left-[50%] transform -translate-x-1/2 shadow-2xl rounded-xl p-6 md:p-10 flex flex-col md:flex-row items-center max-w-5xl w-full mx-auto">
             <p className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-0 md:mr-8 text-center md:text-left">
-              Ready to bring your project to life?
+             {translations[language].ready}
             </p>
             <Link
               to={URLS.CONTACT}
@@ -60,7 +63,7 @@ function Footer() {
                 background: "linear-gradient(to right, #6931CF, #1A61EA)",
               }}
             >
-              Contact Us
+              {translations[language].contact}
             </Link>
           </div>
         </PageWrapper>

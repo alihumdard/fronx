@@ -38,6 +38,8 @@ import {
 import { motion } from "framer-motion";
 import URLS from "../../config/urls.config";
 import { Link } from "react-router-dom";
+import translations from "../../translations";
+import { LanguageProvider, useLanguage } from "../../LanguageContext";
 
 const techColorMap = {
   Python: "#306998",
@@ -71,14 +73,13 @@ const techColorMap = {
   "AI/ML": "#00ffcc",
 };
 
-const servicesData = [
+const servicesData = (language) => [
   {
     id: "website-development",
     icon: FaCode,
-    title: "Website Development",
+    title: translations[language].service1,
     url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
-    description:
-      "Boost your business with custom web and mobile solutions, delivering scalable, user-friendly platforms to enhance engagement and drive growth.From sleek UI/UX designs to robust backend systems, we tailor every solution to your unique goals.",
+    description: translations[language].service1Detail,
     techStackIcons: [
       { icon: FaPython, name: "Python" },
       { icon: SiTypescript, name: "TypeScript" },
@@ -94,12 +95,12 @@ const servicesData = [
       { icon: SiMongodb, name: "MongoDB" },
       { icon: SiMysql, name: "MySQL" },
     ],
-    buttonText: "Web Development",
+    buttonText: translations[language].webDevelopment,
   },
   {
     id: "mobile-app-development",
     icon: FaMobileAlt,
-    title: "Mobile App Development",
+    title: translations[language].service2, // You might want to use translations here too: translations[language].service2
     url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
     description:
       "Crafting intuitive and high-performance mobile applications for iOS and Android.",
@@ -111,12 +112,12 @@ const servicesData = [
       { icon: FaJava, name: "Java" },
       { icon: FaJs, name: "JavaScript" },
     ],
-    buttonText: "Mobile Development",
+    buttonText: translations[language].MobileDevelopment,
   },
   {
     id: "ui-ux-design",
     icon: FaPalette,
-    title: "UI/UX Design",
+    title: translations[language].service3, // translations[language].service3
     url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
     description:
       "Designing captivating and user-centric interfaces focusing on aesthetics and usability.",
@@ -125,12 +126,12 @@ const servicesData = [
       { icon: FaPalette, name: "Adobe XD" },
       { icon: FaTools, name: "Sketch" },
     ],
-    buttonText: "UI/UX Design",
+    buttonText: translations[language].service3,
   },
   {
     id: "e-commerce-solutions",
     icon: FaShoppingCart,
-    title: "E-Commerce Solutions",
+    title: translations[language].service4, // translations[language].service4
     url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
     description:
       "Building secure e-commerce platforms that drive sales and enhance user experience.",
@@ -141,12 +142,12 @@ const servicesData = [
       { icon: FaReact, name: "React" },
       { icon: FaDatabase, name: "Databases" },
     ],
-    buttonText: "E-Commerce",
+    buttonText: translations[language].service4,
   },
   {
     id: "digital-marketing",
     icon: FaBullhorn,
-    title: "Digital Marketing",
+    title: translations[language].service5, // translations[language].service5
     url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
     description:
       "Boost your online presence, drive traffic, and convert leads into loyal customers.",
@@ -155,12 +156,12 @@ const servicesData = [
       { icon: FaBullhorn, name: "Ads" },
       { icon: FaTools, name: "Analytics" },
     ],
-    buttonText: "Digital Marketing",
+    buttonText: translations[language].service5,
   },
   {
     id: "custom-software-development",
     icon: FaCogs,
-    title: "Custom Software Development",
+    title: translations[language].service6, // translations[language].service6
     url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
     description:
       "Tailored solutions to meet your unique business needs and enhance efficiency.",
@@ -172,12 +173,12 @@ const servicesData = [
       { icon: FaDatabase, name: "Databases" },
       { icon: FaCloud, name: "Cloud" },
     ],
-    buttonText: "Custom Software",
+    buttonText: translations[language].service6,
   },
   {
     id: "ai-chatbot-solutions",
     icon: FaRobot,
-    title: "AI & Chatbot Solutions",
+    title: translations[language].service7, // translations[language].service7
     url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
     description:
       "Automate customer support and streamline interactions with AI and chatbots.",
@@ -186,12 +187,12 @@ const servicesData = [
       { icon: FaJs, name: "Node.js" },
       { icon: FaServer, name: "APIs" },
     ],
-    buttonText: "AI & Chatbot",
+    buttonText: translations[language].service7,
   },
   {
     id: "maintenance-support",
     icon: FaTools,
-    title: "Maintenance & Support",
+    title: translations[language].service8, // translations[language].service8
     url: URLS.SERVICE_DETAIL.MAINTENENCE,
     description:
       "Keep applications running smoothly with updates and dedicated technical support.",
@@ -200,12 +201,12 @@ const servicesData = [
       { icon: FaCloud, name: "Cloud Mgmt" },
       { icon: FaTools, name: "Updates" },
     ],
-    buttonText: "Maintenance",
+    buttonText: translations[language].Maintenence,
   },
   {
     id: "search-engine-optimization",
     icon: FaSearch,
-    title: "Search/Engine Optimization",
+    title: translations[language].service9, // translations[language].service9
     url: URLS.SERVICE_DETAIL.SEO,
     description:
       "Improve visibility on search engines to attract more traffic and leads.",
@@ -214,7 +215,7 @@ const servicesData = [
       { icon: FaCode, name: "On-Page SEO" },
       { icon: FaBullhorn, name: "Off-Page SEO" },
     ],
-    buttonText: "SEO",
+    buttonText: translations[language].SEO,
   },
 ];
 
@@ -233,8 +234,16 @@ export const fadeIn = {
 };
 
 const Services = () => {
-  const [activeServiceId, setActiveServiceId] = useState(servicesData[0].id);
-  const activeService = servicesData.find((s) => s.id === activeServiceId);
+  const { language } = useLanguage(); // Get the current language
+
+  // Call servicesData with the current language to get the actual array
+  const currentServicesData = servicesData(language);
+
+  // Initialize activeServiceId using the first item from the *actual* services array
+  const [activeServiceId, setActiveServiceId] = useState(currentServicesData[0]?.id);
+
+  // Find the active service from the *actual* services array
+  const activeService = currentServicesData.find((s) => s.id === activeServiceId);
 
   return (
     <section className="relative py-16 md:py-24 overflow-hidden bg-black">
@@ -258,18 +267,16 @@ const Services = () => {
             custom={0}
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Top Custom Software Development Services
+              {translations[language].softwareDevelopment}
             </h2>
             <p className="text-lg text-gray-300 mx-auto">
-              Turning your vision into reality with Fronxsolutions premium
-              custom software solutions.
+              {translations[language].softwareDevelopment2}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Grid: Service Buttons */}
-            <motion.a
-              href="#scroll"
+            <motion.div // Changed to div as it's not a direct link itself
               className="grid grid-cols-2 sm:grid-cols-3 gap-6"
               initial="hidden"
               whileInView="visible"
@@ -277,7 +284,7 @@ const Services = () => {
               variants={fadeIn}
               custom={1}
             >
-              {servicesData.map((service, index) => {
+              {currentServicesData.map((service, index) => { // Use currentServicesData here
                 const IconComponent = service.icon;
                 const isActive = service.id === activeServiceId;
                 return (
@@ -315,7 +322,7 @@ const Services = () => {
                   </motion.div>
                 );
               })}
-            </motion.a>
+            </motion.div>
 
             {/* Right Panel: Service Detail */}
             <motion.div

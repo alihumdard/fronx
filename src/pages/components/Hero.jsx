@@ -175,7 +175,7 @@ const Hero = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              What will you get?
+            {translations[language].get}
             </motion.h2>
             <motion.p
               className="text-base md:text-md text-gray-700 mb-8 md:mb-10 max-w-full lg:max-w-2xl mx-auto lg:mx-0" // Responsive font sizes, centered on mobile, left on desktop
@@ -184,16 +184,16 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              At Fronx Solutions, we make things simple. For over four years, we've been helping businesses in Belgium and across Europe stand out with customized, fast, beautiful, and effective digital solutions. Whether you're launching a new project or upgrading your current setup, our team is here to bring your vision to life, step by step. Our clients come from a variety of industries, but most run e-commerce businesses, service-based businesses, or are looking to improve their online presence. Whether it's creating an easy-to-use website, developing a custom app, or increasing visibility through smart SEO, our clients trust us to deliver effective digital solutions that truly help them grow. Brands we've worked with include Lemikap, Glamour Cosmetics, and TDSBelgium, all of whom have entrusted us with the realization of their digital vision.
+              {translations[language].getDetail}
             </motion.p>
             {/* Responsive Stats */}
             <div className="grid grid-cols-2 md:grid-cols-3 md:w-[55%] gap-6 justify-items-center sm:justify-items-center lg:justify-items-start max-w-full sm:max-w-md md:max-w-lg lg:max-w-full mx-auto lg:mx-0">
               {" "}
               {/* Centered grid on mobile, left-aligned on desktop */}
               {[
-                { value: "420+", label: "Delivered projects" },
-                { value: "350+", label: "Companies served" },
-                { value: "4+", label: "Years of experience" },
+                { value: "420+", label: translations[language].service1 },
+                { value: "350+", label: translations[language].detail2 },
+                { value: "4+", label:  translations[language].detail3 },
               ].map((stat, index) => (
                 <motion.div
                   key={index}

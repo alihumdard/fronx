@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import PageWrapper from "../../main/Pagewraper"; // Adjust path if needed
 
 const statsData = [
-  { value: "2000+", description: "Delivered Projects" },
-  { value: "500+", description: "Companies Served" },
+  { value: "420+", description: "Delivered Projects" },
+  { value: "320+", description: "Companies Served" },
   { value: "5+", description: "Award Won" },
-  { value: "1200+", description: "Employees Worldwide" },
+  { value: "4+", description: "Years of experience" },
 ];
 
 // Animation variants

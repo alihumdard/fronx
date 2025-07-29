@@ -6,7 +6,7 @@ import PageWrapper from "../../../main/Pagewraper";
 import ContactForm from "../Contact";
 import Footer from "../../../main/Footer";
 import URLS from "../../../config/urls.config";
-import { FaAsterisk } from "react-icons/fa";
+import { FaAsterisk, FaComments, FaDollarSign } from "react-icons/fa";
 import {
   FaNetworkWired,
   FaShoppingBasket,
@@ -52,39 +52,39 @@ const processSteps = [
 const marketing = [
   {
     id: "google ads setup",
-    icon: FaGoogle,
-    title: "Google Ads Setup",
+    icon: FaDollarSign, // from react-icons/fa
+title: "Lower advertising costs",
     shortDescription:
-      "Easy-to-use navigation that helps users find what they need quickly, easily, and effortlessly.",
+      "Less expensive than traditional marketing, it can reach a wide audience at lower cost.",
     longDescription:
-      "Complete Google Ads setup, campaign creation, keyword targeting, and performance optimization to drive traffic and conversions.",
+    "Digital marketing strategies like Google Ads allow you to reach a highly targeted audience at a fraction of the cost of traditional advertising. With precise keyword targeting, campaign optimization, and real-time analytics, you can maximize ROI while keeping your advertising budget low."
   },
   {
     id: "social media marketing",
-    icon: FaFacebookF,
-    title: "Social Media Marketing",
+   icon: FaBullseye, // from react-icons/fa
+title: "Precise targeting",
     shortDescription:
-      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+      "Tailor your campaigns to specific audiences using powerful analysis tools.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    "Precise targeting enables you to focus your marketing efforts on the right audience using advanced tools like demographic filters, interests, behaviors, and location data. This ensures your campaigns reach potential customers who are most likely to engage, boosting effectiveness and conversion rates."
   },
   {
     id: "content marketing",
-    icon: FaPenNib,
-    title: "Content Marketing",
+   icon: FaComments, // from react-icons/fa
+title: "Direct interaction with customers",
     shortDescription:
-      "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
+      "Increase engagement and improve loyalty.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    "Direct interaction with customers through channels like social media, email, live chat, and feedback forms helps build stronger relationships, improve customer satisfaction, and boost brand loyalty. Engaging in real-time communication fosters trust and encourages repeat business."
   },
   {
     id: "email marketing",
-    icon: FaEnvelopeOpenText,
-    title: "Email Marketing",
+    icon: FaLightbulb, // from react-icons/fa
+title: "Adaptability and innovation",
     shortDescription:
-      "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
+      "Adjust your campaigns in real time to maximize their effectiveness.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    "Adaptability and innovation in digital marketing allow you to adjust campaigns in real time based on performance data and market trends. This flexibility helps you stay ahead of the competition, refine your strategies, and continuously improve results with creative, data-driven approaches."
   },
 ];
 
@@ -237,9 +237,11 @@ const digitalmarkiting = () => {
                 <h2 className="text-2xl sm:text-4xl mt-8 font-bold text-gray-800 w-full sm:w-[90%] leading-snug">
                   Crafting Unique Digital Experience that elevate Your Brand
                 </h2>
-                <button className="bg-gradient-to-r from-blue-500 to-blue-700 text-white mt-8 font-semibold px-6 py-3 rounded-full shadow-md hover:opacity-90 transition-all text-sm sm:text-base">
-                  Contact Us
-                </button>
+                <div className="mt-12">
+                  <Link to={URLS.CONTACT} className="bg-gradient-to-r from-blue-500 to-blue-700 text-white mt-8 font-semibold px-6 py-3 rounded-full shadow-md hover:opacity-90 transition-all text-sm sm:text-base">
+                    Contact Us
+                  </Link>
+                </div>
               </motion.div>
 
               {/* Process Steps */}
@@ -299,11 +301,10 @@ const digitalmarkiting = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="markiting-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Our E-Commerce Development Services
+              The benefits of digital marketing
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-                Turning your vision into reality with Fronxsolutions premium
-                custom software solutions.
+               Adopting an effective digital strategy has several benefits:
               </p>
             </motion.div>
 

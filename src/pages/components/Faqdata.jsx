@@ -9,69 +9,73 @@ import {
   FaRocket,
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import translations from "../../translations";
+import { useLanguage } from "../../LanguageContext"; // Import useLanguage directly
 
-const faqData = [
+// faqData is a function that returns the array of FAQ items, depending on language
+const faqData = (language) => [
   {
-    question: "Why choose Fronx Solutions?",
+    question: translations[language].question1,
     answer:
-      "Because we simplify everything, quickly and tailor-made. We listen to your goals, work rigorously, and deliver results that grow your business—without stress or confusion.",
+      translations[language].answer1, // Added fallback
   },
   {
-    question: "I don't know what type of website or app I need. Can you help me?",
+    question: translations[language].question2,
     answer:
-      "Yes, of course! You don't need to have everything defined. Just tell us what you do and what you want to achieve, and we'll ask the right questions, share ideas, and help you choose what's best for your business.",
+      translations[language].answer2,
   },
   {
-    question: "Can you fix my old site or app?",
+    question: translations[language].question3,
     answer:
-      "Yes! We can improve or rebuild your current website or application to make it faster, better, and more modern.",
+      translations[language].answer3,
   },
   {
-    question: "Can you also create my logo or brand identity?",
+    question: translations[language].question4,
     answer:
-      "Yes, we can design a complete identity for your brand — logo, colors, and more.",
+      translations[language].answer4,
   },
   {
-    question: "Can I see some examples of your work?",
+    question: translations[language].question5,
     answer:
-      "Yes! We will be happy to show you websites and apps we have created for other satisfied clients.",
+      translations[language].answer5,
   },
   {
-    question: "Do you offer solutions for schools, institutions or associations?",
+    question: translations[language].question6,
     answer:
-      "Yes! We create custom websites and tools for schools, public organizations, and associations. We ensure they fit your goals and budget.",
+      translations[language].answer6,
   },
   {
-    question: "Can I use the Digitalization Bonus for your services?",
+    question: translations[language].question7,
     answer:
-      "Yes, if you're eligible, you can use the Digitalization Bonus to help finance your project. We'll guide you through the process.",
+      translations[language].answer7,
   },
 ];
 
-const stepsData = [
+// stepsData is also a function now, as it depends on language for its title
+const stepsData = (language) => [
   {
     icon: FaEnvelope,
-    title: "Contact Us",
+    title: translations[language].start3,
     description:
-      "Let's talk about your needs, ideas and objectives. This first meeting will help us understand your vision and propose a suitable solution.",
+      translations[language].start4,
   },
   {
     icon: FaFileAlt,
-    title: "Analysis & Proposals",
+    title: translations[language].start5,
     description:
-      "We analyze your project and propose a customized solution, accompanied by a clear, detailed quotation.",
+      translations[language].start6,
   },
   {
     icon: FaLaptopCode,
-    title: "Design and development",
+    title: translations[language].start7,
     description:
-      "After validation, we begin the design and development of your project, taking care to respect your expectations, your objectives, and the specifications defined together.",
+      translations[language].start8,
   },
   {
     icon: FaRocket,
-    title: "Launch and follow-up",
+    title: translations[language].start9 , // Added fallback
     description:
-      "Once the project has been finalized, we support you during its launch and provide regular follow-up and maintenance to ensure its lasting success.",
+      translations[language].start10,
   },
 ];
 
@@ -95,6 +99,14 @@ const stepVariants = {
 };
 
 const FAQ = () => {
+  const { language } = useLanguage(); // Get the current language from context
+
+  // IMPORTANT: Call faqData with the current language to get the actual array
+  const localizedFaqData = faqData(language);
+  // IMPORTANT: Call stepsData with the current language to get the actual array
+  const localizedStepsData = stepsData(language);
+
+
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggleAccordion = (index) => {
@@ -114,12 +126,13 @@ const FAQ = () => {
         <PageWrapper>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-800">
-              Frequently Asked Questions
+              {translations[language].question}
             </h2>
           </div>
 
           <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 p-4 md:p-8">
-            {faqData.map((item, index) => (
+            {/* Use the localizedFaqData for mapping */}
+            {localizedFaqData.map((item, index) => (
               <div key={index} className="py-4 border rounded-lg px-4 mb-4">
                 <button
                   className="flex justify-between items-center w-full text-left focus:outline-none"
@@ -166,20 +179,19 @@ const FAQ = () => {
         <PageWrapper>
           <div className="text-center mb-12">
             <p className="text-gray-600 font-semibold uppercase tracking-widest text-md mb-2">
-              STEPS TO GET STARTED
+              {translations[language].start}
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-              To Start a Project with Us
+              {translations[language].start1}
             </h2>
             <p className="text-lg sm:text-xl text-gray-500 max-w-3xl mx-auto">
-              Discover how FronxSolutions transforms ideas into cutting-edge
-              digital solutions powering start-ups to enterprises with scalable
-              software excellence.
+              {translations[language].start2}
             </p>
           </div>
 
           <div className="relative flex flex-col lg:flex-row justify-center items-stretch gap-6 mt-16">
-            {stepsData.map((step, index) => {
+            {/* Use the localizedStepsData for mapping */}
+            {localizedStepsData.map((step, index) => {
               const IconComponent = step.icon;
               return (
                 <motion.div

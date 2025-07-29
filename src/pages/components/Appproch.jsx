@@ -8,46 +8,50 @@ import {
   FaCloudUploadAlt,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import translations from "../../translations";
+import { useLanguage } from "../../LanguageContext"; // Import useLanguage directly
 
-const approachSteps = [
+// This is now a function that returns the array of steps,
+// allowing it to use the 'language' variable for translations.
+const approachSteps = (language) => [
   {
     number: "01",
     icon: FaLightbulb,
-    title: "Needs analysis",
+    title: translations[language].approach1,
     description:
-      "We identify your objectives, your audience and the constraints to properly frame the project.",
+       translations[language].approach11
   },
   {
     number: "02",
     icon: FaMapMarkedAlt,
-    title: "Research & benchmark",
+    title: translations[language].approach2, // Added fallback
     description:
-      "Study of trends, competitors and user expectations to inspire design.",
+      translations[language].approach22,
   },
   {
     number: "03",
     icon: FaLaptopCode,
-    title: "UI/UX Design",
+    title: translations[language].approach3, // Added fallback
     description:
-      "Creation of models and prototypes focused on an optimal user experience.",
+      translations[language].approach33,
   },
   {
     number: "04",
     icon: FaCode,
-    title: "Development & deployment",
+    title: translations[language].approach4, // Added fallback
     description:
-      "Transformation of designs into functional and efficient solutions.",
+      translations[language].approach44,
   },
   {
     number: "05",
     icon: FaCloudUploadAlt,
-    title: "Testing & optimization",
+    title: translations[language].approach5, // Added fallback
     description:
-      "Validation through testing, feedback collection and continuous product improvement.",
+      translations[language].approach55,
   },
 ];
 
-// Animation variants
+// Animation variants (can remain outside, as they don't depend on 'language')
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -65,6 +69,11 @@ const cardVariants = {
 };
 
 const Approach = () => {
+  const { language } = useLanguage(); // Get the current language here
+
+  // IMPORTANT: Call approachSteps with the current language to get the actual array
+  const currentApproachSteps = approachSteps(language);
+
   return (
     <motion.section
       initial="hidden"
@@ -76,11 +85,11 @@ const Approach = () => {
     >
       <PageWrapper>
         <motion.div variants={cardVariants} className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl  font-bold mb-4">
-           Our strategic approach to ensuring the success of your projects
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            {translations[language].approach}
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-           Achieve your business goals with the Fronx methodology, recognized for its rigor, strategic planning and sustainable results.
+            {translations[language].achieve}
           </p>
         </motion.div>
 
@@ -88,7 +97,8 @@ const Approach = () => {
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {approachSteps.map((step, index) => {
+          {/* Use the result of the function call here: currentApproachSteps */}
+          {currentApproachSteps.map((step, index) => {
             const IconComponent = step.icon;
             return (
               <motion.div

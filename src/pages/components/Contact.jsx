@@ -1,8 +1,12 @@
 import React from 'react';
 import PageWrapper from '../../main/Pagewraper';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import translations from '../../translations';
+import { LanguageProvider, useLanguage } from '../../LanguageContext';
 
 const ContactForm = () => {
+  const { language } = useLanguage(); // Get the current language from context
+
   return (
     <section
       className="relative py-16 md:py-24 text-white"
@@ -20,10 +24,10 @@ const ContactForm = () => {
           {/* Contact Info Column */}
           <div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
-              Let's start a project together!
+              {translations[language].footer1}
             </h2>
             <p className="text-lg text-gray-300 mb-10 max-w-md">
-              To dominate the e-commerce market, you need ambition and growth opportunities. We help our clients achieve real business results.
+              {translations[language].footer2}
             </p>
 
             <div className="space-y-6">
@@ -33,7 +37,8 @@ const ContactForm = () => {
                   <FaEnvelope className="w-6 h-6" />
                 </div>
                 <div className='border-l-2 pl-5 border-gray-400'>
-                  <p className="text-sm text-orange-300">Email</p>
+                  <p className="text-sm text-orange-300">{translations[language].footer3}
+                  </p>
                   <p className="text-lg">info@fronxsolutions.be</p>
                 </div>
               </div>
@@ -44,7 +49,7 @@ const ContactForm = () => {
                   <FaPhoneAlt className="w-6 h-6" />
                 </div>
                 <div className='border-l-2 border-gray-400 pl-5'>
-                  <p className="text-sm text-orange-300">Phone</p>
+                  <p className="text-sm text-orange-300">{translations[language].footer4}</p>
                   <p className="font-semibold text-lg">
                     +32477277312</p>
                 </div>
@@ -56,7 +61,7 @@ const ContactForm = () => {
                   <FaMapMarkerAlt className="w-6 h-6" />
                 </div>
                 <div className='border-l-2 border-gray-400 pl-5'>
-                  <p className="text-sm text-orange-300">Address</p>
+                  <p className="text-sm text-orange-300">{translations[language].footer5}</p>
                   <p className="font-semibold text-lg">Rue d'Alost 7/11 1000, Brussels</p>
                 </div>
               </div>
@@ -102,7 +107,7 @@ const ContactForm = () => {
                   type="submit"
                   className="w-full bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-8 py-3 rounded-md font-semibold text-lg shadow-md hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#6931CF]"
                 >
-                  Submit
+                  {translations[language].footer5}
                 </button>
               </div>
             </form>

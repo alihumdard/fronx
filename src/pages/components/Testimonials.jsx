@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import PageWrapper from "../../main/Pagewraper";
 import { FaStar, FaQuoteRight } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion"; // <-- Import AnimatePresence
+import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-// Testimonial Data Array
-const ALL_TESTIMONIALS = [
+import translations from "../../translations";
+import { useLanguage } from "../../LanguageContext"; // Import useLanguage directly
+
+// Testimonial Data Array - This is a function that returns the array
+const ALL_TESTIMONIALS = (language) => [
   {
     id: 1,
-    quote:
-      "Working with this team was a pleasure. They turned our vague ideas into a stunning visual identity, exceeding expectations. Their focus on detail and openness to feedback made the entire process smooth and satisfying. Their professionalism and creative approach truly stood out.",
+    quote: translations[language].quote1 || "Default quote for quote1", // Added fallback
     rating: 5,
     clientName: "Chris Noth",
     clientTitle: "Owner Taxfirm",
@@ -18,29 +20,29 @@ const ALL_TESTIMONIALS = [
   {
     id: 2,
     quote:
-      "An outstanding experience from start to finish. The development team delivered a high-quality product well ahead of schedule. Their communication was excellent, keeping us informed every step of the way. Highly recommend their services for anyone looking for reliable and efficient software development.",
+      translations[language].quote2 || "An outstanding experience from start to finish. The development team delivered a high-quality product well ahead of schedule. Their communication was excellent, keeping us informed every step of the way. Highly recommend their services for anyone looking for reliable and efficient software development.",
     rating: 4,
     clientName: "Alice Smith",
     clientTitle: "CEO Tech Solutions",
-    clientAvatar: "/images/Ellipse 24.png", // <--- IMPORTANT: Verify this path and file existence
+    clientAvatar: "/images/Ellipse 24.png",
   },
   {
     id: 3,
     quote:
-      "We are thrilled with the results! The design team captured our vision perfectly and created an intuitive user interface that our customers love. They were responsive to feedback and iterated quickly. A truly talented group of professionals.",
+      translations[language].quote3 || "We are thrilled with the results! The design team captured our vision perfectly and created an intuitive user interface that our customers love. They were responsive to feedback and iterated quickly. A truly talented group of professionals.",
     rating: 5,
     clientName: "Bob Johnson",
     clientTitle: "Product Manager Innovate Co.",
-    clientAvatar: "/images/contact-2.png", // <--- IMPORTANT: Verify this path and file existence
+    clientAvatar: "/images/contact-2.png",
   },
   {
     id: 4,
     quote:
-      "Their expertise in digital marketing helped us significantly increase our online presence and lead generation. The strategies implemented were effective and measurable. We saw a considerable ROI, and their team was always proactive and insightful.",
+      translations[language].quote4 || "Their expertise in digital marketing helped us significantly increase our online presence and lead generation. The strategies implemented were effective and measurable. We saw a considerable ROI, and their team was always proactive and insightful.",
     rating: 4,
     clientName: "Carol White",
     clientTitle: "Marketing Director Global Corp",
-    clientAvatar: "/images/Ellipse 26.png", // <--- IMPORTANT: Verify this path and file existence
+    clientAvatar: "/images/Ellipse 26.png",
   },
 ];
 
@@ -66,8 +68,17 @@ const itemVariants = {
 };
 
 const Testimonials = () => {
+  const { language } = useLanguage(); // Get the current language from context
+
+  // IMPORTANT: Call ALL_TESTIMONIALS with the current language to get the actual array
+  const allTestimonialsLocalized = ALL_TESTIMONIALS(language);
+
+  // Initialize state with a valid index for the localized array
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
-  const currentTestimonial = ALL_TESTIMONIALS[currentTestimonialIndex];
+
+  // Get the current testimonial from the localized array
+  // Add a check in case allTestimonialsLocalized is empty (though unlikely in this setup)
+  const currentTestimonial = allTestimonialsLocalized[currentTestimonialIndex] || {};
 
   console.log("Current Testimonial Index:", currentTestimonialIndex);
   console.log("Current Testimonial Data:", currentTestimonial);
@@ -84,10 +95,10 @@ const Testimonials = () => {
         {/* Header */}
         <motion.div variants={itemVariants} className="text-center mb-12">
           <p className="text-gray-600 font-semibold uppercase tracking-widest text-sm mb-2">
-           Testimony
+            {translations[language].Testimonials}
           </p>
           <h2 className="text-3xl sm:text-5xl font-bold text-gray-800 max-w-2xl mx-auto">
-           What our customers say
+            {translations[language].Testimonials1}
           </h2>
         </motion.div>
 
@@ -108,62 +119,61 @@ const Testimonials = () => {
           </motion.div>
 
           {/* Middle: Testimonial Card (Dynamically updates) */}
-          {/* AnimatePresence is crucial here to manage components entering/exiting with key changes */}
           <AnimatePresence mode="wait">
-            {" "}
-            {/* mode="wait" ensures old component exits before new enters */}
-            <motion.div
-              key={currentTestimonial.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              whileHover={{ scale: 1.02, y: -4 }}
-              className="w-full lg:w-1/2 flex-shrink-0 relative"
-            >
-              <FaQuoteRight className="absolute top-5 right-5 text-orange-400 text-3xl opacity-70" />
-              <div className="bg-gray-100 p-6 sm:p-8 rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md">
-                {/* Star Rating */}
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: currentTestimonial.rating }).map((_, i) => (
-                    <FaStar key={i} className="text-orange-400 w-4 h-4" />
-                  ))}
-                </div>
-
-                {/* Quote */}
-                <p className="text-gray-700 mb-6 italic text-base sm:text-lg leading-relaxed">
-                  "{currentTestimonial.quote}"
-                </p>
-
-                {/* Client Info */}
-                <div className="flex flex-col sm:flex-row justify-between items-center pt-8 gap-4">
-                  <div className="flex items-center gap-4">
-                    <img
-                      src={currentTestimonial.clientAvatar}
-                      alt={currentTestimonial.clientName}
-                      className="w-14 h-14 rounded-full object-cover border-2 border-orange-400"
-                    />
-                    <div>
-                      <p className="font-bold text-gray-800 text-lg">
-                        {currentTestimonial.clientName}
-                      </p>
-                      <p className="text-gray-500 text-sm">
-                        {currentTestimonial.clientTitle}
-                      </p>
-                    </div>
+            {/* Ensure currentTestimonial has an ID before rendering */}
+            {currentTestimonial.id && (
+              <motion.div
+                key={currentTestimonial.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                whileHover={{ scale: 1.02, y: -4 }}
+                className="w-full lg:w-1/2 flex-shrink-0 relative"
+              >
+                <FaQuoteRight className="absolute top-5 right-5 text-orange-400 text-3xl opacity-70" />
+                <div className="bg-gray-100 p-6 sm:p-8 rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md">
+                  {/* Star Rating - use optional chaining for safety */}
+                  <div className="flex gap-1 mb-4">
+                    {Array.from({ length: currentTestimonial.rating || 0 }).map((_, i) => (
+                      <FaStar key={i} className="text-orange-400 w-4 h-4" />
+                    ))}
                   </div>
 
-                  {STATIC_COMPANY_LOGO && (
-                    <img
-                      src={STATIC_COMPANY_LOGO}
-                      alt="Company Logo"
-                      className="h-10 object-contain"
-                    />
-                  )}
-                </div>
-              </div>
-            </motion.div>
+                  {/* Quote - use optional chaining for safety */}
+                  <p className="text-gray-700 mb-6 italic text-base sm:text-lg leading-relaxed">
+                    "{currentTestimonial.quote}"
+                  </p>
 
+                  {/* Client Info - use optional chaining for safety */}
+                  <div className="flex flex-col sm:flex-row justify-between items-center pt-8 gap-4">
+                    <div className="flex items-center gap-4">
+                      <img
+                        src={currentTestimonial.clientAvatar}
+                        alt={currentTestimonial.clientName}
+                        className="w-14 h-14 rounded-full object-cover border-2 border-orange-400"
+                      />
+                      <div>
+                        <p className="font-bold text-gray-800 text-lg">
+                          {currentTestimonial.clientName}
+                        </p>
+                        <p className="text-gray-500 text-sm">
+                          {currentTestimonial.clientTitle}
+                        </p>
+                      </div>
+                    </div>
+
+                    {STATIC_COMPANY_LOGO && (
+                      <img
+                        src={STATIC_COMPANY_LOGO}
+                        alt="Company Logo"
+                        className="h-10 object-contain"
+                      />
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </AnimatePresence>
 
           {/* Right: Client Avatars (Clickable to change main testimonial) */}
@@ -172,10 +182,12 @@ const Testimonials = () => {
               spaceBetween={12}
               slidesPerView={4}
               loop={true}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              // Consider removing autoplay if it interferes with manual selection or causes issues with state updates
+              // autoplay={{ delay: 3000, disableOnInteraction: false }}
               className="w-full"
             >
-              {ALL_TESTIMONIALS.map((testimonial, index) => (
+              {/* Use the localized testimonials array for mapping */}
+              {allTestimonialsLocalized.map((testimonial, index) => (
                 <SwiperSlide key={testimonial.id}>
                   <motion.img
                     whileHover={{ scale: 1.1 }}
@@ -184,14 +196,14 @@ const Testimonials = () => {
                     alt={`Client Avatar ${testimonial.clientName}`}
                     onClick={() => setCurrentTestimonialIndex(index)}
                     className={`
-                  w-12 h-12 rounded-full object-cover shadow-md cursor-pointer
-                  ${currentTestimonialIndex === index
+                      w-12 h-12 rounded-full object-cover shadow-md cursor-pointer
+                      ${currentTestimonialIndex === index
                         ? "border-2 border-orange-500 ring-2 ring-orange-300"
                         : "border-2 border-gray-200"
                       }
-                  transition-all duration-300 ease-in-out
-                  mx-auto
-                `}
+                    transition-all duration-300 ease-in-out
+                    mx-auto
+                    `}
                   />
                 </SwiperSlide>
               ))}
@@ -203,7 +215,8 @@ const Testimonials = () => {
             variants={itemVariants}
             className="hidden lg:flex w-full lg:w-1/12 flex-col justify-center gap-10 flex-wrap lg:items-center pt-4"
           >
-            {ALL_TESTIMONIALS.map((testimonial, index) => (
+            {/* Use the localized testimonials array for mapping */}
+            {allTestimonialsLocalized.map((testimonial, index) => (
               <motion.img
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.3 }}
@@ -212,13 +225,13 @@ const Testimonials = () => {
                 alt={`Client Avatar ${testimonial.clientName}`}
                 onClick={() => setCurrentTestimonialIndex(index)}
                 className={`
-              w-12 h-12 rounded-full object-cover shadow-md cursor-pointer
-              ${currentTestimonialIndex === index
+                  w-12 h-12 rounded-full object-cover shadow-md cursor-pointer
+                  ${currentTestimonialIndex === index
                     ? "border-2 border-orange-500 ring-2 ring-orange-300"
                     : "border-2 border-gray-200"
                   }
-              transition-all duration-300 ease-in-out
-            `}
+                transition-all duration-300 ease-in-out
+                `}
               />
             ))}
           </motion.div>
