@@ -96,7 +96,7 @@ const ContactForm = () => {
                 <textarea
                   id="yourMessage"
                   rows="5"
-                  placeholder="Your Message"
+                  placeholder={translations[language].your}
                   className="w-full px-5 py-3 bg-white bg-opacity-5 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-[#6931CF] focus:border-[#6931CF] outline-none transition-all resize-y"
                 ></textarea>
               </div>

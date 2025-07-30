@@ -34,65 +34,65 @@ const processSteps = [
     icon: FaClipboardList,
     title: "Planning & Strategy",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Strategic planning that aligns your digital goals with real-world results through data-driven insights and focused execution.",
   },
   {
     icon: FaLaptopCode,
-    title: "Design and Development",
+    title: "Design And Development",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "End-to-end design and development services that transform ideas into interactive, high-performance digital experiences.",
   },
   {
     icon: FaVial, // Or FaFlask
     title: "Testing & Quality Assurance",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Comprehensive testing to ensure your application is bug-free, secure, and delivers a flawless user experience.",
   },
   {
     icon: FaCloudUploadAlt,
     title: "Deployment",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Smooth and secure deployment of your application to production environments with minimal downtime.",
   },
 ];
 
 const softservicedata = [
   {
     id: "crm system development",
-    icon: FaNetworkWired,
-    title: "Design and development of custom software",
-    shortDescription:
-      "We create each software solution from A to Z, adapting it to your brand, your users' needs, and your business objectives.",
-    longDescription:
-      "We design and develop custom software solutions from the ground up, tailored to your brand identity, user needs, and business goals. Whether it's a web app, mobile app, or internal tool, our process ensures scalability, usability, and full alignment with your operational requirements."
-  },
+    icon: FaNetworkWired, // from react-icons/fa
+title: "CRM System Development",
+shortDescription:
+  "Build smarter relationships with a CRM tailored to your workflow and business goals.",
+longDescription:
+  "We develop custom CRM systems designed specifically for your business needs—streamlining customer management, automating sales processes, and improving team collaboration. From lead tracking to client communication, our CRM solutions enhance efficiency, scalability, and customer satisfaction."
+ },
   {
     id: "booking or inventory system",
-    icon: FaClipboardList,
-    title: "Desktop, web and multiplatform solutions",
-    shortDescription:
-      "Whether you need a robust web application, a desktop solution, or a cross-platform system using technologies such as .NET, Java, or Electron, we have the right solution.",
-    longDescription:
-      "We develop powerful and scalable desktop, web, and cross-platform applications using technologies like .NET, Java, and Electron. Whether you need a dedicated desktop tool, a browser-based system, or a solution that runs seamlessly across platforms, we tailor each project to meet your specific technical and business needs."
+   icon: FaClipboardList, // from react-icons/fa
+title: "Booking or Inventory System",
+shortDescription:
+  "Custom systems to manage bookings, inventory, and operations—tailored to your business.",
+longDescription:
+  "We design and develop scalable booking and inventory management systems that streamline operations, track resources in real-time, and automate key workflows. Whether you need a web-based platform, desktop software, or a cross-platform solution, we use technologies like .NET, Java, and Electron to build exactly what your business needs."
   },
   {
     id: "saas platform development",
-    icon: FaCloud,
-    title: "Fast, responsive and user-friendly",
-    shortDescription:
-      "We develop with performance and usability at the heart, ensuring smooth workflows, reduced loading times and a consistent user experience across all platforms.",
-    longDescription:
-    "We build software and applications with a strong focus on speed, responsiveness, and user experience. By optimizing performance, minimizing loading times, and ensuring smooth, intuitive interfaces, we deliver solutions that work flawlessly across all devices and platforms."
+   icon: FaCloud, // from react-icons/fa
+title: "SaaS Platform Development",
+shortDescription:
+  "Build scalable, high-performance SaaS platforms tailored for seamless user experience.",
+longDescription:
+  "We design and develop custom SaaS platforms with a strong focus on performance, usability, and scalability. From streamlined workflows to fast load times and cross-platform consistency, our solutions deliver an exceptional user experience while supporting growth and innovation. Whether it's B2B or B2C, we help you launch robust, cloud-based software built for long-term success."
   },
   {
     id: "erp or system",
-    icon: FaCogs,
-    title: "Rich features",
-    shortDescription:
-      "From e-commerce systems and real-time data processing to booking engines, integrations, dashboards and communication tools, whatever your needs, we make them happen.",
-    longDescription:
-    "We develop custom solutions packed with rich features such as e-commerce systems, real-time data processing, booking engines, dashboards, third-party integrations, and communication tools. Whatever your business needs, we design functional and scalable features that enhance usability and performance."
-  },
+   icon: FaCogs, // from react-icons/fa
+title: "ERP System Development",
+shortDescription:
+  "Custom ERP solutions to streamline operations, automate workflows, and centralize business processes.",
+longDescription:
+  "We design and develop tailored ERP systems equipped with essential features such as inventory management, e-commerce integration, real-time data processing, booking engines, analytics dashboards, and communication tools. Built for scalability and efficiency, our ERP solutions unify your operations, boost productivity, and support data-driven decision-making across departments."
+ },
 ];
 
 const features = [

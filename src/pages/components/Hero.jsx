@@ -193,7 +193,7 @@ const Hero = () => {
               {[
                 { value: "420+", label: translations[language].service1 },
                 { value: "350+", label: translations[language].detail2 },
-                { value: "4+", label:  translations[language].detail3 },
+                { value: "7+", label:  translations[language].detail3 },
               ].map((stat, index) => (
                 <motion.div
                   key={index}

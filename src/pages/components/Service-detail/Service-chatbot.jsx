@@ -29,25 +29,25 @@ const processSteps = [
     icon: FaClipboardList,
     title: "Data Collection ",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Gather meaningful insights through structured and secure data collection processes.",
   },
   {
     icon: FaLaptopCode,
     title: "Model Design and Training",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "We design and train AI/ML models tailored to your specific business objectives.",
   },
   {
     icon: FaVial, // Or FaFlask
     title: "Evaluation and Optimization",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Ensure your models are accurate, efficient, and production-ready.",
   },
   {
     icon: FaCloudUploadAlt,
     title: "Deployment and Monitoring",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Seamlessly launch your models and keep track of their performance in real time.",
   },
 ];
 

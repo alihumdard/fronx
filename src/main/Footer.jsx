@@ -265,7 +265,7 @@ function Footer() {
             </div>
 
             <div className="text-center text-xs opacity-60 mt-6">
-              <p>&copy; 2025 All rights reserved Fronxsolutions</p>
+              <p>&copy; {translations[language].reserved}</p>
             </div>
           </footer>
         </PageWrapper>

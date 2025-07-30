@@ -14,7 +14,8 @@ import {
   FaCubes,
   FaDatabase,
   FaEdit,
-  FaPuzzlePiece, // For Deployment
+  FaPuzzlePiece,
+  FaWordpress, // For Deployment
 } from "react-icons/fa";
 import {
   FaWordpressSimple, // For WordPress
@@ -34,76 +35,73 @@ const processSteps = [
     icon: FaClipboardList,
     title: "Planning & Strategy",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Strategic planning that aligns your digital goals with real-world results through data-driven insights and focused execution.",
   },
   {
     icon: FaLaptopCode,
     title: "Design And Development",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "End-to-end design and development services that transform ideas into interactive, high-performance digital experiences.",
   },
   {
     icon: FaVial, // Or FaFlask
     title: "Testing & Quality Assurance",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Comprehensive testing to ensure your application is bug-free, secure, and delivers a flawless user experience.",
   },
   {
     icon: FaCloudUploadAlt,
     title: "Deployment",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Smooth and secure deployment of your application to production environments with minimal downtime.",
   },
 ];
 
 const webServicesData = (language) => [
   {
     id: "computer languages",
-    icon: FaCode,
-    title: translations[language].website3,
-    shortDescription:
-      translations[language].website4,
+
+    icon: FaWordpress,
+    title: "WordPress Development",
+    shortDescription: "Custom WordPress websites with responsive design, SEO optimization, and user-friendly admin panels.",
     longDescription:
-      translations[language].website5,
+      "We specialize in creating responsive and high-performing WordPress websites that are easy to manage and optimized for performance. Whether you need a blog, corporate website, or an e-commerce store using WooCommerce, our team ensures a seamless development process with clean design and robust functionality.",
   },
   {
     id: "frameworks and libraries",
     icon: FaCubes,
-    title: translations[language].website6,
-
-    shortDescription:
-      translations[language].website7,
+    title: "Laravel/PHP Web Apps",
+    shortDescription: "Powerful and scalable web applications built with Laravel and PHP for modern business needs.",
     longDescription:
-      translations[language].website8,
+      "We build robust and secure web applications using Laravel, the leading PHP framework. From custom dashboards and CRM systems to complete business automation tools, our Laravel/PHP solutions are designed for scalability, performance, and maintainability. With clean architecture, RESTful APIs, and advanced backend features, we deliver powerful solutions tailored to your business logic.",
   },
   {
     id: "databases",
     icon: FaDatabase,
-    title: translations[language].website9,
+    title: "React.js/Next.js Web Apps",
     shortDescription:
-      translations[language].website10,
+      "High-performance, SEO-friendly web apps using modern React.js and Next.js frameworks.",
     longDescription:
-      translations[language].website11,
+      "We craft modern, dynamic web applications using React.js for powerful front-end interactivity and Next.js for server-side rendering, routing, and SEO optimization. Our apps are fast, scalable, and fully responsive—ideal for everything from marketing sites to complex dashboards and SaaS platforms. With a focus on performance and user experience, we ensure your product delivers results.",
   },
   {
     id: "(cms)",
     icon: FaEdit,
-    title: translations[language].website12,
-
+    title: "Website Redesign",
     shortDescription:
-      translations[language].website13,
+      "Modernize your outdated website with a fresh, responsive, and conversion-focused design.",
     longDescription:
-      translations[language].website14,
+      "Our website redesign services help transform outdated or underperforming websites into modern, visually appealing, and user-friendly platforms. We focus on improving UI/UX, mobile responsiveness, speed optimization, and overall branding to ensure your site leaves a strong impression and boosts engagement. Whether it's a small revamp or a complete overhaul, we tailor the redesign to meet your business goals.",
   },
   {
     id: "smart features tailored",
-    icon: FaPuzzlePiece,
-    title: translations[language].website15,
-    shortDescription:
-      translations[language].website16,
-    longDescription:
-      translations[language].website17,
-  },
+  icon: FaPuzzlePiece,
+  title: "API Integration",
+  shortDescription:
+    "Seamless integration of third-party APIs to enhance your website or application functionality.",
+  longDescription:
+    "We offer expert API integration services to connect your application with external platforms such as payment gateways, social media, CRMs, shipping providers, and more. Whether it's REST, SOAP, or GraphQL, we ensure secure, efficient, and reliable communication between systems to streamline operations and improve user experience. From custom API setups to third-party services, we’ve got you covered.",
+},
 ];
 
 const features = (language) => [

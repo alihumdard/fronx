@@ -54,39 +54,39 @@ const processSteps = [
 const appservicedata = [
   {
     id: "website maintenance plans",
-    icon: FaClipboardCheck, // Maintenance checklist icon
-    title: "Website Maintenance Plans",
-    shortDescription:
-      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
-    longDescription:
-      "Complete WooCommerce store setup including product configuration, payment integration, and theme customization for your e-commerce business.",
-  },
+   icon: FaClipboardCheck, // from react-icons/fa
+title: "Website UI Design (Figma)",
+shortDescription:
+  "Visually stunning, responsive designs tailored for usability and brand consistency.",
+longDescription:
+  "We craft high-fidelity, pixel-perfect UI designs in Figma for websites and applications. Our design process ensures responsiveness across all screen sizes, intuitive user flows, and consistent branding. From wireframes to prototypes, we focus on creating seamless experiences that engage users and elevate your digital presence."
+ },
   {
     id: "Bug Fixing and Security Updates",
-    icon: FaComments, // Chat icon (for GPT/Support)
-    title: "Open AI/GPT Chatbot for Support/Sales",
-    shortDescription:
-      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
-    longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+   icon: FaComments, // from react-icons/fa
+title: "Mobile App UI Design",
+shortDescription:
+  "Intuitive and visually engaging interfaces tailored for all mobile devices.",
+longDescription:
+  "We design sleek, user-friendly mobile app interfaces that offer a seamless experience across iOS and Android platforms. Using tools like Figma and Adobe XD, we focus on creating intuitive navigation, consistent branding, and responsive layouts. Our goal is to enhance usability, engagement, and visual appeal for every screen size."
   },
   {
     id: "hosting migration",
-    icon: FaServer, // Server icon for hosting
-    title: "Hosting Migration",
-    shortDescription:
-      "We fix bugs, update plugins/themes, patch security holes, and protect your site from malware or hacking attempts.",
-    longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+   icon: FaServer, // from react-icons/fa
+title: "Wireframing & Prototyping",
+shortDescription:
+  "Visualize your ideas with interactive wireframes and prototypes before development begins.",
+longDescription:
+  "We craft detailed wireframes and high-fidelity prototypes to map out the structure, flow, and functionality of your digital product. Using tools like Figma, Adobe XD, or Sketch, we help you validate ideas, refine user journeys, and gain stakeholder approval before moving to full-scale development. This ensures better alignment, usability, and reduced revisions down the line."
   },
   {
     id: "speed optimization",
-    icon: FaTachometerAlt, // Speedometer for performance
-    title: "Speed Optimization",
-    shortDescription:
-      "Designs that adjust smoothly across all screen sizes for a seamless user experience. screen sizes for a seamless ",
-    longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+  icon: FaTachometerAlt, // Speedometer for performance
+title: "Design System Creation",
+shortDescription:
+  "Build a consistent, scalable, and reusable UI system for faster and cohesive product design.",
+longDescription:
+  "We develop comprehensive design systems that include reusable components, standardized styles, color palettes, typography, iconography, and layout grids. These systems ensure consistency across all digital platforms, streamline collaboration between designers and developers, and accelerate product development while maintaining a unified brand experience."
   },
 ];
 

@@ -7,8 +7,7 @@ import { useLanguage } from "../../LanguageContext";
 const statsData = (language) => [
   { value: "420+", description: translations[language].state1 },
   { value: "320+", description: translations[language].state2 },
-  { value: "5+", description: translations[language].state3 },
-  { value: "4+", description: translations[language].state4 },
+  { value: "7+", description: translations[language].state4 },
 ];
 
 // Animation variants
