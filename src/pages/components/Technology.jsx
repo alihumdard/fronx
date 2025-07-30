@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaMobileAlt, FaShoppingCart, FaUsers } from "react-icons/fa";
 import { HiOutlineComputerDesktop } from "react-icons/hi2";
+import translations from "../../translations";
+import { useLanguage } from "../../LanguageContext";
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -64,6 +66,7 @@ const ProgressBar = ({ label, percent, index }) => (
 );
 
 const TechnologyStats = () => {
+    const { language } = useLanguage();
   return (
     <section className="bg-gradient-to-r from-black via-gray-900 to-[#1a1a1a] py-20 px-6">
       <div className="max-w-7xl mx-auto gap-10 items-center">
@@ -75,29 +78,27 @@ const TechnologyStats = () => {
           variants={fadeUpVariant}
         >
           <h2 className="text-white text-4xl font-bold leading-tight mb-4">
-            We Help Businesses Grow With Successes in Technology.
+          {translations[language].help}
           </h2>
           <p className="text-gray-300 mb-8">
-            At Fronx Solutions, we are committed to creating solutions that
-            truly make a difference for our clients. Our tailor-made services
-            help businesses work smarter and uncover new growth opportunities.
+          {translations[language].solu}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 border-b border-gray-400 pb-5">
-          <StatBox number="50" label="Web Projects" index={1} />
-          <StatBox number="100+" label="Mobile App Developed" highlight index={2} />
-          <StatBox number="50" label="E-Commerce Project" index={3} />
-          <StatBox number="95%" label="Clients hire us again" index={4} />
+          <StatBox number="50" label={translations[language].webprojects} index={1} />
+          <StatBox number="100+" label={translations[language].mobapp} highlight index={2} />
+          <StatBox number="50" label={translations[language].ecomm} index={3} />
+          <StatBox number="95%" label={translations[language].client} index={4} />
         </div>
 
         {/* Right Image */}
         <div className="flex gap-28 pt-20 flex-col md:flex-row">
           <div className="w-full md:w-1/2">
-            <ProgressBar label="Business Security" percent={86} index={1} />
-            <ProgressBar label="Career Development" percent={76} index={2} />
-            <ProgressBar label="Business Innovation" percent={96} index={3} />
-            <ProgressBar label="Business Development" percent={99} index={4} />
+            <ProgressBar label={translations[language].business} percent={86} index={1} />
+            <ProgressBar label={translations[language].career} percent={76} index={2} />
+            <ProgressBar label={translations[language].innovation} percent={96} index={3} />
+            <ProgressBar label={translations[language].businessdevelop} percent={99} index={4} />
           </div>
           <motion.div
             className="w-full md:w-1/2 flex justify-center"

@@ -1,12 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import PageWrapper from "../../main/Pagewraper"; // Adjust path if needed
+import translations from "../../translations";
+import { useLanguage } from "../../LanguageContext";
 
-const statsData = [
-  { value: "420+", description: "Delivered Projects" },
-  { value: "320+", description: "Companies Served" },
-  { value: "5+", description: "Award Won" },
-  { value: "4+", description: "Years of experience" },
+const statsData = (language) => [
+  { value: "420+", description: translations[language].state1 },
+  { value: "320+", description: translations[language].state2 },
+  { value: "5+", description: translations[language].state3 },
+  { value: "4+", description: translations[language].state4 },
 ];
 
 // Animation variants
@@ -23,15 +25,17 @@ const fadeUpVariant = {
 };
 
 const StatsSection = () => {
+  const {language} = useLanguage();
+  const updatedstatsData = statsData(language);
   return (
     <section className="bg-white py-16 md:py-24">
       <PageWrapper>
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-start mb-6 px-4 sm:px-8 md:px-12 lg:px-16 pb-6 sm:pb-8">
-          Why Choose Fronx Solutions
+          {translations[language].state}
         </h1>
 
         <div className="flex flex-col md:flex-row justify-around items-center gap-8 md:gap-4 lg:gap-8">
-          {statsData.map((stat, index) => (
+          {updatedstatsData.map((stat, index) => (
             <motion.div
               key={index}
               variants={fadeUpVariant}

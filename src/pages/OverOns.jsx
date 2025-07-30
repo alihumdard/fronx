@@ -9,6 +9,8 @@ import StatsSection from "./components/Statsdata";
 import ContactForm from "./components/Contact";
 import Footer from "../main/Footer";
 import { motion } from "framer-motion";
+import translations from "../translations";
+import { useLanguage } from "../LanguageContext";
 
 // Animation Variants (kept as is, assuming they are correct)
 const containerVariant = {
@@ -30,6 +32,7 @@ const fadeUpVariant = {
 };
 
 const OverOns = () => {
+  const { language } = useLanguage(); // Get the current language from contex
   return (
     <>
       <div className="relative h-screen w-full overflow-x-hidden">
@@ -74,15 +77,15 @@ const OverOns = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
-                <span className="mt-3 relative inline-block">
-                  Expert
-                  <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
+               {translations[language].empover} <br />
+                <span className="mt-3">{translations[language].with}</span>
+                <span className="mt-3 ml-3 relative inline-block">
+                  {translations[language].Expert}
+                  <span className="absolute  left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
 
-               <motion.div
+              <motion.div
                 className="mt-10 sm:mt-16 flex justify-start"
                 variants={fadeUpVariant}
                 transition={{ delay: 0.5 }}
@@ -102,13 +105,13 @@ const OverOns = () => {
                     to="/"
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Home
+                    {translations[language].home}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link
                     className="text-blue-600 hover:text-blue-600 transition-colors"
                   >
-                    About Us
+                    {translations[language].overOns}
                   </Link>
                 </div>
               </motion.div>

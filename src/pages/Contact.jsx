@@ -9,6 +9,8 @@ import ContactForm from "./components/Contact";
 import Footer from "../main/Footer";
 import StatsSection from "./components/Statsdata";
 import ProjectGridSection from "./components/ProjectGridSection";
+import translations from "../translations";
+import { useLanguage } from "../LanguageContext";
 
 // Animation Variants (kept as is, assuming they are correct)
 const containerVariant = {
@@ -38,6 +40,7 @@ export const staggerContainer = {
   },
 };
 const Contact = () => {
+  const { language, toggleLanguage } = useLanguage();
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -83,7 +86,7 @@ const Contact = () => {
                 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6 sm:mb-10"
                 variants={fadeUpVariant}
               >
-                Contact us
+                {translations[language].con}
               </motion.h1>
 
               <motion.p
@@ -91,108 +94,145 @@ const Contact = () => {
                 variants={fadeUpVariant}
                 transition={{ delay: 0.3 }}
               >
-                Need help? Have a question? You’ve come to the right place.
+                {translations[language].need}
               </motion.p>
             </motion.div>
           </PageWrapper>
         </div>
 
-       <div className="bg-white px-4 py-10 sm:px-8 md:px-16 lg:px-24">
-      <motion.div
-        className="py-20"
-        variants={fadeUpVariant}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.div
-          className="bg-gray-50 p-10 flex flex-col lg:flex-row justify-between items-center rounded-xl gap-8"
-          variants={fadeUpVariant}
-          custom={1}
-        >
-          <div className="flex-1 space-y-2 text-center lg:text-left">
-            <p className="text-sm text-blue-600 font-semibold">Work With Us</p>
-            <h2 className="text-3xl font-bold text-gray-800">
-              Contact Information
-            </h2>
-            <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto lg:mx-0">
-              Thank you for your interest in Attach Fronx Solution. We're excited to hear from you and discuss...
-            </p>
-          </div>
-          <div className="w-full md:w-96">
-            <img
-              src="/images/contact.png"
-              alt="Illustration"
-              className="w-full"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6"
-          variants={fadeUpVariant}
-          custom={2}
-        >
-          {[{
-            icon: "fas fa-phone-alt",
-            title: "Call Us For Query",
-            value: "(+256) 69825-3158"
-          }, {
-            icon: "fas fa-envelope",
-            title: "Email Us Anytime",
-            value: "info@gmail.com"
-          }, {
-            icon: "fas fa-map-marker-alt",
-            title: "Visit Our Office",
-            value: "14 Maniel Lane, Karachi"
-          }].map((item, idx) => (
-            <div key={idx} className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
-              <div className="text-orange-500 text-2xl bg-white py-3 px-4 rounded-full">
-                <i className={item.icon}></i>
+        <div className="bg-white px-4 py-10 sm:px-8 md:px-16 lg:px-24">
+          <motion.div
+            className="py-20"
+            variants={fadeUpVariant}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div
+              className="bg-gray-50 p-10 flex flex-col lg:flex-row justify-between items-center rounded-xl gap-8"
+              variants={fadeUpVariant}
+              custom={1}
+            >
+              <div className="flex-1 space-y-2 text-center lg:text-left">
+                <p className="text-sm text-blue-600 font-semibold">
+                  {" "}
+                  {translations[language].work}
+                </p>
+                <h2 className="text-3xl font-bold text-gray-800">
+                  {translations[language].contact}
+                </h2>
+                <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto lg:mx-0">
+                  {translations[language].thank}
+                </p>
               </div>
-              <div>
-                <p className="text-sm text-gray-500">{item.title}</p>
-                <p className="font-semibold text-gray-800">{item.value}</p>
+              <div className="w-full md:w-96">
+                <img
+                  src="/images/contact.png"
+                  alt="Illustration"
+                  className="w-full"
+                />
               </div>
-            </div>
-          ))}
-        </motion.div>
+            </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-16 items-start"
-          variants={fadeUpVariant}
-          custom={3}
-        >
-          <form className="bg-white shadow-lg rounded-xl p-6 md:p-8 space-y-5 w-full">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="text" placeholder="First Name" className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-              <input type="text" placeholder="Last Name" className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="email" placeholder="Email" className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-              <input type="text" placeholder="Mobile Number" className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            </div>
-            <input type="text" placeholder="Subject" className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <textarea rows="4" placeholder="Your Message" className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-            <button type="submit" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded shadow hover:opacity-90 transition">
-              Submit
-            </button>
-          </form>
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6"
+              variants={fadeUpVariant}
+              custom={2}
+            >
+              {[
+                {
+                  icon: "fas fa-phone-alt",
+                  title: translations[language].call,
+                  value: "(+256) 69825-3158",
+                },
+                {
+                  icon: "fas fa-envelope",
+                  title: translations[language].email,
+                  value: "info@gmail.com",
+                },
+                {
+                  icon: "fas fa-map-marker-alt",
+                  title: translations[language].visit,
+                  value: "14 Maniel Lane, Karachi",
+                },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl"
+                >
+                  <div className="text-orange-500 text-2xl bg-white py-3 px-4 rounded-full">
+                    <i className={item.icon}></i>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">{item.title}</p>
+                    <p className="font-semibold text-gray-800">{item.value}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
 
-          <div className="rounded-xl overflow-hidden w-full h-[85%]">
-            <img
-              src="/images/contact-2.png"
-              alt="Support agent"
-              className="w-full h-auto max-h-[500px] object-cover rounded-xl"
-            />
-          </div>
-        </motion.div>
-      </motion.div>
-    </div>
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-16 items-start"
+              variants={fadeUpVariant}
+              custom={3}
+            >
+              <form className="bg-white shadow-lg rounded-xl p-6 md:p-8 space-y-5 w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder={translations[language].first}
+                    className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                  <input
+                    type="text"
+                    placeholder={translations[language].last}
+                    className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="email"
+                    placeholder={translations[language].email}
+                    className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                  <input
+                    type="text"
+                    placeholder={translations[language].mobile}
+                    className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <input
+                  type="text"
+                  placeholder={translations[language].subject}
+                  className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <textarea
+                  rows="4"
+                  placeholder={translations[language].your}
+                  className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded shadow hover:opacity-90 transition"
+                >
+                  {translations[language].submit}
+                </button>
+              </form>
+
+              <div className="rounded-xl overflow-hidden w-full h-[85%]">
+                <img
+                  src="/images/contact-2.png"
+                  alt="Support agent"
+                  className="w-full h-auto max-h-[500px] object-cover rounded-xl"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
 
         <div className="w-full">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d924237.7091839125!2d66.49598340315225!3d25.192983725749368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f44555a0c23!2sKarachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1753094509058!5m2!1sen!2s"
-            className="w-full h-[450px]"
+            className="w-full h-[480px]"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"

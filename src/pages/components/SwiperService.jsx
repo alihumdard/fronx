@@ -7,18 +7,20 @@ import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import translations from "../../translations";
+import { useLanguage } from "../../LanguageContext";
 
-const testimonials = [
+const testimonials = (language) => [
   {
     id: 1,
-    content: `"I am incredibly pleased with the website developed by Fronx Solution. It perfectly captures our brand identity and has significantly improved our online presence. The team was professional, attentive, and ensured every detail was just right. Since launching the site, we've seen a noticeable increase in customer engagement and inquiries. I highly recommend Fronx Solution to anyone looking for top-notch website development services."`,
+    content: translations[language].success11,
     author: "John Doe",
     position: "Founder & CEO of xyz.com",
     image: "/images/swiper.png",
   },
   {
     id: 2,
-    content: `"The mobile app developed by Fronx Solution exceeded our expectations. Their attention to detail and user experience focus resulted in a 40% increase in user retention. The team was responsive throughout the development process."`,
+    content: translations[language].success2,
     author: "Jane Smith",
     position: "CTO of abc.com",
     image: "/images/men.png",
@@ -39,6 +41,8 @@ const fadeInUp = {
 };
 
 const SwiperService = () => {
+      const { language } = useLanguage();
+       const localizedTestimonials = testimonials(language);
   const swiperRef = useRef(null);
 
   return (
@@ -51,7 +55,7 @@ const SwiperService = () => {
           pagination={{ clickable: true }}
           className="relative group"
         >
-          {testimonials.map((testimonial, index) => (
+          {localizedTestimonials.map((testimonial, index) => (
             <SwiperSlide key={testimonial.id}>
               <motion.div
                 initial="hidden"
@@ -66,7 +70,7 @@ const SwiperService = () => {
                   className="p-6 sm:p-8 md:p-10 w-full md:w-[60%]"
                 >
                   <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 sm:mb-8">
-                    Success Stories from Our Clients
+                   {translations[language].success1}
                   </h2>
                   <div className="mb-6 sm:mb-8">
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">

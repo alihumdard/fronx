@@ -226,7 +226,7 @@ function Footer() {
                       to={URLS.SERVICE_DETAIL.SEO}
                       className="hover:text-gray-400"
                     >
-                      {translations[language]. SEOServices}
+                      {translations[language].SEOServices}
                     </Link>
                   </li>
                 </ul>
@@ -241,7 +241,7 @@ function Footer() {
                       to={URLS.SERVICE_DETAIL.DIGITAL_MARKITING}
                       className="hover:text-gray-400"
                     >
-                      Digital Marketing
+                      {translations[language].service5}
                     </Link>
                   </li>
                   <li>
@@ -249,7 +249,7 @@ function Footer() {
                       to={URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT}
                       className="hover:text-gray-400"
                     >
-                      AI Chatbot Solution
+                      {translations[language].ai}
                     </Link>
                   </li>
                   <li>
@@ -257,7 +257,7 @@ function Footer() {
                       to={URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT}
                       className="hover:text-gray-400"
                     >
-                      E-Commerce Solutions
+                   {translations[language].service4}
                     </Link>
                   </li>
                 </ul>

@@ -26,6 +26,8 @@ import {
 } from "react-icons/fa";
 import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
 import StatsSection from "../Statsdata";
+import translations from "../../../translations";
+import { useLanguage } from "../../../LanguageContext";
 
 const processSteps = [
   {
@@ -54,76 +56,76 @@ const processSteps = [
   },
 ];
 
-const webServicesData = [
+const webServicesData = (language) => [
   {
     id: "computer languages",
-   icon: FaCode,
-title: "Computer languages",
+    icon: FaCode,
+    title: translations[language].website3,
     shortDescription:
-      "HTML, CSS, JavaScript, PHP, Ruby, Python, etc. are the foundations of building websites and web applications.",
+      translations[language].website4,
     longDescription:
-      "Computer languages like HTML, CSS, JavaScript, PHP, Ruby, and Python are the building blocks of websites and web applications. They define structure, style, behavior, and server-side logic, enabling the creation of dynamic, interactive, and efficient digital experiences."
+      translations[language].website5,
   },
   {
     id: "frameworks and libraries",
-   icon: FaCubes,
-title: "Frameworks and Libraries",
+    icon: FaCubes,
+    title: translations[language].website6,
 
     shortDescription:
-      "React, Angular, Vue.js, Ruby on Rails, Django, etc. make development easier by providing pre-built frameworks and tools.",
+      translations[language].website7,
     longDescription:
-      "Frameworks and libraries like React, Angular, Vue.js, Ruby on Rails, and Django simplify the development process by offering pre-built components, tools, and structures. They help developers build scalable, efficient, and maintainable applications with less effort and more consistency."
+      translations[language].website8,
   },
   {
     id: "databases",
- icon: FaDatabase,
-title: "Databases",
+    icon: FaDatabase,
+    title: translations[language].website9,
     shortDescription:
-      "MySQL, MongoDB, PostgreSQL, etc. are used to store and manage data efficiently and securely.",
+      translations[language].website10,
     longDescription:
-    "Databases like MySQL, MongoDB, and PostgreSQL are essential for storing, managing, and retrieving data efficiently and securely. They support dynamic applications by handling structured and unstructured data, ensuring performance, scalability, and data integrity."
+      translations[language].website11,
   },
   {
     id: "(cms)",
-   icon: FaEdit,
-title: "Content Management Systems (CMS)",
+    icon: FaEdit,
+    title: translations[language].website12,
 
     shortDescription:
-      "WordPress, Joomla, Drupal, etc., allow simplified content management for end users.",
+      translations[language].website13,
     longDescription:
-    "Content Management Systems like WordPress, Joomla, and Drupal enable users to create, manage, and update website content without needing advanced technical skills. They offer customizable themes, plugins, and user-friendly interfaces for building dynamic and scalable websites."
+      translations[language].website14,
   },
-   {
+  {
     id: "smart features tailored",
     icon: FaPuzzlePiece,
-title: "Smart features tailored to your needs",
+    title: translations[language].website15,
     shortDescription:
-      "Booking systems, contact forms, galleries, blogs, portfolios, whatever your needs, we can make them happen.",
+      translations[language].website16,
     longDescription:
-    "Smart features like booking systems, contact forms, image galleries, blogs, and portfolios are custom-built to match your specific requirements. These functionalities enhance user experience and provide practical solutions that align perfectly with your business goals and website objectives."
+      translations[language].website17,
   },
 ];
 
-const features = [
+const features = (language) => [
   {
     icon: <FaBolt className="text-orange-400 text-3xl" />,
-    title: "Exceptional User Experience (UX) and Interface Design",
-    desc: "Carefully designed interfaces, combined with intuitive UX principles, allow users to navigate easily, fully engage, and enjoy a consistent experience across desktop, tablet, and mobile devices.",
+    title: translations[language].benifits2,
+    desc: translations[language].benifits3,
   },
   {
     icon: <FaCogs className="text-orange-400 text-3xl" />,
-    title: "Optimized performance and responsiveness",
-    desc: "Fast-loading pages, responsive layouts, and efficient front-end logic (thanks to frameworks like React or Vue) ensure smooth interactions and real-time functionality across all browsers.",
+    title: translations[language].benifits4,
+    desc: translations[language].benifits5,
   },
   {
     icon: <FaLock className="text-orange-400 text-3xl" />,
-    title: "Enhanced Security",
-    desc: "Secure login flows, data validation, and protection against threats like XSS and CSRF help protect sensitive user data and build trust.",
+    title: translations[language].benifits6,
+    desc: translations[language].benifits7,
   },
   {
     icon: <FaChartLine className="text-orange-400 text-3xl" />,
-    title: "Scalability and maintainability",
-    desc: " Modular, clear and well-structured code makes it easier to evolve the project, fix bugs and quickly add new features, ensuring lasting success and reducing development costs.",
+    title: translations[language].benifits8,
+    desc: translations[language].benifits9,
   },
 ];
 
@@ -155,6 +157,9 @@ export const staggerContainer = {
   },
 };
 const Serviceweb = () => {
+  const { language } = useLanguage();
+  const updatefeatures = features(language);
+  const latestwebServicesData = webServicesData(language);
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -205,9 +210,9 @@ const Serviceweb = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Web
+                {translations[language].web}
                 <span className="mt-3 ml-3 relative inline-block">
-                  Development
+                  {translations[language].development}
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -232,18 +237,18 @@ const Serviceweb = () => {
                     to="/"
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Home
+                    {translations[language].home}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link
                     to={URLS.SERVICES}
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Services
+                    {translations[language].services}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Website Development
+                    {translations[language].service1}
                   </Link>
                 </div>
               </motion.div>
@@ -326,10 +331,11 @@ const Serviceweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="web-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Technologies used in web development
+                {translations[language].website1}
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                The technologies used in web development are many and varied, each with its own specific advantages and applications:
+                {translations[language].website2}
+
               </p>
             </motion.div>
 
@@ -341,7 +347,7 @@ const Serviceweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {webServicesData.map((service) => {
+              {latestwebServicesData.map((service) => {
                 const IconComponent = service.icon;
                 const isExpanded = expandedCard === service.id;
                 const descriptionToShow =
@@ -408,10 +414,10 @@ const Serviceweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                The Benefits of Modern Web Development
+                {translations[language].benifits}
               </h2>
               <p className="text-gray-300 mb-12 max-w-3xl">
-                Harnessing the power of a robust web front-end brings major benefits to custom sites and applications:
+                {translations[language].benifits1}
               </p>
             </motion.div>
 
@@ -423,7 +429,7 @@ const Serviceweb = () => {
               viewport={{ once: true, amount: 0.1 }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
             >
-              {features.map((feature, index) => (
+              {updatefeatures.map((feature, index) => (
                 <motion.div
                   key={index}
                   variants={fadeUpVariant}

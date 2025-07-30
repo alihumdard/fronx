@@ -90,7 +90,7 @@ const Portfolio = () => {
             className="w-full lg:w-1/4 flex-shrink-0"
           >
             <h3 className="text-3xl font-bold text-gray-800 mb-6 flex items-baseline">
-              {translations[language].our}
+              {translations[language].ours}
               <span className="bg-gradient-to-r from-[#6931CF] to-[#1A61EA] bg-clip-text text-transparent ml-2">
                 {translations[language].portfolio}
               </span>

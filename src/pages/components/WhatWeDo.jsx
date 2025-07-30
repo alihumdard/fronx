@@ -1,9 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import PageWrapper from "../../main/Pagewraper";
+import translations from "../../translations";
+import { useLanguage } from "../../LanguageContext";
 
 // Icons
+// It's generally better to define icons as components or use react-icons
+// For now, keeping your current SVG definitions
 const iconClass = "w-full h-full text-[#FF9B4B]";
+
 const WebDevelopmentIcon = (
   <svg
     className={iconClass}
@@ -120,55 +125,55 @@ const serviceImages = {
   graphicsDesign: "/images/what-6.png",
 };
 
-// Data
-const servicesData = [
+// Data for services, now consistently pulling from translations
+const servicesData = (language) => [
   {
     id: "web-dev",
     iconKey: "webDevelopment",
     imageKey: "webDevelopment",
-    title: "Website development and maintenance",
+    title: translations[language].what3, // Added translation key and fallback
     description:
-      "Custom, fast, and mobile-friendly websites that reflect your brand and convert visitors...",
+      translations[language].what31, // Added translation key and fallback
   },
   {
     id: "ecommerce",
     iconKey: "eCommerce",
     imageKey: "eCommerce",
-    title: "E-commerce solutions",
+    title: translations[language].what4, // Added translation key and fallback
     description:
-      "Powerful online stores that inspire trust, increase sales and build customer loyalty.",
+      translations[language].what41, // Added translation key and fallback
   },
   {
     id: "mobile-app",
     iconKey: "mobileApplication",
     imageKey: "mobileApplication",
-    title: "Mobile Application Development",
+    title:translations[language].what5, // Added translation key and fallback
     description:
-      "Smooth, user-friendly apps that connect your brand to your users, wherever they...",
+      translations[language].what51, // Added translation key and fallback
   },
   {
     id: "digital-marketing",
     iconKey: "digitalMarketing",
     imageKey: "digitalMarketing",
-    title: "Digital marketing",
+    title: translations[language].what6, // Added translation key and fallback
     description:
-      "Tactical campaigns and content that drive traffic, increase visibility, and grow your...",
+      translations[language].what61, // Added translation key and fallback
   },
   {
     id: "content-writing",
     iconKey: "contentWriting",
     imageKey: "contentWriting",
-    title: "Content writing",
+    title: translations[language].what7, // Added translation key and fallback
     description:
-      "Clear, impactful words that speak your audience's language and inspire them to take action...",
+      translations[language].what71, // Added translation key and fallback
   },
   {
     id: "graphics-design",
     iconKey: "graphicsDesign",
     imageKey: "graphicsDesign",
-    title: "Graphics Design",
+    title: translations[language].what8, // Added translation key and fallback
     description:
-      "Visually stunning graphics that convey your brand message and leave a lasting impression...",
+      translations[language].what81, // Added translation key and fallback
   },
 ];
 
@@ -188,7 +193,7 @@ const ServiceCard = ({ icon, title, description, imageSrc, onArrowClick }) => {
 
         <button
           onClick={onArrowClick}
-          className="w-11 h-11 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 group-hover:bg-indigo-100  shadow transition-all duration-300 ease-in-out transform"
+          className="w-11 h-11 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 group-hover:bg-indigo-100 shadow transition-all duration-300 ease-in-out transform"
         >
           <svg
             className="w-5 h-5 transition-all duration-300 ease-in-out transform group-hover:-rotate-45 group-hover:scale-110"
@@ -230,6 +235,9 @@ const ServiceCard = ({ icon, title, description, imageSrc, onArrowClick }) => {
 
 // Main Component
 const WhatWeDo = () => {
+  const { language } = useLanguage(); // Get the current language from context
+  const localizedServicesData = servicesData(language); // CALL the function to get the array
+
   const handleArrowClick = (title) => console.log(`Clicked on: ${title}`);
   const handleSeeMoreDetails = () =>
     console.log("See More Details button clicked");
@@ -244,23 +252,25 @@ const WhatWeDo = () => {
         viewport={{ once: true }}
       >
         <div>
-          <h2 className="text-4xl font-bold text-gray-800 mb-2">What We Do</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-2">
+            {translations[language].what || "What We Do"}
+          </h2>
           <p className="text-gray-600 text-lg">
-            A complete digital team — here to solve, build, and grow
+            {translations[language].what1 || "Our comprehensive range of digital services."}
           </p>
         </div>
         <button
           onClick={handleSeeMoreDetails}
           className="mt-6 md:mt-0 px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition duration-200"
         >
-          See More Details
+          {translations[language].what2 || "See More Details"}
         </button>
       </motion.div>
 
       <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 font-sans">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {servicesData.map((service, index) => (
+            {localizedServicesData.map((service) => ( // Use localizedServicesData here
               <ServiceCard
                 key={service.id}
                 icon={serviceIcons[service.iconKey]}

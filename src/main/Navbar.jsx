@@ -6,23 +6,19 @@ import DropdownMenu from "./DropdownMenu";
 import URLS from "../config/urls.config";
 import translations from "../translations";
 import { useLanguage } from "../LanguageContext";
+import useScrollDetection from "./useScrollDetection"; // Ensure this hook is correctly placed and imported
 
 const Navbar = () => {
   const location = useLocation();
   const { language, toggleLanguage } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Use the custom hook to get scroll status
+  const isScrolled = useScrollDetection(10); // Threshold for scroll detection
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+  // Effect to manage body overflow for mobile menu
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -34,12 +30,22 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
-  // Helper functions for text and link classes
-  const getTextColor = () => (isScrolled ? "text-gray-800" : "text-white");
-  const getNavbarBackground = () =>
-    isScrolled ? "bg-white shadow-lg" : "bg-transparent";
+ 
+  const getNavbarBackground = () => {
+    if (isMobileMenuOpen) {
+      return "bg-white shadow-lg"; // Mobile menu always forces white background
+    }
+    // Transparent if not scrolled, white with shadow if scrolled, for ALL pages
+    return isScrolled ? "bg-white shadow-lg" : "bg-transparent";
+  };
 
-  // Mobile link classes
+  // Determine text color for desktop links based on scroll status (applies to all pages)
+  const getDesktopTextColor = () => {
+    // Text color is white if not scrolled (transparent navbar), dark if scrolled (white navbar)
+    return isScrolled ? "text-gray-800" : "text-white";
+  };
+
+  // Mobile link classes (these are always dark, as mobile menu is white)
   const getMobileLinkClasses = (path) =>
     `px-2 py-2 block w-full text-start ${
       location.pathname === path
@@ -47,13 +53,13 @@ const Navbar = () => {
         : "text-gray-800 hover:text-blue-600"
     }`;
 
-  // Desktop link classes
+  // Desktop link classes (updated to use getDesktopTextColor)
   const getDesktopLinkClasses = (path) => {
     const isActive = location.pathname === path;
     return `px-2 py-1 ${
       isActive
         ? "bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-transparent bg-clip-text border-b-2 border-blue-500"
-        : `${getTextColor()} hover:text-blue-300`
+        : `${getDesktopTextColor()} hover:text-blue-300` // Use the new text color function
     }`;
   };
 
@@ -63,16 +69,15 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isMobileMenuOpen ? "bg-white shadow-lg" : getNavbarBackground()
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${getNavbarBackground()}`}
       >
         <PageWrapper>
           <div className="flex flex-col lg:flex-row items-center justify-between py-3 lg:py-5">
             {/* Logo + Mobile Menu Button */}
             <div className="flex items-center justify-between w-full lg:w-auto">
               <motion.div
-                key={isMobileMenuOpen || isScrolled ? "logo-2" : "logo-1"}
+                // Key logic: changes when mobile menu open OR when NOT scrolled (transparent)
+                key={isMobileMenuOpen || !isScrolled ? "logo-1" : "logo-2"}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -82,9 +87,9 @@ const Navbar = () => {
                 <Link to="/">
                   <img
                     src={
-                      isMobileMenuOpen || isScrolled
-                        ? "/images/logo-2.png"
-                        : "/images/logo.png"
+                      isMobileMenuOpen || !isScrolled
+                        ? "/images/logo.png" // White logo for transparent/dark background
+                        : "/images/logo-2.png" // Dark logo for white background
                     }
                     alt="Logo"
                     className="h-8 lg:h-10 w-auto transition-all duration-300"
@@ -99,9 +104,9 @@ const Navbar = () => {
               >
                 <svg
                   className={`w-6 h-6 transition-colors duration-300 ${
-                    isMobileMenuOpen || isScrolled
-                      ? "text-gray-800"
-                      : "text-white"
+                    isMobileMenuOpen || !isScrolled
+                      ? "text-white" // Hamburger color for transparent/dark background
+                      : "text-gray-800" // Hamburger color for white background
                   }`}
                   fill="none"
                   stroke="currentColor"
@@ -113,8 +118,8 @@ const Navbar = () => {
                     strokeWidth={2}
                     d={
                       isMobileMenuOpen
-                        ? ""
-                        : "M4 6h16M4 12h16M4 18h16"
+                        ? "M6 18L18 6M6 6l12 12" // X icon when open
+                        : "M4 6h16M4 12h16M4 18h16" // Hamburger icon when closed
                     }
                   />
                 </svg>
@@ -138,7 +143,7 @@ const Navbar = () => {
                     to={URLS.OVERONS}
                     className={getDesktopLinkClasses(URLS.OVERONS)}
                   >
-                   {translations[language].overOns}
+                    {translations[language].overOns}
                   </Link>
                 </li>
 
@@ -154,20 +159,20 @@ const Navbar = () => {
                     to={URLS.BOLG}
                     className={getDesktopLinkClasses(URLS.BOLG)}
                   >
-                  {translations[language].blog}
+                    {translations[language].blog}
                   </Link>
                 </li>
 
                 <li>
                   <a
                     href="#"
-                    className={`px-2 py-1 ${getTextColor()} hover:text-blue-300`}
+                    className={`px-2 py-1 ${getDesktopTextColor()} hover:text-blue-300`} // Use getDesktopTextColor here
                   >
-                   {translations[language].portfolio}
+                    {translations[language].portfolio}
                   </a>
                 </li>
                 <div className="flex items-center space-x-2 rounded-full">
-                  <span className={`text-xs font-medium ${getTextColor()}`}>
+                  <span className={`text-xs font-medium ${getDesktopTextColor()}`}> {/* Use getDesktopTextColor */}
                     FR
                   </span>
                   <button
@@ -176,13 +181,13 @@ const Navbar = () => {
                   >
                     <div
                       className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                         language === "fr"
+                        language === "fr"
                           ? "translate-x-0 bg-gray-300"
                           : "translate-x-6 bg-gradient-to-r from-[#6931CF] to-[#1A61EA]"
                       }`}
                     ></div>
                   </button>
-                  <span className={`text-xs font-medium ${getTextColor()}`}>
+                  <span className={`text-xs font-medium ${getDesktopTextColor()}`}> {/* Use getDesktopTextColor */}
                     EN
                   </span>
                 </div>
@@ -195,7 +200,9 @@ const Navbar = () => {
                 to={URLS.CONTACT}
                 className="btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-2 rounded-full font-semibold shadow"
               >
-                <span className="relative z-[1]">{translations[language].contact}</span>
+                <span className="relative z-[1]">
+                  {translations[language].contacts  }
+                </span>
               </Link>
             </div>
           </div>
@@ -243,8 +250,7 @@ const Navbar = () => {
                     className={getMobileLinkClasses(URLS.HOME)}
                     onClick={toggleMobileMenu}
                   >
-                                      {translations[language].home}
-
+                    {translations[language].home}
                   </Link>
                 </li>
                 <li className="border-b-2">
@@ -253,25 +259,23 @@ const Navbar = () => {
                     className={getMobileLinkClasses(URLS.OVERONS)}
                     onClick={toggleMobileMenu}
                   >
-                   {translations[language].overOns}
-
+                    {translations[language].overOns}
                   </Link>
                 </li>
-                <Link className="border-b-2">
+                <li className="border-b-2">
                   <DropdownMenu
                     mobile={true}
                     textColorClass={getMobileLinkClasses(URLS.SERVICES)}
                     onCloseMobileMenu={toggleMobileMenu}
                   />
-                </Link>
+                </li>
                 <li className="border-b-2">
                   <Link
                     to={URLS.BOLG}
                     className={getMobileLinkClasses(URLS.BOLG)}
                     onClick={toggleMobileMenu}
                   >
-                  {translations[language].blog}
-
+                    {translations[language].blog}
                   </Link>
                 </li>
                 <li className="border-b-2">
@@ -280,13 +284,12 @@ const Navbar = () => {
                     className="px-2 py-2 block w-full text-start text-gray-800 hover:text-blue-600"
                     onClick={toggleMobileMenu}
                   >
-                   {translations[language].portfolio}
-
+                    {translations[language].portfolio}
                   </a>
                 </li>
                 <li className="flex justify-start mt-auto pt-4">
-                  <div className="flex items-center space-x-2  rounded-full">
-                    <span className="text-blacktext-xs font-medium">FR</span>
+                  <div className="flex items-center space-x-2 rounded-full">
+                    <span className="text-gray-800 text-xs font-medium">FR</span>
                     <button
                       onClick={toggleLanguage}
                       className="w-12 h-6 flex items-center bg-black rounded-full px-1 transition-all duration-300"
@@ -295,11 +298,11 @@ const Navbar = () => {
                         className={`w-4 h-4 rounded-full transition-all duration-300 ${
                           language === "fr"
                             ? "translate-x-0 bg-gray-300"
-                            : "translate-x-6 bg-gradient-to-r from-[#6931CF] to-[#1A61EA]300"
+                            : "translate-x-6 bg-gradient-to-r from-[#6931CF] to-[#1A61EA]"
                         }`}
                       ></div>
                     </button>
-                    <span className="text-black text-xs font-medium">EN</span>
+                    <span className="text-gray-800 text-xs font-medium">EN</span>
                   </div>
                 </li>
                 <li className="pt-6">
@@ -308,8 +311,7 @@ const Navbar = () => {
                     className="btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-3 rounded-full font-semibold shadow text-sm w-full text-center block"
                     onClick={toggleMobileMenu}
                   >
-                    <span className="relative z-[1]">                   {translations[language].contact}
-</span>
+                    <span className="relative z-[1]"> {translations[language].contacts}</span>
                   </Link>
                 </li>
               </ul>

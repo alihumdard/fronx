@@ -7,12 +7,14 @@ import Testimonials from './components/Testimonials'
 import FAQ from './components/Faqdata'
 import ContactForm from './components/Contact'
 import Footer from '../main/Footer'
+import Servicex from './components/service-x-scroll'
 
 const Home = () => {
   return (
     <div>
       <Hero/>
       <Services/>
+      <Servicex/>
       <Portfolio/>
       <Approach/>
       <Testimonials/>
