@@ -53,38 +53,40 @@ const marketing = [
   {
     id: "google ads setup",
     icon: FaDollarSign, // from react-icons/fa
-title: "Lower advertising costs",
+    title: "Google Ads Setup",
     shortDescription:
-      "Less expensive than traditional marketing, it can reach a wide audience at lower cost.",
+      "Reach your ideal audience efficiently with targeted, cost-effective Google Ads campaigns.",
     longDescription:
-    "Digital marketing strategies like Google Ads allow you to reach a highly targeted audience at a fraction of the cost of traditional advertising. With precise keyword targeting, campaign optimization, and real-time analytics, you can maximize ROI while keeping your advertising budget low."
+      "Google Ads Setup helps you connect with the right audience through precision-targeted campaigns. We handle everything from keyword research and ad creation to budget management and performance tracking, ensuring your business gets maximum exposure and return on investment with minimal spend."
+
   },
   {
     id: "social media marketing",
-   icon: FaBullseye, // from react-icons/fa
-title: "Precise targeting",
+    icon: FaBullseye, // from react-icons/fa
+    title: "Social Media Marketing",
     shortDescription:
-      "Tailor your campaigns to specific audiences using powerful analysis tools.",
+      "Engage the right audience with tailored campaigns and real-time insights.",
     longDescription:
-    "Precise targeting enables you to focus your marketing efforts on the right audience using advanced tools like demographic filters, interests, behaviors, and location data. This ensures your campaigns reach potential customers who are most likely to engage, boosting effectiveness and conversion rates."
+      "Social Media Marketing leverages powerful targeting tools to deliver your message to the most relevant audience. From demographics and interests to behaviors and location data, we optimize your campaigns to drive engagement, increase brand awareness, and boost conversion rates across platforms like Facebook, Instagram, LinkedIn, and more."
+
   },
   {
     id: "content marketing",
-   icon: FaComments, // from react-icons/fa
-title: "Direct interaction with customers",
+    icon: FaComments, // from react-icons/fa
+    title: "Content Marketing",
     shortDescription:
-      "Increase engagement and improve loyalty.",
+      "Build authority, engage audiences, and drive conversions through valuable content.",
     longDescription:
-    "Direct interaction with customers through channels like social media, email, live chat, and feedback forms helps build stronger relationships, improve customer satisfaction, and boost brand loyalty. Engaging in real-time communication fosters trust and encourages repeat business."
+      "Content Marketing focuses on creating and distributing valuable, relevant, and consistent content to attract and engage a clearly defined audience. From blog posts and videos to infographics and email campaigns, quality content builds trust, strengthens your brand, and drives profitable customer actions."
   },
   {
     id: "email marketing",
     icon: FaLightbulb, // from react-icons/fa
-title: "Adaptability and innovation",
+    title: "Email Marketing",
     shortDescription:
-      "Adjust your campaigns in real time to maximize their effectiveness.",
+      "Engage your audience with targeted, personalized email campaigns.",
     longDescription:
-    "Adaptability and innovation in digital marketing allow you to adjust campaigns in real time based on performance data and market trends. This flexibility helps you stay ahead of the competition, refine your strategies, and continuously improve results with creative, data-driven approaches."
+      "Email marketing helps you build strong customer relationships by delivering personalized messages directly to their inbox. With segmentation, automation, and performance tracking, you can craft effective campaigns that boost engagement, increase conversions, and drive long-term loyalty."
   },
 ];
 
@@ -301,10 +303,10 @@ const digitalmarkiting = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="markiting-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-              The benefits of digital marketing
+                What you do
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-               Adopting an effective digital strategy has several benefits:
+                Adopting an effective digital strategy has several benefits:
               </p>
             </motion.div>
 

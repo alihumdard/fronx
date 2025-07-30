@@ -33,73 +33,73 @@ const processSteps = [
     icon: FaClipboardList,
     title: "Planning & Research",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Laying the foundation for success with in-depth research, strategic planning, and clear project direction.",
   },
   {
     icon: FaLaptopCode,
     title: "Design & Store Setup",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "We create visually appealing, user-friendly online stores with seamless navigation and a streamlined shopping experience.",
   },
   {
     icon: FaVial, // Or FaFlask
     title: "Development & Integration",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Robust development combined with seamless integration of third-party tools, APIs, and services tailored to your business needs.",
   },
   {
     icon: FaCloudUploadAlt,
     title: "Testing & Launch",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Thorough testing followed by a smooth, confident launch to ensure your product is bug-free, secure, and ready for users.",
   },
 ];
 
 const appservicedata = [
   {
     id: "woocommerce store setup",
-  icon: FaPalette, // from react-icons/fa
-title: "A design to suit you",
+    icon: FaPalette,
+    title: "WooCommerce Store Setup",
     shortDescription:
-      "Every element, from colors to typography, faithfully reflects your identity, your branding and your graphic charter.",
+      "Professional WooCommerce store setup with customized design, product setup, and secure payment integration—ready to sell from day one.",
     longDescription:
-      "Complete WooCommerce store setup including product configuration, payment integration, and theme customization for your e-commerce business.",
+      "We provide a complete WooCommerce store setup tailored to your brand and business goals. From installing and customizing themes to configuring products, categories, shipping, taxes, and payment gateways, we handle it all. Our service ensures your store is visually appealing, easy to manage, mobile-friendly, and fully functional—giving your customers a seamless shopping experience from browsing to checkout.",
   },
   {
     id: "shopify store development",
-  icon: FaCogs, // from react-icons/fa
-title: "Features designed with you in mind",
+    icon: FaCogs,
+    title: "Shopify Development",
     shortDescription:
-      "Advanced inventory management, multi-currency payments, flash sales... it's all possible.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Custom Shopify store development with advanced features like inventory management, multi-currency payments, and flash sales.",
+    longDescription:
+      "We specialize in creating high-converting, fully customized Shopify stores that are visually appealing and easy to manage. From theme customization and product setup to integrating payment gateways, apps, and advanced features like inventory tracking and multilingual support, we deliver scalable Shopify solutions. Whether you’re launching a new store or upgrading an existing one, we ensure a smooth, secure, and sales-ready platform tailored to your brand.",
   },
   {
     id: "payment gateway integration",
-icon: FaChartLine, // from react-icons/fa
-title: "Total scalability",
+    icon: FaChartLine,
+    title: "Custom E-Commerce Portal",
     shortDescription:
-      "Your site grows with you. You can add features or change the architecture over time.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Scalable, feature-rich e-commerce platforms tailored to your business needs, with full control over design, functionality, and growth.",
+    longDescription:
+      "We build custom e-commerce portals from the ground up—tailored to your unique requirements, not limited by templates or platform constraints. Whether you're selling physical products, digital goods, or subscription services, our solutions include custom shopping carts, advanced filters, secure payment gateways, admin dashboards, and analytics integration. Built with scalability in mind, your platform can grow and evolve with your business over time.",
   },
   {
     id: "custom e-commerce portals",
-   icon: FaTachometerAlt, // from react-icons/fa
-title: "Optimized performance",
+    icon: FaTachometerAlt,
+    title: "Product Management System",
     shortDescription:
-      "Pages load fast, and search engines love it.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Efficiently manage products, categories, inventory, pricing, and more with a centralized, easy-to-use system.",
+    longDescription:
+      "Our Product Management System enables businesses to organize and control their entire product catalog from a single, user-friendly dashboard. From managing SKUs, stock levels, pricing tiers, and product variations to handling categories, tags, and descriptions—our solution is built for speed, scalability, and integration with e-commerce platforms. Whether you're managing 50 products or 50,000, our system adapts to your growth and operational needs.",
   },
   {
     id: "product management system",
-    icon: FaBoxes, // Represents product inventory
-    title: "Product Management System",
+    icon: FaBoxes , // Consider changing to FaCreditCard or FaMoneyCheckAlt for better clarity
+    title: "Payment Gateway Integration",
     shortDescription:
-      "Comprehensive tools to manage your product catalog, inventory, and listings.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Secure and seamless payment gateway setup tailored to your business needs.",
+    longDescription:
+      "We integrate reliable payment gateways like Stripe, PayPal, Razorpay, and more into your website or mobile app, ensuring a secure, smooth, and user-friendly transaction process. Our solutions support multi-currency payments, recurring billing, refunds, invoicing, and real-time payment tracking—giving your customers a frictionless checkout experience and your business full control over transactions."
   },
 ];
 const features = [
@@ -205,7 +205,7 @@ const Ecommerece = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-               Tailor-made e-commerce to boost your <br />
+                Tailor-made e-commerce to boost your <br />
                 <span className="mt-3">online</span>
                 <span className="mt-3 ml-3 relative inline-block">
                   business
@@ -321,7 +321,7 @@ const Ecommerece = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="commerce-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-               The advantages of a customized e-commerce site
+                What you do
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
                 Custom e-commerce is much more than a classic online store. It’s a real growth driver. Here’s why:
@@ -402,10 +402,10 @@ const Ecommerece = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl text-center font-bold mb-4">
-               Steps to creating a custom e-commerce site
+                Steps to creating a custom e-commerce site
               </h2>
               <p className="text-gray-300 mb-12 max-w-3xl mx-auto text-center">
-               Creating an e-commerce site is no trivial task. To succeed, every e-commerce project must be carefully planned, and every step must be thought through in detail:
+                Creating an e-commerce site is no trivial task. To succeed, every e-commerce project must be carefully planned, and every step must be thought through in detail:
               </p>
             </motion.div>
 

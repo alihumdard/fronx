@@ -26,64 +26,64 @@ const processSteps = [
     icon: FaSearch, // Better for "Research" than clipboard
     title: "Research & Direction",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "In-depth research and strategic direction to guide your digital products toward innovation and market success.",
   },
   {
     icon: FaProjectDiagram, // Represents "Flow Design" better than a laptop
     title: "Framework & Flow Design",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Blueprinting the structure and logic of your application to ensure smooth user experiences and efficient development.",
   },
   {
     icon: FaCogs, // Represents refinement and adjustments
     title: "Prototyping & Refinement",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Transforming ideas into interactive prototypes to validate concepts and refine user experience before development.",
   },
   {
     icon: FaRocket, // More dynamic than cloud upload for "Execution & Delivery"
     title: "Execution & Delivery",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Flawless execution and on-time delivery of high-quality digital solutions tailored to your goals.",
   },
 ];
 
 const uiux_service = [
   {
     id: "website ui design",
-    icon: FaPencilRuler, // from react-icons/fa
-    title: "Custom UI Designs",
+    icon: FaPencilRuler,
+    title: "Website UI Design (Figma)",
     shortDescription:
-      "We don't copy others. We create designs from A to Z, tailored to your style, brand, and goals.",
+      "We don’t copy designs—we craft original, custom interfaces tailored to your brand, goals, and vision.",
     longDescription:
-      "Custom UI design focuses on creating unique, user-friendly interfaces tailored to your brand, goals, and audience. From layout to color scheme, every element is crafted from scratch to ensure a seamless and visually compelling user experience that sets you apart from the competition."
+      "Our custom UI design process focuses on building unique, user-friendly website interfaces from the ground up. Using Figma, we design layouts, components, and visual systems that reflect your brand identity while optimizing for usability and conversion. Every element—from typography to color palettes—is carefully crafted to deliver a seamless and memorable user experience that truly sets you apart.",
   },
   {
     id: "mobile app ui design",
-    icon: FaMousePointer, // from react-icons/fa
-    title: "Simple and user-friendly UX",
+    icon: FaMousePointer,
+    title: "Mobile App UI Design",
     shortDescription:
-      "We plan every step of the user's journey, from the first visit to the final action... so that navigation on your site is fluid and intuitive.",
+      "We design intuitive and engaging mobile interfaces that guide users smoothly from first tap to final interaction.",
     longDescription:
-      "User-friendly UX design ensures that every step of the user's journey is smooth, intuitive, and enjoyable. By focusing on usability, navigation, and interaction, we create experiences that guide users effortlessly from their first visit to the final action, increasing satisfaction and engagement."
+      "Our Mobile App UI Design services focus on creating visually appealing and highly functional interfaces tailored for small screens. Every element—from navigation to gestures—is thoughtfully crafted to enhance usability, maintain consistency across devices, and reflect your brand identity. We ensure each step of the user's journey is smooth, engaging, and aligned with the app’s core purpose—leading to better retention and satisfaction.",
   },
   {
     id: "wireframing & prototyping",
-    icon: FaTabletAlt, // from react-icons/fa
-    title: "Suitable for all devices",
+    icon: FaTabletAlt,
+    title: "Wireframing & Prototyping",
     shortDescription:
-      "Your users browse on smartphones, tablets, and computers. Our designs look beautiful and perform well on all screens.",
+      "Visualize your app or website early with structured wireframes and interactive prototypes before development begins.",
     longDescription:
-      "Our designs are fully responsive, ensuring your website looks and functions perfectly on smartphones, tablets, laptops, and desktops. We prioritize a seamless user experience across all screen sizes, delivering consistency, speed, and visual appeal on every device."
+      "Our wireframing and prototyping process helps define the structure, layout, and flow of your digital product before a single line of code is written. Wireframes provide a low-fidelity blueprint of screens, while interactive prototypes simulate real user interactions. This allows for early feedback, usability testing, and fast iteration—ensuring your final design is intuitive, user-centered, and development-ready.",
   },
   {
     id: "design system creation",
-    icon: FaMagic, // from react-icons/fa
-    title: "Interactive and intelligent features",
+    icon: FaMagic,
+    title: "Design System Creation",
     shortDescription:
-      "We integrate buttons, animations, menus and more to make your site or application pleasant to use and easy to understand.",
+      "We build scalable and consistent design systems that streamline UI development and maintain brand identity across all products.",
     longDescription:
-      "We develop interactive and intelligent features such as dynamic buttons, smooth animations, intuitive menus, and real-time feedback to enhance user engagement. These elements make your website or application not only visually appealing but also easy to navigate and enjoyable to use."
+      "Our Design System Creation service focuses on building a structured library of reusable components, styles, and guidelines to ensure visual and functional consistency across your digital products. From typography and color schemes to buttons, form elements, and spacing rules, we create a centralized design foundation that accelerates development, simplifies collaboration, and strengthens your brand presence across all platforms.",
   },
 ];
 

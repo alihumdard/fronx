@@ -18,7 +18,7 @@ const translations = {
     getDetail:
       "At Fronx Solutions, we make things simple. For over four years, we've been helping businesses in Belgium and across Europe stand out with customized, fast, beautiful, and effective digital solutions. Whether you're launching a new project or upgrading your current setup, our team is here to bring your vision to life, step by step. Our clients come from a variety of industries, but most run e-commerce businesses, service-based businesses, or are looking to improve their online presence. Whether it's creating an easy-to-use website, developing a custom app, or increasing visibility through smart SEO, our clients trust us to deliver effective digital solutions that truly help them grow. Brands we've worked with include Lemikap, Glamour Cosmetics, and TDSBelgium, all of whom have entrusted us with the realization of their digital vision.",
     detail1: "Delivered projects",
-    detail2: "Companies served",
+    detail2: "Clients served",
     detail3: "Years of experience",
     softwareDevelopment: "Top Custom Software Development Services",
     softwareDevelopment2:
@@ -217,31 +217,6 @@ const translations = {
     website1: "Technologies used in web development",
     website2:
       "The technologies used in web development are many and varied, each with its own specific advantages and applications:",
-    website3: "Computer languages",
-    website4:
-      "HTML, CSS, JavaScript, PHP, Ruby, Python, etc. are the foundations of building websites and web applications.",
-    website5:
-      "Computer languages like HTML, CSS, JavaScript, PHP, Ruby, and Python are the building blocks of websites and web applications. They define structure, style, behavior, and server-side logic, enabling the creation of dynamic, interactive, and efficient digital experiences.",
-    website6: "Frameworks and Libraries",
-    website7:
-      "React, Angular, Vue.js, Ruby on Rails, Django, etc. make development easier by providing pre-built frameworks and tools.",
-    website8:
-      "Frameworks and libraries like React, Angular, Vue.js, Ruby on Rails, and Django simplify the development process by offering pre-built components, tools, and structures. They help developers build scalable, efficient, and maintainable applications with less effort and more consistency.",
-    website9: "Databases",
-    website10:
-      "MySQL, MongoDB, PostgreSQL, etc. are used to store and manage data efficiently and securely.",
-    website11:
-      "Databases like MySQL, MongoDB, and PostgreSQL are essential for storing, managing, and retrieving data efficiently and securely. They support dynamic applications by handling structured and unstructured data, ensuring performance, scalability, and data integrity.",
-    website12: "Content Management Systems (CMS)",
-    website13:
-      "WordPress, Joomla, Drupal, etc., allow simplified content management for end users.",
-    website14:
-      "Content Management Systems like WordPress, Joomla, and Drupal enable users to create, manage, and update website content without needing advanced technical skills. They offer customizable themes, plugins, and user-friendly interfaces for building dynamic and scalable websites.",
-    website15: "Smart features tailored to your needs",
-    website16:
-      "Booking systems, contact forms, galleries, blogs, portfolios, whatever your needs, we can make them happen.",
-    website17:
-      "Smart features like booking systems, contact forms, image galleries, blogs, and portfolios are custom-built to match your specific requirements. These functionalities enhance user experience and provide practical solutions that align perfectly with your business goals and website objectives.",
     benifits: "The Benefits of Modern Web Development",
     benifits1:
       "Harnessing the power of a robust web front-end brings major benefits to custom sites and applications:",
@@ -262,6 +237,8 @@ const translations = {
     state2: "Companies Served",
     state3: "Award Won",
     state4: "Years of experience",
+    reserved: "2025 All rights reserved Fronxsolutions",
+
   },
 
   fr: {
@@ -283,7 +260,7 @@ const translations = {
     getDetail:
       "Chez Fronx Solutions, nous simplifions les choses. Depuis plus de quatre ans, nous aidons les entreprises belges et européennes à se démarquer grâce à des solutions numériques personnalisées, rapides, esthétiques et efficaces. Que vous lanciez un nouveau projet ou modernisiez votre infrastructure actuelle, notre équipe est là pour donner vie à votre vision, étape par étape. Nos clients sont issus de secteurs variés, mais la plupart dirigent des entreprises de e-commerce, des entreprises de services ou cherchent à améliorer leur présence en ligne. Qu'il s'agisse de créer un site web convivial, de développer une application personnalisée ou d'accroître leur visibilité grâce à un référencement intelligent, nos clients nous font confiance pour leur fournir des solutions numériques efficaces qui contribuent véritablement à leur croissance. Parmi les marques avec lesquelles nous avons collaboré, citons Lemikap, Glamour Cosmetics et TDSBelgium, qui nous ont toutes confié la réalisation de leur vision numérique.",
     detail1: "Projets livrés",
-    detail2: "Entreprises desservies",
+    detail2: "Clients servis",
     detail3: "Années d'expérience",
     softwareDevelopment:
       "Meilleurs services de développement de logiciels personnalisés",
@@ -488,31 +465,6 @@ const translations = {
     website1: "Technologies utilisées dans le développement web",
     website2:
       "Les technologies utilisées dans le développement web sont nombreuses et variées, chacune ayant ses propres avantages et applications spécifiques :",
-    website3: "Langages informatiques",
-    website4:
-      "HTML, CSS, JavaScript, PHP, Ruby, Python, etc. sont les bases de la création de sites web et d'applications web.",
-    website5:
-      "Les langages informatiques comme HTML, CSS, JavaScript, PHP, Ruby et Python sont les éléments fondamentaux des sites web et des applications web. Ils définissent la structure, le style, le comportement et la logique côté serveur, permettant de créer des expériences numériques dynamiques, interactives et efficaces.",
-    website6: "Frameworks et bibliothèques",
-    website7:
-      "React, Angular, Vue.js, Ruby on Rails, Django, etc. facilitent le développement grâce à des outils et des frameworks préconstruits.",
-    website8:
-      "Les frameworks et bibliothèques comme React, Angular, Vue.js, Ruby on Rails et Django simplifient le processus de développement en proposant des composants, outils et structures prédéfinis. Ils aident les développeurs à créer des applications évolutives, efficaces et faciles à maintenir avec moins d'efforts et plus de cohérence.",
-    website9: "Bases de données",
-    website10:
-      "MySQL, MongoDB, PostgreSQL, etc. sont utilisées pour stocker et gérer les données de manière efficace et sécurisée.",
-    website11:
-      "Les bases de données comme MySQL, MongoDB et PostgreSQL sont essentielles pour stocker, gérer et récupérer les données de manière efficace et sécurisée. Elles prennent en charge les applications dynamiques en traitant des données structurées et non structurées, garantissant performance, évolutivité et intégrité des données.",
-    website12: "Systèmes de gestion de contenu (CMS)",
-    website13:
-      "WordPress, Joomla, Drupal, etc., permettent une gestion de contenu simplifiée pour les utilisateurs finaux.",
-    website14:
-      "Les systèmes de gestion de contenu comme WordPress, Joomla et Drupal permettent aux utilisateurs de créer, gérer et mettre à jour le contenu de leur site web sans compétences techniques avancées. Ils offrent des thèmes personnalisables, des plugins et des interfaces conviviales pour construire des sites web dynamiques et évolutifs.",
-    website15: "Fonctionnalités intelligentes adaptées à vos besoins",
-    website16:
-      "Systèmes de réservation, formulaires de contact, galeries, blogs, portfolios — quels que soient vos besoins, nous pouvons les réaliser.",
-    website17:
-      "Des fonctionnalités intelligentes comme les systèmes de réservation, formulaires de contact, galeries d’images, blogs et portfolios sont conçues sur mesure pour répondre à vos besoins spécifiques. Ces fonctionnalités améliorent l'expérience utilisateur et offrent des solutions pratiques parfaitement alignées sur les objectifs de votre entreprise et de votre site web.",
     benifits: "Les avantages du développement web moderne",
     benifits1:
       "Exploiter la puissance d’un front-end web robuste apporte des avantages majeurs aux sites et applications personnalisés :",
@@ -534,6 +486,7 @@ const translations = {
     state2: "Entreprises servies",
     state3: "Récompenses reçues",
     state4: "Années d'expérience",
+    reserved: "2025 Tous droits réservés Fronxsolutions",
   },
 };
 

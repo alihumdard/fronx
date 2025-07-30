@@ -25,25 +25,25 @@ const processSteps = [
     icon: FaClipboardList,
     title: "Planning & Strategy",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Strategic planning that aligns your digital goals with real-world results through data-driven insights and focused execution.",
   },
   {
     icon: FaLaptopCode,
     title: "Design And Development",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "End-to-end design and development services that transform ideas into interactive, high-performance digital experiences.",
   },
   {
     icon: FaVial, // Or FaFlask
     title: "Testing & Quality Assurance",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Comprehensive testing to ensure your application is bug-free, secure, and delivers a flawless user experience.",
   },
   {
     icon: FaCloudUploadAlt,
     title: "Deployment",
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "Smooth and secure deployment of your application to production environments with minimal downtime.",
   },
 ];
 
@@ -51,7 +51,7 @@ const appservicedata = [
   {
     id: "flutter app development",
     icon: FaFlutter, // Changed from FaWordpressSimple to FaFlutter
-    title: "Flutter",
+    title: "Flutter App Development",
     shortDescription:
       "Developed by Google, Flutter is perfect for modern, fluid interfaces, with cross-platform compatibility.",
     longDescription:
@@ -59,26 +59,26 @@ const appservicedata = [
   },
   {
     id: "react native development",
-    icon: FaReact, // Changed from FaPhp to FaReact (React Native uses React)
-    title: "React Native",
-    shortDescription:
-      "Ideal for hybrid applications, React Native lets you create a single code base compatible with iOS and Android. It's fast and costs less than native development.",
-    longDescription:
-      "React Native development is building responsive, high-performance, and native-like mobile applications using React Native’s component-based architecture and single codebase. React Native development enables seamless experiences across both Android and iOS platforms.",
-  },
+   icon: FaReact,
+  title: "React Native Development",
+  shortDescription:
+    "Build high-performance mobile apps with a single codebase for both iOS and Android—faster and more cost-effective than native development.",
+  longDescription:
+    "React Native development allows us to create fast, responsive, and scalable mobile applications using a shared codebase for both iOS and Android. Leveraging React’s component-based architecture, we deliver native-like experiences with reduced development time and cost. Whether it's a startup MVP or a full-featured mobile product, React Native offers the flexibility and efficiency to bring your mobile vision to life.",
+},
   {
     id: "android app development",
-    icon: FaAndroid, // Changed from FaReact to FaAndroid
-    title: "Swift and Objective-C",
-    shortDescription:
-      "If you're targeting iOS users only, these native languages offer optimal performance and seamless integration into the Apple ecosystem.",
-    longDescription:
-      "Swift and Objective-C development is building fast, reliable, and native iOS applications using Apple’s powerful programming languages. This development ensures seamless performance, security, and integration across all Apple devices.",
-  },
+   icon: FaAndroid,
+  title: "Android App Development",
+  shortDescription:
+    "Build native Android applications with excellent performance, seamless user experience, and full integration with the Android ecosystem.",
+  longDescription:
+    "Our Android App Development services focus on creating robust, scalable, and user-friendly mobile applications using Java or Kotlin. We follow modern design guidelines, optimize for performance, and ensure compatibility across a wide range of Android devices. From idea to Play Store launch, we handle everything—including UI/UX design, backend integration, and rigorous testing—for a reliable and impactful Android experience.",
+},
   {
     id: "ios app development",
     icon: FaApple, // Changed from FaCode to FaApple (for iOS)
-    title: "Kotlin and Java",
+    title: "IOS App Development",
     shortDescription:
       "Recommended for native Android applications, they guarantee robustness and speed.",
     longDescription:
@@ -86,13 +86,13 @@ const appservicedata = [
   },
   {
     id: "app ui design",
-    icon: FaPalette, // Changed from FaServer to FaPalette (more design-related)
-    title: "Progressive Web Apps (PWA)",
-    shortDescription:
-      "For lightweight applications accessible via a browser, PWAs are an excellent alternative, combining the best of web and mobile.",
-    longDescription:
-      "Progressive Web App (PWA) development is creating fast, reliable, and engaging web applications that work seamlessly across all devices. PWAs combine the best of web and mobile apps with offline access and native-like performance.",
-  },
+    icon: FaPalette,
+  title: "APP UI Design",
+  shortDescription:
+    "Crafting visually stunning and user-centric mobile app interfaces that elevate the user experience.",
+  longDescription:
+    "Our App UI Design services focus on creating clean, intuitive, and engaging user interfaces tailored for both iOS and Android platforms. We blend aesthetic appeal with functionality, ensuring smooth navigation, accessibility, and brand consistency. Using tools like Figma and Adobe XD, we deliver pixel-perfect designs that enhance usability and support your app's overall success.",
+},
 ];
 
 const features = [
@@ -309,7 +309,7 @@ const Appweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="app-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Mobile application development tools
+               What you get
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
                 Turning your vision into reality with Fronxsolutions premium
