@@ -60,53 +60,53 @@ const softservicedata = [
   {
     id: "crm system development",
     icon: FaNetworkWired,
-    title: "CRM System Development",
+    title: "Design and development of custom software",
     shortDescription:
-      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+      "We create each software solution from A to Z, adapting it to your brand, your users' needs, and your business objectives.",
     longDescription:
-      "Complete WooCommerce store setup including product configuration, payment integration, and theme customization for your e-commerce business.",
+      "We design and develop custom software solutions from the ground up, tailored to your brand identity, user needs, and business goals. Whether it's a web app, mobile app, or internal tool, our process ensures scalability, usability, and full alignment with your operational requirements."
   },
   {
     id: "booking or inventory system",
     icon: FaClipboardList,
-    title: "Booking or Inventory System",
+    title: "Desktop, web and multiplatform solutions",
     shortDescription:
-      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Whether you need a robust web application, a desktop solution, or a cross-platform system using technologies such as .NET, Java, or Electron, we have the right solution.",
+    longDescription:
+      "We develop powerful and scalable desktop, web, and cross-platform applications using technologies like .NET, Java, and Electron. Whether you need a dedicated desktop tool, a browser-based system, or a solution that runs seamlessly across platforms, we tailor each project to meet your specific technical and business needs."
   },
   {
     id: "saas platform development",
     icon: FaCloud,
-    title: "Saas Platform Development",
+    title: "Fast, responsive and user-friendly",
     shortDescription:
-      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "We develop with performance and usability at the heart, ensuring smooth workflows, reduced loading times and a consistent user experience across all platforms.",
+    longDescription:
+    "We build software and applications with a strong focus on speed, responsiveness, and user experience. By optimizing performance, minimizing loading times, and ensuring smooth, intuitive interfaces, we deliver solutions that work flawlessly across all devices and platforms."
   },
   {
     id: "erp or system",
     icon: FaCogs,
-    title: "ERP or System",
+    title: "Rich features",
     shortDescription:
-      "Tailored online shopping solutions designed for your specific business needs.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "From e-commerce systems and real-time data processing to booking engines, integrations, dashboards and communication tools, whatever your needs, we make them happen.",
+    longDescription:
+    "We develop custom solutions packed with rich features such as e-commerce systems, real-time data processing, booking engines, dashboards, third-party integrations, and communication tools. Whatever your business needs, we design functional and scalable features that enhance usability and performance."
   },
 ];
 
 const features = [
   {
     icon: <FaRocket className="text-orange-400 text-3xl" />,
-    title: "Save costs and launch quickly",
+    title: "Optimize your business processes.",
   },
   {
     icon: <FaCode className="text-orange-400 text-3xl" />,
-    title: "Expertise in development",
+    title: "Integrate seamlessly with your existing tools.",
   },
   {
     icon: <FaHeadset className="text-orange-400 text-3xl" />,
-    title: "Support after launch",
+    title: "Solving your specific problems without compromise.",
   },
 ];
 
@@ -185,10 +185,9 @@ const Software = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
-                <span className="mt-3 relative inline-block">
-                  Expert
+                Software
+                <span className="mt-3 ml-3 relative inline-block">
+                  development
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -219,7 +218,7 @@ const Software = () => {
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Custom Software Development
+                    Software development
                   </Link>
                 </div>
               </motion.div>
@@ -301,11 +300,10 @@ const Software = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="software-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Our E-Commerce Development Services
+                What you get
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-                Turning your vision into reality with Fronxsolutions premium
-                custom software solutions.
+                The technologies used in software development are numerous and varied, each bringing its own specific advantages and meeting particular needs.
               </p>
             </motion.div>
 

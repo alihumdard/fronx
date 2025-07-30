@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
+import translations from "../translations";
+import { LanguageProvider, useLanguage } from "../LanguageContext";
 
 function Footer() {
   const companyLogos = [
@@ -17,8 +19,9 @@ function Footer() {
     { src: "/images/company-6.png", alt: "Soriana" },
     { src: "/images/company-7.png", alt: "Skullcandy" },
   ];
-
+  const { language } = useLanguage(); // Get the current language from context
   return (
+
     <>
       {/* Company Logos + CTA Section */}
       <header className="relative z-10">
@@ -51,7 +54,7 @@ function Footer() {
           {/* CTA Banner */}
           <div className="bg-white justify-between absolute -bottom-16 left-48 sm:left-[50%] transform -translate-x-1/2 shadow-2xl rounded-xl p-6 md:p-10 flex flex-col md:flex-row items-center max-w-5xl w-full mx-auto">
             <p className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-0 md:mr-8 text-center md:text-left">
-              Ready to bring your project to life?
+              {translations[language].ready}
             </p>
             <Link
               to={URLS.CONTACT}
@@ -60,7 +63,7 @@ function Footer() {
                 background: "linear-gradient(to right, #6931CF, #1A61EA)",
               }}
             >
-              Contact Us
+              {translations[language].contact}
             </Link>
           </div>
         </PageWrapper>
@@ -75,11 +78,11 @@ function Footer() {
           <section className="bg-gradient-to-b from-fronx-dark-bg to-fronx-darkest-bg py-16 px-4 md:px-12 mx-14 text-white overflow-hidden">
             <div className="whitespace-nowrap animate-marquee flex gap-28">
               {[
-                "Web Development",
-                "App Development",
-                "UX/UI Design",
-                "Maintenance",
-                "Digital Marketing",
+                translations[language].webDevelopment,
+                translations[language].appDevelopment,
+                translations[language].service3,
+                translations[language].maintinence,
+                translations[language].service5,
               ].map((service, index) => (
                 <span
                   key={index}
@@ -90,11 +93,11 @@ function Footer() {
               ))}
               {/* Duplicate items for seamless looping */}
               {[
-                "Web Development",
-                "App Development",
-                "UX/UI Design",
-                "Maintenance",
-                "Digital Marketing",
+                translations[language].webDevelopment,
+                translations[language].appDevelopment,
+                translations[language].service3,
+                translations[language].maintinence,
+                translations[language].service5,
               ].map((service, index) => (
                 <span
                   key={index + 100}
@@ -104,11 +107,11 @@ function Footer() {
                 </span>
               ))}
               {[
-                "Web Development",
-                "App Development",
-                "UX/UI Design",
-                "Maintenance",
-                "Digital Marketing",
+                translations[language].webDevelopment,
+                translations[language].appDevelopment,
+                translations[language].service3,
+                translations[language].maintinence,
+                translations[language].service5,
               ].map((service, index) => (
                 <span
                   key={index + 100}
@@ -127,8 +130,7 @@ function Footer() {
               <div className="w-full md:w-1/2 lg:w-1/5">
                 <h2 className="text-3xl font-bold mb-4">FRONX</h2>
                 <p className="text-sm opacity-80 mb-6">
-                  Driving Business Success Through Innovative Technology | Fronx
-                  Solutions
+                  {translations[language].drive}
                 </p>
                 <div className="flex space-x-3">
                   {["T", "L", "I", "P", "M"].map((item, idx) => (
@@ -145,36 +147,36 @@ function Footer() {
 
               {/* Menu */}
               <div className="w-1/2 md:w-1/4 lg:w-1/6">
-                <h3 className="text-lg font-semibold mb-4">Menu</h3>
+                <h3 className="text-lg font-semibold mb-4">{translations[language].menu}</h3>
                 <ul className="space-y-2 text-sm opacity-80">
                   <li>
                     <Link to={URLS.HOME} className="hover:text-gray-400">
-                      Home
+                      {translations[language].home}
                     </Link>
                   </li>
                   <li>
                     <Link to={URLS.OVERONS} className="hover:text-gray-400">
-                      Over Ons
+                      {translations[language].overOns}
                     </Link>
                   </li>
                   <li>
                     <Link to={URLS.SERVICES} className="hover:text-gray-400">
-                      Services
+                      {translations[language].services}
                     </Link>
                   </li>
                   <li>
                     <Link to={URLS.BLOG} className="hover:text-gray-400">
-                      Blog
+                      {translations[language].blog}
                     </Link>
                   </li>
                   <li>
                     <Link to="#" className="hover:text-gray-400">
-                      Portfolio
+                      {translations[language].portfolio}
                     </Link>
                   </li>
                   <li>
                     <Link to={URLS.CONTACT} className="hover:text-gray-400">
-                      Contact
+                      {translations[language].contact}
                     </Link>
                   </li>
                 </ul>
@@ -182,14 +184,15 @@ function Footer() {
 
               {/* Services Column 1 */}
               <div className="w-1/2 md:w-1/4 lg:w-1/6">
-                <h3 className="text-lg font-semibold mb-4">Services</h3>
+                <h3 className="text-lg font-semibold mb-4"> {translations[language].services}
+                </h3>
                 <ul className="space-y-2 text-sm opacity-80">
                   <li>
                     <Link
                       to={URLS.SERVICE_DETAIL.WEB_DEVELOPMENT}
                       className="hover:text-gray-400"
                     >
-                      Web Design and Development
+                      {translations[language].webDevelopment}
                     </Link>
                   </li>
                   <li>
@@ -197,7 +200,8 @@ function Footer() {
                       to={URLS.SERVICE_DETAIL.APP_DEVELOPMENT}
                       className="hover:text-gray-400"
                     >
-                      Mobile Application Development
+                      {translations[language].appDevelopment}
+
                     </Link>
                   </li>
                   <li>
@@ -205,7 +209,8 @@ function Footer() {
                       to={URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT}
                       className="hover:text-gray-400"
                     >
-                      Software Development
+                      {translations[language].service6}
+
                     </Link>
                   </li>
                   <li>
@@ -213,7 +218,7 @@ function Footer() {
                       to={URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT}
                       className="hover:text-gray-400"
                     >
-                      UI/UX Design
+                      {translations[language].approach3}
                     </Link>
                   </li>
                   <li>
@@ -221,7 +226,7 @@ function Footer() {
                       to={URLS.SERVICE_DETAIL.SEO}
                       className="hover:text-gray-400"
                     >
-                      SEO Services
+                      {translations[language]. SEOServices}
                     </Link>
                   </li>
                 </ul>

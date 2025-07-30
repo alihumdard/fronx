@@ -10,7 +10,11 @@ import {
   FaClipboardList, // For Planning & Strategy
   FaLaptopCode, // For Design And Development
   FaVial, // For Testing & Quality Assurance (FaFlask could also work)
-  FaCloudUploadAlt, // For Deployment
+  FaCloudUploadAlt,
+  FaCubes,
+  FaDatabase,
+  FaEdit,
+  FaPuzzlePiece, // For Deployment
 } from "react-icons/fa";
 import {
   FaWordpressSimple, // For WordPress
@@ -52,81 +56,74 @@ const processSteps = [
 
 const webServicesData = [
   {
-    id: "wordpress",
-    icon: FaWordpressSimple,
-    title: "WordPress Development",
+    id: "computer languages",
+   icon: FaCode,
+title: "Computer languages",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "HTML, CSS, JavaScript, PHP, Ruby, Python, etc. are the foundations of building websites and web applications.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Computer languages like HTML, CSS, JavaScript, PHP, Ruby, and Python are the building blocks of websites and web applications. They define structure, style, behavior, and server-side logic, enabling the creation of dynamic, interactive, and efficient digital experiences."
   },
   {
-    id: "laravel-php",
-    icon: FaPhp,
-    title: "Laravel/PHP Web Apps",
+    id: "frameworks and libraries",
+   icon: FaCubes,
+title: "Frameworks and Libraries",
+
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "React, Angular, Vue.js, Ruby on Rails, Django, etc. make development easier by providing pre-built frameworks and tools.",
     longDescription:
-      "Bootstrap development is building responsive, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Frameworks and libraries like React, Angular, Vue.js, Ruby on Rails, and Django simplify the development process by offering pre-built components, tools, and structures. They help developers build scalable, efficient, and maintainable applications with less effort and more consistency."
   },
   {
-    id: "react-nextjs",
-    icon: FaReact, // Could use SiNextdotjs for combined icon
-    title: "React.js / Next.js Web Apps",
+    id: "databases",
+ icon: FaDatabase,
+title: "Databases",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "MySQL, MongoDB, PostgreSQL, etc. are used to store and manage data efficiently and securely.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    "Databases like MySQL, MongoDB, and PostgreSQL are essential for storing, managing, and retrieving data efficiently and securely. They support dynamic applications by handling structured and unstructured data, ensuring performance, scalability, and data integrity."
   },
   {
-    id: "website-redesign",
-    icon: FaCode, // Generic B icon equivalent
-    title: "Website Redesign/Optimization",
+    id: "(cms)",
+   icon: FaEdit,
+title: "Content Management Systems (CMS)",
+
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "WordPress, Joomla, Drupal, etc., allow simplified content management for end users.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    "Content Management Systems like WordPress, Joomla, and Drupal enable users to create, manage, and update website content without needing advanced technical skills. They offer customizable themes, plugins, and user-friendly interfaces for building dynamic and scalable websites."
   },
-  {
-    id: "api-integration",
-    icon: FaServer, // Generic B icon equivalent
-    title: "API Integration",
+   {
+    id: "smart features tailored",
+    icon: FaPuzzlePiece,
+title: "Smart features tailored to your needs",
     shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Booking systems, contact forms, galleries, blogs, portfolios, whatever your needs, we can make them happen.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-  },
-  {
-    id: "landing-page",
-    icon: FaFileAlt, // Generic B icon equivalent
-    title: "Landing Page Development",
-    shortDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
-    longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+    "Smart features like booking systems, contact forms, image galleries, blogs, and portfolios are custom-built to match your specific requirements. These functionalities enhance user experience and provide practical solutions that align perfectly with your business goals and website objectives."
   },
 ];
 
 const features = [
   {
     icon: <FaBolt className="text-orange-400 text-3xl" />,
-    title: "Effective",
-    desc: "We design our apps with a strong focus on the user experience. Featuring intuitive interfaces, our apps make navigation simple and efficient, allowing users to find what they need quickly. This seamless interaction boosts both satisfaction and usability.",
+    title: "Exceptional User Experience (UX) and Interface Design",
+    desc: "Carefully designed interfaces, combined with intuitive UX principles, allow users to navigate easily, fully engage, and enjoy a consistent experience across desktop, tablet, and mobile devices.",
   },
   {
     icon: <FaCogs className="text-orange-400 text-3xl" />,
-    title: "Dynamic",
-    desc: "Our apps prioritize experience, featuring intuitive interfaces that ensure smooth and effortless navigation. Users can quickly find the content they need, resulting in greater satisfaction. This seamless interaction boosts both satisfaction and usability.",
+    title: "Optimized performance and responsiveness",
+    desc: "Fast-loading pages, responsive layouts, and efficient front-end logic (thanks to frameworks like React or Vue) ensure smooth interactions and real-time functionality across all browsers.",
   },
   {
     icon: <FaLock className="text-orange-400 text-3xl" />,
-    title: "Affordable",
-    desc: "Our app places a strong emphasis on user data security by using advanced encryption, multi-factor authentication, and a robust, industry-standard security framework to prevent unauthorized access and reliably protect all information.",
+    title: "Enhanced Security",
+    desc: "Secure login flows, data validation, and protection against threats like XSS and CSRF help protect sensitive user data and build trust.",
   },
   {
     icon: <FaChartLine className="text-orange-400 text-3xl" />,
-    title: "Scale Your Business",
-    desc: "Our app seamlessly integrates with popular social platforms, enabling users to log in using their social accounts, share content easily, and connect with others—greatly enhancing overall community interaction and user engagement.",
+    title: "Scalability and maintainability",
+    desc: " Modular, clear and well-structured code makes it easier to evolve the project, fix bugs and quickly add new features, ensuring lasting success and reducing development costs.",
   },
 ];
 
@@ -208,10 +205,9 @@ const Serviceweb = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
-                <span className="mt-3 relative inline-block">
-                  Expert
+                Web
+                <span className="mt-3 ml-3 relative inline-block">
+                  Development
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -330,11 +326,10 @@ const Serviceweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="web-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Our Web Development Services
+                Technologies used in web development
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                Turning your vision into reality with Fronxsolutions premium
-                custom software solutions.
+                The technologies used in web development are many and varied, each with its own specific advantages and applications:
               </p>
             </motion.div>
 
@@ -384,7 +379,7 @@ const Serviceweb = () => {
                         onClick={() => toggleExpand(service.id)}
                         className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
                       >
-                        {isExpanded ? "Show less →" : "Learn more →"}
+                        {isExpanded ? "Show less →" : "Show more →"}
                       </button>
                     )}
 
@@ -393,7 +388,7 @@ const Serviceweb = () => {
                         href="#"
                         className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline"
                       >
-                        Learn more →
+                        Show more →
                       </a>
                     )}
                   </motion.div>
@@ -413,11 +408,10 @@ const Serviceweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                Website Development Features
+                The Benefits of Modern Web Development
               </h2>
               <p className="text-gray-300 mb-12 max-w-3xl">
-                Explore the elements that make our designs intuitive, engaging,
-                and results-driven.
+                Harnessing the power of a robust web front-end brings major benefits to custom sites and applications:
               </p>
             </motion.div>
 

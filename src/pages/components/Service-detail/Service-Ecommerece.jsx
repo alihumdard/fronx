@@ -14,6 +14,8 @@ import {
   FaNetworkWired,
   FaShoppingBasket,
   FaRobot,
+  FaPalette,
+  FaTachometerAlt,
 } from "react-icons/fa";
 import {
   FaWordpress,
@@ -56,37 +58,37 @@ const processSteps = [
 const appservicedata = [
   {
     id: "woocommerce store setup",
-    icon: FaWordpress, // WooCommerce is a WordPress plugin
-    title: "WooCommerce Store Setup",
+  icon: FaPalette, // from react-icons/fa
+title: "A design to suit you",
     shortDescription:
-      "Easy-to-use navigation that helps users find what they need quickly, easily, and effortlessly.",
+      "Every element, from colors to typography, faithfully reflects your identity, your branding and your graphic charter.",
     longDescription:
       "Complete WooCommerce store setup including product configuration, payment integration, and theme customization for your e-commerce business.",
   },
   {
     id: "shopify store development",
-    icon: FaShopify, // Official Shopify icon
-    title: "Shopify Store Development",
+  icon: FaCogs, // from react-icons/fa
+title: "Features designed with you in mind",
     shortDescription:
-      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+      "Advanced inventory management, multi-currency payments, flash sales... it's all possible.",
         longDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "payment gateway integration",
-    icon: FaCreditCard, // Represents payments
-    title: "Payment Gateway Integration",
+icon: FaChartLine, // from react-icons/fa
+title: "Total scalability",
     shortDescription:
-      "Secure integration of payment processors for smooth and reliable transactions.",
+      "Your site grows with you. You can add features or change the architecture over time.",
         longDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
   {
     id: "custom e-commerce portals",
-    icon: FaShoppingCart, // Represents e-commerce
-    title: "Custom E-Commerce Portals",
+   icon: FaTachometerAlt, // from react-icons/fa
+title: "Optimized performance",
     shortDescription:
-      "Tailored online shopping solutions designed for your specific business needs.",
+      "Pages load fast, and search engines love it.",
         longDescription:
       "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
   },
@@ -103,18 +105,28 @@ const appservicedata = [
 const features = [
   {
     icon: <FaNetworkWired className="text-orange-400 text-3xl" />,
-    title: "Business-to-Business",
-    desc: "Shift your offline territory to a more rigid online Ecommerce platform to target larger audiences.",
+    title: "Identify your needs",
+    desc: "You need to know who you're selling to, what you're selling and how you're selling it. Preliminary project analysis is essential to meet companies' expectations and objectives.",
   },
   {
     icon: <FaShoppingBasket className="text-orange-400 text-3xl" />,
-    title: "Business-to-Consumer",
-    desc: "Reach out to more prospects locally and globally by introducing your brand to an online community.",
+    title: "Choosing the right technologies",
+    desc: "Tools such as WooCommerce or Magento offer a solid foundation, but custom development can go even further. It's crucial to choose a suitable webshop platform that offers analysis tools and supports multiple languages.",
   },
   {
     icon: <FaRobot className="text-orange-400 text-3xl" />,
-    title: "Complete Automation",
-    desc: "Streamline business processes with ecommerce and focus on things that help in business growth.",
+    title: "Create an interface that attracts and retains",
+    desc: "Your customers need to find what they're looking for in just a few clicks. Clear, attractive design is crucial. Personalizing your website is also essential to attracting and retaining customers.",
+  },
+  {
+    icon: <FaRobot className="text-orange-400 text-3xl" />,
+    title: "Integrating key functionalities",
+    desc: "Online payments, order management, inventory tracking... Your website needs to be a well-oiled machine. Integrating key functionalities is essential for a high-performance website.",
+  },
+  {
+    icon: <FaRobot className="text-orange-400 text-3xl" />,
+    title: "Test and adjust",
+    desc: "Nothing goes online untested. Every detail is checked to ensure an impeccable experience. Testing and fine-tuning are crucial to optimizing websites and delivering a flawless user experience.",
   },
 ];
 
@@ -193,10 +205,10 @@ const Ecommerece = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
-                <span className="mt-3 relative inline-block">
-                  Expert
+               Tailor-made e-commerce to boost your <br />
+                <span className="mt-3">online</span>
+                <span className="mt-3 ml-3 relative inline-block">
+                  business
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -309,11 +321,10 @@ const Ecommerece = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="commerce-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Our E-Commerce Development Services
+               The advantages of a customized e-commerce site
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-                Turning your vision into reality with Fronxsolutions premium
-                custom software solutions.
+                Custom e-commerce is much more than a classic online store. It’s a real growth driver. Here’s why:
               </p>
             </motion.div>
 
@@ -391,11 +402,10 @@ const Ecommerece = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl text-center font-bold mb-4">
-                Our E-Commerce Solutions
+               Steps to creating a custom e-commerce site
               </h2>
               <p className="text-gray-300 mb-12 max-w-3xl mx-auto text-center">
-                Achieve your business goals with our Fronx methodology, renowned
-                for its structure, planning, and consistent results.
+               Creating an e-commerce site is no trivial task. To succeed, every e-commerce project must be carefully planned, and every step must be thought through in detail:
               </p>
             </motion.div>
 

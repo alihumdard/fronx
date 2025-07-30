@@ -51,70 +51,70 @@ const appservicedata = [
   {
     id: "flutter app development",
     icon: FaFlutter, // Changed from FaWordpressSimple to FaFlutter
-    title: "Flutter App Development",
+    title: "Flutter",
     shortDescription:
-      "Easy-to-use navigation that helps users find what they need quickly, easily, and effortlessly.",
+      "Developed by Google, Flutter is perfect for modern, fluid interfaces, with cross-platform compatibility.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework's grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework's grid system and UI components.",
+      "Flutter development is building responsive, high-performance, and visually appealing cross-platform applications using Flutter’s widget-based UI and single codebase architecture. Flutter development enables seamless experiences across mobile, web, and desktop platforms.",
   },
   {
     id: "react native development",
     icon: FaReact, // Changed from FaPhp to FaReact (React Native uses React)
-    title: "React Native Development",
+    title: "React Native",
     shortDescription:
-      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
+      "Ideal for hybrid applications, React Native lets you create a single code base compatible with iOS and Android. It's fast and costs less than native development.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "React Native development is building responsive, high-performance, and native-like mobile applications using React Native’s component-based architecture and single codebase. React Native development enables seamless experiences across both Android and iOS platforms.",
   },
   {
     id: "android app development",
     icon: FaAndroid, // Changed from FaReact to FaAndroid
-    title: "Android App Development",
+    title: "Swift and Objective-C",
     shortDescription:
-      "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
+      "If you're targeting iOS users only, these native languages offer optimal performance and seamless integration into the Apple ecosystem.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Swift and Objective-C development is building fast, reliable, and native iOS applications using Apple’s powerful programming languages. This development ensures seamless performance, security, and integration across all Apple devices.",
   },
   {
     id: "ios app development",
     icon: FaApple, // Changed from FaCode to FaApple (for iOS)
-    title: "IOS App Development",
+    title: "Kotlin and Java",
     shortDescription:
-      "Designing with the user's needs, preferences, and behaviors at the core of every decision.",
+      "Recommended for native Android applications, they guarantee robustness and speed.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Kotlin and Java development is building robust, efficient, and native Android applications using powerful object-oriented and modern programming languages. This development ensures smooth performance and compatibility across Android devices.",
   },
   {
     id: "app ui design",
     icon: FaPalette, // Changed from FaServer to FaPalette (more design-related)
-    title: "APP UI Design",
+    title: "Progressive Web Apps (PWA)",
     shortDescription:
-      "Creating intuitive interactions that make navigating and using the product simple and enjoyable.",
+      "For lightweight applications accessible via a browser, PWAs are an excellent alternative, combining the best of web and mobile.",
     longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      "Progressive Web App (PWA) development is creating fast, reliable, and engaging web applications that work seamlessly across all devices. PWAs combine the best of web and mobile apps with offline access and native-like performance.",
   },
 ];
 
 const features = [
   {
     icon: <FaBolt className="text-orange-400 text-3xl" />,
-    title: "User-friendly Interface",
-    desc: "We design our apps with a strong focus on the user experience. Featuring intuitive interfaces, our apps make navigation simple and efficient, allowing users to find what they need quickly. This seamless interaction boosts both satisfaction and usability.",
+    title: "Data Management and Synchronization",
+    desc: "A well-structured backend ensures real-time data synchronization between devices, providing a seamless user experience and consistent data flow.",
   },
   {
     icon: <FaCogs className="text-orange-400 text-3xl" />,
-    title: "Improve Stability",
-    desc: "Our apps prioritize experience, featuring intuitive interfaces that ensure smooth and effortless navigation. Users can quickly find the content they need, resulting in greater satisfaction. This seamless interaction boosts both satisfaction and usability.",
+    title: "Performance and Scalability",
+    desc: "Optimized APIs and efficient server logic allow mobile apps to load quickly and scale easily to support a growing user base without performance loss.",
   },
   {
     icon: <FaLock className="text-orange-400 text-3xl" />,
-    title: "Resilience",
-    desc: "Our app places a strong emphasis on user data security by using advanced encryption, multi-factor authentication, and a robust, industry-standard security framework to prevent unauthorized access and reliably protect all information.",
+    title: "Security",
+    desc: " Built-in authentication, user authorization, and data encryption protect sensitive information and ensure compliance with industry security standards.",
   },
   {
     icon: <FaChartLine className="text-orange-400 text-3xl" />,
-    title: "Socialization",
-    desc: "Our app seamlessly integrates with popular social platforms, enabling users to log in using their social accounts, share content easily, and connect with others—greatly enhancing overall community interaction and user engagement.",
+    title: "Maintainability and flexibility",
+    desc: "A modular and well-documented backend makes it easy to maintain the code, release updates, and add new features based on user needs and technological developments.",
   },
 ];
 
@@ -193,10 +193,10 @@ const Appweb = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
+              Best Mobile App Development<br />
+                <span className="mt-3">Company in </span>
                 <span className="mt-3 relative inline-block">
-                  Expert
+                  Belgium
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -227,7 +227,7 @@ const Appweb = () => {
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Mobile Development
+                   Best Mobile App Development Company in Belgium
                   </Link>
                 </div>
               </motion.div>
@@ -309,7 +309,7 @@ const Appweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="app-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Our APP Development Services
+                Mobile application development tools
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
                 Turning your vision into reality with Fronxsolutions premium
@@ -391,11 +391,10 @@ const Appweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                Mobile App Development Features
+               The Benefits of Mobile App Development
               </h2>
               <p className="text-gray-300 mb-12 max-w-3xl">
-                Explore the elements that make our designs intuitive, engaging,
-                and results-driven.
+              A solid backend is the foundation of any successful mobile app. Here's how it delivers value:
               </p>
             </motion.div>
 
