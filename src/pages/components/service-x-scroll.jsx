@@ -233,7 +233,7 @@ export const fadeIn = {
   }),
 };
 
-const Service2 = () => {
+const Servicex = () => {
   const { language } = useLanguage(); // Get the current language
 
   // Call servicesData with the current language to get the actual array
@@ -246,9 +246,16 @@ const Service2 = () => {
   const activeService = currentServicesData.find((s) => s.id === activeServiceId);
 
   return (
-    <section className="relative py-16 md:py-24 hidden md:block overflow-hidden">
+    <section className="relative py-16 md:py-24 overflow-hidden  block md:hidden bg-black">
+      {/* Background image */}
+      <img
+        src="/images/bg.png"
+        alt="Decorative"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-100 pointer-events-none"
+      />
+
       <PageWrapper>
-        <div className="relative z-[2] text-black">
+        <div className="relative z-[2] text-white">
           {/* Heading */}
 
           <motion.div
@@ -262,7 +269,7 @@ const Service2 = () => {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               {translations[language].softwareDevelopment}
             </h2>
-            <p className="text-lg text-gray-800 mx-auto">
+            <p className="text-lg text-gray-300 mx-auto">
               {translations[language].softwareDevelopment2}
             </p>
           </motion.div>
@@ -281,44 +288,47 @@ const Service2 = () => {
                 const IconComponent = service.icon;
                 const isActive = service.id === activeServiceId;
                 return (
-                  <motion.div
-                    layout
-                    key={service.id}
-                    custom={index}
-                    variants={fadeIn}
-                    onClick={() => setActiveServiceId(service.id)}
-                    className={`relative flex flex-col items-center justify-center rounded-xl cursor-pointer transition-all duration-300
+                  <a href="#scroll">
+                    <motion.div
+                      layout
+                      key={service.id}
+                      custom={index}
+                      variants={fadeIn}
+                      onClick={() => setActiveServiceId(service.id)}
+                      className={`relative flex flex-col items-center justify-center rounded-xl cursor-pointer transition-all duration-300
                       ${isActive
-                        ? "border border-orange-600 text-black shadow-lg scale-105"
-                        : "bg-white/10 text-gray-800 shadow-sm hover:bg-white/20 hover:text-black border-none"
-                      } min-h-[150px] sm:min-h-[170px] text-center`}
-                  >
-                    {isActive && (
-                      <motion.div
-                        layoutId="active-service-border"
-                        className="absolute inset-0 rounded-xl border-2 border-orange-500 animate-pulse-slow"
-                      />
-                    )}
-                    {IconComponent && (
-                      <IconComponent
-                        className="w-10 h-10 mb-3"
-                        style={{ color: "#FF9B4B" }}
-                      />
-                    )}
-                    <h3 className="text-lg w-60 font-semibold leading-snug">
-                      {service.title.split(" ").map((word, i) => (
-                        <span key={i} className="block">
-                          {word}
-                        </span>
-                      ))}
-                    </h3>
-                  </motion.div>
+                          ? "border border-orange-600 text-white shadow-lg scale-105"
+                          : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white border-none"
+                        } min-h-[150px] sm:min-h-[170px] text-center`}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="active-service-border"
+                          className="absolute inset-0 rounded-xl border-2 border-orange-500 animate-pulse-slow"
+                        />
+                      )}
+                      {IconComponent && (
+                        <IconComponent
+                          className="w-10 h-10 mb-3"
+                          style={{ color: "#FF9B4B" }}
+                        />
+                      )}
+                      <h3 className="text-lg w-60 font-semibold leading-snug">
+                        {service.title.split(" ").map((word, i) => (
+                          <span key={i} className="block">
+                            {word}
+                          </span>
+                        ))}
+                      </h3>
+                    </motion.div>
+                  </a>
                 );
               })}
             </motion.div>
 
             {/* Right Panel: Service Detail */}
             <motion.div
+              id="scroll"
               className="py-8 pl-5 md:py-10 flex flex-col justify-between min-h-[400px] lg:min-h-[500px]"
               initial="hidden"
               whileInView="visible"
@@ -331,7 +341,7 @@ const Service2 = () => {
                   <h3 className="text-3xl font-bold mb-4">
                     {activeService.title}
                   </h3>
-                  <p className="text-gray-800 text-lg mb-6 flex-grow">
+                  <p className="text-gray-300 text-lg mb-6 flex-grow">
                     {activeService.description}
                   </p>
                   {/* Mobile Marquee (visible on mobile only) */}
@@ -354,7 +364,7 @@ const Service2 = () => {
                                 color: techColorMap[tech.name] || "#ccc",
                               }}
                             />
-                            <span className="text-xs text-gray-800 mt-1">
+                            <span className="text-xs text-gray-400 mt-1">
                               {tech.name}
                             </span>
                           </div>
@@ -377,7 +387,7 @@ const Service2 = () => {
                             title={tech.name}
                             style={{ color: techColorMap[tech.name] || "#ccc" }}
                           />
-                          <span className="text-xs text-gray-800 mt-1">
+                          <span className="text-xs text-gray-400 mt-1">
                             {tech.name}
                           </span>
                         </div>
@@ -405,4 +415,4 @@ const Service2 = () => {
   );
 };
 
-export default Service2;
+export default Servicex;

@@ -246,7 +246,7 @@ const Services = () => {
   const activeService = currentServicesData.find((s) => s.id === activeServiceId);
 
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden bg-black">
+    <section className="relative py-16 md:py-24 overflow-hidden hidden md:block bg-black">
       {/* Background image */}
       <img
         src="/images/bg.png"
@@ -288,45 +288,47 @@ const Services = () => {
                 const IconComponent = service.icon;
                 const isActive = service.id === activeServiceId;
                 return (
-                  <motion.div
-                    layout
-                    key={service.id}
-                    custom={index}
-                    variants={fadeIn}
-                    onClick={() => setActiveServiceId(service.id)}
-                    className={`relative flex flex-col items-center justify-center rounded-xl cursor-pointer transition-all duration-300
+                 
+                    <motion.div
+                      layout
+                      key={service.id}
+                      custom={index}
+                      variants={fadeIn}
+                      onClick={() => setActiveServiceId(service.id)}
+                      className={`relative flex flex-col items-center justify-center rounded-xl cursor-pointer transition-all duration-300
                       ${isActive
-                        ? "border border-orange-600 text-white shadow-lg scale-105"
-                        : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white border-none"
-                      } min-h-[150px] sm:min-h-[170px] text-center`}
-                  >
-                    {isActive && (
-                      <motion.div
-                        layoutId="active-service-border"
-                        className="absolute inset-0 rounded-xl border-2 border-orange-500 animate-pulse-slow"
-                      />
-                    )}
-                    {IconComponent && (
-                      <IconComponent
-                        className="w-10 h-10 mb-3"
-                        style={{ color: "#FF9B4B" }}
-                      />
-                    )}
-                    <h3 className="text-lg w-60 font-semibold leading-snug">
-                      {service.title.split(" ").map((word, i) => (
-                        <span key={i} className="block">
-                          {word}
-                        </span>
-                      ))}
-                    </h3>
-                  </motion.div>
+                          ? "border border-orange-600 text-white shadow-lg scale-105"
+                          : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white border-none"
+                        } min-h-[150px] sm:min-h-[170px] text-center`}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="active-service-border"
+                          className="absolute inset-0 rounded-xl border-2 border-orange-500 animate-pulse-slow"
+                        />
+                      )}
+                      {IconComponent && (
+                        <IconComponent
+                          className="w-10 h-10 mb-3"
+                          style={{ color: "#FF9B4B" }}
+                        />
+                      )}
+                      <h3 className="text-lg w-60 font-semibold leading-snug">
+                        {service.title.split(" ").map((word, i) => (
+                          <span key={i} className="block">
+                            {word}
+                          </span>
+                        ))}
+                      </h3>
+                    </motion.div>
+                  
                 );
               })}
             </motion.div>
 
             {/* Right Panel: Service Detail */}
             <motion.div
-              id="scroll"
+            
               className="py-8 pl-5 md:py-10 flex flex-col justify-between min-h-[400px] lg:min-h-[500px]"
               initial="hidden"
               whileInView="visible"

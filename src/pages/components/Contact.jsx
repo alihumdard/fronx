@@ -72,12 +72,12 @@ const ContactForm = () => {
           <div className="bg-white bg-opacity-5 p-8 md:p-10 rounded-xl shadow-lg border border-gray-700">
             <form className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { id: "firstName", placeholder: "First Name" },
-                { id: "lastName", placeholder: "Last Name" },
-                { id: "email", placeholder: "Email", type: "email" },
-                { id: "mobileNumber", placeholder: "Mobile Number", type: "tel" },
-                { id: "currentWebsite", placeholder: "Current Website?", colSpan: true },
-                { id: "iWouldLike", placeholder: "I Would Like...", colSpan: true },
+                { id: "firstName", placeholder: translations[language].firstname },
+                { id: "lastName", placeholder: translations[language].LastName },
+                { id: "email", placeholder: translations[language].Email, type: "email" },
+                { id: "mobileNumber", placeholder: translations[language].MobileNumber, type: "tel" },
+                { id: "currentWebsite", placeholder: translations[language].CurrentWebsite, colSpan: true },
+                { id: "iWouldLike", placeholder: translations[language].like, colSpan: true },
               ].map(({ id, placeholder, type = "text", colSpan }) => (
                 <div key={id} className={`${colSpan ? "sm:col-span-2" : ""}`}>
                   <label htmlFor={id} className="sr-only">{placeholder}</label>

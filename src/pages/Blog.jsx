@@ -9,6 +9,8 @@ import ContactForm from "./components/Contact";
 import Footer from "../main/Footer";
 import StatsSection from "./components/Statsdata";
 import ProjectGridSection from "./components/ProjectGridSection";
+import { useLanguage } from "../LanguageContext";
+import translations from "../translations";
 
 // Animation Variants (kept as is, assuming they are correct)
 const containerVariant = {
@@ -38,6 +40,7 @@ export const staggerContainer = {
   },
 };
 const Blog = () => {
+  const { language } = useLanguage();
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -85,11 +88,11 @@ const Blog = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
-                <span className="mt-3 relative inline-block">
-                  Expert
-                  <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
+                {translations[language].empover} <br />
+                <span className="mt-3">{translations[language].with}</span>
+                <span className="mt-3 ml-3 relative inline-block">
+                  {translations[language].Expert}
+                  <span className="absolute  left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
 
@@ -108,11 +111,11 @@ const Blog = () => {
                     to="/"
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Home
+                    {translations[language].home}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Blog
+                    {translations[language].blog}
                   </Link>
                 </div>
               </motion.div>
@@ -125,7 +128,7 @@ const Blog = () => {
         </div>
 
         <motion.div
-          className="bg-cover bg-center text-white px-4 sm:px-6 md:px-10 lg:px-28 py-10 rounded-lg shadow-lg my-20 flex flex-col lg:flex-row items-center lg:items-start"
+          className="bg-cover bg-center text-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 rounded-lg shadow-lg my-20 flex flex-col lg:flex-row items-center lg:items-start"
           style={{ backgroundImage: "url('/images/Home.png')" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -147,7 +150,7 @@ const Blog = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Transform Your Business Today <br /> Speak with Our Experts!
+              {translations[language].transform} <br />{translations[language].transform1}
             </motion.h2>
 
             <motion.p
@@ -157,9 +160,9 @@ const Blog = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Ready to take your business to the next level with cutting-edge IT
+              {translations[language].transform2}
               <br />
-              solutions? Our team is here to help you transform.
+
             </motion.p>
 
             <motion.div
@@ -172,7 +175,7 @@ const Blog = () => {
               <div className="relative w-full sm:w-auto bg-white rounded-full shadow-lg flex items-center max-w-md p-1">
                 <input
                   type="email"
-                  placeholder="Email Address"
+                  placeholder={translations[language].emailaddress}
                   className="flex-1 px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base text-gray-700 bg-transparent outline-none placeholder-gray-500 rounded-full"
                   aria-label="Email Address"
                 />
@@ -180,7 +183,7 @@ const Blog = () => {
                   className="flex items-center justify-center px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-700 text-white text-sm sm:text-lg font-semibold rounded-full shadow-md hover:shadow-xl transition"
                   aria-label="Subscribe"
                 >
-                  Subscribe
+                  {translations[language].sub}
                   <svg
                     className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
