@@ -30,30 +30,30 @@ import StatsSection from "../Statsdata";
 import translations from "../../../translations";
 import { useLanguage } from "../../../LanguageContext";
 
-const processSteps = [
+const processSteps = (language) => [
   {
     icon: FaClipboardList,
-    title: "Planning & Strategy",
+    title: translations[language].webservice3,
     description:
-      "Strategic planning that aligns your digital goals with real-world results through data-driven insights and focused execution.",
+      translations[language].webservice4,
   },
   {
     icon: FaLaptopCode,
-    title: "Design And Development",
+    title: translations[language].webservice5,
     description:
-      "End-to-end design and development services that transform ideas into interactive, high-performance digital experiences.",
+      translations[language].webservice6,
   },
   {
     icon: FaVial, // Or FaFlask
-    title: "Testing & Quality Assurance",
+    title: translations[language].webservice7,
     description:
-      "Comprehensive testing to ensure your application is bug-free, secure, and delivers a flawless user experience.",
+      translations[language].webservice8,
   },
   {
     icon: FaCloudUploadAlt,
-    title: "Deployment",
+    title: translations[language].webservice9,
     description:
-      "Smooth and secure deployment of your application to production environments with minimal downtime.",
+      translations[language].webservice10,
   },
 ];
 
@@ -62,46 +62,46 @@ const webServicesData = (language) => [
     id: "computer languages",
 
     icon: FaWordpress,
-    title: "WordPress Development",
-    shortDescription: "Custom WordPress websites with responsive design, SEO optimization, and user-friendly admin panels.",
+    title: translations[language].webservice11,
+    shortDescription: translations[language].webservice12,
     longDescription:
-      "We specialize in creating responsive and high-performing WordPress websites that are easy to manage and optimized for performance. Whether you need a blog, corporate website, or an e-commerce store using WooCommerce, our team ensures a seamless development process with clean design and robust functionality.",
+      translations[language].webservice13,
   },
   {
     id: "frameworks and libraries",
     icon: FaCubes,
-    title: "Laravel/PHP Web Apps",
-    shortDescription: "Powerful and scalable web applications built with Laravel and PHP for modern business needs.",
+    title: translations[language].webservice14,
+    shortDescription: translations[language].webservice15,
     longDescription:
-      "We build robust and secure web applications using Laravel, the leading PHP framework. From custom dashboards and CRM systems to complete business automation tools, our Laravel/PHP solutions are designed for scalability, performance, and maintainability. With clean architecture, RESTful APIs, and advanced backend features, we deliver powerful solutions tailored to your business logic.",
+      translations[language].webservice16,
   },
   {
     id: "databases",
     icon: FaDatabase,
-    title: "React.js/Next.js Web Apps",
+    title: translations[language].webservice17,
     shortDescription:
-      "High-performance, SEO-friendly web apps using modern React.js and Next.js frameworks.",
+      translations[language].webservice18,
     longDescription:
-      "We craft modern, dynamic web applications using React.js for powerful front-end interactivity and Next.js for server-side rendering, routing, and SEO optimization. Our apps are fast, scalable, and fully responsive—ideal for everything from marketing sites to complex dashboards and SaaS platforms. With a focus on performance and user experience, we ensure your product delivers results.",
+      translations[language].webservice19,
   },
   {
     id: "(cms)",
     icon: FaEdit,
-    title: "Website Redesign",
+    title: translations[language].webservice20,
     shortDescription:
-      "Modernize your outdated website with a fresh, responsive, and conversion-focused design.",
+      translations[language].webservice21,
     longDescription:
-      "Our website redesign services help transform outdated or underperforming websites into modern, visually appealing, and user-friendly platforms. We focus on improving UI/UX, mobile responsiveness, speed optimization, and overall branding to ensure your site leaves a strong impression and boosts engagement. Whether it's a small revamp or a complete overhaul, we tailor the redesign to meet your business goals.",
+    translations[language].webservice22,
   },
   {
     id: "smart features tailored",
-  icon: FaPuzzlePiece,
-  title: "API Integration",
-  shortDescription:
-    "Seamless integration of third-party APIs to enhance your website or application functionality.",
-  longDescription:
-    "We offer expert API integration services to connect your application with external platforms such as payment gateways, social media, CRMs, shipping providers, and more. Whether it's REST, SOAP, or GraphQL, we ensure secure, efficient, and reliable communication between systems to streamline operations and improve user experience. From custom API setups to third-party services, we’ve got you covered.",
-},
+    icon: FaPuzzlePiece,
+    title: translations[language].webservice23,
+    shortDescription:
+      translations[language].webservice24,
+    longDescription:
+      translations[language].webservice25,
+  },
 ];
 
 const features = (language) => [
@@ -158,6 +158,7 @@ const Serviceweb = () => {
   const { language } = useLanguage();
   const updatefeatures = features(language);
   const latestwebServicesData = webServicesData(language);
+  const latestprocessSteps = processSteps(language);
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -265,10 +266,10 @@ const Serviceweb = () => {
               className="text-start px-4 sm:px-6 mb-12"
             >
               <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                Website Development Process
+                {translations[language].webservice1}
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-4xl">
-                Cutting-Edge Technology Solutions
+                {translations[language].webservice2}
               </h2>
             </motion.div>
 
@@ -283,7 +284,7 @@ const Serviceweb = () => {
                 className="absolute top-20 lg:top-24 hidden lg:block w-full h-0.5 border-t-2 border-dashed border-gray-300 z-0"
               ></motion.div>
 
-              {processSteps.map((step, index) => {
+              {latestprocessSteps.map((step, index) => {
                 const IconComponent = step.icon;
                 return (
                   <motion.div
@@ -383,7 +384,7 @@ const Serviceweb = () => {
                         onClick={() => toggleExpand(service.id)}
                         className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
                       >
-                        {isExpanded ? "Show less →" : "Show more →"}
+                        {isExpanded ?  translations[language].webservice26 : translations[language].webservice27}
                       </button>
                     )}
 

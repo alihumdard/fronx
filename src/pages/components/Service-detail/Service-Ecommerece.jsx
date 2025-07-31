@@ -26,107 +26,109 @@ import {
 } from "react-icons/fa";
 import StatsSection from "../Statsdata";
 import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
+import translations from "../../../translations";
+import { useLanguage } from "../../../LanguageContext";
 
 
-const processSteps = [
+const processSteps = (language) =>  [
   {
     icon: FaClipboardList,
-    title: "Planning & Research",
+    title: translations[language].commerce7,
     description:
-      "Laying the foundation for success with in-depth research, strategic planning, and clear project direction.",
+      translations[language].commerce8,
   },
   {
     icon: FaLaptopCode,
-    title: "Design & Store Setup",
+    title: translations[language].commerce9,
     description:
-      "We create visually appealing, user-friendly online stores with seamless navigation and a streamlined shopping experience.",
+      translations[language].commerce10,
   },
   {
     icon: FaVial, // Or FaFlask
-    title: "Development & Integration",
+    title: translations[language].commerce11,
     description:
-      "Robust development combined with seamless integration of third-party tools, APIs, and services tailored to your business needs.",
+      translations[language].commerce12,
   },
   {
     icon: FaCloudUploadAlt,
-    title: "Testing & Launch",
+    title: translations[language].commerce13,
     description:
-      "Thorough testing followed by a smooth, confident launch to ensure your product is bug-free, secure, and ready for users.",
+      translations[language].commerce14,
   },
 ];
 
-const appservicedata = [
+const appservicedata = (language) =>  [
   {
     id: "woocommerce store setup",
     icon: FaPalette,
-    title: "WooCommerce Store Setup",
+    title: translations[language].commerce17,
     shortDescription:
-      "Professional WooCommerce store setup with customized design, product setup, and secure payment integration—ready to sell from day one.",
+      translations[language].commerce18,
     longDescription:
-      "We provide a complete WooCommerce store setup tailored to your brand and business goals. From installing and customizing themes to configuring products, categories, shipping, taxes, and payment gateways, we handle it all. Our service ensures your store is visually appealing, easy to manage, mobile-friendly, and fully functional—giving your customers a seamless shopping experience from browsing to checkout.",
+      translations[language].commerce19,
   },
   {
     id: "shopify store development",
     icon: FaCogs,
-    title: "Shopify Development",
+    title: translations[language].commerce20,
     shortDescription:
-      "Custom Shopify store development with advanced features like inventory management, multi-currency payments, and flash sales.",
+      translations[language].commerce21,
     longDescription:
-      "We specialize in creating high-converting, fully customized Shopify stores that are visually appealing and easy to manage. From theme customization and product setup to integrating payment gateways, apps, and advanced features like inventory tracking and multilingual support, we deliver scalable Shopify solutions. Whether you’re launching a new store or upgrading an existing one, we ensure a smooth, secure, and sales-ready platform tailored to your brand.",
+      translations[language].commerce22,
   },
   {
     id: "payment gateway integration",
     icon: FaChartLine,
-    title: "Custom E-Commerce Portal",
+    title: translations[language].commerce23,
     shortDescription:
-      "Scalable, feature-rich e-commerce platforms tailored to your business needs, with full control over design, functionality, and growth.",
+      translations[language].commerce24,
     longDescription:
-      "We build custom e-commerce portals from the ground up—tailored to your unique requirements, not limited by templates or platform constraints. Whether you're selling physical products, digital goods, or subscription services, our solutions include custom shopping carts, advanced filters, secure payment gateways, admin dashboards, and analytics integration. Built with scalability in mind, your platform can grow and evolve with your business over time.",
+      translations[language].commerce25,
   },
   {
     id: "custom e-commerce portals",
     icon: FaTachometerAlt,
-    title: "Product Management System",
+    title: translations[language].commerce26,
     shortDescription:
-      "Efficiently manage products, categories, inventory, pricing, and more with a centralized, easy-to-use system.",
+      translations[language].commerce27,
     longDescription:
-      "Our Product Management System enables businesses to organize and control their entire product catalog from a single, user-friendly dashboard. From managing SKUs, stock levels, pricing tiers, and product variations to handling categories, tags, and descriptions—our solution is built for speed, scalability, and integration with e-commerce platforms. Whether you're managing 50 products or 50,000, our system adapts to your growth and operational needs.",
+      translations[language].commerce28,
   },
   {
     id: "product management system",
     icon: FaBoxes , // Consider changing to FaCreditCard or FaMoneyCheckAlt for better clarity
-    title: "Payment Gateway Integration",
+    title: translations[language].commerce29,
     shortDescription:
-      "Secure and seamless payment gateway setup tailored to your business needs.",
+      translations[language].commerce30,
     longDescription:
-      "We integrate reliable payment gateways like Stripe, PayPal, Razorpay, and more into your website or mobile app, ensuring a secure, smooth, and user-friendly transaction process. Our solutions support multi-currency payments, recurring billing, refunds, invoicing, and real-time payment tracking—giving your customers a frictionless checkout experience and your business full control over transactions."
+       translations[language].commerce31
   },
 ];
-const features = [
+const features = (language) => [
   {
     icon: <FaNetworkWired className="text-orange-400 text-3xl" />,
-    title: "Identify your needs",
-    desc: "You need to know who you're selling to, what you're selling and how you're selling it. Preliminary project analysis is essential to meet companies' expectations and objectives.",
+    title: translations[language].commerce34,
+    desc: translations[language].commerce35,
   },
   {
     icon: <FaShoppingBasket className="text-orange-400 text-3xl" />,
-    title: "Choosing the right technologies",
-    desc: "Tools such as WooCommerce or Magento offer a solid foundation, but custom development can go even further. It's crucial to choose a suitable webshop platform that offers analysis tools and supports multiple languages.",
+    title: translations[language].commerce36,
+    desc: translations[language].commerce37,
   },
   {
     icon: <FaRobot className="text-orange-400 text-3xl" />,
-    title: "Create an interface that attracts and retains",
-    desc: "Your customers need to find what they're looking for in just a few clicks. Clear, attractive design is crucial. Personalizing your website is also essential to attracting and retaining customers.",
+    title: translations[language].commerce38,
+    desc: translations[language].commerce39,
   },
   {
     icon: <FaRobot className="text-orange-400 text-3xl" />,
-    title: "Integrating key functionalities",
-    desc: "Online payments, order management, inventory tracking... Your website needs to be a well-oiled machine. Integrating key functionalities is essential for a high-performance website.",
+    title: translations[language].commerce40,
+    desc: translations[language].commerce41,
   },
   {
     icon: <FaRobot className="text-orange-400 text-3xl" />,
-    title: "Test and adjust",
-    desc: "Nothing goes online untested. Every detail is checked to ensure an impeccable experience. Testing and fine-tuning are crucial to optimizing websites and delivering a flawless user experience.",
+    title: translations[language].commerce42,
+    desc: translations[language].commerce43,
   },
 ];
 
@@ -158,6 +160,10 @@ export const staggerContainer = {
   },
 };
 const Ecommerece = () => {
+  const {language} = useLanguage();
+  const latestprocessSteps = processSteps(language);
+  const  latestappservicedata = appservicedata(language);
+  const latestfeatures = features(language);
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -205,10 +211,10 @@ const Ecommerece = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Tailor-made e-commerce to boost your <br />
-                <span className="mt-3">online</span>
+                {translations[language].commerce1} <br />
+                <span className="mt-3">{translations[language].commerce2}</span>
                 <span className="mt-3 ml-3 relative inline-block">
-                  business
+                  {translations[language].commerce3}
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -228,18 +234,18 @@ const Ecommerece = () => {
                     to="/"
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Home
+                    {translations[language].home}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link
                     to={URLS.SERVICES}
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Services
+                    {translations[language].services}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    E-Commerece Solutions
+                    {translations[language].commerce4}
                   </Link>
                 </div>
               </motion.div>
@@ -258,10 +264,10 @@ const Ecommerece = () => {
               className="text-start px-4 sm:px-6 mb-12"
             >
               <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                E-Commerece Solutions Process
+                {translations[language].commerce5}
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-5xl">
-                E-Commerce Development Process
+                {translations[language].commerce6}
               </h2>
             </motion.div>
 
@@ -276,7 +282,7 @@ const Ecommerece = () => {
                 className="absolute top-20 lg:top-24 hidden lg:block w-full h-0.5 border-t-2 border-dashed border-gray-300 z-0"
               ></motion.div>
 
-              {processSteps.map((step, index) => {
+              {latestprocessSteps.map((step, index) => {
                 const IconComponent = step.icon;
                 return (
                   <motion.div
@@ -321,10 +327,10 @@ const Ecommerece = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="commerce-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                What you do
+                {translations[language].commerce15}
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-                Custom e-commerce is much more than a classic online store. It’s a real growth driver. Here’s why:
+                {translations[language].commerce16}
               </p>
             </motion.div>
 
@@ -336,7 +342,7 @@ const Ecommerece = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {appservicedata.map((service) => {
+              {latestappservicedata.map((service) => {
                 const IconComponent = service.icon;
                 const isExpanded = expandedCard === service.id;
                 const descriptionToShow =
@@ -402,10 +408,10 @@ const Ecommerece = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl text-center font-bold mb-4">
-                Steps to creating a custom e-commerce site
+                {translations[language].commerce32}
               </h2>
               <p className="text-gray-300 mb-12 max-w-3xl mx-auto text-center">
-                Creating an e-commerce site is no trivial task. To succeed, every e-commerce project must be carefully planned, and every step must be thought through in detail:
+                {translations[language].commerce33}
               </p>
             </motion.div>
 
@@ -417,7 +423,7 @@ const Ecommerece = () => {
               viewport={{ once: true, amount: 0.1 }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-              {features.map((feature, index) => (
+              {latestfeatures.map((feature, index) => (
                 <motion.div
                   key={index}
                   variants={fadeUpVariant}

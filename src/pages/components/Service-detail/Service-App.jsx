@@ -19,102 +19,105 @@ import { FaReact } from "react-icons/fa";
 import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
 import StatsSection from "../Statsdata";
 import { FaFlutter } from "react-icons/fa6";
+import translations from "../../../translations";
+import { useLanguage } from "../../../LanguageContext";
 
-const processSteps = [
+
+const processSteps = (language) => [
   {
     icon: FaClipboardList,
-    title: "Planning & Strategy",
+    title: translations[language].webservice3,
     description:
-      "Strategic planning that aligns your digital goals with real-world results through data-driven insights and focused execution.",
+      translations[language].webservice4,
   },
   {
     icon: FaLaptopCode,
-    title: "Design And Development",
+    title: translations[language].webservice5,
     description:
-      "End-to-end design and development services that transform ideas into interactive, high-performance digital experiences.",
+      translations[language].webservice6,
   },
   {
     icon: FaVial, // Or FaFlask
-    title: "Testing & Quality Assurance",
+    title: translations[language].webservice7,
     description:
-      "Comprehensive testing to ensure your application is bug-free, secure, and delivers a flawless user experience.",
+      translations[language].webservice8,
   },
   {
     icon: FaCloudUploadAlt,
-    title: "Deployment",
+    title: translations[language].webservice9,
     description:
-      "Smooth and secure deployment of your application to production environments with minimal downtime.",
+      translations[language].webservice10,
   },
 ];
 
-const appservicedata = [
+const appservicedata = (language) => [
   {
     id: "flutter app development",
     icon: FaFlutter, // Changed from FaWordpressSimple to FaFlutter
-    title: "Flutter App Development",
+    title: translations[language].appservice9,
     shortDescription:
-      "Developed by Google, Flutter is perfect for modern, fluid interfaces, with cross-platform compatibility.",
+      translations[language].appservice10,
     longDescription:
-      "Flutter development is building responsive, high-performance, and visually appealing cross-platform applications using Flutter’s widget-based UI and single codebase architecture. Flutter development enables seamless experiences across mobile, web, and desktop platforms.",
+      translations[language].appservice11,
   },
   {
     id: "react native development",
-   icon: FaReact,
-  title: "React Native Development",
-  shortDescription:
-    "Build high-performance mobile apps with a single codebase for both iOS and Android—faster and more cost-effective than native development.",
-  longDescription:
-    "React Native development allows us to create fast, responsive, and scalable mobile applications using a shared codebase for both iOS and Android. Leveraging React’s component-based architecture, we deliver native-like experiences with reduced development time and cost. Whether it's a startup MVP or a full-featured mobile product, React Native offers the flexibility and efficiency to bring your mobile vision to life.",
-},
+    icon: FaReact,
+    title: translations[language].appservice12,
+    shortDescription:
+      translations[language].appservice13,
+    longDescription:
+      translations[language].appservice14,
+  },
   {
     id: "android app development",
-   icon: FaAndroid,
-  title: "Android App Development",
-  shortDescription:
-    "Build native Android applications with excellent performance, seamless user experience, and full integration with the Android ecosystem.",
-  longDescription:
-    "Our Android App Development services focus on creating robust, scalable, and user-friendly mobile applications using Java or Kotlin. We follow modern design guidelines, optimize for performance, and ensure compatibility across a wide range of Android devices. From idea to Play Store launch, we handle everything—including UI/UX design, backend integration, and rigorous testing—for a reliable and impactful Android experience.",
-},
+    icon: FaAndroid,
+    title: translations[language].appservice15,
+    shortDescription:
+      translations[language].appservice16,
+    longDescription:
+      translations[language].appservice17,
+  },
   {
     id: "ios app development",
     icon: FaApple, // Changed from FaCode to FaApple (for iOS)
-    title: "IOS App Development",
+    title: translations[language].appservice18,
     shortDescription:
-      "Recommended for native Android applications, they guarantee robustness and speed.",
+      translations[language].appservice19,
     longDescription:
-      "Kotlin and Java development is building robust, efficient, and native Android applications using powerful object-oriented and modern programming languages. This development ensures smooth performance and compatibility across Android devices.",
+      translations[language].appservice20,
   },
   {
     id: "app ui design",
     icon: FaPalette,
-  title: "APP UI Design",
-  shortDescription:
-    "Crafting visually stunning and user-centric mobile app interfaces that elevate the user experience.",
-  longDescription:
-    "Our App UI Design services focus on creating clean, intuitive, and engaging user interfaces tailored for both iOS and Android platforms. We blend aesthetic appeal with functionality, ensuring smooth navigation, accessibility, and brand consistency. Using tools like Figma and Adobe XD, we deliver pixel-perfect designs that enhance usability and support your app's overall success.",
-},
+    title: translations[language].appservice21,
+    shortDescription:
+      translations[language].appservice22,
+    longDescription:
+    translations[language].appservice23,
+  },
 ];
 
-const features = [
+const features = (language) =>  [
   {
     icon: <FaBolt className="text-orange-400 text-3xl" />,
-    title: "Data Management and Synchronization",
-    desc: "A well-structured backend ensures real-time data synchronization between devices, providing a seamless user experience and consistent data flow.",
+    title: translations[language].appservice26,
+    desc: translations[language].appservice27,
   },
   {
     icon: <FaCogs className="text-orange-400 text-3xl" />,
-    title: "Performance and Scalability",
-    desc: "Optimized APIs and efficient server logic allow mobile apps to load quickly and scale easily to support a growing user base without performance loss.",
+    title: translations[language].appservice28,
+    desc: translations[language].appservice29,
   },
   {
     icon: <FaLock className="text-orange-400 text-3xl" />,
-    title: "Security",
-    desc: " Built-in authentication, user authorization, and data encryption protect sensitive information and ensure compliance with industry security standards.",
+    title: translations[language].appservice30,
+    desc: translations[language].appservice31,
   },
   {
     icon: <FaChartLine className="text-orange-400 text-3xl" />,
-    title: "Maintainability and flexibility",
-    desc: "A modular and well-documented backend makes it easy to maintain the code, release updates, and add new features based on user needs and technological developments.",
+    title: translations[language].appservice32,
+    desc: translations[language].appservice33,
   },
 ];
 
@@ -146,6 +149,10 @@ export const staggerContainer = {
   },
 };
 const Appweb = () => {
+  const { language } = useLanguage();
+  const latestprocessSteps = processSteps(language);
+  const latestappservicedata = appservicedata(language);
+  const latestfeatures = features(language);
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -193,10 +200,10 @@ const Appweb = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-              Best Mobile App Development<br />
-                <span className="mt-3">Company in </span>
-                <span className="mt-3 relative inline-block">
-                  Belgium
+                {translations[language].appservice1}<br />
+                <span className="mt-3">{translations[language].appservice2}</span>
+                <span className="mt-3 relative ml-3 inline-block">
+                  {translations[language].appservice3}
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -216,18 +223,18 @@ const Appweb = () => {
                     to="/"
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Home
+                    {translations[language].home}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link
                     to={URLS.SERVICES}
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Services
+                    {translations[language].services}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                   Best Mobile App Development Company in Belgium
+                    {translations[language].appservice4}
                   </Link>
                 </div>
               </motion.div>
@@ -246,10 +253,10 @@ const Appweb = () => {
               className="text-start px-4 sm:px-6 mb-12"
             >
               <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                Mobile Development Process
+                {translations[language].appservice5}
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-5xl">
-                Turning Your Vision into a ,Mobile Solution
+                {translations[language].appservice6}
               </h2>
             </motion.div>
 
@@ -264,7 +271,7 @@ const Appweb = () => {
                 className="absolute top-20 lg:top-24 hidden lg:block w-full h-0.5 border-t-2 border-dashed border-gray-300 z-0"
               ></motion.div>
 
-              {processSteps.map((step, index) => {
+              {latestprocessSteps.map((step, index) => {
                 const IconComponent = step.icon;
                 return (
                   <motion.div
@@ -309,11 +316,10 @@ const Appweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="app-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-               What you get
+                {translations[language].appservice7}
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-                Turning your vision into reality with Fronxsolutions premium
-                custom software solutions.
+                {translations[language].appservice8}
               </p>
             </motion.div>
 
@@ -325,7 +331,7 @@ const Appweb = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {appservicedata.map((service) => {
+              {latestappservicedata.map((service) => {
                 const IconComponent = service.icon;
                 const isExpanded = expandedCard === service.id;
                 const descriptionToShow =
@@ -391,10 +397,10 @@ const Appweb = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-               The Benefits of Mobile App Development
+                {translations[language].appservice24}
               </h2>
               <p className="text-gray-300 mb-12 max-w-3xl">
-              A solid backend is the foundation of any successful mobile app. Here's how it delivers value:
+                {translations[language].appservice25}
               </p>
             </motion.div>
 
@@ -406,7 +412,7 @@ const Appweb = () => {
               viewport={{ once: true, amount: 0.1 }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
             >
-              {features.map((feature, index) => (
+              {latestfeatures.map((feature, index) => (
                 <motion.div
                   key={index}
                   variants={fadeUpVariant}

@@ -28,85 +28,87 @@ import {
 } from "react-icons/fa";
 import StatsSection from "../Statsdata";
 import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
+import translations from "../../../translations";
+import { useLanguage } from "../../../LanguageContext";
 
-const processSteps = [
+const processSteps = (language) => [
   {
     icon: FaClipboardList,
-    title: "Planning & Strategy",
+    title: translations[language].softservice6,
     description:
-      "Strategic planning that aligns your digital goals with real-world results through data-driven insights and focused execution.",
+      translations[language].softservice7,
   },
   {
     icon: FaLaptopCode,
-    title: "Design And Development",
+    title: translations[language].softservice8,
     description:
-      "End-to-end design and development services that transform ideas into interactive, high-performance digital experiences.",
+      translations[language].softservice9,
   },
   {
     icon: FaVial, // Or FaFlask
-    title: "Testing & Quality Assurance",
+    title: translations[language].softservice10,
     description:
-      "Comprehensive testing to ensure your application is bug-free, secure, and delivers a flawless user experience.",
+      translations[language].softservice11,
   },
   {
     icon: FaCloudUploadAlt,
-    title: "Deployment",
+    title: translations[language].softservice12,
     description:
-      "Smooth and secure deployment of your application to production environments with minimal downtime.",
+      translations[language].softservice13,
   },
 ];
 
-const softservicedata = [
+const softservicedata = (language) => [
   {
     id: "crm system development",
     icon: FaNetworkWired, // from react-icons/fa
-title: "CRM System Development",
-shortDescription:
-  "Build smarter relationships with a CRM tailored to your workflow and business goals.",
-longDescription:
-  "We develop custom CRM systems designed specifically for your business needs—streamlining customer management, automating sales processes, and improving team collaboration. From lead tracking to client communication, our CRM solutions enhance efficiency, scalability, and customer satisfaction."
- },
+    title: translations[language].softservice16,
+    shortDescription:
+      translations[language].softservice17,
+    longDescription:
+      translations[language].softservice18,
+  },
   {
     id: "booking or inventory system",
-   icon: FaClipboardList, // from react-icons/fa
-title: "Booking or Inventory System",
-shortDescription:
-  "Custom systems to manage bookings, inventory, and operations—tailored to your business.",
-longDescription:
-  "We design and develop scalable booking and inventory management systems that streamline operations, track resources in real-time, and automate key workflows. Whether you need a web-based platform, desktop software, or a cross-platform solution, we use technologies like .NET, Java, and Electron to build exactly what your business needs."
+    icon: FaClipboardList, // from react-icons/fa
+    title: translations[language].softservice19,
+    shortDescription:
+      translations[language].softservice20,
+    longDescription:
+      translations[language].softservice21,
   },
   {
     id: "saas platform development",
-   icon: FaCloud, // from react-icons/fa
-title: "SaaS Platform Development",
-shortDescription:
-  "Build scalable, high-performance SaaS platforms tailored for seamless user experience.",
-longDescription:
-  "We design and develop custom SaaS platforms with a strong focus on performance, usability, and scalability. From streamlined workflows to fast load times and cross-platform consistency, our solutions deliver an exceptional user experience while supporting growth and innovation. Whether it's B2B or B2C, we help you launch robust, cloud-based software built for long-term success."
+    icon: FaCloud, // from react-icons/fa
+    title: translations[language].softservice22,
+    shortDescription:
+      translations[language].softservice23,
+    longDescription:
+      translations[language].softservice24,
   },
   {
     id: "erp or system",
-   icon: FaCogs, // from react-icons/fa
-title: "ERP System Development",
-shortDescription:
-  "Custom ERP solutions to streamline operations, automate workflows, and centralize business processes.",
-longDescription:
-  "We design and develop tailored ERP systems equipped with essential features such as inventory management, e-commerce integration, real-time data processing, booking engines, analytics dashboards, and communication tools. Built for scalability and efficiency, our ERP solutions unify your operations, boost productivity, and support data-driven decision-making across departments."
- },
+    icon: FaCogs, // from react-icons/fa
+    title: translations[language].softservice25,
+    shortDescription:
+      translations[language].softservice26,
+    longDescription:
+      translations[language].softservice27,
+  },
 ];
 
-const features = [
+const features = (language) => [
   {
     icon: <FaRocket className="text-orange-400 text-3xl" />,
-    title: "Optimize your business processes.",
+    title: translations[language].softservice29,
   },
   {
     icon: <FaCode className="text-orange-400 text-3xl" />,
-    title: "Integrate seamlessly with your existing tools.",
+    title: translations[language].softservice30,
   },
   {
     icon: <FaHeadset className="text-orange-400 text-3xl" />,
-    title: "Solving your specific problems without compromise.",
+    title: translations[language].softservice31,
   },
 ];
 
@@ -138,6 +140,10 @@ export const staggerContainer = {
   },
 };
 const Software = () => {
+  const { language } = useLanguage();
+  const latestprocessSteps = processSteps(language);
+  const latestsoftservicedata = softservicedata(language);
+  const latestfeatures = features(language);
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -185,9 +191,9 @@ const Software = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Software
+                {translations[language].softservice1}
                 <span className="mt-3 ml-3 relative inline-block">
-                  development
+                  {translations[language].softservice2}
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -207,18 +213,18 @@ const Software = () => {
                     to="/"
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Home
+                    {translations[language].home}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link
                     to={URLS.SERVICES}
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Services
+                    {translations[language].services}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Software development
+                    {translations[language].softservice3}
                   </Link>
                 </div>
               </motion.div>
@@ -237,10 +243,10 @@ const Software = () => {
               className="text-center md:text-left mb-12"
             >
               <span className="bg-orange-400 px-2 md:px-4 py-2 rounded-full text-white font-semibold uppercase tracking-wide text-sm">
-                Custom Software Development Process
+                {translations[language].softservice4}
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 leading-tight max-w-4xl mx-auto md:mx-0">
-                The Way We Develop Custom Software
+                {translations[language].softservice5}
               </h2>
             </motion.div>
 
@@ -255,7 +261,7 @@ const Software = () => {
                 className="absolute top-1/2 transform -translate-y-1/2 hidden lg:block w-full h-0.5 border-t-2 border-dashed border-gray-300 z-0"
               ></motion.div>
 
-              {processSteps.map((step, index) => {
+              {latestprocessSteps.map((step, index) => {
                 const IconComponent = step.icon;
                 return (
                   <motion.div
@@ -300,10 +306,10 @@ const Software = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="software-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                What you get
+                {translations[language].softservice14}
               </h2>
               <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-                The technologies used in software development are numerous and varied, each bringing its own specific advantages and meeting particular needs.
+                {translations[language].softservice15}
               </p>
             </motion.div>
 
@@ -315,7 +321,7 @@ const Software = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {softservicedata.map((service) => {
+              {latestsoftservicedata.map((service) => {
                 const IconComponent = service.icon;
                 const isExpanded = expandedCard === service.id;
                 const descriptionToShow =
@@ -383,7 +389,7 @@ const Software = () => {
                 viewport={{ once: true, amount: 0.2 }}
               >
                 <h2 className="text-3xl lg:text-4xl font-bold max-w-3xl mb-14">
-                  Why Choose Fronx Solutions for Custom Software Development?
+                  {translations[language].softservice28}
                 </h2>
               </motion.div>
 
@@ -395,7 +401,7 @@ const Software = () => {
                 viewport={{ once: true, amount: 0.1 }}
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
               >
-                {features.map((feature, index) => (
+                {latestfeatures.map((feature, index) => (
                   <motion.div
                     key={index}
                     variants={fadeUpVariant}

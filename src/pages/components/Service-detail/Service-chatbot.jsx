@@ -23,89 +23,91 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import translations from "../../../translations";
+import { useLanguage } from "../../../LanguageContext";
 
-const processSteps = [
+const processSteps = (language) => [
   {
     icon: FaClipboardList,
-    title: "Data Collection ",
+    title: translations[language].aiservice7,
     description:
-      "Gather meaningful insights through structured and secure data collection processes.",
+      translations[language].aiservice8,
   },
   {
     icon: FaLaptopCode,
-    title: "Model Design and Training",
+    title: translations[language].aiservice9,
     description:
-      "We design and train AI/ML models tailored to your specific business objectives.",
+      translations[language].aiservice10,
   },
   {
     icon: FaVial, // Or FaFlask
-    title: "Evaluation and Optimization",
+    title: translations[language].aiservice11,
     description:
-      "Ensure your models are accurate, efficient, and production-ready.",
+      translations[language].aiservice12,
   },
   {
     icon: FaCloudUploadAlt,
-    title: "Deployment and Monitoring",
+    title: translations[language].aiservice13,
     description:
-      "Seamlessly launch your models and keep track of their performance in real time.",
+      translations[language].aiservice14,
   },
 ];
 
-const appservicedata = [
+const appservicedata = (language) => [
   {
     id: "website chatbot development",
     icon: FaComments, // Chat icon
-    title: "Website Chatbot Development",
+    title: translations[language].aiservice16,
     shortDescription:
-      "Easy-to-use navigation that helps users find what they need quickly, easily, and effortlessly.",
+      translations[language].aiservice17,
     longDescription:
-      "Complete WooCommerce store setup including product configuration, payment integration, and theme customization for your e-commerce business.",
+      translations[language].aiservice18,
   },
   {
     id: "open ai/gpt chatbot for support/sales",
     icon: FaRobot, // AI Robot icon
-    title: "Open AI/GPT Chatbot for Support/Sales",
+    title: translations[language].aiservice19,
     shortDescription:
-      "Designs that adjust smoothly across all screen sizes for a seamless user experience.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      translations[language].aiservice20,
+    longDescription:
+      translations[language].aiservice21,
   },
   {
     id: "ai powered saas tool integration",
     icon: FaTools, // Tools icon for integration
-    title: "AI Powered SaaS Tool Integration",
+    title: translations[language].aiservice22,
     shortDescription:
-      "Maintaining a consistent look and feel across all elements to enhance usability and identity.",
-        longDescription:
-      "Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components. Bootstrap development is building responsive, mobile-friendly, and modern websites using the Bootstrap framework’s grid system and UI components.",
+      translations[language].aiservice23,
+    longDescription:
+      translations[language].aiservice24,
   },
 ];
 
-const features = [
+const features = (language) => [
   {
     icon: <FaMicrochip className="text-orange-400 text-3xl" />,
-    title: "IOT",
-    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
+    title: translations[language].aiservice26,
+    desc: translations[language].aiservice27,
   },
   {
     icon: <FaBrain className="text-orange-400 text-3xl" />,
-    title: "AI Diagnostics",
-    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
+    title: translations[language].aiservice28,
+    desc: translations[language].aiservice29,
   },
   {
     icon: <FaHeartbeat className="text-orange-400 text-3xl" />,
-    title: "Smart Health Care",
-    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
+    title: translations[language].aiservice30,
+    desc: translations[language].aiservice31,
   },
   {
     icon: <FaMicrochip className="text-orange-400 text-3xl" />,
-    title: "IOT",
-    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
+    title: translations[language].aiservice26,
+    desc: translations[language].aiservice27,
   },
   {
     icon: <FaBrain className="text-orange-400 text-3xl" />,
-    title: "AI Diagnostics",
-    desc: "Leverage data to identify actionable patterns that drive strategic decisions and optimize business performance.",
+    title: translations[language].aiservice28,
+    desc: translations[language].aiservice29,
   },
 ];
 
@@ -137,6 +139,10 @@ export const staggerContainer = {
   },
 };
 const chatbot = () => {
+  const { language } = useLanguage();
+  const latestprocessSteps = processSteps(language);
+  const latestappservicedata = appservicedata(language);
+  const latestfeatures = features(language);
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -184,10 +190,10 @@ const chatbot = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
-                <span className="mt-3 relative inline-block">
-                  Expert
+                {translations[language].aiservice1} <br />
+                <span className="mt-3">{translations[language].aiservice2}</span>
+                <span className="mt-3 ml-3 relative inline-block">
+                  {translations[language].aiservice3}
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -199,26 +205,26 @@ const chatbot = () => {
               >
                 <div
                   className="flex flex-wrap lg:flex-nowrap items-center 
-          gap-2 lg:gap-3 px-4 sm:px-6 py-2 sm:py-3 
-          border border-white/30 rounded-full text-sm sm:text-base 
-          text-white bg-white/5 hover:bg-white/10 transition-all duration-300"
+                  gap-2 lg:gap-3 px-4 sm:px-6 py-2 sm:py-3 
+                  border border-white/30 rounded-full text-sm sm:text-base 
+                  text-white bg-white/5 hover:bg-white/10 transition-all duration-300"
                 >
                   <Link
                     to="/"
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Home
+                    {translations[language].home}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link
                     to={URLS.SERVICES}
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Services
+                    {translations[language].services}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    AI & Chatbot Solutions
+                    {translations[language].aiservice4}
                   </Link>
                 </div>
               </motion.div>
@@ -238,12 +244,12 @@ const chatbot = () => {
             >
               <div className="flex justify-center md:justify-start">
                 <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                  AI & Chatbot Development Process
+                  {translations[language].aiservice5}
                 </span>
               </div>
 
               <h2 className="text-2xl sm:text-4xl text-center md:text-start lg:text-5xl mt-6 font-bold text-gray-800 max-w-5xl">
-                The Way We Build AI & Chatbot Applications
+                {translations[language].aiservice6}
               </h2>
             </motion.div>
 
@@ -258,7 +264,7 @@ const chatbot = () => {
                 className="absolute top-20 lg:top-24 hidden lg:block w-full h-0.5 border-t-2 border-dashed border-gray-300 z-0"
               ></motion.div>
 
-              {processSteps.map((step, index) => {
+              {latestprocessSteps.map((step, index) => {
                 const IconComponent = step.icon;
                 return (
                   <motion.div
@@ -303,8 +309,7 @@ const chatbot = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 id="ai-development-process" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
-                Experience the Future of Enterprise Solutions with Our AI
-                Development Services
+                {translations[language].aiservice15}
               </h2>
             </motion.div>
 
@@ -316,7 +321,7 @@ const chatbot = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {appservicedata.map((service) => {
+              {latestappservicedata.map((service) => {
                 const IconComponent = service.icon;
                 const isExpanded = expandedCard === service.id;
                 const descriptionToShow =
@@ -382,7 +387,7 @@ const chatbot = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl text-center font-bold mb-16">
-                Industries We Serve
+                {translations[language].aiservice25}
               </h2>
             </motion.div>
 
@@ -410,7 +415,7 @@ const chatbot = () => {
                 modules={[Pagination]}
                 className="pb-10"
               >
-                {features.map((feature, index) => (
+                {latestfeatures.map((feature, index) => (
                   <SwiperSlide key={index}>
                     <motion.div
                       variants={fadeUpVariant}

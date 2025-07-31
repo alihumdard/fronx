@@ -5,99 +5,98 @@ import { Link } from "react-router-dom";
 import translations from "../translations";
 import { LanguageProvider, useLanguage } from "../LanguageContext";
 
-const serviceCategories = [
+const serviceCategories = (language) => [
   {
-    title: "Website Development",
+    title: translations[language].drop1,
     url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
     items: [
-      { label: "Wordpress Development", hash: "#web-development-process" },
-      { label: "Laravel/PHP Web Apps", hash: "#web-development-process" },
-      { label: "React.js/Next.js Web Apps", hash: "#web-development-process" },
-      { label: "Website Redesign", hash: "#web-development-process" },
-      { label: "API Integration", hash: "#web-development-process" },
+      { label: translations[language].drop2, hash: "#web-development-process" },
+      { label: translations[language].drop3, hash: "#web-development-process" },
+      { label: translations[language].drop4, hash: "#web-development-process" },
+      { label: translations[language].drop5, hash: "#web-development-process" },
+      { label: translations[language].drop6, hash: "#web-development-process" },
     ],
   },
   {
-    title: "Mobile Development",
+    title: translations[language].drop7,
     url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
     items: [
-      { label: "Flutter App Development", hash: "#app-development-process" },
-      { label: "React Native Development", hash: "#app-development-process" },
-      { label: "Android App Development", hash: "#app-development-process" },
-      { label: "IOS App Development", hash: "#app-development-process" },
-      { label: "APP UI Design", hash: "#app-development-process" },
+      { label: translations[language].drop8, hash: "#app-development-process" },
+      { label: translations[language].drop9, hash: "#app-development-process" },
+      { label: translations[language].drop10, hash: "#app-development-process" },
+      { label: translations[language].drop11, hash: "#app-development-process" },
+      { label: translations[language].drop12, hash: "#app-development-process" },
     ],
   },
   {
-    title: "UX/UI Design Services",
+    title: translations[language].drop13,
     url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
     items: [
-      { label: "Website UI Design (Figma)", hash: "#uiux-development-process" },
-      { label: "Mobile App U Design", hash: "#uiux-development-process" },
-      { label: "Wireframing & Prototyping", hash: "#uiux-development-process" },
-      { label: "Design System Creation", hash: "#uiux-development-process" },
+      { label: translations[language].drop14, hash: "#uiux-development-process" },
+      { label: translations[language].drop15, hash: "#uiux-development-process" },
+      { label: translations[language].drop16, hash: "#uiux-development-process" },
+      { label: translations[language].drop17, hash: "#uiux-development-process" },
     ],
   },
   {
-    title: "E-Commerce Solution",
+    title: translations[language].drop18,
     url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
     items: [
-      { label: "WooCommerce Store Setup", hash: "#commerce-development-process" },
-      { label: "Shopify Development", hash: "#commerce-development-process" },
-      { label: "Custom E-Commerce Portal", hash: "#commerce-development-process" },
-      { label: "Product Management System", hash: "#commerce-development-process" },
-      { label: "Payment Gateway Integration", hash: "#commerce-development-process" },
+      { label: translations[language].drop19, hash: "#commerce-development-process" },
+      { label: translations[language].drop20, hash: "#commerce-development-process" },
+      { label: translations[language].drop21, hash: "#commerce-development-process" },
+      { label: translations[language].drop22, hash: "#commerce-development-process" },
+      { label: translations[language].drop23, hash: "#commerce-development-process" },
     ],
   },
   {
-    title: "Digital Marketing",
+    title: translations[language].drop24,
     url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
     items: [
-      { label: "Google Ads Setup", hash: "#markiting-development-process" },
-      { label: "Social Media Marketing", hash: "#markiting-development-process" },
-      { label: "Content Marketing", hash: "#markiting-development-process" },
-      { label: "Email Marketing", hash: "#markiting-development-process" },
+      { label: translations[language].drop25, hash: "#markiting-development-process" },
+      { label: translations[language].drop26, hash: "#markiting-development-process" },
+      { label: translations[language].drop27, hash: "#markiting-development-process" },
+      { label: translations[language].drop28, hash: "#markiting-development-process" },
     ],
   },
   {
-    title: "SEO",
+    title: translations[language].drop29,
     url: URLS.SERVICE_DETAIL.SEO,
     items: [
-      { label: "Keyword Research", hash: "#seo-development-process" },
-      { label: "On-Page SEO", hash: "#seo-development-process" },
-      { label: "Off-Page SEO", hash: "#seo-development-process" },
-      { label: "Technical SEO", hash: "#seo-development-process" },
-      { label: "Content Creation", hash: "#seo-development-process" },
+      { label: translations[language].drop30, hash: "#seo-development-process" },
+      { label: translations[language].drop31, hash: "#seo-development-process" },
+      { label: translations[language].drop32, hash: "#seo-development-process" },
+      { label: translations[language].drop33, hash: "#seo-development-process" },
+      { label: translations[language].drop34, hash: "#seo-development-process" },
     ],
   },
   {
-    title: "Software Development",
+    title: translations[language].drop35,
     url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
     items: [
-      { label: "CRM System Development", hash: "#software-development-process" },
-      { label: "Booking or Inventory System", hash: "#software-development-process" },
-      { label: "SaaS Platform Development", hash: "#software-development-process" },
-      { label: "ERP System Development", hash: "#software-development-process" },
+      { label: translations[language].drop36, hash: "#software-development-process" },
+      { label: translations[language].drop37, hash: "#software-development-process" },
+      { label: translations[language].drop38, hash: "#software-development-process" },
+      { label: translations[language].drop39, hash: "#software-development-process" },
     ],
   },
   {
-    title: "Maintenance & Support",
+    title: translations[language].drop40,
     url: URLS.SERVICE_DETAIL.MAINTENENCE,
     items: [
-      { label: "Website UI Design (Figma)", hash: "#maintinence-development-process" },
-      { label: "Mobile App U Design", hash: "#maintinence-development-process" },
-      { label: "Wireframing & Prototyping", hash: "#maintinence-development-process" },
-      { label: "Design System Creation", hash: "#maintinence-development-process" },
+      { label: translations[language].drop41, hash: "#maintinence-development-process" },
+      { label: translations[language].drop42, hash: "#maintinence-development-process" },
+      { label: translations[language].drop43, hash: "#maintinence-development-process" },
+      { label: translations[language].drop44, hash: "#maintinence-development-process" },
     ],
   },
   {
-    title: "AI & Chatbot Solution",
+    title: translations[language].drop45,
     url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
     items: [
-      { label: "Website Chatbot Development", hash: "#ai-development-process" },
-      { label: "Open AI/GPT Chatbot for Support/Sale", hash: "#ai-development-process" },
-      { label: "AI Powered SaaS Tool Integration", hash: "#ai-development-process" },
-      { label: "AI Powered SaaS Tool Integration", hash: "#ai-development-process" },
+      { label: translations[language].drop46, hash: "#ai-development-process" },
+      { label: translations[language].drop47, hash: "#ai-development-process" },
+      { label: translations[language].drop48, hash: "#ai-development-process" },
     ],
   },
 
@@ -105,6 +104,7 @@ const serviceCategories = [
 
 const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
   const { language } = useLanguage();
+  const latestserviceCategories = serviceCategories(language);
   const [isMainDropdownOpen, setIsMainDropdownOpen] = useState(false);
   const [openCategoryIndex, setOpenCategoryIndex] = useState(null); // New state for mobile category dropdowns
 
@@ -174,7 +174,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
             className={`
                             ${mobile
                 ? "relative w-full mt-2 p-4 bg-gray-50 rounded-lg shadow-inner"
-                : "absolute left-1/2 sm:-left-[530%] top-full mt-3 w-screen max-w-screen-xl -translate-x-1/2 p-8 bg-white rounded-xl shadow-lg"
+                : "absolute left-1/2 sm:-left-[650%] top-full mt-3 w-screen max-w-screen-[600px] -translate-x-1/2 p-8 bg-white rounded-xl shadow-lg"
               }
                             overflow-hidden
                         `}
@@ -182,10 +182,10 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
             <div
               className={`grid ${mobile
                   ? "grid-cols-1 gap-y-0" // Adjusted gap-y for mobile as categories will have their own spacing
-                  : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-8 gap-x-6"
+                  : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-8 gap-x-28"
                 }`}
             >
-              {serviceCategories.map((category, catIndex) => (
+              {latestserviceCategories.map((category, catIndex) => (
                 <div
                   key={catIndex}
                   className="flex flex-col items-start text-left w-full"
