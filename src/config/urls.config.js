@@ -5,6 +5,7 @@ const URLS = {
   BOLG: "/blog",
   BlogDetail: "/BlogDetail",
   CONTACT: "/contact-us",
+  SUBMIT: "/submit",
 
   SERVICE_DETAIL: {
     WEB_DEVELOPMENT: "/web-development",

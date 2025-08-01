@@ -173,7 +173,7 @@ const Navbar = () => {
                 </li>
                 <div className="flex items-center space-x-2 rounded-full">
                   <span className={`text-xs font-medium ${getDesktopTextColor()}`}> {/* Use getDesktopTextColor */}
-                    FR
+                    NL
                   </span>
                   <button
                     onClick={toggleLanguage}
@@ -182,13 +182,13 @@ const Navbar = () => {
                     <div
                       className={`w-4 h-4 rounded-full transition-all duration-300 ${
                         language === "fr"
-                          ? "translate-x-0 bg-gray-300"
-                          : "translate-x-6 bg-gradient-to-r from-[#6931CF] to-[#1A61EA]"
+                          ? "translate-x-6 bg-gradient-to-r from-[#6931CF] to-[#1A61EA]"
+                          : "translate-x-0 bg-gray-300"
                       }`}
                     ></div>
                   </button>
                   <span className={`text-xs font-medium ${getDesktopTextColor()}`}> {/* Use getDesktopTextColor */}
-                    EN
+                    FR
                   </span>
                 </div>
               </ul>
@@ -197,11 +197,19 @@ const Navbar = () => {
             {/* Desktop Right Side Elements */}
             <div className="hidden lg:flex items-center space-x-6">
               <Link
+                to={URLS.SUBMIT}
+                className="btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-2 rounded-full font-semibold shadow"
+              >
+                <span className="relative z-[1]">
+                                    {translations[language].footer6}
+                </span>
+              </Link>
+               <Link
                 to={URLS.CONTACT}
                 className="btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-2 rounded-full font-semibold shadow"
               >
                 <span className="relative z-[1]">
-                  {translations[language].contacts  }
+                  {translations[language].contacts}
                 </span>
               </Link>
             </div>
@@ -313,7 +321,9 @@ const Navbar = () => {
                   >
                     <span className="relative z-[1]"> {translations[language].contacts}</span>
                   </Link>
+                  
                 </li>
+
               </ul>
             </motion.div>
 

@@ -35,9 +35,11 @@ const fadeUpVariant = {
 };
 
 const Service = () => {
-    const { language } = useLanguage();
+  const { language } = useLanguage();
   return (
     <>
+      <title>Digital Services in Belgium – Web, Mobile & Software | Fronx Solutions</title>
+      <meta name="description" content="Explore Fronx Solutions' full range of digital services in Belgium, including web development, mobile apps, software development, UI/UX design, and more." />
       <div className="relative h-screen w-auto overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
@@ -80,7 +82,7 @@ const Service = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                 {translations[language].empover}<br />
+                {translations[language].empover}<br />
                 <span className="mt-3">{translations[language].with} </span>
                 <span className="mt-3 relative inline-block">
                   {translations[language].Expert}
@@ -88,7 +90,7 @@ const Service = () => {
                 </span>
               </motion.h1>
 
-                <motion.div
+              <motion.div
                 className="mt-10 sm:mt-16 flex justify-start"
                 variants={fadeUpVariant}
                 transition={{ delay: 0.5 }}
@@ -114,7 +116,7 @@ const Service = () => {
                   <Link
                     className="text-blue-500 hover:text-blue-600 transition-colors"
                   >
-                   {translations[language].services}
+                    {translations[language].services}
                   </Link>
                 </div>
               </motion.div>
@@ -123,7 +125,7 @@ const Service = () => {
         </div>
 
         <Service2 />
-        <Service2x/>
+        <Service2x />
         <SwiperService />
 
         <motion.div
@@ -149,7 +151,7 @@ const Service = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-             {translations[language].transform} <br />{translations[language].transform1}
+              {translations[language].transform} <br />{translations[language].transform1}
             </motion.h2>
 
             <motion.p
@@ -161,7 +163,7 @@ const Service = () => {
             >
               {translations[language].transform2}
               <br />
-              
+
             </motion.p>
 
             <motion.div

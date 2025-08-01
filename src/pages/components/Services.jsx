@@ -103,7 +103,7 @@ const servicesData = (language) => [
     title: translations[language].service2, // You might want to use translations here too: translations[language].service2
     url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
     description:
-      "Crafting intuitive and high-performance mobile applications for iOS and Android.",
+      "Crafting intuitive and high-performance mobile applications for iOS and Android, we specialize in building seamless, scalable, and user-friendly experiences tailored to your business goals. From concept to deployment, our mobile solutions ensure speed, reliability, and exceptional user engagement across all devices.",
     techStackIcons: [
       { icon: SiFlutter, name: "Flutter" },
       { icon: FaReact, name: "React Native" },
@@ -120,7 +120,7 @@ const servicesData = (language) => [
     title: translations[language].service3, // translations[language].service3
     url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
     description:
-      "Designing captivating and user-centric interfaces focusing on aesthetics and usability.",
+      "Designing captivating and user-centric interfaces, we focus on aesthetics, usability, and seamless interaction. Our UI/UX design approach combines creativity with user behavior insights to create visually stunning, intuitive experiences that keep users engaged and satisfied.",
     techStackIcons: [
       { icon: SiFigma, name: "Figma" },
       { icon: FaPalette, name: "Adobe XD" },
@@ -134,7 +134,7 @@ const servicesData = (language) => [
     title: translations[language].service4, // translations[language].service4
     url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
     description:
-      "Building secure e-commerce platforms that drive sales and enhance user experience.",
+      "Building secure and scalable e-commerce platforms that drive sales, enhance user experience, and streamline operations. We focus on performance, mobile responsiveness, and conversion optimization to help your online store succeed in a competitive digital marketplace.",
     techStackIcons: [
       { icon: FaShopify, name: "Shopify" },
       { icon: FaWordpress, name: "WooCommerce" },
@@ -150,7 +150,7 @@ const servicesData = (language) => [
     title: translations[language].service5, // translations[language].service5
     url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
     description:
-      "Boost your online presence, drive traffic, and convert leads into loyal customers.",
+      "Boost your online presence, drive targeted traffic, and convert leads into loyal customers through strategic digital marketing solutions. From SEO and content strategy to paid campaigns, we help you grow sustainably and achieve measurable results.",
     techStackIcons: [
       { icon: FaSearch, name: "SEO" },
       { icon: FaBullhorn, name: "Ads" },
@@ -164,7 +164,7 @@ const servicesData = (language) => [
     title: translations[language].service6, // translations[language].service6
     url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
     description:
-      "Tailored solutions to meet your unique business needs and enhance efficiency.",
+      "We deliver tailored solutions designed to meet your unique business needs, optimize workflows, and enhance overall efficiency. Our approach ensures that every strategy, tool, and technology we implement aligns perfectly with your goals and operational requirements.",
     techStackIcons: [
       { icon: FaPython, name: "Python" },
       { icon: FaJava, name: "Java" },
@@ -181,7 +181,7 @@ const servicesData = (language) => [
     title: translations[language].service7, // translations[language].service7
     url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
     description:
-      "Automate customer support and streamline interactions with AI and chatbots.",
+      "Automate customer support and streamline interactions with AI and intelligent chatbots. Enhance response times, reduce support costs, and provide 24/7 assistance through seamless, human-like conversations that elevate the customer experience.",
     techStackIcons: [
       { icon: FaRobot, name: "AI/ML" },
       { icon: FaJs, name: "Node.js" },
@@ -195,7 +195,7 @@ const servicesData = (language) => [
     title: translations[language].service8, // translations[language].service8
     url: URLS.SERVICE_DETAIL.MAINTENENCE,
     description:
-      "Keep applications running smoothly with updates and dedicated technical support.",
+      "Keep your applications running smoothly with regular updates, proactive maintenance, and dedicated technical support. We ensure optimal performance, security, and reliability so you can focus on growing your business without interruptions.",
     techStackIcons: [
       { icon: FaServer, name: "Monitoring" },
       { icon: FaCloud, name: "Cloud Mgmt" },
@@ -209,7 +209,7 @@ const servicesData = (language) => [
     title: translations[language].service9, // translations[language].service9
     url: URLS.SERVICE_DETAIL.SEO,
     description:
-      "Improve visibility on search engines to attract more traffic and leads.",
+      "Improve your visibility on search engines to attract qualified traffic, generate more leads, and grow your online presence. Our SEO strategies are tailored to help you rank higher, drive engagement, and convert visitors into customers.",
     techStackIcons: [
       { icon: FaSearch, name: "Keyword Research" },
       { icon: FaCode, name: "On-Page SEO" },

@@ -29,23 +29,23 @@ import "swiper/css/pagination";
 const recentPosts = [
   {
     date: "4 August 2024",
-    title: "Scalable IT solution tailored to meet a unique business needs.",
+    title: "Avoiding Common AI Writing Pitfalls",
     image: "/images/blog-1.png", // Replace with your image path
   },
   // Duplicate entries for demo – repeat as needed
   {
     date: "4 August 2024",
-    title: "Scalable IT solution tailored to meet a unique business needs.",
+    title: "Understanding ChatGPT's Capabilities – Defining Your Style",
     image: "/images/blog-1.png",
   },
   {
     date: "4 August 2024",
-    title: "Scalable IT solution tailored to meet a unique business needs.",
+    title: "Understanding your readers",
     image: "/images/blog-1.png",
   },
   {
     date: "4 August 2024",
-    title: "Scalable IT solution tailored to meet a unique business needs.",
+    title: "Create quality AI-powered blogs that stand out",
     image: "/images/blog-1.png",
   },
 ];
@@ -141,10 +141,10 @@ const BlogDetail = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
-                <span className="mt-3 relative inline-block">
-                  Expert
+                How Laravel Improves Web  <br />
+                <span className="mt-3">Application</span>
+                <span className="mt-3 ml-3 relative inline-block">
+                  Development
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -175,8 +175,7 @@ const BlogDetail = () => {
                   </Link>
                   <span className="text-orange-400 hidden sm:block">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors flex">
-                    Scalable IT solution tailored to meet a unique business
-                    <span className="hidden sm:block pl-1">needs...</span>
+                   How Laravel Improves Web Application Development
                   </Link>
                 </div>
               </motion.div>
@@ -184,128 +183,159 @@ const BlogDetail = () => {
           </PageWrapper>
         </div>
 
-     <div className="bg-white px-4 md:px-10 pt-28 pb-20">
-  <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-    {/* Main Content */}
-    <motion.div
-      className="md:col-span-2 space-y-6"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ staggerChildren: 0.2 }}
-    >
-      {/* Hero Image */}
-      <motion.img
-        src="/images/blog-4.png"
-        alt="Main Banner"
-        className="rounded-lg w-full object-cover"
-        variants={fadeInUp}
-      />
-
-      {/* Title and Paragraph */}
-      <motion.div className="md:pb-10" variants={fadeInUp}>
-        <h2 className="text-2xl font-bold text-gray-800">
-          Scalable IT solution tailored to meet a unique business needs.
-        </h2>
-        <p className="text-gray-600 mt-4">
-          Aliquam metus nibh consectetur montes nascetur...
-        </p>
-        <p className="text-gray-600 mt-4">
-          Curabitur sit sollicitudin duis condimentum nec...
-        </p>
-      </motion.div>
-
-      {/* Quote Section */}
-      <motion.div
-        className="border-l-4 border-indigo-500 bg-gray-50 p-5 shadow-sm italic text-gray-700"
-        variants={fadeInUp}
-      >
-        <p>
-          “Tortor dis efficitur risus placerat libero condimentum faucibus enim...”
-        </p>
-        <p className="mt-2 font-semibold text-indigo-600">
-          — Kathryn Murphy
-        </p>
-      </motion.div>
-
-      {/* Sub Content */}
-      <motion.div className="md:pt-10 pb-5" variants={fadeInUp}>
-        <h3 className="text-xl font-semibold text-gray-800">
-          Creative approach to every project
-        </h3>
-        <p className="text-gray-600 mt-2">
-          Aliquam metus nibh consectetur montes nascetur...
-        </p>
-      </motion.div>
-
-      {/* Share Icons */}
-      <motion.div
-        className="flex items-center gap-3 mt-4 pb-10"
-        variants={fadeInUp}
-      >
-        <span className="text-gray-600 font-medium">Share Article:</span>
-
-        {/* Social Icons */}
-        {["facebook-f", "instagram", "pinterest-p", "linkedin-in"].map(
-          (icon, i) => (
-            <motion.a
-              key={icon}
-              href="#"
-              variants={fadeIn}
-              custom={i + 1}
-              className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors duration-200 ${
-                icon === "facebook-f"
-                  ? "bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white"
-                  : icon === "instagram"
-                  ? "bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white"
-                  : icon === "pinterest-p"
-                  ? "bg-red-100 text-red-600 hover:bg-red-600 hover:text-white"
-                  : "bg-blue-100 text-blue-500 hover:bg-blue-500 hover:text-white"
-              }`}
+        <div className="bg-white px-4 md:px-10 pt-28 pb-20">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            {/* Main Content */}
+            <motion.div
+              className="md:col-span-2 space-y-6"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ staggerChildren: 0.2 }}
             >
-              <i className={`fab fa-${icon}`}></i>
-            </motion.a>
-          )
-        )}
-      </motion.div>
-    </motion.div>
+              {/* Hero Image */}
+              <motion.img
+                src="/images/blog_1.webp"
+                alt="Main Banner"
+                className="rounded-lg w-full object-cover"
+                variants={fadeInUp}
+              />
 
-    {/* Sidebar – Recent Posts */}
-    <motion.div
-      className="rounded-lg p-5"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeInUp}
-    >
-      <h3 className="text-lg bg-white font-semibold text-gray-800 mb-4">
-        Recent Posts
-      </h3>
-      <ul className="space-y-8 bg-gray-50 p-3">
-        {recentPosts.map((post, index) => (
-          <motion.li
-            key={index}
-            className="flex gap-3 items-start border-b-2 pb-3 border-gray-100"
-            custom={index + 1}
-            variants={fadeIn}
-          >
-            <img
-              src={post.image}
-              alt="Post Thumb"
-              className="w-14 h-14 rounded-md object-cover"
-            />
-            <div>
-              <p className="text-sm text-gray-400 mb-1">{post.date}</p>
-              <p className="text-sm font-semibold text-gray-800">
-                {post.title}
-              </p>
-            </div>
-          </motion.li>
-        ))}
-      </ul>
-    </motion.div>
-  </div>
-</div>
+              {/* Title and Paragraph */}
+              <motion.div className="md:pb-10" variants={fadeInUp}>
+                <p className="text-gray-600 my-4">Laravel has become one of the most popular PHP frameworks for web application development, offering developers an elegant and scalable solution for building robust applications. With its extensive features and modern architecture, Laravel simplifies the development process while ensuring high-quality performance. Here's how Laravel improves web application development:</p>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  1. Elegant syntax and developer-friendly framework
+                </h2>
+                <p className="text-gray-600 mt-4">
+                  Laravel offers a clear and expressive syntax, making it easy to write and maintain code. This intuitive framework simplifies common tasks such as routing, authentication, and caching, allowing developers to focus on core application functionality.
+                </p>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  2. Integrated authentication and authorization
+                </h2>
+                <p className="text-gray-600 mt-4">
+                  Security is paramount for any web application, and Laravel offers built-in authentication and authorization features. With just a few commands, developers can set up secure authentication, as well as password saving and recovery, ensuring a reliable user experience.
+                </p>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  3. MVC architecture for better organization
+                </h2>
+                <p className="text-gray-600 mt-4">
+                  Laravel follows the MVC (Model-View-Controller) model, allowing for a clear structure of business logic, interface, and data. This separation promotes efficient code organization, which is particularly useful for large-scale projects.
+                </p>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  4. Eloquent ORM for simplified database management
+                </h2>
+                <p className="text-gray-600 mt-4">
+                  Laravel's Eloquent ORM provides a powerful and user-friendly interface for interacting with databases. Developers can perform complex queries with simple PHP syntax, making data management faster without writing raw SQL.
+                </p>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  5. Artisan Command Line Tool
+                </h2>
+                <p className="text-gray-600 mt-4">
+                  Laravel's Artisan CLI is an effective tool for automating repetitive tasks like migrations, seeding, and code generation. It increases developer productivity while reducing human error.
+                </p>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  6. Enhanced security features
+                </h2>
+                <p className="text-gray-600 mt-4">
+                  Laravel incorporates security measures such as encryption, XSS protection, SQL injection protection, and CSRF protection. These built-in safeguards help secure applications without requiring additional manual configuration.
+                </p>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  7. Seamless integration with third-party services
+                </h2>
+                <p className="text-gray-600 mt-4">
+                  Laravel makes it easy to integrate third-party services—such as APIs, payment gateways, or analytics tools—into web applications. This compatibility allows you to add advanced features without excessive complexity.
+                </p>
+                <h2 className="text-2xl font-bold text-gray-800">
+                 Conclusion
+                </h2>
+                <p className="text-gray-600 mt-4">
+                  Laravel is a powerful and flexible framework that makes web application development easy thanks to its clear syntax, robust features, and developer-friendly tools. Whether for a small application or a large-scale platform, Laravel enables you to create powerful, scalable, and secure web solutions.
+                </p>
+              </motion.div>
+
+              {/* Quote Section */}
+              <motion.div
+                className="border-l-4 border-indigo-500 bg-gray-50 p-5 shadow-sm italic text-gray-700"
+                variants={fadeInUp}
+              >
+                <p>
+                  “Tortor dis efficitur risus placerat libero condimentum faucibus enim...”
+                </p>
+                <p className="mt-2 font-semibold text-indigo-600">
+                  — Kathryn Murphy
+                </p>
+              </motion.div>
+
+              {/* Sub Content */}
+              
+              {/* Share Icons */}
+              <motion.div
+                className="flex items-center gap-3 mt-4 pb-10"
+                variants={fadeInUp}
+              >
+                <span className="text-gray-600 font-medium">Share Article:</span>
+
+                {/* Social Icons */}
+                {["facebook-f", "instagram", "pinterest-p", "linkedin-in"].map(
+                  (icon, i) => (
+                    <motion.a
+                      key={icon}
+                      href="#"
+                      variants={fadeIn}
+                      custom={i + 1}
+                      className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors duration-200 ${icon === "facebook-f"
+                          ? "bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white"
+                          : icon === "instagram"
+                            ? "bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white"
+                            : icon === "pinterest-p"
+                              ? "bg-red-100 text-red-600 hover:bg-red-600 hover:text-white"
+                              : "bg-blue-100 text-blue-500 hover:bg-blue-500 hover:text-white"
+                        }`}
+                    >
+                      <i className={`fab fa-${icon}`}></i>
+                    </motion.a>
+                  )
+                )}
+              </motion.div>
+            </motion.div>
+
+            {/* Sidebar – Recent Posts */}
+            <motion.div
+              className="rounded-lg p-5"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h3 className="text-lg bg-white font-semibold text-gray-800 mb-4">
+                In this article
+              </h3>
+              <ul className="space-y-8 bg-gray-50 p-3">
+                {recentPosts.map((post, index) => (
+                  <motion.li
+                    key={index}
+                    className="flex gap-3 items-start border-b-2 pb-3 border-gray-100"
+                    custom={index + 1}
+                    variants={fadeIn}
+                  >
+                    <img
+                      src={post.image}
+                      alt="Post Thumb"
+                      className="w-14 h-14 rounded-md object-cover"
+                    />
+                    <div>
+                      <p className="text-sm text-gray-400 mb-1">{post.date}</p>
+                      <p className="text-sm font-semibold text-gray-800">
+                        {post.title}
+                      </p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </div>
 
 
         <ContactForm />

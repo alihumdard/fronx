@@ -91,7 +91,7 @@ const webServicesData = (language) => [
     shortDescription:
       translations[language].webservice21,
     longDescription:
-    translations[language].webservice22,
+      translations[language].webservice22,
   },
   {
     id: "smart features tailored",
@@ -167,6 +167,8 @@ const Serviceweb = () => {
 
   return (
     <>
+      <title>Professional Web Development Services in Belgium | Fronx Solutions</title>
+      <meta name="description" content="Fronx Solutions offers professional web development in Belgium. We build fast, responsive, and custom websites tailored to your business needs." />
       <div className="relative h-screen w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
@@ -384,7 +386,7 @@ const Serviceweb = () => {
                         onClick={() => toggleExpand(service.id)}
                         className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
                       >
-                        {isExpanded ?  translations[language].webservice26 : translations[language].webservice27}
+                        {isExpanded ? translations[language].webservice26 : translations[language].webservice27}
                       </button>
                     )}
 

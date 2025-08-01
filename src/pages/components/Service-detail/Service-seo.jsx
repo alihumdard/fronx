@@ -142,6 +142,8 @@ const SEO = () => {
 
   return (
     <>
+      <title>Best SEO Company in Belgium | Fronx Solutions</title>
+      <meta name="description" content="Meta des Fronx Solutions is the leading SEO company in Belgium, offering expert SEO services to boost your Google rankings, drive organic traffic, and grow your business online." />
       <div className="relative h-screen w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
@@ -456,15 +458,15 @@ const SEO = () => {
 
                   <div className="space-y-2">
                     <p className="text-gray-600">
-                    {translations[language].seoservice41}
+                      {translations[language].seoservice41}
                     </p>
                     <p className="text-gray-600">
                       {translations[language].seoservice42}
                     </p>
                     <p className="text-gray-600">
-                     {translations[language].seoservice43}
+                      {translations[language].seoservice43}
                       <span className="text-orange-600 px-2">{translations[language].seoservice44}</span>
-                     {translations[language].seoservice45}
+                      {translations[language].seoservice45}
                     </p>
                     <p className="text-gray-600">
                       {translations[language].seoservice46}

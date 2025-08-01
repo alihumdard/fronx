@@ -174,7 +174,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
             className={`
                             ${mobile
                 ? "relative w-full mt-2 p-4 bg-gray-50 rounded-lg shadow-inner"
-                : "absolute left-1/2 sm:-left-[650%] top-full mt-3 w-screen max-w-screen-[600px] -translate-x-1/2 p-8 bg-white rounded-xl shadow-lg"
+                : "absolute left-1/2 sm:-left-[500%] top-full mt-3 w-screen max-w-screen-xl -translate-x-1/2 p-8 bg-white rounded-xl shadow-lg"
               }
                             overflow-hidden
                         `}
@@ -182,7 +182,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
             <div
               className={`grid ${mobile
                   ? "grid-cols-1 gap-y-0" // Adjusted gap-y for mobile as categories will have their own spacing
-                  : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-8 gap-x-28"
+                  : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-8 gap-x-20"
                 }`}
             >
               {latestserviceCategories.map((category, catIndex) => (
@@ -242,7 +242,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                           }`} // Indent and add top margin on mobile
                       >
                         {category.items.map((item, itemIndex) => (
-                          <li key={itemIndex}>
+                          <li key={itemIndex} className="w-20">
                             <Link
                               to={`${category.url}${item.hash}`} // e.g. /web#development-process
                               className={`block transition-colors duration-200 whitespace-nowrap text-gray-700 ${linkHoverClass}`}

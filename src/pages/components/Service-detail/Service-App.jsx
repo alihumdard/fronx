@@ -94,11 +94,11 @@ const appservicedata = (language) => [
     shortDescription:
       translations[language].appservice22,
     longDescription:
-    translations[language].appservice23,
+      translations[language].appservice23,
   },
 ];
 
-const features = (language) =>  [
+const features = (language) => [
   {
     icon: <FaBolt className="text-orange-400 text-3xl" />,
     title: translations[language].appservice26,
@@ -161,6 +161,8 @@ const Appweb = () => {
 
   return (
     <>
+      <title>Mobile App Development Services in Belgium | Fronx Solutions</title>
+      <meta name="description" content="Fronx Solutions delivers expert mobile app development for iOS and Android. We build fast, scalable, and user-friendly mobile applications in Belgium." />
       <div className="relative h-screen w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />

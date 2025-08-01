@@ -15,7 +15,7 @@ const ALL_TESTIMONIALS = (language) => [
     rating: 5,
     clientName: "Chris Noth",
     clientTitle: "Owner Taxfirm",
-    clientAvatar: "/images/Ellipse 27.png",
+    clientAvatar: "/images/testimonial_1.png",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const ALL_TESTIMONIALS = (language) => [
     rating: 4,
     clientName: "Alice Smith",
     clientTitle: "CEO Tech Solutions",
-    clientAvatar: "/images/Ellipse 24.png",
+    clientAvatar: "/images/testimonial_2.webp",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const ALL_TESTIMONIALS = (language) => [
     rating: 5,
     clientName: "Bob Johnson",
     clientTitle: "Product Manager Innovate Co.",
-    clientAvatar: "/images/contact-2.png",
+    clientAvatar: "/public/images/testimonial_3.webp",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const ALL_TESTIMONIALS = (language) => [
     rating: 4,
     clientName: "Carol White",
     clientTitle: "Marketing Director Global Corp",
-    clientAvatar: "/images/Ellipse 26.png",
+    clientAvatar: "/images/testimonial_4.webp",
   },
 ];
 

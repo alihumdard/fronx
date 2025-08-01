@@ -49,6 +49,9 @@ const Blog = () => {
 
   return (
     <>
+     <title>Digital Insights & Tech Trends Blog | Fronx Solutions</title>
+      <meta name="description" content="Stay updated with the latest in web development, mobile apps, UI/UX, and digital strategy. Explore expert articles and insights on the Fronx Solutions Blog." />
+
       <div className="relative h-screen w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
