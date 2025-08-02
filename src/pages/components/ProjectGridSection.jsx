@@ -104,11 +104,11 @@ const ProjectGridSection = () => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="bg-white rounded-2xl overflow-hidden shadow-md mb-20 hover:shadow-2xl transition-shadow duration-300"
               >
-                <div className="overflow-hidden">
+                <div className="overflow-hidden ">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out hover:scale-105"
+                    className="w-full h-64 object-center transform transition-transform duration-500 ease-in-out hover:scale-105"
                   />
                 </div>
               </motion.div>
