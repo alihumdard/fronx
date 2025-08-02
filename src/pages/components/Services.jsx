@@ -103,7 +103,7 @@ const servicesData = (language) => [
     title: translations[language].service2, // You might want to use translations here too: translations[language].service2
     url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
     description:
-      "Crafting intuitive and high-performance mobile applications for iOS and Android, we specialize in building seamless, scalable, and user-friendly experiences tailored to your business goals. From concept to deployment, our mobile solutions ensure speed, reliability, and exceptional user engagement across all devices.",
+      translations[language].servicedetail2,
     techStackIcons: [
       { icon: SiFlutter, name: "Flutter" },
       { icon: FaReact, name: "React Native" },
@@ -120,7 +120,7 @@ const servicesData = (language) => [
     title: translations[language].service3, // translations[language].service3
     url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
     description:
-      "Designing captivating and user-centric interfaces, we focus on aesthetics, usability, and seamless interaction. Our UI/UX design approach combines creativity with user behavior insights to create visually stunning, intuitive experiences that keep users engaged and satisfied.",
+      translations[language].servicedetail3,
     techStackIcons: [
       { icon: SiFigma, name: "Figma" },
       { icon: FaPalette, name: "Adobe XD" },
@@ -134,7 +134,7 @@ const servicesData = (language) => [
     title: translations[language].service4, // translations[language].service4
     url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
     description:
-      "Building secure and scalable e-commerce platforms that drive sales, enhance user experience, and streamline operations. We focus on performance, mobile responsiveness, and conversion optimization to help your online store succeed in a competitive digital marketplace.",
+      translations[language].servicedetail4,
     techStackIcons: [
       { icon: FaShopify, name: "Shopify" },
       { icon: FaWordpress, name: "WooCommerce" },
@@ -150,7 +150,7 @@ const servicesData = (language) => [
     title: translations[language].service5, // translations[language].service5
     url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
     description:
-      "Boost your online presence, drive targeted traffic, and convert leads into loyal customers through strategic digital marketing solutions. From SEO and content strategy to paid campaigns, we help you grow sustainably and achieve measurable results.",
+      translations[language].servicedetail5,
     techStackIcons: [
       { icon: FaSearch, name: "SEO" },
       { icon: FaBullhorn, name: "Ads" },
@@ -164,7 +164,7 @@ const servicesData = (language) => [
     title: translations[language].service6, // translations[language].service6
     url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
     description:
-      "We deliver tailored solutions designed to meet your unique business needs, optimize workflows, and enhance overall efficiency. Our approach ensures that every strategy, tool, and technology we implement aligns perfectly with your goals and operational requirements.",
+      translations[language].servicedetail6,
     techStackIcons: [
       { icon: FaPython, name: "Python" },
       { icon: FaJava, name: "Java" },
@@ -181,7 +181,7 @@ const servicesData = (language) => [
     title: translations[language].service7, // translations[language].service7
     url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
     description:
-      "Automate customer support and streamline interactions with AI and intelligent chatbots. Enhance response times, reduce support costs, and provide 24/7 assistance through seamless, human-like conversations that elevate the customer experience.",
+      translations[language].servicedetail7,
     techStackIcons: [
       { icon: FaRobot, name: "AI/ML" },
       { icon: FaJs, name: "Node.js" },
@@ -195,7 +195,7 @@ const servicesData = (language) => [
     title: translations[language].service8, // translations[language].service8
     url: URLS.SERVICE_DETAIL.MAINTENENCE,
     description:
-      "Keep your applications running smoothly with regular updates, proactive maintenance, and dedicated technical support. We ensure optimal performance, security, and reliability so you can focus on growing your business without interruptions.",
+      translations[language].servicedetail8,
     techStackIcons: [
       { icon: FaServer, name: "Monitoring" },
       { icon: FaCloud, name: "Cloud Mgmt" },
@@ -209,7 +209,7 @@ const servicesData = (language) => [
     title: translations[language].service9, // translations[language].service9
     url: URLS.SERVICE_DETAIL.SEO,
     description:
-      "Improve your visibility on search engines to attract qualified traffic, generate more leads, and grow your online presence. Our SEO strategies are tailored to help you rank higher, drive engagement, and convert visitors into customers.",
+      translations[language].servicedetail9,
     techStackIcons: [
       { icon: FaSearch, name: "Keyword Research" },
       { icon: FaCode, name: "On-Page SEO" },
@@ -288,47 +288,47 @@ const Services = () => {
                 const IconComponent = service.icon;
                 const isActive = service.id === activeServiceId;
                 return (
-                 
-                    <motion.div
-                      layout
-                      key={service.id}
-                      custom={index}
-                      variants={fadeIn}
-                      onClick={() => setActiveServiceId(service.id)}
-                      className={`relative flex flex-col items-center justify-center rounded-xl cursor-pointer transition-all duration-300
+
+                  <motion.div
+                    layout
+                    key={service.id}
+                    custom={index}
+                    variants={fadeIn}
+                    onClick={() => setActiveServiceId(service.id)}
+                    className={`relative flex flex-col items-center justify-center rounded-xl cursor-pointer transition-all duration-300
                       ${isActive
-                          ? "border border-orange-600 text-white shadow-lg scale-105"
-                          : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white border-none"
-                        } min-h-[150px] sm:min-h-[170px] text-center`}
-                    >
-                      {isActive && (
-                        <motion.div
-                          layoutId="active-service-border"
-                          className="absolute inset-0 rounded-xl border-2 border-orange-500 animate-pulse-slow"
-                        />
-                      )}
-                      {IconComponent && (
-                        <IconComponent
-                          className="w-10 h-10 mb-3"
-                          style={{ color: "#FF9B4B" }}
-                        />
-                      )}
-                      <h3 className="text-lg w-60 font-semibold leading-snug">
-                        {service.title.split(" ").map((word, i) => (
-                          <span key={i} className="block">
-                            {word}
-                          </span>
-                        ))}
-                      </h3>
-                    </motion.div>
-                  
+                        ? "border border-orange-600 text-white shadow-lg scale-105"
+                        : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white border-none"
+                      } min-h-[150px] sm:min-h-[170px] text-center`}
+                  >
+                    {isActive && (
+                      <motion.div
+                        layoutId="active-service-border"
+                        className="absolute inset-0 rounded-xl border-2 border-orange-500 animate-pulse-slow"
+                      />
+                    )}
+                    {IconComponent && (
+                      <IconComponent
+                        className="w-10 h-10 mb-3"
+                        style={{ color: "#FF9B4B" }}
+                      />
+                    )}
+                    <h3 className="text-lg w-60 font-semibold leading-snug">
+                      {service.title.split(" ").map((word, i) => (
+                        <span key={i} className="block">
+                          {word}
+                        </span>
+                      ))}
+                    </h3>
+                  </motion.div>
+
                 );
               })}
             </motion.div>
 
             {/* Right Panel: Service Detail */}
             <motion.div
-            
+
               className="py-8 pl-5 md:py-10 flex flex-col justify-between min-h-[400px] lg:min-h-[500px]"
               initial="hidden"
               whileInView="visible"

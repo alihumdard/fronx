@@ -174,7 +174,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
             className={`
                             ${mobile
                 ? "relative w-full mt-2 p-4 bg-gray-50 rounded-lg shadow-inner"
-                : "absolute left-1/2 sm:-left-[500%] top-full mt-3 w-screen max-w-screen-xl -translate-x-1/2 p-8 bg-white rounded-xl shadow-lg"
+                : "absolute left-1/2 sm:-left-[440%] top-full mt-3 w-screen max-w-screen-xl -translate-x-1/2 p-8 bg-white rounded-xl shadow-lg"
               }
                             overflow-hidden
                         `}

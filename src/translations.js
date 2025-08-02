@@ -110,10 +110,14 @@ const translations = {
     footer1: "Let's launch the project together!",
     footer2:
       "To dominate the e-commerce market, you need ambition and growth opportunities. We help our clients achieve real business results.",
-    footer3: "Email",
+    footer3: "E-mail",
     footer4: "Phone",
     footer5: "Address",
     footer6: "Submit",
+    upload: " Upload file",
+    tell: "Tell us more!",
+    auth: "I authorize D/M digital to use the data transmitted through this form, including for marketing purposes. See our Privacy Policy to learn more.",
+    send: "send",
     ready: "  Ready to bring your project to life?",
     contact: "Contact Us",
     maintinence: "Maintinence",
@@ -782,6 +786,38 @@ const translations = {
     subject4: "create a mobile application",
     subject5: "create a custom software",
     subject6: "other",
+    servicedetail2:
+      "Crafting intuitive and high-performance mobile applications for iOS and Android, we specialize in building seamless, scalable, and user-friendly experiences tailored to your business goals. From concept to deployment, our mobile solutions ensure speed, reliability, and exceptional user engagement across all devices.",
+    servicedetail3:
+      "Designing captivating and user-centric interfaces, we focus on aesthetics, usability, and seamless interaction. Our UI/UX design approach combines creativity with user behavior insights to create visually stunning, intuitive experiences that keep users engaged and satisfied.",
+    servicedetail4:
+      "Building secure and scalable e-commerce platforms that drive sales, enhance user experience, and streamline operations. We focus on performance, mobile responsiveness, and conversion optimization to help your online store succeed in a competitive digital marketplace.",
+    servicedetail5:
+      "Boost your online presence, drive targeted traffic, and convert leads into loyal customers through strategic digital marketing solutions. From SEO and content strategy to paid campaigns, we help you grow sustainably and achieve measurable results.",
+    servicedetail6:
+      "We deliver tailored solutions designed to meet your unique business needs, optimize workflows, and enhance overall efficiency. Our approach ensures that every strategy, tool, and technology we implement aligns perfectly with your goals and operational requirements.",
+    servicedetail7:
+      "Automate customer support and streamline interactions with AI and intelligent chatbots. Enhance response times, reduce support costs, and provide 24/7 assistance through seamless, human-like conversations that elevate the customer experience.",
+    servicedetail8:
+      "Keep your applications running smoothly with regular updates, proactive maintenance, and dedicated technical support. We ensure optimal performance, security, and reliability so you can focus on growing your business without interruptions.",
+    servicedetail9:
+      "Improve your visibility on search engines to attract qualified traffic, generate more leads, and grow your online presence. Our SEO strategies are tailored to help you rank higher, drive engagement, and convert visitors into customers.",
+    submit1: "Submit RFI / RFP",
+    submit2: "Send us your RFI or RFP",
+    submit3: "We would be happy to answer it.",
+    submit4: "Access the form",
+    submit5: "For 25 years,",
+    submit6:
+      " has been supporting businesses with their digital projects to transform their ambitions into concrete results. Web development, mobile, e-commerce, digital marketing, UX/UI: our experts design tailor-made solutions adapted to your challenges.",
+    submit7:
+      "With recognized technical expertise and a deep understanding of your business, we are the trusted partner to accelerate your growth. Send us your specifications: together, we will build solutions that meet your objectives.",
+    submit8: "Send us your documents",
+    business: "Business",
+    blog1: "How Laravel Improves Web Application Development",
+    blog2: "This is the source of the mobile app nodig.",
+    blog3: "Het belang van responsive mobile design in 2024",
+    trans: "Transmettre RFI / RFP",
+
   },
 
   fr: {
@@ -1576,6 +1612,41 @@ const translations = {
     subject4: "créer une application mobile",
     subject5: "créer un logiciel personnalisé",
     subject6: "autre",
+    servicedetail2:
+      "Concevoir des applications mobiles intuitives et performantes pour iOS et Android, nous sommes spécialisés dans la création d’expériences fluides, évolutives et conviviales, adaptées à vos objectifs commerciaux. De la conception au déploiement, nos solutions mobiles garantissent rapidité, fiabilité et engagement exceptionnel des utilisateurs sur tous les appareils.",
+    servicedetail3:
+      "Concevoir des interfaces captivantes et centrées sur l’utilisateur, nous mettons l’accent sur l’esthétique, l’utilisabilité et l’interaction fluide. Notre approche UI/UX associe créativité et compréhension du comportement utilisateur pour créer des expériences visuellement attrayantes et intuitives qui fidélisent les utilisateurs.",
+    servicedetail4:
+      "Créer des plateformes e-commerce sécurisées et évolutives qui stimulent les ventes, améliorent l’expérience utilisateur et optimisent les opérations. Nous nous concentrons sur les performances, la réactivité mobile et l’optimisation de la conversion pour assurer le succès de votre boutique en ligne dans un marché numérique compétitif.",
+    servicedetail5:
+      "Renforcez votre présence en ligne, attirez un trafic ciblé et transformez vos prospects en clients fidèles grâce à des solutions de marketing digital stratégiques. Du SEO à la stratégie de contenu en passant par les campagnes payantes, nous vous aidons à croître durablement et à obtenir des résultats mesurables.",
+    servicedetail6:
+      "Nous proposons des solutions sur mesure conçues pour répondre aux besoins uniques de votre entreprise, optimiser les flux de travail et améliorer l’efficacité globale. Notre approche garantit que chaque stratégie, outil et technologie mis en œuvre s’aligne parfaitement avec vos objectifs et vos exigences opérationnelles.",
+    servicedetail7:
+      "Automatisez le support client et simplifiez les interactions grâce à l’IA et aux chatbots intelligents. Améliorez les délais de réponse, réduisez les coûts de support et offrez une assistance 24/7 par des conversations fluides et naturelles qui enrichissent l’expérience client.",
+    servicedetail8:
+      "Assurez le bon fonctionnement de vos applications grâce à des mises à jour régulières, une maintenance proactive et un support technique dédié. Nous garantissons performance, sécurité et fiabilité pour que vous puissiez vous concentrer sur la croissance de votre entreprise sans interruption.",
+    servicedetail9:
+      "Améliorez votre visibilité sur les moteurs de recherche pour attirer un trafic qualifié, générer plus de prospects et développer votre présence en ligne. Nos stratégies SEO sont conçues pour vous aider à mieux vous positionner, à accroître l’engagement et à convertir les visiteurs en clients.",
+    submit1: "Soumettre une RFI / RFP",
+    submit2: "Envoyez-nous votre RFI ou RFP",
+    submit3: "Nous serions ravis d’y répondre.",
+    submit4: "Accéder au formulaire",
+    submit5: "Depuis 25 ans,",
+    submit6:
+      " accompagne les entreprises dans leurs projets numériques pour transformer leurs ambitions en résultats concrets. Développement web, mobile, e-commerce, marketing digital, UX/UI : nos experts conçoivent des solutions sur mesure adaptées à vos enjeux.",
+    submit7:
+      "Avec une expertise technique reconnue et une compréhension approfondie de votre métier, nous sommes le partenaire de confiance pour accélérer votre croissance. Envoyez-nous votre cahier des charges : ensemble, nous construirons des solutions qui répondent à vos objectifs.",
+    submit8: "Envoyez-nous vos documents",
+    business: "Entreprise",
+    upload: "Téléverser un fichier",
+    tell: "Dites-nous en plus !",
+    auth: "J’autorise D/M digital à utiliser les données transmises via ce formulaire, y compris à des fins marketing. Consultez notre Politique de Confidentialité pour en savoir plus.",
+    send: "Envoyer",
+    blog1: "Comment Laravel améliore le développement d’applications web",
+    blog2: "Voici la source de l’application mobile nécessaire.",
+    blog3: "L’importance du design mobile responsive en 2024",
+    trans: "Émetteur RFI / RFP",
   },
 };
 

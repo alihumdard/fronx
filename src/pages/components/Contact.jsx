@@ -77,7 +77,7 @@ const ContactForm = () => {
                 { id: "email", placeholder: translations[language].Email, type: "email" },
                 { id: "mobileNumber", placeholder: translations[language].MobileNumber, type: "tel" },
                 { id: "currentWebsite", placeholder: translations[language].CurrentWebsite, colSpan: true },
-                { id: "iWouldLike", placeholder: translations[language].like, colSpan: true },
+                // { id: "iWouldLike", placeholder: translations[language].like, colSpan: true },
               ].map(({ id, placeholder, type = "text", colSpan }) => (
                 <div key={id} className={`${colSpan ? "sm:col-span-2" : ""}`}>
                   <label htmlFor={id} className="sr-only">{placeholder}</label>
@@ -89,7 +89,23 @@ const ContactForm = () => {
                   />
                 </div>
               ))}
-
+              <div className="w-full space-y-4 sm:col-span-2">
+                {/* Dropdown */}
+                <select
+                aria-colspan={true}
+                  className="w-full px-5 py-3 bg-white bg-opacity-5 border border-gray-600 rounded-md text-gray-400 placeholder-gray-400 focus:ring-[#6931CF] focus:border-[#6931CF] outline-none transition-all"
+                  defaultValue=""
+                >
+                  <option className='w-full px-5 py-3 bg-white bg-opacity-5 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-[#6931CF] focus:border-[#6931CF] outline-none transition-all' value="" disabled>
+                    {translations[language].subject1}
+                  </option>
+                  <option value="general">{translations[language].subject2}</option>
+                  <option value="support">{translations[language].subject3}</option>
+                  <option value="feedback">{translations[language].subject4}</option>
+                  <option value="quote">{translations[language].subject5}</option>
+                  <option value="quote">{translations[language].subject6}</option>
+                </select>
+              </div>
               {/* Textarea */}
               <div className="sm:col-span-2">
                 <label htmlFor="yourMessage" className="sr-only">Your Message</label>

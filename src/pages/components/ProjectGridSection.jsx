@@ -4,14 +4,17 @@ import PageWrapper from "../../main/Pagewraper";
 import { FaCalendarAlt, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import URLS from "../../config/urls.config";
+import translations from "../../translations";
+import { useLanguage } from "../../LanguageContext";
 
-const ALL_PROJECTS = [
+// ALL_PROJECTS is a function that returns the array of projects
+const ALL_PROJECTS = (language) => [
   {
     id: 1,
     image: "/images/blog_1.webp",
     date: "10 July 2024",
     url: URLS.BlogDetail,
-    title: "How Laravel Improves Web Application Development",
+    title: translations[language].blog1,
     description:
       "Developed a cutting-edge AI platform to process large datasets, providing actionable insights for businesses.",
   },
@@ -19,8 +22,8 @@ const ALL_PROJECTS = [
     id: 2,
     image: "/images/blog_2.webp",
     date: "25 June 2024",
-    
-    title: "This is the source of the mobile app nodig.",
+    url: URLS.BlogDetail1,
+    title: translations[language].blog2,
     description:
       "Built a robust e-commerce site featuring secure payment gateways and seamless CRM integration.",
   },
@@ -28,23 +31,30 @@ const ALL_PROJECTS = [
     id: 3,
     image: "/images/blog_3.webp",
     date: "15 May 2024",
-    title: "Het belang van responsive mobile design in 2024",
+    title: translations[language].blog3,
     description:
       "Designed and developed an intuitive mobile application for iOS and Android, focusing on user engagement.",
   },
- 
 ];
 
 const PROJECTS_PER_PAGE = 9;
 
 const ProjectGridSection = () => {
+  const { language } = useLanguage();
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(ALL_PROJECTS.length / PROJECTS_PER_PAGE);
+  // 1. First, get the complete array of projects for the current language
+  const allProjectsForCurrentLanguage = ALL_PROJECTS(language);
+
+  // 2. Now you can use this array to calculate pagination details
+  const totalPages = Math.ceil(allProjectsForCurrentLanguage.length / PROJECTS_PER_PAGE);
   const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
   const endIndex = startIndex + PROJECTS_PER_PAGE;
-  const currentProjects = ALL_PROJECTS.slice(startIndex, endIndex);
 
+  // 3. And finally, slice the array for the current page
+  const currentProjects = allProjectsForCurrentLanguage.slice(startIndex, endIndex);
+
+  // The rest of your code is good.
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const renderPageNumbers = () => {
@@ -103,7 +113,6 @@ const ProjectGridSection = () => {
                 </div>
               </motion.div>
 
-
               {/* Floating Info Box */}
               <div className="absolute left-4 right-4 bottom-20 translate-y-1/2 bg-white rounded-xl shadow-lg px-4 py-6 flex flex-col gap-2">
                 {/* Date */}
@@ -151,10 +160,11 @@ const ProjectGridSection = () => {
               ) : (
                 <button
                   onClick={() => paginate(number)}
-                  className={`w-10 h-10 flex items-center justify-center rounded-full text-lg font-semibold ${currentPage === number
-                    ? "bg-blue-600 text-white"
-                    : "text-gray-700 hover:bg-gray-100"
-                    } transition-colors focus:outline-none`}
+                  className={`w-10 h-10 flex items-center justify-center rounded-full text-lg font-semibold ${
+                    currentPage === number
+                      ? "bg-blue-600 text-white"
+                      : "text-gray-700 hover:bg-gray-100"
+                  } transition-colors focus:outline-none`}
                 >
                   {number}
                 </button>
@@ -169,7 +179,6 @@ const ProjectGridSection = () => {
           >
             <i className="fas fa-chevron-right"></i>
           </button>
-
         </motion.div>
       </PageWrapper>
     </motion.section>

@@ -41,7 +41,7 @@ export const staggerContainer = {
   },
 };
 const Submit = () => {
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage();
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -87,7 +87,7 @@ const Submit = () => {
                 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6 sm:mb-10"
                 variants={fadeUpVariant}
               >
-                Submit RFI / RFP
+                {translations[language].submit1}
               </motion.h1>
 
               <div
@@ -103,7 +103,7 @@ const Submit = () => {
                 </Link>
                 <span className="text-orange-400">››</span>
                 <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                  Submit RFI / RFP
+                  {translations[language].submit1}
                 </Link>
               </div>
             </motion.div>
@@ -114,13 +114,13 @@ const Submit = () => {
           {/* Header Section */}
           <div className="max-w-4xl ">
             <h1 className="text-5xl font-extrabold text-gray-700 bg-clip-text  mb-4">
-              Send us your RFI or RFP
+              {translations[language].submit2}
             </h1>
             <p className="text-lg text-gray-600 mb-6">
-              We would be happy to answer it.
+             {translations[language].submit3}
             </p>
             <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold shadow transition duration-300">
-              Access the form
+             {translations[language].submit4}
             </button>
           </div>
 
@@ -129,10 +129,10 @@ const Submit = () => {
             <div className="mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="text-gray-700 space-y-6 text-lg">
                 <p>
-                  For 25 years, <span className="font-semibold text-purple-600">Fronx Solutions</span> has been supporting businesses with their digital projects to transform their ambitions into concrete results. Web development, mobile, e-commerce, digital marketing, UX/UI: our experts design tailor-made solutions adapted to your challenges.
+               {translations[language].submit5} <span className="font-semibold text-purple-600">Fronx Solutions</span> {translations[language].submit6}
                 </p>
                 <p>
-                  With recognized technical expertise and a deep understanding of your business, we are the trusted partner to accelerate your growth. Send us your specifications: together, we will build solutions that meet your objectives.
+                 {translations[language].submit7}
                 </p>
               </div>
               <div>
@@ -147,39 +147,62 @@ const Submit = () => {
             {/* Form Section */}
             <div className="mt-24 bg-gray-50 p-10 rounded-2xl max-w-4xl mx-auto shadow-xl">
               <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
-                Send us your documents
+              {translations[language].submit8}
               </h2>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <input
                     type="text"
-                    placeholder="Name"
+                    placeholder={translations[language].firstname}
                     className="border border-gray-300 px-4 py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
                   />
                   <input
                     type="text"
-                    placeholder="First name"
+                    placeholder={translations[language].LastName}
                     className="border border-gray-300 px-4 py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
                   />
                   <input
                     type="text"
-                    placeholder="Business"
+                    placeholder={translations[language].business}
                     className="border border-gray-300 px-4 py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
                   />
                   <input
                     type="text"
-                    placeholder="Phone number"
+                    placeholder={translations[language].footer4}
                     className="border border-gray-300 px-4 py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
                   />
                 </div>
                 <input
                   type="email"
-                  placeholder="E-mail"
+                  placeholder={translations[language].footer3}
                   className="border border-gray-300 px-4 py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
                 />
+                      <div className="w-full space-y-4">
+                  {/* Text Input */}
+                  <input
+                    type="text"
+                    placeholder={translations[language].subject}
+                    className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+
+                  {/* Dropdown */}
+                  <select
+                    className="w-full text-gray-400 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      {translations[language].subject1}
+                    </option>
+                    <option value="general">{translations[language].subject2}</option>
+                    <option value="support">{translations[language].subject3}</option>
+                    <option value="feedback">{translations[language].subject4}</option>
+                    <option value="quote">{translations[language].subject5}</option>
+                    <option value="quote">{translations[language].subject6}</option>
+                  </select>
+                </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Upload file
+                    {translations[language].upload}
                   </label>
                   <input
                     type="file"
@@ -187,7 +210,7 @@ const Submit = () => {
                   />
                 </div>
                 <textarea
-                  placeholder="Tell us more!"
+                  placeholder={translations[language].tell}
                   rows="5"
                   className="border border-gray-300 px-4 py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
                 ></textarea>
@@ -205,7 +228,7 @@ const Submit = () => {
                   type="submit"
                   className="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-semibold transition duration-300"
                 >
-                  Send
+                  {translations[language].send}
                 </button>
               </form>
             </div>

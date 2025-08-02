@@ -74,149 +74,149 @@ const techColorMap = {
 };
 
 const servicesData = (language) => [
-    {
-        id: "website-development",
-        icon: FaCode,
-        title: translations[language].service1,
-        url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
-        description: translations[language].service1Detail,
-        techStackIcons: [
-            { icon: FaPython, name: "Python" },
-            { icon: SiTypescript, name: "TypeScript" },
-            { icon: FaJs, name: "JavaScript" },
-            { icon: FaReact, name: "React" },
-            { icon: SiNextdotjs, name: "Next.js" },
-            { icon: FaNodeJs, name: "Node.js" },
-            { icon: FaLaravel, name: "Laravel" },
-            { icon: FaWordpress, name: "WordPress" },
-            { icon: FaShopify, name: "Shopify" },
-            { icon: SiTailwindcss, name: "Tailwind CSS" },
-            { icon: SiBootstrap, name: "Bootstrap" },
-            { icon: SiMongodb, name: "MongoDB" },
-            { icon: SiMysql, name: "MySQL" },
-        ],
-        buttonText: translations[language].webDevelopment,
-    },
-    {
-        id: "mobile-app-development",
-        icon: FaMobileAlt,
-        title: translations[language].service2, // You might want to use translations here too: translations[language].service2
-        url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
-        description:
-            "Crafting intuitive and high-performance mobile applications for iOS and Android.",
-        techStackIcons: [
-            { icon: SiFlutter, name: "Flutter" },
-            { icon: FaReact, name: "React Native" },
-            { icon: SiAndroid, name: "Android" },
-            { icon: SiIos, name: "iOS" },
-            { icon: FaJava, name: "Java" },
-            { icon: FaJs, name: "JavaScript" },
-        ],
-        buttonText: translations[language].MobileDevelopment,
-    },
-    {
-        id: "ui-ux-design",
-        icon: FaPalette,
-        title: translations[language].service3, // translations[language].service3
-        url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
-        description:
-            "Designing captivating and user-centric interfaces focusing on aesthetics and usability.",
-        techStackIcons: [
-            { icon: SiFigma, name: "Figma" },
-            { icon: FaPalette, name: "Adobe XD" },
-            { icon: FaTools, name: "Sketch" },
-        ],
-        buttonText: translations[language].service3,
-    },
-    {
-        id: "e-commerce-solutions",
-        icon: FaShoppingCart,
-        title: translations[language].service4, // translations[language].service4
-        url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
-        description:
-            "Building secure e-commerce platforms that drive sales and enhance user experience.",
-        techStackIcons: [
-            { icon: FaShopify, name: "Shopify" },
-            { icon: FaWordpress, name: "WooCommerce" },
-            { icon: FaLaravel, name: "Laravel" },
-            { icon: FaReact, name: "React" },
-            { icon: FaDatabase, name: "Databases" },
-        ],
-        buttonText: translations[language].service4,
-    },
-    {
-        id: "digital-marketing",
-        icon: FaBullhorn,
-        title: translations[language].service5, // translations[language].service5
-        url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
-        description:
-            "Boost your online presence, drive traffic, and convert leads into loyal customers.",
-        techStackIcons: [
-            { icon: FaSearch, name: "SEO" },
-            { icon: FaBullhorn, name: "Ads" },
-            { icon: FaTools, name: "Analytics" },
-        ],
-        buttonText: translations[language].service5,
-    },
-    {
-        id: "custom-software-development",
-        icon: FaCogs,
-        title: translations[language].service6, // translations[language].service6
-        url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
-        description:
-            "Tailored solutions to meet your unique business needs and enhance efficiency.",
-        techStackIcons: [
-            { icon: FaPython, name: "Python" },
-            { icon: FaJava, name: "Java" },
-            { icon: SiDotnet, name: ".NET" },
-            { icon: FaNodeJs, name: "Node.js" },
-            { icon: FaDatabase, name: "Databases" },
-            { icon: FaCloud, name: "Cloud" },
-        ],
-        buttonText: translations[language].service6,
-    },
-    {
-        id: "ai-chatbot-solutions",
-        icon: FaRobot,
-        title: translations[language].service7, // translations[language].service7
-        url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
-        description:
-            "Automate customer support and streamline interactions with AI and chatbots.",
-        techStackIcons: [
-            { icon: FaRobot, name: "AI/ML" },
-            { icon: FaJs, name: "Node.js" },
-            { icon: FaServer, name: "APIs" },
-        ],
-        buttonText: translations[language].service7,
-    },
-    {
-        id: "maintenance-support",
-        icon: FaTools,
-        title: translations[language].service8, // translations[language].service8
-        url: URLS.SERVICE_DETAIL.MAINTENENCE,
-        description:
-            "Keep applications running smoothly with updates and dedicated technical support.",
-        techStackIcons: [
-            { icon: FaServer, name: "Monitoring" },
-            { icon: FaCloud, name: "Cloud Mgmt" },
-            { icon: FaTools, name: "Updates" },
-        ],
-        buttonText: translations[language].Maintenence,
-    },
-    {
-        id: "search-engine-optimization",
-        icon: FaSearch,
-        title: translations[language].service9, // translations[language].service9
-        url: URLS.SERVICE_DETAIL.SEO,
-        description:
-            "Improve visibility on search engines to attract more traffic and leads.",
-        techStackIcons: [
-            { icon: FaSearch, name: "Keyword Research" },
-            { icon: FaCode, name: "On-Page SEO" },
-            { icon: FaBullhorn, name: "Off-Page SEO" },
-        ],
-        buttonText: translations[language].SEO,
-    },
+  {
+    id: "website-development",
+    icon: FaCode,
+    title: translations[language].service1,
+    url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
+    description: translations[language].service1Detail,
+    techStackIcons: [
+      { icon: FaPython, name: "Python" },
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: FaJs, name: "JavaScript" },
+      { icon: FaReact, name: "React" },
+      { icon: SiNextdotjs, name: "Next.js" },
+      { icon: FaNodeJs, name: "Node.js" },
+      { icon: FaLaravel, name: "Laravel" },
+      { icon: FaWordpress, name: "WordPress" },
+      { icon: FaShopify, name: "Shopify" },
+      { icon: SiTailwindcss, name: "Tailwind CSS" },
+      { icon: SiBootstrap, name: "Bootstrap" },
+      { icon: SiMongodb, name: "MongoDB" },
+      { icon: SiMysql, name: "MySQL" },
+    ],
+    buttonText: translations[language].webDevelopment,
+  },
+  {
+    id: "mobile-app-development",
+    icon: FaMobileAlt,
+    title: translations[language].service2, // You might want to use translations here too: translations[language].service2
+    url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
+    description:
+      translations[language].servicedetail2,
+    techStackIcons: [
+      { icon: SiFlutter, name: "Flutter" },
+      { icon: FaReact, name: "React Native" },
+      { icon: SiAndroid, name: "Android" },
+      { icon: SiIos, name: "iOS" },
+      { icon: FaJava, name: "Java" },
+      { icon: FaJs, name: "JavaScript" },
+    ],
+    buttonText: translations[language].MobileDevelopment,
+  },
+  {
+    id: "ui-ux-design",
+    icon: FaPalette,
+    title: translations[language].service3, // translations[language].service3
+    url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
+    description:
+     translations[language].servicedetail3,
+    techStackIcons: [
+      { icon: SiFigma, name: "Figma" },
+      { icon: FaPalette, name: "Adobe XD" },
+      { icon: FaTools, name: "Sketch" },
+    ],
+    buttonText: translations[language].service3,
+  },
+  {
+    id: "e-commerce-solutions",
+    icon: FaShoppingCart,
+    title: translations[language].service4, // translations[language].service4
+    url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
+    description:
+     translations[language].servicedetail4,
+    techStackIcons: [
+      { icon: FaShopify, name: "Shopify" },
+      { icon: FaWordpress, name: "WooCommerce" },
+      { icon: FaLaravel, name: "Laravel" },
+      { icon: FaReact, name: "React" },
+      { icon: FaDatabase, name: "Databases" },
+    ],
+    buttonText: translations[language].service4,
+  },
+  {
+    id: "digital-marketing",
+    icon: FaBullhorn,
+    title: translations[language].service5, // translations[language].service5
+    url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
+    description:
+      translations[language].servicedetail5,
+    techStackIcons: [
+      { icon: FaSearch, name: "SEO" },
+      { icon: FaBullhorn, name: "Ads" },
+      { icon: FaTools, name: "Analytics" },
+    ],
+    buttonText: translations[language].service5,
+  },
+  {
+    id: "custom-software-development",
+    icon: FaCogs,
+    title: translations[language].service6, // translations[language].service6
+    url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
+    description:
+     translations[language].servicedetail6,
+    techStackIcons: [
+      { icon: FaPython, name: "Python" },
+      { icon: FaJava, name: "Java" },
+      { icon: SiDotnet, name: ".NET" },
+      { icon: FaNodeJs, name: "Node.js" },
+      { icon: FaDatabase, name: "Databases" },
+      { icon: FaCloud, name: "Cloud" },
+    ],
+    buttonText: translations[language].service6,
+  },
+  {
+    id: "ai-chatbot-solutions",
+    icon: FaRobot,
+    title: translations[language].service7, // translations[language].service7
+    url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
+    description:
+     translations[language].servicedetail7,
+    techStackIcons: [
+      { icon: FaRobot, name: "AI/ML" },
+      { icon: FaJs, name: "Node.js" },
+      { icon: FaServer, name: "APIs" },
+    ],
+    buttonText: translations[language].service7,
+  },
+  {
+    id: "maintenance-support",
+    icon: FaTools,
+    title: translations[language].service8, // translations[language].service8
+    url: URLS.SERVICE_DETAIL.MAINTENENCE,
+    description:
+     translations[language].servicedetail8,
+    techStackIcons: [
+      { icon: FaServer, name: "Monitoring" },
+      { icon: FaCloud, name: "Cloud Mgmt" },
+      { icon: FaTools, name: "Updates" },
+    ],
+    buttonText: translations[language].Maintenence,
+  },
+  {
+    id: "search-engine-optimization",
+    icon: FaSearch,
+    title: translations[language].service9, // translations[language].service9
+    url: URLS.SERVICE_DETAIL.SEO,
+    description:
+     translations[language].servicedetail9,
+    techStackIcons: [
+      { icon: FaSearch, name: "Keyword Research" },
+      { icon: FaCode, name: "On-Page SEO" },
+      { icon: FaBullhorn, name: "Off-Page SEO" },
+    ],
+    buttonText: translations[language].SEO,
+  },
 ];
 
 // Animation variant

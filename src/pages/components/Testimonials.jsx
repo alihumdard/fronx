@@ -13,8 +13,7 @@ const ALL_TESTIMONIALS = (language) => [
     id: 1,
     quote: translations[language].quote1 || "Default quote for quote1", // Added fallback
     rating: 5,
-    clientName: "Chris Noth",
-    clientTitle: "Owner Taxfirm",
+    clientName: "saadychohan",
     clientAvatar: "/images/testimonial_1.png",
   },
   {
@@ -22,8 +21,7 @@ const ALL_TESTIMONIALS = (language) => [
     quote:
       translations[language].quote2 || "An outstanding experience from start to finish. The development team delivered a high-quality product well ahead of schedule. Their communication was excellent, keeping us informed every step of the way. Highly recommend their services for anyone looking for reliable and efficient software development.",
     rating: 4,
-    clientName: "Alice Smith",
-    clientTitle: "CEO Tech Solutions",
+    clientName: "muhammadusaid51",
     clientAvatar: "/images/testimonial_2.webp",
   },
   {
@@ -31,8 +29,7 @@ const ALL_TESTIMONIALS = (language) => [
     quote:
       translations[language].quote3 || "We are thrilled with the results! The design team captured our vision perfectly and created an intuitive user interface that our customers love. They were responsive to feedback and iterated quickly. A truly talented group of professionals.",
     rating: 5,
-    clientName: "Bob Johnson",
-    clientTitle: "Product Manager Innovate Co.",
+    clientName: "endlezmusic",
     clientAvatar: "/public/images/testimonial_3.webp",
   },
   {
@@ -40,8 +37,7 @@ const ALL_TESTIMONIALS = (language) => [
     quote:
       translations[language].quote4 || "Their expertise in digital marketing helped us significantly increase our online presence and lead generation. The strategies implemented were effective and measurable. We saw a considerable ROI, and their team was always proactive and insightful.",
     rating: 4,
-    clientName: "Carol White",
-    clientTitle: "Marketing Director Global Corp",
+    clientName: "muahmmad tablas",
     clientAvatar: "/images/testimonial_4.webp",
   },
 ];
@@ -162,14 +158,6 @@ const Testimonials = () => {
                         </p>
                       </div>
                     </div>
-
-                    {STATIC_COMPANY_LOGO && (
-                      <img
-                        src={STATIC_COMPANY_LOGO}
-                        alt="Company Logo"
-                        className="h-10 object-contain"
-                      />
-                    )}
                   </div>
                 </div>
               </motion.div>

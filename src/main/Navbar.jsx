@@ -201,7 +201,7 @@ const Navbar = () => {
                 className="btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-2 rounded-full font-semibold shadow"
               >
                 <span className="relative z-[1]">
-                                    {translations[language].footer6}
+                  {translations[language].trans}
                 </span>
               </Link>
                <Link
