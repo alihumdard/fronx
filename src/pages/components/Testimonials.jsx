@@ -30,7 +30,7 @@ const ALL_TESTIMONIALS = (language) => [
       translations[language].quote3 || "We are thrilled with the results! The design team captured our vision perfectly and created an intuitive user interface that our customers love. They were responsive to feedback and iterated quickly. A truly talented group of professionals.",
     rating: 5,
     clientName: "endlezmusic",
-    clientAvatar: "/public/images/testimonial_3.webp",
+    clientAvatar: "/images/testimonial_3.webp",
   },
   {
     id: 4,
