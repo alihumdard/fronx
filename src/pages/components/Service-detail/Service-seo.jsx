@@ -144,7 +144,7 @@ const SEO = () => {
     <>
       <title>Best SEO Company in Belgium | Fronx Solutions</title>
       <meta name="description" content="Meta des Fronx Solutions is the leading SEO company in Belgium, offering expert SEO services to boost your Google rankings, drive organic traffic, and grow your business online." />
-      <div className="relative h-screen w-full overflow-x-hidden">
+      <div className="relative w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 

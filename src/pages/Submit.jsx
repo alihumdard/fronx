@@ -50,7 +50,7 @@ const Submit = () => {
 
   return (
     <>
-      <div className="relative h-screen w-full">
+      <div className="relative w-full">
         {/* Navbar */}
         <Navbar />
 

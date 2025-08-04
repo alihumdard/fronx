@@ -147,7 +147,7 @@ const uxui = () => {
      <title>UI/UX Design Services in Belgium | Fronx Solutions</title>
       <meta name="description" content="Enhance user experience with expert UI/UX design services by Fronx Solutions. We create intuitive, modern, and user-centered digital interfaces." />
 
-      <div className="relative h-screen w-full overflow-x-hidden">
+      <div className="relative w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 

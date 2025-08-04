@@ -169,7 +169,7 @@ const Serviceweb = () => {
     <>
       <title>Professional Web Development Services in Belgium | Fronx Solutions</title>
       <meta name="description" content="Fronx Solutions offers professional web development in Belgium. We build fast, responsive, and custom websites tailored to your business needs." />
-      <div className="relative h-screen w-full overflow-x-hidden">
+      <div className="relative w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 

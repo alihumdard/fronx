@@ -163,7 +163,7 @@ const Appweb = () => {
     <>
       <title>Mobile App Development Services in Belgium | Fronx Solutions</title>
       <meta name="description" content="Fronx Solutions delivers expert mobile app development for iOS and Android. We build fast, scalable, and user-friendly mobile applications in Belgium." />
-      <div className="relative h-screen w-full overflow-x-hidden">
+      <div className="relative w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 

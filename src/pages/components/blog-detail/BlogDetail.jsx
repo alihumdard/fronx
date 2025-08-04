@@ -6,46 +6,31 @@ import PageWrapper from "../../../main/Pagewraper";
 import ContactForm from "../Contact";
 import Footer from "../../../main/Footer";
 import URLS from "../../../config/urls.config";
-import {
-  FaComments,
-  FaTools,
-  FaMicrochip,
-  FaBrain,
-  FaHeartbeat,
-  FaSearch,
-  FaLightbulb,
-  FaDraftingCompass,
-  FaCogs,
-  FaChartLine,
-  FaFileAlt,
-  FaShareAlt,
-  FaPenNib,
-  FaLink,
-} from "react-icons/fa";
-import StatsSection from "../Statsdata";
 import "swiper/css";
 import "swiper/css/pagination";
+import translations from "../../../translations";
+import { useLanguage } from "../../../LanguageContext";
 
-const recentPosts = [
+const recentPosts = (language) => [
   {
     date: "4 August 2024",
-    title: "Avoiding Common AI Writing Pitfalls",
+    title: translations[language].blogDetail26,
     image: "/images/blog-1.png", // Replace with your image path
   },
   // Duplicate entries for demo – repeat as needed
   {
     date: "4 August 2024",
-    title: "Understanding ChatGPT's Capabilities – Defining Your Style",
+    title: translations[language].blogDetail27,
     image: "/images/blog-1.png",
   },
   {
     date: "4 August 2024",
-    title: "Understanding your readers",
+    title: translations[language].blogDetail28,
     image: "/images/blog-1.png",
   },
   {
     date: "4 August 2024",
-    title: "Create quality AI-powered blogs that stand out",
+    title: translations[language].blogDetail29,
     image: "/images/blog-1.png",
   },
 ];
@@ -94,6 +79,8 @@ const fadeIn = {
 };
 
 const BlogDetail = () => {
+  const {language} = useLanguage();
+  const latestrecentPosts = recentPosts(language);
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -102,7 +89,7 @@ const BlogDetail = () => {
 
   return (
     <>
-      <div className="relative h-screen w-full">
+      <div className="relative w-full">
         {/* Navbar */}
         <Navbar />
 
@@ -141,10 +128,10 @@ const BlogDetail = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                How Laravel Improves Web  <br />
-                <span className="mt-3">Application</span>
+                {translations[language].blogDetail1}  <br />
+                <span className="mt-3">{translations[language].blogDetail2} </span>
                 <span className="mt-3 ml-3 relative inline-block">
-                  Development
+                  {translations[language].blogDetail3} 
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -164,18 +151,18 @@ const BlogDetail = () => {
                     to="/"
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Home
+                    {translations[language].home} 
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link
                     to={URLS.BOLG}
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Blog
+                    {translations[language].blog} 
                   </Link>
                   <span className="text-orange-400 hidden sm:block">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors flex">
-                   How Laravel Improves Web Application Development
+                    {translations[language].blogDetail4} 
                   </Link>
                 </div>
               </motion.div>
@@ -203,54 +190,54 @@ const BlogDetail = () => {
 
               {/* Title and Paragraph */}
               <motion.div className="md:pb-10" variants={fadeInUp}>
-                <p className="text-gray-600 my-4">Laravel has become one of the most popular PHP frameworks for web application development, offering developers an elegant and scalable solution for building robust applications. With its extensive features and modern architecture, Laravel simplifies the development process while ensuring high-quality performance. Here's how Laravel improves web application development:</p>
+                <p className="text-gray-600 my-4">{translations[language].blogDetail5}</p>
                 <h2 className="text-2xl font-bold text-gray-800">
-                  1. Elegant syntax and developer-friendly framework
+                  {translations[language].blogDetail6} 
                 </h2>
                 <p className="text-gray-600 mt-4">
-                  Laravel offers a clear and expressive syntax, making it easy to write and maintain code. This intuitive framework simplifies common tasks such as routing, authentication, and caching, allowing developers to focus on core application functionality.
+                  {translations[language].blogDetail7}
                 </p>
                 <h2 className="text-2xl font-bold text-gray-800">
-                  2. Integrated authentication and authorization
+                  {translations[language].blogDetail8}
                 </h2>
                 <p className="text-gray-600 mt-4">
-                  Security is paramount for any web application, and Laravel offers built-in authentication and authorization features. With just a few commands, developers can set up secure authentication, as well as password saving and recovery, ensuring a reliable user experience.
+                  {translations[language].blogDetail9}
                 </p>
                 <h2 className="text-2xl font-bold text-gray-800">
-                  3. MVC architecture for better organization
+                  {translations[language].blogDetail10}
                 </h2>
                 <p className="text-gray-600 mt-4">
-                  Laravel follows the MVC (Model-View-Controller) model, allowing for a clear structure of business logic, interface, and data. This separation promotes efficient code organization, which is particularly useful for large-scale projects.
+                  {translations[language].blogDetail11}
                 </p>
                 <h2 className="text-2xl font-bold text-gray-800">
-                  4. Eloquent ORM for simplified database management
+                  {translations[language].blogDetail12}
                 </h2>
                 <p className="text-gray-600 mt-4">
-                  Laravel's Eloquent ORM provides a powerful and user-friendly interface for interacting with databases. Developers can perform complex queries with simple PHP syntax, making data management faster without writing raw SQL.
+                  {translations[language].blogDetail13}
                 </p>
                 <h2 className="text-2xl font-bold text-gray-800">
-                  5. Artisan Command Line Tool
+                  {translations[language].blogDetail14}
                 </h2>
                 <p className="text-gray-600 mt-4">
-                  Laravel's Artisan CLI is an effective tool for automating repetitive tasks like migrations, seeding, and code generation. It increases developer productivity while reducing human error.
+                  {translations[language].blogDetail5}
                 </p>
                 <h2 className="text-2xl font-bold text-gray-800">
-                  6. Enhanced security features
+                  {translations[language].blogDetail16}features
                 </h2>
                 <p className="text-gray-600 mt-4">
-                  Laravel incorporates security measures such as encryption, XSS protection, SQL injection protection, and CSRF protection. These built-in safeguards help secure applications without requiring additional manual configuration.
+                  {translations[language].blogDetail17}
                 </p>
                 <h2 className="text-2xl font-bold text-gray-800">
-                  7. Seamless integration with third-party services
+                  {translations[language].blogDetail18}
                 </h2>
                 <p className="text-gray-600 mt-4">
-                  Laravel makes it easy to integrate third-party services—such as APIs, payment gateways, or analytics tools—into web applications. This compatibility allows you to add advanced features without excessive complexity.
+                  {translations[language].blogDetail19}
                 </p>
                 <h2 className="text-2xl font-bold text-gray-800">
-                 Conclusion
+                  {translations[language].blogDetail20}
                 </h2>
                 <p className="text-gray-600 mt-4">
-                  Laravel is a powerful and flexible framework that makes web application development easy thanks to its clear syntax, robust features, and developer-friendly tools. Whether for a small application or a large-scale platform, Laravel enables you to create powerful, scalable, and secure web solutions.
+                  {translations[language].blogDetail21}
                 </p>
               </motion.div>
 
@@ -260,21 +247,21 @@ const BlogDetail = () => {
                 variants={fadeInUp}
               >
                 <p>
-                  “Tortor dis efficitur risus placerat libero condimentum faucibus enim...”
+                  {translations[language].blogDetail22}
                 </p>
                 <p className="mt-2 font-semibold text-indigo-600">
-                  — Kathryn Murphy
+                  {translations[language].blogDetail23}
                 </p>
               </motion.div>
 
               {/* Sub Content */}
-              
+
               {/* Share Icons */}
               <motion.div
                 className="flex items-center gap-3 mt-4 pb-10"
                 variants={fadeInUp}
               >
-                <span className="text-gray-600 font-medium">Share Article:</span>
+                <span className="text-gray-600 font-medium">{translations[language].blogDetail24}</span>
 
                 {/* Social Icons */}
                 {["facebook-f", "instagram", "pinterest-p", "linkedin-in"].map(
@@ -285,12 +272,12 @@ const BlogDetail = () => {
                       variants={fadeIn}
                       custom={i + 1}
                       className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors duration-200 ${icon === "facebook-f"
-                          ? "bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white"
-                          : icon === "instagram"
-                            ? "bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white"
-                            : icon === "pinterest-p"
-                              ? "bg-red-100 text-red-600 hover:bg-red-600 hover:text-white"
-                              : "bg-blue-100 text-blue-500 hover:bg-blue-500 hover:text-white"
+                        ? "bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white"
+                        : icon === "instagram"
+                          ? "bg-pink-100 text-pink-500 hover:bg-pink-500 hover:text-white"
+                          : icon === "pinterest-p"
+                            ? "bg-red-100 text-red-600 hover:bg-red-600 hover:text-white"
+                            : "bg-blue-100 text-blue-500 hover:bg-blue-500 hover:text-white"
                         }`}
                     >
                       <i className={`fab fa-${icon}`}></i>
@@ -312,7 +299,7 @@ const BlogDetail = () => {
                 In this article
               </h3>
               <ul className="space-y-8 bg-gray-50 p-3">
-                {recentPosts.map((post, index) => (
+                {latestrecentPosts.map((post, index) => (
                   <motion.li
                     key={index}
                     className="flex gap-3 items-start border-b-2 pb-3 border-gray-100"

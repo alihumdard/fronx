@@ -40,7 +40,7 @@ const Service = () => {
     <>
       <title>Digital Services in Belgium – Web, Mobile & Software | Fronx Solutions</title>
       <meta name="description" content="Explore Fronx Solutions' full range of digital services in Belgium, including web development, mobile apps, software development, UI/UX design, and more." />
-      <div className="relative h-screen w-auto overflow-x-hidden">
+      <div className="relative w-auto overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 

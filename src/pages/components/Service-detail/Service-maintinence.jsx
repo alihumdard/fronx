@@ -153,7 +153,7 @@ const Maintenence = () => {
      <title>Website Maintenance & Support Services Belgium | Fronx Solutions</title>
       <meta name="description" content="Keep your website secure, updated, and running smoothly with expert maintenance and support services by Fronx Solutions in Belgium" />
 
-      <div className="relative h-screen w-full overflow-x-hidden">
+      <div className="relative w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 

@@ -154,7 +154,7 @@ const Software = () => {
     <>
     <title>Custom Software Development Services in Belgium | Fronx Solutions</title>
       <meta name="description" content="Fronx Solutions offers custom software development in Belgium. We build scalable, secure, and efficient software tailored to your business needs." />
-      <div className="relative h-screen w-full overflow-x-hidden">
+      <div className="relative w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 
