@@ -283,7 +283,7 @@ const BlogDetail = () => {
               variants={fadeInUp}
             >
               <h3 className="text-lg bg-white font-semibold text-gray-800 mb-4">
-                In this article view
+                In this article
               </h3>
               <ul className="space-y-8 bg-gray-50 p-3">
                 {latestrecentPosts.map((post, index) => (

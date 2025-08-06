@@ -31,7 +31,7 @@ const translations = {
     service6: "Aangepaste Softwareontwikkeling",
     service7: "AI & Chatbot Oplossingen",
     service8: "Onderhoud & Ondersteuning",
-    service9: "Zoekmachine/Optimalisatie",
+    service9: "Zoekmachine  Optimalisatie",
     service1Detail:
       "Boost uw bedrijf met op maat gemaakte web- en mobiele oplossingen, die schaalbare, gebruiksvriendelijke platforms leveren om betrokkenheid te vergroten en groei te stimuleren. Van strakke UI/UX-ontwerpen tot robuuste backendsystemen, wij stemmen elke oplossing af op uw unieke doelen.",
     MobileDevelopment: "Mobiele Ontwikkeling",

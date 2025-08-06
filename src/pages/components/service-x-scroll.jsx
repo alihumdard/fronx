@@ -397,7 +397,7 @@ const Servicex = () => {
 
                   <Link
                     to={activeService.url}
-                    className="inline-block mt-10 self-start bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-md hover:opacity-90 transition-opacity"
+                    className="inline-block mt-10 self-start text-lg hover:opacity-90 transition-opacity btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-3 rounded-full font-semibold shadow"
                   >
                     {activeService.buttonText}
                   </Link>
