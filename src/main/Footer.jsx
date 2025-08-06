@@ -65,7 +65,7 @@ function Footer() {
             </p>
             <Link
               to={URLS.CONTACT}
-              className="text-white font-semibold py-3 px-8 rounded-3xl shadow-md transition duration-300 ease-in-out"
+              className="text-white btn-animate font-semibold py-3 px-8 rounded-3xl shadow-md transition duration-300 ease-in-out"
               style={{
                 background: "linear-gradient(to right, #6931CF, #1A61EA)",
               }}

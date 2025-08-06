@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion"; // ✅ Framer Motion
+import { motion } from "framer-motion";
 import PageWrapper from "../../main/Pagewraper";
-import { FaCalendarAlt, FaArrowRight } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaArrowRight,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import URLS from "../../config/urls.config";
 import translations from "../../translations";
@@ -22,7 +27,7 @@ const ALL_PROJECTS = (language) => [
     id: 2,
     image: "/images/blog_2.webp",
     date: "25 June 2024",
-    url: URLS.BlogDetail1,
+    // url: URLS.BlogDetail1,
     title: translations[language].blog2,
     description:
       "Built a robust e-commerce site featuring secure payment gateways and seamless CRM integration.",
@@ -31,6 +36,8 @@ const ALL_PROJECTS = (language) => [
     id: 3,
     image: "/images/blog_3.webp",
     date: "15 May 2024",
+    // ⚠️ Added missing 'url' property for consistency
+    // url: URLS.BlogDetail2,
     title: translations[language].blog3,
     description:
       "Designed and developed an intuitive mobile application for iOS and Android, focusing on user engagement.",
@@ -39,22 +46,29 @@ const ALL_PROJECTS = (language) => [
 
 const PROJECTS_PER_PAGE = 9;
 
+// Create a Framer Motion-enabled Link component
+const MotionLink = motion(Link);
+
 const ProjectGridSection = () => {
   const { language } = useLanguage();
   const [currentPage, setCurrentPage] = useState(1);
 
-  // 1. First, get the complete array of projects for the current language
+  // First, get the complete array of projects for the current language
   const allProjectsForCurrentLanguage = ALL_PROJECTS(language);
 
-  // 2. Now you can use this array to calculate pagination details
-  const totalPages = Math.ceil(allProjectsForCurrentLanguage.length / PROJECTS_PER_PAGE);
+  // Now you can use this array to calculate pagination details
+  const totalPages = Math.ceil(
+    allProjectsForCurrentLanguage.length / PROJECTS_PER_PAGE
+  );
   const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
   const endIndex = startIndex + PROJECTS_PER_PAGE;
 
-  // 3. And finally, slice the array for the current page
-  const currentProjects = allProjectsForCurrentLanguage.slice(startIndex, endIndex);
+  // And finally, slice the array for the current page
+  const currentProjects = allProjectsForCurrentLanguage.slice(
+    startIndex,
+    endIndex
+  );
 
-  // The rest of your code is good.
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const renderPageNumbers = () => {
@@ -74,7 +88,6 @@ const ProjectGridSection = () => {
       if (endPage < totalPages - 1) pageNumbers.push(ellipsis);
       pageNumbers.push(totalPages);
     }
-
     return pageNumbers;
   };
 
@@ -88,7 +101,9 @@ const ProjectGridSection = () => {
       <PageWrapper>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {currentProjects.map((project, index) => (
-            <motion.div
+            // ⚠️ Corrected to use the MotionLink component and project.url
+            <MotionLink
+              to={project.url}
               key={project.id}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -104,11 +119,11 @@ const ProjectGridSection = () => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="bg-white rounded-2xl overflow-hidden shadow-md mb-20 hover:shadow-2xl transition-shadow duration-300"
               >
-                <div className="overflow-hidden ">
+                <div className="flex items-center justify-center overflow-hidden h-64">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-center transform transition-transform duration-500 ease-in-out hover:scale-105"
+                    className="transform h-full transition-transform duration-500 ease-in-out hover:scale-105"
                   />
                 </div>
               </motion.div>
@@ -134,7 +149,7 @@ const ProjectGridSection = () => {
                   <FaArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </motion.div>
+            </MotionLink>
           ))}
         </div>
 
@@ -150,7 +165,8 @@ const ProjectGridSection = () => {
             disabled={currentPage === 1}
             className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white disabled:bg-gray-300 disabled:text-gray-500 hover:bg-blue-700 transition-colors focus:outline-none"
           >
-            <i className="fas fa-chevron-left"></i>
+            {/* ⚠️ Changed to use React Icons for consistency */}
+            <FaChevronLeft />
           </button>
 
           {renderPageNumbers().map((number, index) => (
@@ -160,11 +176,10 @@ const ProjectGridSection = () => {
               ) : (
                 <button
                   onClick={() => paginate(number)}
-                  className={`w-10 h-10 flex items-center justify-center rounded-full text-lg font-semibold ${
-                    currentPage === number
+                  className={`w-10 h-10 flex items-center justify-center rounded-full text-lg font-semibold ${currentPage === number
                       ? "bg-blue-600 text-white"
                       : "text-gray-700 hover:bg-gray-100"
-                  } transition-colors focus:outline-none`}
+                    } transition-colors focus:outline-none`}
                 >
                   {number}
                 </button>
@@ -177,7 +192,8 @@ const ProjectGridSection = () => {
             disabled={currentPage === totalPages}
             className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white disabled:bg-gray-300 disabled:text-gray-500 hover:bg-blue-700 transition-colors focus:outline-none"
           >
-            <i className="fas fa-chevron-right"></i>
+            {/* ⚠️ Changed to use React Icons for consistency */}
+            <FaChevronRight />
           </button>
         </motion.div>
       </PageWrapper>

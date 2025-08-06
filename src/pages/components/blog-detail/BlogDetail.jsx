@@ -143,9 +143,9 @@ const BlogDetail = () => {
               >
                 <div
                   className="flex flex-wrap lg:flex-nowrap items-center 
-          gap-2 lg:gap-3 px-4 sm:px-6 py-2 sm:py-3 
-          border border-white/30 rounded-full text-sm sm:text-base 
-          text-white bg-white/5 hover:bg-white/10 transition-all duration-300"
+                  gap-2 lg:gap-3 px-4 sm:px-6 py-2 sm:py-3 
+                  border border-white/30 rounded-full text-sm sm:text-base 
+                  text-white bg-white/5 hover:bg-white/10 transition-all duration-300"
                 >
                   <Link
                     to="/"
@@ -241,20 +241,7 @@ const BlogDetail = () => {
                 </p>
               </motion.div>
 
-              {/* Quote Section */}
-              <motion.div
-                className="border-l-4 border-indigo-500 bg-gray-50 p-5 shadow-sm italic text-gray-700"
-                variants={fadeInUp}
-              >
-                <p>
-                  {translations[language].blogDetail22}
-                </p>
-                <p className="mt-2 font-semibold text-indigo-600">
-                  {translations[language].blogDetail23}
-                </p>
-              </motion.div>
-
-              {/* Sub Content */}
+             
 
               {/* Share Icons */}
               <motion.div
@@ -296,7 +283,7 @@ const BlogDetail = () => {
               variants={fadeInUp}
             >
               <h3 className="text-lg bg-white font-semibold text-gray-800 mb-4">
-                In this article
+                In this article view
               </h3>
               <ul className="space-y-8 bg-gray-50 p-3">
                 {latestrecentPosts.map((post, index) => (

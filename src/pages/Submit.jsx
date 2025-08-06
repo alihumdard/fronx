@@ -119,7 +119,7 @@ const Submit = () => {
             <p className="text-lg text-gray-600 mb-6">
              {translations[language].submit3}
             </p>
-            <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold shadow transition duration-300">
+            <button className="bg-purple-600 btn-animate hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold shadow transition duration-300">
              {translations[language].submit4}
             </button>
           </div>
@@ -226,7 +226,7 @@ const Submit = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-semibold transition duration-300"
+                  className="w-full btn-animate bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-semibold transition duration-300"
                 >
                   {translations[language].send}
                 </button>

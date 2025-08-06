@@ -231,7 +231,7 @@ const Contact = () => {
                 ></textarea>
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded shadow hover:opacity-90 transition"
+                  className="btn-animate bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded shadow hover:opacity-90 transition"
                 >
                   {translations[language].submit}
                 </button>

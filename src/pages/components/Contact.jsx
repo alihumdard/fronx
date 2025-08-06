@@ -39,7 +39,7 @@ const ContactForm = () => {
                 <div className='border-l-2 pl-5 border-gray-400'>
                   <p className="text-sm text-orange-300">{translations[language].footer3}
                   </p>
-                  <p className="text-lg">info@fronxsolutions.be</p>
+                  <a href='' className="text-lg">info@fronxsolutions.be</a>
                 </div>
               </div>
 
@@ -50,8 +50,8 @@ const ContactForm = () => {
                 </div>
                 <div className='border-l-2 border-gray-400 pl-5'>
                   <p className="text-sm text-orange-300">{translations[language].footer4}</p>
-                  <p className="font-semibold text-lg">
-                    +32477277312</p>
+                  <a href='' className="font-semibold text-lg">
+                    +32477277312</a>
                 </div>
               </div>
 
@@ -113,7 +113,7 @@ const ContactForm = () => {
                   id="yourMessage"
                   rows="5"
                   placeholder={translations[language].your}
-                  className="w-full px-5 py-3 bg-white bg-opacity-5 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-[#6931CF] focus:border-[#6931CF] outline-none transition-all resize-y"
+                  className="w-full px-5 py-3 bg-white bg-opacity-5 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-[#6931CF] focus:border-[#6931CF] outline-none transition-all"
                 ></textarea>
               </div>
 
@@ -121,7 +121,7 @@ const ContactForm = () => {
               <div className="sm:col-span-2">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-8 py-3 rounded-md font-semibold text-lg shadow-md hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#6931CF]"
+                  className="inline-block mt-10 self-start text-lg hover:opacity-90 transition-opacity btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-3 rounded-lg font-semibold shadow w-full"
                 >
                   {translations[language].footer5}
                 </button>

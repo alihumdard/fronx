@@ -321,89 +321,91 @@ const Serviceweb = () => {
           </PageWrapper>
         </section>
 
-        <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-20 md:py-24">
-          <PageWrapper>
-            {/* Section Header */}
-            <motion.div
-              className="text-center mb-12 md:mb-16"
-              variants={fadeUpVariant}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <h2 id="web-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                {translations[language].website1}
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                {translations[language].website2}
-
-              </p>
-            </motion.div>
-
-            {/* Services Grid */}
-            <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              {latestwebServicesData.map((service) => {
-                const IconComponent = service.icon;
-                const isExpanded = expandedCard === service.id;
-                const descriptionToShow =
-                  isExpanded && service.longDescription
-                    ? service.longDescription
-                    : service.shortDescription;
-
-                return (
-                  <motion.div
-
-                    key={service.id}
-                    variants={fadeUpVariant}
-                    className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col"
-                  >
-                    {/* Icon */}
-                    <div className="bg-orange-100 p-3 rounded-md inline-block mb-4 self-start">
-                      {IconComponent && (
-                        <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
-                      )}
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
-                      {service.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 flex-grow">
-                      {descriptionToShow}
-                    </p>
-
-                    {/* Learn More / Show Less */}
-                    {service.longDescription && (
-                      <button
-                        onClick={() => toggleExpand(service.id)}
-                        className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
-                      >
-                        {isExpanded ? translations[language].webservice26 : translations[language].webservice27}
-                      </button>
-                    )}
-
-                    {!service.longDescription && (
-                      <a
-                        href="#"
-                        className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline"
-                      >
-                        Show more →
-                      </a>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </PageWrapper>
-        </section>
+    <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-20 md:py-24">
+  <PageWrapper>
+    {/* Section Header */}
+    <motion.div
+      className="text-center mb-12 md:mb-16"
+      variants={fadeUpVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <h2 id="web-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+        {translations[language].website1}
+      </h2>
+      <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+        {translations[language].website2}
+      </p>
+    </motion.div>
+    
+    {/* Services Grid */}
+    <motion.div
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start" // Added items-start
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
+      {latestwebServicesData.map((service) => {
+        const IconComponent = service.icon;
+        const isExpanded = expandedCard === service.id;
+        const descriptionToShow =
+          isExpanded && service.longDescription
+            ? service.longDescription
+            : service.shortDescription;
+        return (
+          <motion.div
+            key={service.id}
+            variants={fadeUpVariant}
+            className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col cursor-pointer
+                   transform transition-all duration-300 hover:shadow-xl hover:scale-[1.02] self-start" // Added self-start
+            onClick={() => toggleExpand(service.id)}
+          >
+            {/* Icon */}
+            <div className="bg-orange-100 p-3 rounded-md inline-block mb-4 self-start">
+              {IconComponent && (
+                <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
+              )}
+            </div>
+            
+            {/* Title */}
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+              {service.title}
+            </h3>
+            
+            {/* Description */}
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
+              {descriptionToShow}
+            </p>
+            
+            {/* Learn More / Show Less */}
+            {service.longDescription && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent event bubbling
+                  toggleExpand(service.id);
+                }}
+                className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
+              >
+                {isExpanded ? translations[language].webservice26 : translations[language].webservice27}
+              </button>
+            )}
+            {!service.longDescription && (
+              <a
+                href="#"
+                className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline"
+                onClick={(e) => e.stopPropagation()} // Prevent event bubbling
+              >
+                Show more →
+              </a>
+            )}
+          </motion.div>
+        );
+      })}
+    </motion.div>
+  </PageWrapper>
+</section>
 
         <div className="bg-[url('/images/bg.png')] bg-cover bg-center bg-no-repeat py-16 px-6 lg:px-20 text-white">
           <div className="max-w-7xl mx-auto">
