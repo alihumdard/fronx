@@ -383,7 +383,7 @@ const Serviceweb = () => {
             {service.longDescription && (
               <button
                 onClick={(e) => {
-                  e.stopPropagation(); // Prevent event bubbling
+                  e.stopPropagation(); 
                   toggleExpand(service.id);
                 }}
                 className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
