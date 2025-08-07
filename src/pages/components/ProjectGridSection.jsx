@@ -99,59 +99,53 @@ const ProjectGridSection = () => {
       className="bg-white py-16 md:py-24"
     >
       <PageWrapper>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {currentProjects.map((project, index) => (
-            // ⚠️ Corrected to use the MotionLink component and project.url
-            <MotionLink
-              to={project.url}
-              key={project.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="relative"
-            >
-              {/* Main Card Container with Rounded Image */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="bg-white rounded-2xl overflow-hidden shadow-md mb-20 hover:shadow-2xl transition-shadow duration-300"
-              >
-                <div className="flex items-center justify-center overflow-hidden h-64">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="transform h-full transition-transform duration-500 ease-in-out hover:scale-105"
-                  />
-                </div>
-              </motion.div>
-
-              {/* Floating Info Box */}
-              <div className="absolute left-4 right-4 bottom-20 translate-y-1/2 bg-white rounded-xl shadow-lg px-4 py-6 flex flex-col gap-2">
-                {/* Date */}
-                <div className="flex items-center gap-2 text-gray-500 text-sm font-medium">
-                  <FaCalendarAlt className="w-4 h-4" />
-                  <span>{project.date}</span>
-                </div>
-
-                {/* Title */}
-                <p className="text-gray-800 font-semibold text-xl leading-tight">
-                  {project.title}
-                </p>
-
-                {/* Arrow Icon Button */}
-                <Link
-                  to={project.url}
-                  className="absolute -top-3 -right-3 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-md transition"
-                >
-                  <FaArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </MotionLink>
-          ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+  {currentProjects.map((project, index) => (
+    // ⚠️ Corrected to use the MotionLink component and project.url
+    <MotionLink
+      to={project.url}
+      key={project.id}
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      className="relative group" // Added group class here
+    >
+      {/* Main Card Container with Rounded Image */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="bg-white rounded-2xl overflow-hidden shadow-md mb-20 hover:shadow-2xl transition-shadow duration-300"
+      >
+        <div className="flex items-center justify-center overflow-hidden h-64">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="transform h-full transition-transform duration-500 ease-in-out hover:scale-105"
+          />
         </div>
+      </motion.div>
+      {/* Floating Info Box */}
+      <div className="absolute left-4 right-4 bottom-20 translate-y-1/2 bg-white rounded-xl shadow-lg px-4 py-6 flex flex-col gap-2">
+        {/* Date */}
+        <div className="flex items-center gap-2 text-gray-500 text-sm font-medium">
+          <FaCalendarAlt className="w-4 h-4" />
+          <span>{project.date}</span>
+        </div>
+        {/* Title */}
+        <p className="text-gray-800 font-semibold text-xl leading-tight">
+          {project.title}
+        </p>
+        {/* Arrow Icon Button */}
+        <div className="absolute -top-3 -right-3 bg-blue-600 group-hover:bg-blue-700 text-white p-4 rounded-full shadow-md transition">
+          <FaArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:rotate-[-40deg]" />
+        </div>
+      </div>
+    </MotionLink>
+  ))}
+</div>
 
         {/* Pagination */}
         <motion.div
@@ -177,8 +171,8 @@ const ProjectGridSection = () => {
                 <button
                   onClick={() => paginate(number)}
                   className={`w-10 h-10 flex items-center justify-center rounded-full text-lg font-semibold ${currentPage === number
-                      ? "bg-blue-600 text-white"
-                      : "text-gray-700 hover:bg-gray-100"
+                    ? "bg-blue-600 text-white"
+                    : "text-gray-700 hover:bg-gray-100"
                     } transition-colors focus:outline-none`}
                 >
                   {number}
