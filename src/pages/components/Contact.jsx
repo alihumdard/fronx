@@ -26,6 +26,13 @@ const ContactForm = () => {
     }));
   };
 
+  const handleSelectChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      iWouldLike: e.target.value
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -40,7 +47,7 @@ const ContactForm = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: '92de9d3b-4e9e-475d-b728-dbf336d29359', // Replace with your access key
+          access_key: '92de9d3b-4e9e-475d-b728-dbf336d29359', 
           name: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
           phone: formData.mobileNumber,
@@ -50,9 +57,8 @@ const ContactForm = () => {
           subject: `New Lead from Website - ${formData.firstName} ${formData.lastName}`,
           from_name: 'Fronx Solutions Website',
           to_email: 'info@fronxsolutions.be',
-          // Additional Web3Forms options
-          botcheck: false, // Prevents bot submissions
-          redirect: false // We handle success/error in React
+          botcheck: false, 
+          redirect: false
         })
       });
 
@@ -113,23 +119,23 @@ const ContactForm = () => {
                 </div>
                 <div className='border-l-2 pl-5 border-gray-400'>
                   <p className="text-sm text-orange-300">{translations[language].footer3}</p>
-                  <p className="text-lg">info@fronxsolutions.be</p>
+                  <a href='mailto:info@fronxsolutions.be' className="text-lg">info@fronxsolutions.be</a>
                 </div>
               </div>
 
               {/* Phone */}
-              <div className="bg-white bg-opacity-5 pl-5 p-6 rounded-xl flex items-center gap-4 border border-gray-700">
+              <div className="bg-white bg-opacity-5 p-6 rounded-xl flex items-center gap-4 border border-gray-700">
                 <div className="p-3 rounded-full text-orange-400">
                   <FaPhoneAlt className="w-6 h-6" />
                 </div>
                 <div className='border-l-2 border-gray-400 pl-5'>
                   <p className="text-sm text-orange-300">{translations[language].footer4}</p>
-                  <p className="font-semibold text-lg">+32477277312</p>
+                  <a href='tel:+32477277312' className="font-semibold text-lg">+32477277312</a>
                 </div>
               </div>
 
               {/* Address */}
-              <div className="bg-white bg-opacity-5 p-6 rounded-center flex gap-4 border border-gray-700">
+              <div className="bg-white bg-opacity-5 p-6 rounded-xl flex items-center gap-4 border border-gray-700">
                 <div className="p-3 rounded-full text-orange-400">
                   <FaMapMarkerAlt className="w-6 h-6" />
                 </div>
@@ -150,7 +156,6 @@ const ContactForm = () => {
                 { id: "email", placeholder: translations[language].Email, type: "email", required: true },
                 { id: "mobileNumber", placeholder: translations[language].MobileNumber, type: "tel", required: true },
                 { id: "currentWebsite", placeholder: translations[language].CurrentWebsite, colSpan: true },
-                { id: "iWouldLike", placeholder: translations[language].like, colSpan: true, required: true },
               ].map(({ id, placeholder, type = "text", colSpan, required }) => (
                 <div key={id} className={`${colSpan ? "sm:col-span-2" : ""}`}>
                   <label htmlFor={id} className="sr-only">{placeholder}</label>
@@ -165,6 +170,24 @@ const ContactForm = () => {
                   />
                 </div>
               ))}
+              
+              <div className="w-full space-y-4 sm:col-span-2">
+                {/* Dropdown */}
+                <select
+                  value={formData.iWouldLike}
+                  onChange={handleSelectChange}
+                  className="w-full px-5 py-3 bg-white bg-opacity-5 border border-gray-600 rounded-md text-white focus:ring-[#6931CF] focus:border-[#6931CF] outline-none transition-all"
+                >
+                  <option value="" disabled className="bg-gray-800 text-gray-400">
+                    {translations[language].subject1}
+                  </option>
+                  <option value="general" className="bg-gray-800 text-white">{translations[language].subject2}</option>
+                  <option value="support" className="bg-gray-800 text-white">{translations[language].subject3}</option>
+                  <option value="feedback" className="bg-gray-800 text-white">{translations[language].subject4}</option>
+                  <option value="quote" className="bg-gray-800 text-white">{translations[language].subject5}</option>
+                  <option value="other" className="bg-gray-800 text-white">{translations[language].subject6}</option>
+                </select>
+              </div>
 
               {/* Textarea */}
               <div className="sm:col-span-2">
@@ -176,7 +199,7 @@ const ContactForm = () => {
                   onChange={handleInputChange}
                   placeholder={translations[language].your}
                   required
-                  className="w-full px-5 py-3 bg-white bg-opacity-5 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-[#6931CF] focus:border-[#6931CF] outline-none transition-all resize-y"
+                  className="w-full px-5 py-3 bg-white bg-opacity-5 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-[#6931CF] focus:border-[#6931CF] outline-none transition-all"
                 ></textarea>
               </div>
 
@@ -197,9 +220,9 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-8 py-3 rounded-md font-semibold text-lg shadow-md hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#6931CF] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="inline-block mt-10 self-start text-lg hover:opacity-90 transition-opacity btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-3 rounded-lg font-semibold shadow w-full disabled:opacity-50"
                 >
-                  {isSubmitting ? 'Sending...' : translations[language].footer5}
+                  {isSubmitting ? 'Sending...' : translations[language].submit}
                 </button>
               </div>
             </form>

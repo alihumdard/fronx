@@ -8,16 +8,23 @@ import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import translations from "../translations";
 import { LanguageProvider, useLanguage } from "../LanguageContext";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 function Footer() {
   const companyLogos = [
-    { src: "/images/company-1.png", alt: "Zscaler" },
-    { src: "/images/company-2.png", alt: "Blender" },
-    { src: "/images/company-3.png", alt: "Syngenta" },
-    { src: "/images/company-4.png", alt: "Vattenfall" },
-    { src: "/images/company-5.png", alt: "Disco" },
-    { src: "/images/company-6.png", alt: "Soriana" },
-    { src: "/images/company-7.png", alt: "Skullcandy" },
+    { src: "/images/foot1.webp", alt: "Zscaler" },
+    { src: "/images/foot2.webp", alt: "Blender" },
+    { src: "/images/foot3.webp", alt: "Syngenta" },
+    { src: "/images/foot4.webp", alt: "Vattenfall" },
+    { src: "/images/foot5.webp", alt: "Disco" },
+    { src: "/images/foot6.webp", alt: "Soriana" },
+    { src: "/images/foot7.webp", alt: "Skullcandy" },
+    { src: "/images/foot8.webp", alt: "Skullcandy" },
+    { src: "/images/foot9.webp", alt: "Skullcandy" },
+    { src: "/images/foot10.webp", alt: "Skullcandy" },
+    { src: "/images/foot11.webp", alt: "Skullcandy" },
+    { src: "/images/foot12.webp", alt: "Skullcandy" },
+    { src: "/images/foot13.webp", alt: "Skullcandy" },
   ];
   const { language } = useLanguage(); // Get the current language from context
   return (
@@ -44,7 +51,7 @@ function Footer() {
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className="h-6 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    className="h-8 opacity-70 hover:opacity-100 transition-opacity duration-300"
                   />
                 </SwiperSlide>
               ))}
@@ -58,7 +65,7 @@ function Footer() {
             </p>
             <Link
               to={URLS.CONTACT}
-              className="text-white font-semibold py-3 px-8 rounded-3xl shadow-md transition duration-300 ease-in-out"
+              className="text-white btn-animate font-semibold py-3 px-8 rounded-3xl shadow-md transition duration-300 ease-in-out"
               style={{
                 background: "linear-gradient(to right, #6931CF, #1A61EA)",
               }}
@@ -133,15 +140,46 @@ function Footer() {
                   {translations[language].drive}
                 </p>
                 <div className="flex space-x-3">
-                  {["T", "L", "I", "P", "M"].map((item, idx) => (
-                    <a
-                      key={idx}
-                      href="#"
-                      className="w-8 h-8 flex items-center justify-center bg-[#FF9B4B] rounded text-white text-lg"
-                    >
-                      {item}
-                    </a>
-                  ))}
+                  <a
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 flex items-center justify-center bg-[#FF9B4B] rounded text-white text-lg"
+                  >
+                    <FaInstagram />
+                  </a>
+                  <a
+                    href="https://www.facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 flex items-center justify-center bg-[#FF9B4B] rounded text-white text-lg"
+                  >
+                    <FaFacebookF />
+                  </a>
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 flex items-center justify-center bg-[#FF9B4B] rounded text-white text-lg"
+                  >
+                    <FaTwitter />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 flex items-center justify-center bg-[#FF9B4B] rounded text-white text-lg"
+                  >
+                    <FaLinkedinIn />
+                  </a>
+                  <a
+                    href="https://wa.me/1234567890"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 flex items-center justify-center bg-[#FF9B4B] rounded text-white text-lg"
+                  >
+                    <FaWhatsapp />
+                  </a>
                 </div>
               </div>
 
@@ -257,7 +295,7 @@ function Footer() {
                       to={URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT}
                       className="hover:text-gray-400"
                     >
-                   {translations[language].service4}
+                      {translations[language].service4}
                     </Link>
                   </li>
                 </ul>

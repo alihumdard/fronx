@@ -25,79 +25,81 @@ import {
 import StatsSection from "../Statsdata";
 import "swiper/css";
 import "swiper/css/pagination";
+import translations from "../../../translations";
+import { useLanguage } from "../../../LanguageContext";
 
-const processSteps = [
+const processSteps = (language) => [
   {
     icon: FaLightbulb, // Research
-    title: "Research",
+    title: translations[language].seoservice6,
     description:
-      "With our strategies you will be able to form valuable connections with your target audience",
+      translations[language].seoservice7,
   },
   {
     icon: FaDraftingCompass, // Planning
-    title: "Planning",
+    title: translations[language].seoservice8,
     description:
-      "Our team will come up with a unique plan that will grow your website and help your audience",
+      translations[language].seoservice9,
   },
   {
     icon: FaCogs, // Execution
-    title: "Execution",
+    title: translations[language].seoservice10,
     description:
-      "The team will start the work of fixing, developing and improving your website",
+      translations[language].seoservice11,
   },
   {
     icon: FaChartLine, // Analysis
-    title: "Analysis",
+    title: translations[language].seoservice12,
     description:
-      "Our team will regularly report insightful data about your website after a thorough evaluation",
+      translations[language].seoservice13,
   },
 ];
 
-const appservicedata = [
+const appservicedata = (language) => [
   {
     id: "keyword research",
     icon: FaSearch, // Magnifying glass for research
-    title: "Smart keyword research",
+    title: translations[language].seoservice16,
     shortDescription:
-      "We identify the exact words your customers are typing into Google, so your site appears when they need it.",
+      translations[language].seoservice17,
     longDescription:
-      "Smart keyword research involves analyzing and identifying the exact search terms your potential customers use on platforms like Google. By targeting high-impact keywords with strong search intent, we help improve your site's visibility, attract the right audience, and boost search engine rankings effectively."
+      translations[language].seoservice18,
   },
   {
     id: "on-page seo",
     icon: FaFileAlt, // Represents content/page optimization
-    title: "On-Page & Technical SEO",
+    title: translations[language].seoservice19,
     shortDescription:
-      "We correct and optimize the structure, speed and content of your site so that it is suitable for both search engines and visitors.",
+      translations[language].seoservice20,
     longDescription:
-      "On-Page and Technical SEO focus on optimizing your website's structure, speed, and content to enhance both user experience and search engine visibility. This includes improving meta tags, headings, internal linking, mobile responsiveness, page load times, and fixing crawl or indexing issues to ensure your site ranks higher and performs better."
+      translations[language].seoservice21,
   },
   {
     id: "off-page seo",
     icon: FaShareAlt, // Represents external sharing/backlinking
-    title: "SEO Content Creation",
+    title: translations[language].seoservice22,
     shortDescription:
-      "We write optimized blog posts and web content that builds trust, answers user questions, and improves your ranking over time.",
+      translations[language].seoservice23,
     longDescription:
-      "SEO content creation involves crafting high-quality blog posts, web pages, and articles that are optimized for search engines and valuable to readers. By targeting relevant keywords and addressing user intent, we help build trust, drive organic traffic, and steadily improve your website’s search rankings over time."
+      translations[language].seoservice24,
   },
   {
     id: "technical seo",
     icon: FaTools, // Technical settings/tools
-    title: "Local SEO optimization",
+    title: translations[language].seoservice25,
     shortDescription:
-      "We increase your visibility in local searches with your Google Business listing, localized content, and citations to reach customers near you.",
+      translations[language].seoservice26,
     longDescription:
-      "Local SEO optimization focuses on improving your visibility in local search results by enhancing your Google Business Profile, creating localized content, and building consistent local citations. This helps attract nearby customers, increase foot traffic, and strengthen your presence in your target geographic area."
+      translations[language].seoservice27,
   },
   {
     id: "content creation",
     icon: FaPenNib, // Writing/content icon
-    title: "Creating backlinks",
+    title: translations[language].seoservice28,
     shortDescription:
-      "We build your site's authority with quality, relevant, and reliable backlinks to improve your ranking and visibility in search results.",
+      translations[language].seoservice29,
     longDescription:
-      "Creating backlinks involves acquiring high-quality, relevant links from trusted websites to boost your site’s authority and credibility. These backlinks signal to search engines that your content is valuable, helping improve your search rankings, increase organic traffic, and enhance overall online visibility."
+      translations[language].seoservice30,
   },
 ];
 
@@ -129,6 +131,9 @@ export const staggerContainer = {
   },
 };
 const SEO = () => {
+  const { language } = useLanguage();
+  const latestprocessSteps = processSteps(language);
+  const latestappservicedata = appservicedata(language);
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -137,7 +142,9 @@ const SEO = () => {
 
   return (
     <>
-      <div className="relative h-screen w-full overflow-x-hidden">
+      <title>Best SEO Company in Belgium | Fronx Solutions</title>
+      <meta name="description" content="Meta des Fronx Solutions is the leading SEO company in Belgium, offering expert SEO services to boost your Google rankings, drive organic traffic, and grow your business online." />
+      <div className="relative w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 
@@ -176,9 +183,9 @@ const SEO = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                SEO
+                {translations[language].seoservice1}
                 <span className="mt-3 ml-3 relative inline-block">
-                  Service
+                  {translations[language].seoservice2}
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -198,18 +205,18 @@ const SEO = () => {
                     to="/"
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Home
+                    {translations[language].home}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link
                     to={URLS.SERVICES}
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Services
+                    {translations[language].services}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    SEO Service
+                    {translations[language].seoservice3}
                   </Link>
                 </div>
               </motion.div>
@@ -229,12 +236,12 @@ const SEO = () => {
             >
               <div className="flex justify-center md:justify-start">
                 <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                  Search Engine Optimization (SEO)
+                  {translations[language].seoservice4}
                 </span>
               </div>
 
               <h2 className="text-2xl sm:text-4xl text-center md:text-start  mt-6 font-bold text-gray-800 max-w-5xl">
-                Result-Driven SEO Services – Rise to the Top!
+                {translations[language].seoservice5}
               </h2>
             </motion.div>
 
@@ -249,7 +256,7 @@ const SEO = () => {
                 className="absolute top-20 lg:top-24 hidden lg:block w-full h-0.5 border-t-2 border-dashed border-gray-300 z-0"
               ></motion.div>
 
-              {processSteps.map((step, index) => {
+              {latestprocessSteps.map((step, index) => {
                 const IconComponent = step.icon;
                 return (
                   <motion.div
@@ -283,87 +290,89 @@ const SEO = () => {
           </PageWrapper>
         </section>
 
-        <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-20 md:py-24">
-          <PageWrapper>
-            {/* Section Header */}
-            <motion.div
-              className="text-center mb-12 md:mb-16"
-              variants={fadeUpVariant}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <h2 id="seo-development-process" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
-                What you get
-              </h2>
-              <p className="text-center text-gray-600">
-                The technologies used in SEO and digital marketing are many and varied, each offering specific benefits and suitable applications.
-              </p>
-            </motion.div>
-
-            {/* Services Grid */}
-            <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              {appservicedata.map((service) => {
-                const IconComponent = service.icon;
-                const isExpanded = expandedCard === service.id;
-                const descriptionToShow =
-                  isExpanded && service.longDescription
-                    ? service.longDescription
-                    : service.shortDescription;
-
-                return (
-                  <motion.div
-                    key={service.id}
-                    variants={fadeUpVariant}
-                    className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col"
-                  >
-                    {/* Icon */}
-                    <div className="bg-gray-50 p-3 rounded-md inline-block mb-4 self-start">
-                      {IconComponent && (
-                        <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
-                      )}
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
-                      {service.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 flex-grow">
-                      {descriptionToShow}
-                    </p>
-
-                    {/* Learn More / Show Less */}
-                    {service.longDescription && (
-                      <button
-                        onClick={() => toggleExpand(service.id)}
-                        className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
-                      >
-                        {isExpanded ? "Show less →" : "Learn more →"}
-                      </button>
-                    )}
-
-                    {!service.longDescription && (
-                      <a
-                        href="#"
-                        className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline"
-                      >
-                        Learn more →
-                      </a>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </PageWrapper>
-        </section>
+    <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-20 md:py-24">
+  <PageWrapper>
+    {/* Section Header */}
+    <motion.div
+      className="text-center mb-12 md:mb-16"
+      variants={fadeUpVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <h2 id="seo-development-process" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 max-w-5xl mx-auto">
+        {translations[language].seoservice14}
+      </h2>
+      <p className="text-center text-gray-600">
+        {translations[language].seoservice15}
+      </p>
+    </motion.div>
+    
+    {/* Services Grid */}
+    <motion.div
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start" // Added items-start
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
+      {latestappservicedata.map((service) => {
+        const IconComponent = service.icon;
+        const isExpanded = expandedCard === service.id;
+        const descriptionToShow =
+          isExpanded && service.longDescription
+            ? service.longDescription
+            : service.shortDescription;
+        return (
+          <motion.div
+            key={service.id}
+            variants={fadeUpVariant}
+            className="bg-white hover:shadow-xl hover:scale-[1.02] p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col self-start" // Added self-start
+          >
+            {/* Icon */}
+            <div className="bg-gray-50 p-3 rounded-md inline-block mb-4 self-start">
+              {IconComponent && (
+                <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
+              )}
+            </div>
+            
+            {/* Title */}
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+              {service.title}
+            </h3>
+            
+            {/* Description */}
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4"> {/* Removed flex-grow */}
+              {descriptionToShow}
+            </p>
+            
+            {/* Learn More / Show Less */}
+            {service.longDescription && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent event bubbling
+                  toggleExpand(service.id);
+                }}
+                className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
+              >
+                {isExpanded ? "Show less →" : "Learn more →"}
+              </button>
+            )}
+            {!service.longDescription && (
+              <a
+                href="#"
+                className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline"
+                onClick={(e) => e.stopPropagation()} // Prevent event bubbling
+              >
+                Learn more →
+              </a>
+            )}
+          </motion.div>
+        );
+      })}
+    </motion.div>
+  </PageWrapper>
+</section>
 
         <div className="">
           <PageWrapper>
@@ -378,35 +387,25 @@ const SEO = () => {
               >
                 <div className="max-w-3xl mx-auto">
                   <h2 className="text-3xl sm:text-4xl font-bold text-black mb-10">
-                    Expertise for Your Digital <br /> Growth Journey
+                    {translations[language].seoservice31} <br /> {translations[language].seoservice32}
                   </h2>
 
                   <div className="space-y-2">
                     <p className="text-gray-600">
-                      For businesses targeting local audiences, our SEO services
-                      in Pakistan go beyond the basics. We fine-tune your Google
-                      My Business profile, build rock-solid local citations, and
-                      optimize for hyper-local search dominance.
+                      {translations[language].seoservice33}
                     </p>
                     <p className="text-gray-600">
-                      The result? Your business doesn’t just show up it shines
-                      in local search results, guiding eager customers straight
-                      to your door.
+                      {translations[language].seoservice34}
                     </p>
                     <p className="text-gray-600">
-                      To complement your local SEO strategy, we also offer
-                      comprehensive
-                      <span className="text-orange-600 pr-2">
-                        SMM solutions
+                      {translations[language].seoservice35}
+                      <span className="text-orange-600 px-2">
+                        {translations[language].seoservice36}
                       </span>
-                      that help amplify your brand’s voice and engage your local
-                      audience across platforms.
+                      {translations[language].seoservice37}
                     </p>
                     <p className="text-gray-600">
-                      With years of hands-on experience, we’ve earned our
-                      reputation as a premier SEO services provider in Pakistan.
-                      Our team of seasoned professionals works tirelessly to
-                      fine-tune your search engine rankings.
+                      {translations[language].seoservice38}
                     </p>
                   </div>
                 </div>
@@ -455,38 +454,28 @@ const SEO = () => {
               >
                 <div className="max-w-3xl mx-auto">
                   <h2 className="text-3xl sm:text-4xl font-bold text-black mb-10">
-                    Expertise for Your Digital <br /> Growth Journey
+                    {translations[language].seoservice39}
+                    <br />{translations[language].seoservice40}
                   </h2>
 
                   <div className="space-y-2">
                     <p className="text-gray-600">
-                      For businesses targeting local audiences, our SEO services
-                      in Pakistan go beyond the basics. We fine-tune your Google
-                      My Business profile, build rock-solid local citations, and
-                      optimize for hyper-local search dominance.
+                      {translations[language].seoservice41}
                     </p>
                     <p className="text-gray-600">
-                      The result? Your business doesn’t just show up it shines
-                      in local search results, guiding eager customers straight
-                      to your door.
+                      {translations[language].seoservice42}
                     </p>
                     <p className="text-gray-600">
-                      To complement your local SEO strategy, we also offer
-                      comprehensive
-                      <span className="text-orange-600 pr-2">
-                        SMM solutions
-                      </span>
-                      that help amplify your brand’s voice and engage your local
-                      audience across platforms.
+                      {translations[language].seoservice43}
+                      <span className="text-orange-600 px-2">{translations[language].seoservice44}</span>
+                      {translations[language].seoservice45}
                     </p>
                     <p className="text-gray-600">
-                      With years of hands-on experience, we’ve earned our
-                      reputation as a premier SEO services provider in Pakistan.
-                      Our team of seasoned professionals works tirelessly to
-                      fine-tune your search engine rankings.
+                      {translations[language].seoservice46}
                     </p>
                   </div>
                 </div>
+
               </motion.div>
             </div>
           </PageWrapper>

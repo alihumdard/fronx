@@ -1,20 +1,35 @@
-// hooks/useScrollDetection.js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const useScrollDetection = (threshold = 10) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > threshold);
+      // THIS IS THE KEY LOG: It will print every time the window scrolls
+      console.log(
+        `[Scroll Hook] Event detected on path: ${pathname}. Scroll position: ${window.scrollY}`
+      );
+
+      if (window.scrollY > threshold) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
 
-    // Set initial state on mount
+    console.log(`[Scroll Hook] Setting up listener for path: ${pathname}`);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Run a check when the page loads
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [threshold]); // Re-run effect if threshold changes
+    return () => {
+      console.log(`[Scroll Hook] Cleaning up listener for path: ${pathname}`);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pathname, threshold]);
 
   return isScrolled;
 };

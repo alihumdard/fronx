@@ -11,10 +11,10 @@ const portfolioCategories = (language) => [
   { id: "website-development", name: translations[language].service1 },
   // Make sure to add translations for other categories if they exist in your translations file
   { id: "mobile-app-development", name: translations[language].service2 },
-  { id: "wordpress-development", name: translations[language].WordPressDevelopment  },
+  { id: "wordpress-development", name: translations[language].WordPressDevelopment },
   { id: "seo-services", name: translations[language].SEOServices },
   { id: "ui-ux-design", name: translations[language].service3 },
-  { id: "digital-marketing", name: translations[language]. service5 },
+  { id: "digital-marketing", name: translations[language].service5 },
 ];
 
 // Portfolio items (assuming these do not need to be translated for simplicity for now)
@@ -116,57 +116,61 @@ const Portfolio = () => {
           </motion.div>
 
           {/* Portfolio Grid */}
-          <motion.div
-            layout
-            variants={container}
-            className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
-            <AnimatePresence mode="wait">
-              {filteredPortfolioItems.length > 0 ? (
-                filteredPortfolioItems.map((itemData) => (
-                  <motion.div
-                    key={itemData.id}
-                    variants={item}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    layout
-                    className="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden relative group"
-                  >
-                    <motion.img
-                      src={itemData.image}
-                      alt={itemData.title}
-                      className="w-full h-48 object-cover"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                    <div className="p-6">
-                      <h4 className="text-xl font-bold text-gray-800 mb-2">
-                        {itemData.title}
-                      </h4>
-                      <p className="text-gray-600 text-sm mb-4">
-                        {itemData.description}
-                      </p>
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        className="absolute bottom-6 right-6 bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white p-3 rounded-full shadow-md"
-                      >
-                        <FaArrowRight className="w-5 h-5" />
-                      </motion.button>
-                    </div>
-                  </motion.div>
-                ))
-              ) : (
-                <motion.div
-                  key="no-items"
-                  variants={item}
-                  className="col-span-1 md:col-span-2 text-center text-gray-500 text-lg py-10"
-                >
-                  No portfolio items found for this category.
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+     <motion.div
+  layout
+  variants={container}
+  className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-8"
+>
+  <AnimatePresence mode="wait">
+    {filteredPortfolioItems.length > 0 ? (
+      filteredPortfolioItems.map((itemData) => (
+        <motion.div
+          key={itemData.id}
+          variants={item}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          layout
+          className="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden relative group" // Added "group" class
+        >
+          <motion.img
+            src={itemData.image}
+            alt={itemData.title}
+            className="w-full h-48 object-cover"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          />
+          <div className="p-6">
+            <h4 className="text-xl font-bold text-gray-800 mb-2">
+              {itemData.title}
+            </h4>
+            <p className="text-gray-600 text-sm mb-4">
+              {itemData.description}
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.1 }} // Removed rotate from here
+              transition={{ 
+                duration: 0.3,
+                ease: "easeInOut"
+              }}
+              className="absolute bottom-6 right-6 bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white p-3 rounded-full shadow-md"
+            >
+              <FaArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:rotate-[-30deg]" />
+            </motion.button>
+          </div>
+        </motion.div>
+      ))
+    ) : (
+      <motion.div
+        key="no-items"
+        variants={item}
+        className="col-span-1 md:col-span-2 text-center text-gray-500 text-lg py-10"
+      >
+        No portfolio items found for this category.
+      </motion.div>
+    )}
+  </AnimatePresence>
+</motion.div>
         </div>
       </PageWrapper>
     </motion.section>
