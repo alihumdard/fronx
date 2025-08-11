@@ -49,7 +49,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="relative h-screen w-full">
+      <div className="relative w-full">
         {/* Navbar */}
         <Navbar />
 
@@ -142,17 +142,17 @@ const Contact = () => {
                 {
                   icon: "fas fa-phone-alt",
                   title: translations[language].call,
-                  value: "(+256) 69825-3158",
+                  value: "+32477277312",
                 },
                 {
                   icon: "fas fa-envelope",
                   title: translations[language].email,
-                  value: "info@gmail.com",
+                  value: "info@fronxsolutions.be",
                 },
                 {
                   icon: "fas fa-map-marker-alt",
                   title: translations[language].visit,
-                  value: "14 Maniel Lane, Karachi",
+                  value: "Rue d'Alost 7/11 1000, Brussels",
                 },
               ].map((item, idx) => (
                 <div
@@ -200,11 +200,30 @@ const Contact = () => {
                     className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
-                <input
-                  type="text"
-                  placeholder={translations[language].subject}
-                  className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <div className="w-full space-y-4">
+                  {/* Text Input */}
+                  <input
+                    type="text"
+                    placeholder={translations[language].subject}
+                    className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+
+                  {/* Dropdown */}
+                  <select
+                    className="w-full text-gray-400 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      {translations[language].subject1}
+                    </option>
+                    <option value="general">{translations[language].subject2}</option>
+                    <option value="support">{translations[language].subject3}</option>
+                    <option value="feedback">{translations[language].subject4}</option>
+                    <option value="quote">{translations[language].subject5}</option>
+                    <option value="quote">{translations[language].subject6}</option>
+                  </select>
+                </div>
+
                 <textarea
                   rows="4"
                   placeholder={translations[language].your}
@@ -212,7 +231,7 @@ const Contact = () => {
                 ></textarea>
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded shadow hover:opacity-90 transition"
+                  className="btn-animate bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded shadow hover:opacity-90 transition"
                 >
                   {translations[language].submit}
                 </button>
@@ -231,15 +250,15 @@ const Contact = () => {
 
         <div className="w-full">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d924237.7091839125!2d66.49598340315225!3d25.192983725749368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f44555a0c23!2sKarachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1753094509058!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2518.851049941143!2d4.339593776122954!3d50.85244245833903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c3893f6f15dd%3A0x48ebcce077f1970b!2sRue%20d'Alost%20711%2C%201000%20Bruxelles%2C%20Belgium!5e0!3m2!1sen!2s!4v1754032911370!5m2!1sen!2s"
             className="w-full h-[480px]"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Google Map of Karachi"
           ></iframe>
         </div>
+
 
         <Footer />
       </div>

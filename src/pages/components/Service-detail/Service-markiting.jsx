@@ -21,90 +21,92 @@ import {
   FaEnvelopeOpenText,
 } from "react-icons/fa";
 import StatsSection from "../Statsdata";
+import translations from "../../../translations";
+import { useLanguage } from "../../../LanguageContext";
 
-const processSteps = [
+const processSteps = (language) => [
   {
     icon: FaBullseye,
-    title: "Your Success, Our Mission",
+    title: translations[language].markiting7,
     description:
-      "We measure our success by the success of our clients. With a focus on results and a dedication to quality, our mission is to deliver digital solutions that make a real impact.",
+    translations[language].markiting8,
   },
   {
     icon: FaPalette,
-    title: "Creators Of Digital Excellence",
+    title: translations[language].markiting9,
     description:
-      "At the core of our agency is a commitment to excellence and creativity. We specialize in crafting digital solutions that not only meet your needs but also elevate your brand.",
+      translations[language].markiting10,
   },
   {
     icon: FaLightbulb,
-    title: "Innovating the Digital Landscape",
+    title: translations[language].markiting11,
     description:
-      "Innovation is key to our digital strategies. We blend creativity with technology to deliver solutions that push boundaries and transform brands.",
+      translations[language].markiting12,
   },
   {
     icon: FaRocket,
-    title: "Helping Brands Thrive Online",
+    title: translations[language].markiting13,
     description:
-      "Our purpose is simple: to help brands succeed in the digital age. We're passionate about building strong relationships with our clients and crafting custom strategies that drive results.",
+      translations[language].markiting14,
   },
 ];
 
-const marketing = [
+const marketing = (language) => [
   {
     id: "google ads setup",
     icon: FaDollarSign, // from react-icons/fa
-    title: "Google Ads Setup",
+    title: translations[language].markiting17,
     shortDescription:
-      "Reach your ideal audience efficiently with targeted, cost-effective Google Ads campaigns.",
+      translations[language].markiting18,
     longDescription:
-      "Google Ads Setup helps you connect with the right audience through precision-targeted campaigns. We handle everything from keyword research and ad creation to budget management and performance tracking, ensuring your business gets maximum exposure and return on investment with minimal spend."
+      translations[language].markiting19,
 
   },
   {
     id: "social media marketing",
     icon: FaBullseye, // from react-icons/fa
-    title: "Social Media Marketing",
+    title: translations[language].markiting20,
     shortDescription:
-      "Engage the right audience with tailored campaigns and real-time insights.",
+      translations[language].markiting21,
     longDescription:
-      "Social Media Marketing leverages powerful targeting tools to deliver your message to the most relevant audience. From demographics and interests to behaviors and location data, we optimize your campaigns to drive engagement, increase brand awareness, and boost conversion rates across platforms like Facebook, Instagram, LinkedIn, and more."
+      translations[language].markiting22
 
   },
   {
     id: "content marketing",
     icon: FaComments, // from react-icons/fa
-    title: "Content Marketing",
+    title: translations[language].markiting23,
     shortDescription:
-      "Build authority, engage audiences, and drive conversions through valuable content.",
+      translations[language].markiting24,
     longDescription:
-      "Content Marketing focuses on creating and distributing valuable, relevant, and consistent content to attract and engage a clearly defined audience. From blog posts and videos to infographics and email campaigns, quality content builds trust, strengthens your brand, and drives profitable customer actions."
+      translations[language].markiting25,
   },
   {
     id: "email marketing",
     icon: FaLightbulb, // from react-icons/fa
-    title: "Email Marketing",
+    title: translations[language].markiting26,
     shortDescription:
-      "Engage your audience with targeted, personalized email campaigns.",
+      translations[language].markiting27,
     longDescription:
-      "Email marketing helps you build strong customer relationships by delivering personalized messages directly to their inbox. With segmentation, automation, and performance tracking, you can craft effective campaigns that boost engagement, increase conversions, and drive long-term loyalty."
+      translations[language].markiting28,
   },
 ];
 
-const items = [
+const items = (language) => [
   {
-    title: "Data-Driven Approach",
+    title: translations[language].markiting39,
     description:
-      "We leverage data and insights to make informed decisions that lead to more effective and efficient solutions.",
+      translations[language].markiting40,
   },
   {
-    title: "Competitive Pricing",
+    title: translations[language].markiting41,
     description:
-      "We offer our top-quality services at competitive prices, providing you with great value for your investment.",
+      translations[language].markiting42,
   },
   {
-    title: "Ethical Business Practices",
+    title: translations[language].markiting43,
     description:
-      "We maintain the highest level of professionalism and ethical standards in all our business dealings.",
+      translations[language].markiting44,
   },
 ];
 
@@ -136,6 +138,10 @@ export const staggerContainer = {
   },
 };
 const digitalmarkiting = () => {
+  const {language} =  useLanguage();
+  const latestprocessSteps = processSteps (language);
+  const latestmarketing = marketing(language);
+  const latestitems = items(language);
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -144,7 +150,7 @@ const digitalmarkiting = () => {
 
   return (
     <>
-      <div className="relative h-screen w-full overflow-x-hidden">
+      <div className="relative w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 
@@ -183,10 +189,10 @@ const digitalmarkiting = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Empowering IT Consulting <br />
-                <span className="mt-3">With </span>
+                {translations[language].markiting1} <br />
+                <span className="mt-3">{translations[language].markiting2}</span>
                 <span className="mt-3 relative inline-block">
-                  Expert
+                  {translations[language].markiting3}
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -206,18 +212,18 @@ const digitalmarkiting = () => {
                     to="/"
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Home
+                    {translations[language].home}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link
                     to={URLS.SERVICES}
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Services
+                    {translations[language].services}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
-                    Digital Marketing
+                    {translations[language].markiting4}
                   </Link>
                 </div>
               </motion.div>
@@ -237,11 +243,11 @@ const digitalmarkiting = () => {
                 className="w-full lg:w-[40%] text-start"
               >
                 <h2 className="text-2xl sm:text-4xl mt-8 font-bold text-gray-800 w-full sm:w-[90%] leading-snug">
-                  Crafting Unique Digital Experience that elevate Your Brand
+                  {translations[language].markiting5}
                 </h2>
                 <div className="mt-12">
                   <Link to={URLS.CONTACT} className="bg-gradient-to-r from-blue-500 to-blue-700 text-white mt-8 font-semibold px-6 py-3 rounded-full shadow-md hover:opacity-90 transition-all text-sm sm:text-base">
-                    Contact Us
+                    {translations[language].markiting6}
                   </Link>
                 </div>
               </motion.div>
@@ -257,7 +263,7 @@ const digitalmarkiting = () => {
                   className="absolute top-20 lg:top-24 hidden lg:block w-full h-0.5 border-gray-300 z-0"
                 ></motion.div>
 
-                {processSteps.map((step, index) => {
+                {latestprocessSteps.map((step, index) => {
                   const IconComponent = step.icon;
                   return (
                     <motion.div
@@ -292,87 +298,89 @@ const digitalmarkiting = () => {
           </PageWrapper>
         </section>
 
-        <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-20 md:py-24">
-          <PageWrapper>
-            {/* Section Header */}
-            <motion.div
-              className="text-center mb-12 md:mb-16"
-              variants={fadeUpVariant}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <h2 id="markiting-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                What you do
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-                Adopting an effective digital strategy has several benefits:
-              </p>
-            </motion.div>
-
-            {/* Services Grid */}
-            <motion.div
-              className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              {marketing.map((service) => {
-                const IconComponent = service.icon;
-                const isExpanded = expandedCard === service.id;
-                const descriptionToShow =
-                  isExpanded && service.longDescription
-                    ? service.longDescription
-                    : service.shortDescription;
-
-                return (
-                  <motion.div
-                    key={service.id}
-                    variants={fadeUpVariant}
-                    className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col"
-                  >
-                    {/* Icon */}
-                    <div className="bg-gray-50 p-3 rounded-md inline-block mb-4 self-start">
-                      {IconComponent && (
-                        <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
-                      )}
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
-                      {service.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 flex-grow">
-                      {descriptionToShow}
-                    </p>
-
-                    {/* Learn More / Show Less */}
-                    {service.longDescription && (
-                      <button
-                        onClick={() => toggleExpand(service.id)}
-                        className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
-                      >
-                        {isExpanded ? "Show less →" : "Learn more →"}
-                      </button>
-                    )}
-
-                    {!service.longDescription && (
-                      <a
-                        href="#"
-                        className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline"
-                      >
-                        Learn more →
-                      </a>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </PageWrapper>
-        </section>
+   <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-20 md:py-24">
+  <PageWrapper>
+    {/* Section Header */}
+    <motion.div
+      className="text-center mb-12 md:mb-16"
+      variants={fadeUpVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <h2 id="markiting-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+        {translations[language].markiting15}
+      </h2>
+      <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+        {translations[language].markiting16}
+      </p>
+    </motion.div>
+    
+    {/* Services Grid */}
+    <motion.div
+      className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 items-start" // Added items-start
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
+      {latestmarketing.map((service) => {
+        const IconComponent = service.icon;
+        const isExpanded = expandedCard === service.id;
+        const descriptionToShow =
+          isExpanded && service.longDescription
+            ? service.longDescription
+            : service.shortDescription;
+        return (
+          <motion.div
+            key={service.id}
+            variants={fadeUpVariant}
+            className="bg-white p-5 hover:shadow-xl hover:scale-[1.02] sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col self-start" // Added self-start
+          >
+            {/* Icon */}
+            <div className="bg-gray-50 p-3 rounded-md inline-block mb-4 self-start">
+              {IconComponent && (
+                <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
+              )}
+            </div>
+            
+            {/* Title */}
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+              {service.title}
+            </h3>
+            
+            {/* Description */}
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4"> {/* Removed flex-grow */}
+              {descriptionToShow}
+            </p>
+            
+            {/* Learn More / Show Less */}
+            {service.longDescription && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent event bubbling
+                  toggleExpand(service.id);
+                }}
+                className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
+              >
+                {isExpanded ? "Show less →" : "Learn more →"}
+              </button>
+            )}
+            {!service.longDescription && (
+              <a
+                href="#"
+                className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline"
+                onClick={(e) => e.stopPropagation()} // Prevent event bubbling
+              >
+                Learn more →
+              </a>
+            )}
+          </motion.div>
+        );
+      })}
+    </motion.div>
+  </PageWrapper>
+</section>
 
         <div className="bg-[url('/images/bg.png')] bg-cover bg-center bg-no-repeat py-16 px-6 lg:px-20 text-white">
           <section className="py-16 md:py-24 text-white relative overflow-hidden">
@@ -401,9 +409,9 @@ const digitalmarkiting = () => {
                   viewport={{ once: true }}
                 >
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight lg:mb-20 mb-8">
-                    Expertise that drives digital
+                  {translations[language].markiting29}
                     <span className="text-orange-400 pl-3 block sm:inline">
-                      success
+                      {translations[language].markiting30}
                     </span>
                   </h2>
 
@@ -420,7 +428,7 @@ const digitalmarkiting = () => {
                         +60%
                       </p>
                       <p className="text-gray-300 text-sm sm:text-base max-w-xs mx-auto sm:mx-0">
-                        By optimizing your website for search engines.
+                       {translations[language].markiting31}
                       </p>
                     </motion.div>
 
@@ -436,8 +444,7 @@ const digitalmarkiting = () => {
                         +30%
                       </p>
                       <p className="text-gray-300 text-sm sm:text-base max-w-xs mx-auto sm:mx-0">
-                        Rise in revenue as more visitors convert into paying
-                        customers.
+                        {translations[language].markiting32}
                       </p>
                     </motion.div>
                   </div>
@@ -465,12 +472,9 @@ const digitalmarkiting = () => {
                     <FaAsterisk className="w-4 h-4 text-orange-400 mt-1 mr-3 flex-shrink-0" />
                     <p className="text-gray-300 text-sm sm:text-base">
                       <span className="font-semibold text-white">
-                        Social Media Management:
+                        {translations[language].markiting33}
                       </span>{" "}
-                      Our social media management services focus on building and
-                      enhancing your brand's online presence. We create engaging
-                      content, manage your social media accounts, and analyze
-                      performance.
+                    {translations[language].markiting34}
                     </p>
                   </motion.div>
 
@@ -484,12 +488,9 @@ const digitalmarkiting = () => {
                     <FaAsterisk className="w-4 h-4 text-orange-400 mt-1 mr-3 flex-shrink-0" />
                     <p className="text-gray-300 text-sm sm:text-base">
                       <span className="font-semibold text-white">
-                        E-commerce Solutions:
+                      {translations[language].markiting35}
                       </span>{" "}
-                      Our e-commerce solutions are designed to create seamless
-                      online shopping experiences. From user-friendly website
-                      design to secure payment processing and inventory
-                      management.
+                     {translations[language].markiting36}
                     </p>
                   </motion.div>
                 </motion.div>
@@ -511,11 +512,11 @@ const digitalmarkiting = () => {
               >
                 <div className="max-w-3xl mx-auto">
                   <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-10">
-                    Expertise for Your Digital <br /> Growth Journey
+                  {translations[language].markiting361} <br />{translations[language].markiting37}  
                   </h2>
 
                   <div className="space-y-4">
-                    {items.map((item, index) => (
+                    {latestitems.map((item, index) => (
                       <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
@@ -545,9 +546,7 @@ const digitalmarkiting = () => {
                 className="w-full lg:w-1/2 flex flex-col justify-center px-6 py-16"
               >
                 <p className="text-gray-500 max-w-xl text-base mb-20">
-                  Our dedicated team is committed to understanding your unique
-                  needs, ensuring that we provide innovative strategies that
-                  drive results with a focus on quality and integrity.
+                {translations[language].markiting38}
                 </p>
                 <img
                   src="/images/Rectangle 10541.png"

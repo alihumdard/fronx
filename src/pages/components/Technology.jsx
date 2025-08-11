@@ -86,9 +86,9 @@ const TechnologyStats = () => {
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 border-b border-gray-400 pb-5">
-          <StatBox number="50" label={translations[language].webprojects} index={1} />
+          <StatBox number="200" label={translations[language].webprojects} index={1} />
           <StatBox number="100+" label={translations[language].mobapp} highlight index={2} />
-          <StatBox number="50" label={translations[language].ecomm} index={3} />
+          <StatBox number="120+" label={translations[language].ecomm} index={3} />
           <StatBox number="95%" label={translations[language].client} index={4} />
         </div>
 

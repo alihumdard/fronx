@@ -13,6 +13,7 @@ import Contact from "../../pages/Contact";
 import Home from "../../pages/Home";
 import OverOns from "../../pages/OverOns";
 import Service from "../../pages/Service";
+import Submit from "../../pages/Submit";
 
 export const publicRoutes = [
   {
@@ -26,6 +27,10 @@ export const publicRoutes = [
   {
     path: "/over-ons",
     element: OverOns,
+  },
+  {
+    path: "/submit",
+    element: Submit,
   },
   {
     path: "/web-development",

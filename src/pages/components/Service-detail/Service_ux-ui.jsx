@@ -20,70 +20,72 @@ import {
 } from "react-icons/fa";
 import { FaBolt, FaCogs, FaLock, FaChartLine } from "react-icons/fa";
 import StatsSection from "../Statsdata";
+import translations from "../../../translations";
+import { useLanguage } from "../../../LanguageContext";
 
-const processSteps = [
+const processSteps = (language) => [
   {
     icon: FaSearch, // Better for "Research" than clipboard
-    title: "Research & Direction",
+    title: translations[language].uiuxservice7,
     description:
-      "In-depth research and strategic direction to guide your digital products toward innovation and market success.",
+      translations[language].uiuxservice8,
   },
   {
     icon: FaProjectDiagram, // Represents "Flow Design" better than a laptop
-    title: "Framework & Flow Design",
+    title: translations[language].uiuxservice9,
     description:
-      "Blueprinting the structure and logic of your application to ensure smooth user experiences and efficient development.",
+      translations[language].uiuxservice10,
   },
   {
     icon: FaCogs, // Represents refinement and adjustments
-    title: "Prototyping & Refinement",
+    title: translations[language].uiuxservice11,
     description:
-      "Transforming ideas into interactive prototypes to validate concepts and refine user experience before development.",
+      translations[language].uiuxservice12,
   },
   {
     icon: FaRocket, // More dynamic than cloud upload for "Execution & Delivery"
-    title: "Execution & Delivery",
+    title: translations[language].uiuxservice13,
     description:
-      "Flawless execution and on-time delivery of high-quality digital solutions tailored to your goals.",
+      translations[language].uiuxservice14,
   },
 ];
 
-const uiux_service = [
+const uiux_service = (language) => [
   {
     id: "website ui design",
     icon: FaPencilRuler,
-    title: "Website UI Design (Figma)",
+    title: translations[language].uiuxservice17,
     shortDescription:
-      "We don’t copy designs—we craft original, custom interfaces tailored to your brand, goals, and vision.",
+      translations[language].uiuxservice18,
     longDescription:
-      "Our custom UI design process focuses on building unique, user-friendly website interfaces from the ground up. Using Figma, we design layouts, components, and visual systems that reflect your brand identity while optimizing for usability and conversion. Every element—from typography to color palettes—is carefully crafted to deliver a seamless and memorable user experience that truly sets you apart.",
+      translations[language].uiuxservice19,
   },
   {
     id: "mobile app ui design",
     icon: FaMousePointer,
-    title: "Mobile App UI Design",
+    title: translations[language].uiuxservice20,
     shortDescription:
-      "We design intuitive and engaging mobile interfaces that guide users smoothly from first tap to final interaction.",
+      translations[language].uiuxservice21,
     longDescription:
-      "Our Mobile App UI Design services focus on creating visually appealing and highly functional interfaces tailored for small screens. Every element—from navigation to gestures—is thoughtfully crafted to enhance usability, maintain consistency across devices, and reflect your brand identity. We ensure each step of the user's journey is smooth, engaging, and aligned with the app’s core purpose—leading to better retention and satisfaction.",
+      translations[language].uiuxservice22
   },
   {
     id: "wireframing & prototyping",
     icon: FaTabletAlt,
-    title: "Wireframing & Prototyping",
+    title: translations[language].uiuxservice23,
     shortDescription:
-      "Visualize your app or website early with structured wireframes and interactive prototypes before development begins.",
+      translations[language].uiuxservice24,
     longDescription:
-      "Our wireframing and prototyping process helps define the structure, layout, and flow of your digital product before a single line of code is written. Wireframes provide a low-fidelity blueprint of screens, while interactive prototypes simulate real user interactions. This allows for early feedback, usability testing, and fast iteration—ensuring your final design is intuitive, user-centered, and development-ready.",
+      translations[language].uiuxservice25,
   },
   {
     id: "design system creation",
     icon: FaMagic,
-    title: "Design System Creation",
+    title: translations[language].uiuxservice26,
     shortDescription:
-      "We build scalable and consistent design systems that streamline UI development and maintain brand identity across all products.",
+      translations[language].uiuxservice27,
     longDescription:
-      "Our Design System Creation service focuses on building a structured library of reusable components, styles, and guidelines to ensure visual and functional consistency across your digital products. From typography and color schemes to buttons, form elements, and spacing rules, we create a centralized design foundation that accelerates development, simplifies collaboration, and strengthens your brand presence across all platforms.",
+      translations[language].uiuxservice28,
   },
 ];
 
@@ -131,6 +133,9 @@ export const staggerContainer = {
   },
 };
 const uxui = () => {
+  const { language } = useLanguage();
+  const latestprocessSteps = processSteps(language);
+  const latestuiux_service = uiux_service(language);
   const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
 
   const toggleExpand = (id) => {
@@ -139,7 +144,10 @@ const uxui = () => {
 
   return (
     <>
-      <div className="relative h-screen w-full overflow-x-hidden">
+     <title>UI/UX Design Services in Belgium | Fronx Solutions</title>
+      <meta name="description" content="Enhance user experience with expert UI/UX design services by Fronx Solutions. We create intuitive, modern, and user-centered digital interfaces." />
+
+      <div className="relative w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 
@@ -181,10 +189,10 @@ const uxui = () => {
                 className="text-4xl text-white sm:text-5xl md:text-6xl lg:text-6xl font-semibold mb-4 md:mb-6"
                 variants={fadeUpVariant}
               >
-                Expert UI/UX Design Services Belgium | Best <br />
-                <span className="mt-3">UX Designers</span>
-                <span className="mt-3 relative inline-block">
-                  Brussels
+                {translations[language].uiuxservice1} <br />
+                <span className="mt-3">{translations[language].uiuxservice2}</span>
+                <span className="mt-3 ml-3 relative inline-block">
+                  {translations[language].uiuxservice3}
                   <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
                 </span>
               </motion.h1>
@@ -209,19 +217,19 @@ const uxui = () => {
                     to="/"
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Home
+                    {translations[language].home}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link
                     to={URLS.SERVICES}
                     className="text-orange-400 hover:text-orange-300 transition-colors"
                   >
-                    Services
+                    {translations[language].services}
                   </Link>
                   <span className="text-orange-400">››</span>
                   <Link className="text-blue-400 hover:text-blue-300 transition-colors">
 
-                    Expert UI/UX Design Services Belgium | Best UX Designers Brussels
+                    {translations[language].uiuxservice4}
                   </Link>
                 </div>
               </motion.div>
@@ -240,10 +248,10 @@ const uxui = () => {
               className="text-start px-4 sm:px-6 mb-12"
             >
               <span className="bg-orange-400 px-4 py-2 rounded-3xl text-white font-semibold uppercase tracking-wide text-sm">
-                UX/UI Design Process
+                {translations[language].uiuxservice5}
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-6 font-bold text-gray-800 max-w-5xl">
-                The Way We Build UX/UI
+                {translations[language].uiuxservice6}
               </h2>
             </motion.div>
 
@@ -258,7 +266,7 @@ const uxui = () => {
                 className="absolute top-20 lg:top-24 hidden lg:block w-full h-0.5 border-t-2 border-dashed border-gray-300 z-0"
               ></motion.div>
 
-              {processSteps.map((step, index) => {
+              {latestprocessSteps.map((step, index) => {
                 const IconComponent = step.icon;
                 return (
                   <motion.div
@@ -292,87 +300,89 @@ const uxui = () => {
           </PageWrapper>
         </section>
 
-        <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-20 md:py-24">
-          <PageWrapper>
-            {/* Section Header */}
-            <motion.div
-              className="text-center mb-12 md:mb-16"
-              variants={fadeUpVariant}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <h2 id="uiux-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                What you get
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-                The technologies used in UI/UX design are numerous and varied, each providing specific advantages and meeting particular needs:
-              </p>
-            </motion.div>
-
-            {/* Services Grid */}
-            <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              {uiux_service.map((service) => {
-                const IconComponent = service.icon;
-                const isExpanded = expandedCard === service.id;
-                const descriptionToShow =
-                  isExpanded && service.longDescription
-                    ? service.longDescription
-                    : service.shortDescription;
-
-                return (
-                  <motion.div
-                    key={service.id}
-                    variants={fadeUpVariant}
-                    className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col"
-                  >
-                    {/* Icon */}
-                    <div className="bg-gray-50 p-3 rounded-md inline-block mb-4 self-start">
-                      {IconComponent && (
-                        <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
-                      )}
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
-                      {service.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 flex-grow">
-                      {descriptionToShow}
-                    </p>
-
-                    {/* Learn More / Show Less */}
-                    {service.longDescription && (
-                      <button
-                        onClick={() => toggleExpand(service.id)}
-                        className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
-                      >
-                        {isExpanded ? "Show less →" : "Learn more →"}
-                      </button>
-                    )}
-
-                    {!service.longDescription && (
-                      <a
-                        href="#"
-                        className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline"
-                      >
-                        Learn more →
-                      </a>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </PageWrapper>
-        </section>
+       <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-20 md:py-24">
+  <PageWrapper>
+    {/* Section Header */}
+    <motion.div
+      className="text-center mb-12 md:mb-16"
+      variants={fadeUpVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <h2 id="uiux-development-process" className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+        {translations[language].uiuxservice15}
+      </h2>
+      <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+        {translations[language].uiuxservice16}
+      </p>
+    </motion.div>
+    
+    {/* Services Grid */}
+    <motion.div
+      className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-start" // Added items-start
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
+      {latestuiux_service.map((service) => {
+        const IconComponent = service.icon;
+        const isExpanded = expandedCard === service.id;
+        const descriptionToShow =
+          isExpanded && service.longDescription
+            ? service.longDescription
+            : service.shortDescription;
+        return (
+          <motion.div
+            key={service.id}
+            variants={fadeUpVariant}
+            className="bg-white p-5 hover:shadow-xl hover:scale-[1.02] sm:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col self-start" // Added self-start
+          >
+            {/* Icon */}
+            <div className="bg-gray-50 p-3 rounded-md inline-block mb-4 self-start">
+              {IconComponent && (
+                <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
+              )}
+            </div>
+            
+            {/* Title */}
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+              {service.title}
+            </h3>
+            
+            {/* Description */}
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4"> {/* Removed flex-grow */}
+              {descriptionToShow}
+            </p>
+            
+            {/* Learn More / Show Less */}
+            {service.longDescription && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent event bubbling
+                  toggleExpand(service.id);
+                }}
+                className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline focus:outline-none"
+              >
+                {isExpanded ? "Show less →" : "Learn more →"}
+              </button>
+            )}
+            {!service.longDescription && (
+              <a
+                href="#"
+                className="text-orange-500 font-semibold text-sm sm:text-base self-start hover:underline"
+                onClick={(e) => e.stopPropagation()} // Prevent event bubbling
+              >
+                Learn more →
+              </a>
+            )}
+          </motion.div>
+        );
+      })}
+    </motion.div>
+  </PageWrapper>
+</section>
 
         <div className="relative">
           <section className="relative min-h-[600px] py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -397,7 +407,7 @@ const uxui = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                   >
-                    The benefits of UI/UX design
+                    {translations[language].uiuxservice29}
                   </motion.h1>
                   <motion.p
                     className="text-lg text-white/90 max-w-2xl mx-auto"
@@ -406,7 +416,7 @@ const uxui = () => {
                     transition={{ delay: 0.2 }}
                     viewport={{ once: true }}
                   >
-                    Strong UI/UX design is essential for creating intuitive, accessible, and engaging digital experiences. Here are the key benefits it brings to custom apps:
+                    {translations[language].uiuxservice30}
                   </motion.p>
                 </div>
 
@@ -414,27 +424,27 @@ const uxui = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
                   {[
                     {
-                      title: "Seamless User Experience & Visual Design",
+                      title: translations[language].uiuxservice31,
                       description:
-                        "Carefully designed interfaces offer easy navigation, clear visual hierarchy, and consistent interactions—ensuring users complete tasks easily, regardless of device or screen size.",
+                        translations[language].uiuxservice32,
                       margin: "md:mr-36 mr-0",
                     },
                     {
-                      title: "Improved perceived performance",
+                      title: translations[language].uiuxservice33,
                       description:
-                        "Smart UX choices like loading indicators, lazy loading, and progressive reveals increase perceived speed and responsiveness, maintaining user engagement even during heavy operations.",
+                        translations[language].uiuxservice34,
                       margin: "md:ml-36 ml-0",
                     },
                     {
-                      title: "Trust through usability and privacy",
+                      title: translations[language].uiuxservice35,
                       description:
-                        " Intuitive forms, secure journeys, and transparent data management build trust, encouraging users to interact confidently and return regularly.",
+                        translations[language].uiuxservice36,
                       margin: "md:mr-36 mr-0",
                     },
                     {
-                      title: "Scalable design systems",
+                      title: translations[language].uiuxservice37,
                       description:
-                        "Reusable UI components and well-defined style guides facilitate long-term scalability and maintenance. Designers can quickly adapt to new requirements without sacrificing consistency or quality.",
+                        translations[language].uiuxservice38,
                       margin: "md:ml-36 ml-0",
                     },
                   ].map((feature, index) => (

@@ -103,7 +103,7 @@ const servicesData = (language) => [
     title: translations[language].service2, // You might want to use translations here too: translations[language].service2
     url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
     description:
-      "Crafting intuitive and high-performance mobile applications for iOS and Android.",
+      translations[language].servicedetail2,
     techStackIcons: [
       { icon: SiFlutter, name: "Flutter" },
       { icon: FaReact, name: "React Native" },
@@ -120,7 +120,7 @@ const servicesData = (language) => [
     title: translations[language].service3, // translations[language].service3
     url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
     description:
-      "Designing captivating and user-centric interfaces focusing on aesthetics and usability.",
+      translations[language].servicedetail3,
     techStackIcons: [
       { icon: SiFigma, name: "Figma" },
       { icon: FaPalette, name: "Adobe XD" },
@@ -134,7 +134,7 @@ const servicesData = (language) => [
     title: translations[language].service4, // translations[language].service4
     url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
     description:
-      "Building secure e-commerce platforms that drive sales and enhance user experience.",
+      translations[language].servicedetail4,
     techStackIcons: [
       { icon: FaShopify, name: "Shopify" },
       { icon: FaWordpress, name: "WooCommerce" },
@@ -150,7 +150,7 @@ const servicesData = (language) => [
     title: translations[language].service5, // translations[language].service5
     url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
     description:
-      "Boost your online presence, drive traffic, and convert leads into loyal customers.",
+      translations[language].servicedetail5,
     techStackIcons: [
       { icon: FaSearch, name: "SEO" },
       { icon: FaBullhorn, name: "Ads" },
@@ -164,7 +164,7 @@ const servicesData = (language) => [
     title: translations[language].service6, // translations[language].service6
     url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
     description:
-      "Tailored solutions to meet your unique business needs and enhance efficiency.",
+      translations[language].servicedetail6,
     techStackIcons: [
       { icon: FaPython, name: "Python" },
       { icon: FaJava, name: "Java" },
@@ -181,7 +181,7 @@ const servicesData = (language) => [
     title: translations[language].service7, // translations[language].service7
     url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
     description:
-      "Automate customer support and streamline interactions with AI and chatbots.",
+      translations[language].servicedetail7,
     techStackIcons: [
       { icon: FaRobot, name: "AI/ML" },
       { icon: FaJs, name: "Node.js" },
@@ -195,7 +195,7 @@ const servicesData = (language) => [
     title: translations[language].service8, // translations[language].service8
     url: URLS.SERVICE_DETAIL.MAINTENENCE,
     description:
-      "Keep applications running smoothly with updates and dedicated technical support.",
+      translations[language].servicedetail8,
     techStackIcons: [
       { icon: FaServer, name: "Monitoring" },
       { icon: FaCloud, name: "Cloud Mgmt" },
@@ -209,7 +209,7 @@ const servicesData = (language) => [
     title: translations[language].service9, // translations[language].service9
     url: URLS.SERVICE_DETAIL.SEO,
     description:
-      "Improve visibility on search engines to attract more traffic and leads.",
+      translations[language].servicedetail9,
     techStackIcons: [
       { icon: FaSearch, name: "Keyword Research" },
       { icon: FaCode, name: "On-Page SEO" },
@@ -387,7 +387,7 @@ const Service2 = () => {
 
                   <Link
                     to={activeService.url}
-                    className="inline-block mt-10 self-start bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-md hover:opacity-90 transition-opacity"
+                    className="inline-block mt-10 self-start text-lg hover:opacity-90 transition-opacity btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-3 rounded-full font-semibold shadow"
                   >
                     {activeService.buttonText}
                   </Link>
