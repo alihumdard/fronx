@@ -12,7 +12,7 @@ import ProjectGridSection from "./components/ProjectGridSection";
 import translations from "../translations";
 import { useLanguage } from "../LanguageContext";
 
-// Animation Variants (kept as is, assuming they are correct)
+// Animation Variants
 const containerVariant = {
   hidden: {},
   visible: {
@@ -30,6 +30,7 @@ const fadeUpVariant = {
     transition: { duration: 0.8, ease: "easeOut" },
   },
 };
+
 export const staggerContainer = {
   hidden: {},
   visible: {
@@ -39,12 +40,87 @@ export const staggerContainer = {
     },
   },
 };
+
 const Contact = () => {
   const { language, toggleLanguage } = useLanguage();
-  const [expandedCard, setExpandedCard] = useState(null); // State to manage which card is expanded
+  const [expandedCard, setExpandedCard] = useState(null);
+  
+  // Form state for the contact page form
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    mobile: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
 
   const toggleExpand = (id) => {
     setExpandedCard(expandedCard === id ? null : id);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      // Web3Forms API call
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '92de9d3b-4e9e-475d-b728-dbf336d29359', // Replace with your access key
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          phone: formData.mobile,
+          subject: formData.subject,
+          message: formData.message,
+          subject: `Fronx Solution Contact Form  ${formData.subject} - ${formData.firstName} ${formData.lastName}`,
+          from_name: 'Fronx Solutions Contact ',
+          to_email: 'info@fronxsolutions.be',
+          botcheck: false,
+          redirect: false,
+          form_source: 'Contact Page Form'
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          mobile: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+        console.error('Web3Forms Error:', result.message);
+      }
+    } catch (error) {
+      console.error('Email sending error:', error);
+      setSubmitStatus('error');
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -114,7 +190,6 @@ const Contact = () => {
             >
               <div className="flex-1 space-y-2 text-center lg:text-left">
                 <p className="text-sm text-blue-600 font-semibold">
-                  {" "}
                   {translations[language].work}
                 </p>
                 <h2 className="text-3xl font-bold text-gray-800">
@@ -142,17 +217,17 @@ const Contact = () => {
                 {
                   icon: "fas fa-phone-alt",
                   title: translations[language].call,
-                  value: "(+256) 69825-3158",
+                  value: "+32477277312",
                 },
                 {
                   icon: "fas fa-envelope",
                   title: translations[language].email,
-                  value: "info@gmail.com",
+                  value: "info@fronxsolutions.be",
                 },
                 {
                   icon: "fas fa-map-marker-alt",
                   title: translations[language].visit,
-                  value: "14 Maniel Lane, Karachi",
+                  value: "Rue d'Alost 7/11 1000, Brussels",
                 },
               ].map((item, idx) => (
                 <div
@@ -175,46 +250,84 @@ const Contact = () => {
               variants={fadeUpVariant}
               custom={3}
             >
-              <form className="bg-white shadow-lg rounded-xl p-6 md:p-8 space-y-5 w-full">
+              <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-xl p-6 md:p-8 space-y-5 w-full">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
                     placeholder={translations[language].first}
+                    required
                     className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                   <input
                     type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
                     placeholder={translations[language].last}
+                    required
                     className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder={translations[language].email}
+                    required
                     className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                   <input
-                    type="text"
+                    type="tel"
+                    name="mobile"
+                    value={formData.mobile}
+                    onChange={handleInputChange}
                     placeholder={translations[language].mobile}
+                    required
                     className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <input
                   type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
                   placeholder={translations[language].subject}
+                  required
                   className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <textarea
                   rows="4"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   placeholder={translations[language].your}
+                  required
                   className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 ></textarea>
+
+                {/* Status Messages */}
+                {submitStatus === 'success' && (
+                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                    ✅ Message sent successfully! We'll get back to you soon.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                    ❌ Failed to send message. Please try again or contact us directly.
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded shadow hover:opacity-90 transition"
+                  disabled={isSubmitting}
+                  className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded shadow hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {translations[language].submit}
+                  {isSubmitting ? 'Sending...' : translations[language].submit}
                 </button>
               </form>
 
