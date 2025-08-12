@@ -135,7 +135,7 @@ function Footer() {
             <div className="container mx-auto flex flex-wrap justify-between gap-y-10 pb-10 border-b border-gray-700">
               {/* About */}
               <div className="w-full md:w-1/2 lg:w-1/5">
-                <h2 className="text-3xl font-bold mb-4">FRONX</h2>
+                <img src="/images/logo.png" alt="Fronx Solutions Logo" className="h-10 lg:h-12 mb-3"/>
                 <p className="text-sm opacity-80 mb-6">
                   {translations[language].drive}
                 </p>

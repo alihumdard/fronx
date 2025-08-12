@@ -230,7 +230,7 @@ const Submit = () => {
                 {/* Formsubmit Configuration - Stay on same page */}
                 <input type="hidden" name="_subject" value="🚀 New Project Submission from Fronx Solutions Website" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value={window.location.href} />
+                {/* <input type="hidden" name="_next" value={'https://fronxsolutions.be'} /> */}
                 <input type="hidden" name="_captcha" value="false" />
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -323,7 +323,7 @@ const Submit = () => {
                     accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.zip,.ppt,.pptx,.xls,.xlsx"
                     className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:font-semibold file:bg-purple-100 file:text-purple-700 hover:file:bg-purple-200 transition"
                   />
-                  <p className="text-xs text-gray-500 mt-1">✅ FREE file uploads! Supported: PDF, DOC, DOCX, TXT, JPG, PNG, ZIP, PPT, XLS</p>
+                  <p className="text-xs text-gray-500 mt-1">Supported: PDF, DOC, DOCX, TXT, JPG, PNG, ZIP, PPT, XLS</p>
                   <p className="text-xs text-red-500 font-semibold">⚠️ Maximum file size: 10MB</p>
                   {formData.file && (
                     <p className="text-xs text-green-600 mt-1">
