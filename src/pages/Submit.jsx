@@ -352,11 +352,11 @@ const Submit = () => {
                     required
                   />
                   <p className="text-sm text-gray-600">
-                    I authorize Fronx Solutions to use the data transmitted through this form, including for marketing purposes. See our{" "}
+                    {translations[language].sub}{" "}
                     <a href="#" className="underline text-purple-600 hover:text-purple-800">
-                      Privacy Policy
+                      {translations[language].sub1}
                     </a>{" "}
-                    to learn more.
+                    {translations[language].sub2}
                   </p>
                 </div>
 

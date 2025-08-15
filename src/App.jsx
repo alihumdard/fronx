@@ -1,9 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { useRoutes } from "./routes";
 import ScrollToTop from "./main/ScrollToTop";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import ScrollToHash from "./main/ScrollToHash";
+import WhatsAppButton from "./main/WhatsAppButton";
+import CookieConsent from "./main/CookieConsent";
 
 const App = () => {
   const routes = useRoutes();
@@ -22,6 +24,8 @@ const App = () => {
           </Routes>
         </main>
       </div>
+      <WhatsAppButton/>
+      <CookieConsent/>
     </Router>
   );
 };
