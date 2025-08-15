@@ -217,11 +217,11 @@ const Submit = () => {
                 <div className="flex items-start">
                   <input type="checkbox" className="mr-3 mt-1" />
                   <p className="text-sm text-gray-600">
-                    I authorize D/M digital to use the data transmitted through this form, including for marketing purposes. See our{" "}
+                    {translations[language].sub}{" "}
                     <a href="#" className="underline text-purple-600 hover:text-purple-800">
-                      Privacy Policy
+                      {translations[language].sub1}
                     </a>{" "}
-                    to learn more.
+                    {translations[language].sub2}
                   </p>
                 </div>
                 <button

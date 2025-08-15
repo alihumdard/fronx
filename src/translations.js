@@ -134,8 +134,8 @@ const translations = {
     empover: "IT-consultancy versterken",
     with: "Met",
     Expert: "Expert",
-    Access: "Toegangscontrole en identiteit",
-    proces: "Beheerproces",
+    Access: "De methode achter onze gekte of hoe",
+    proces: "De magie werkt",
     Discussion: "Discussie",
     step1:
       "Dit kan onder meer het instellen van snelkoppelingen, afhankelijkheden of systeeminstellingen omvatten om ervoor te zorgen",
@@ -219,6 +219,15 @@ const translations = {
     emailaddress: "E-mailadres",
     web: "Web",
     development: "Ontwikkeling",
+    cokkie: "Deze site gebruikt cookies",
+cokkie1: "Wij gebruiken cookies om ervoor te zorgen dat de site correct functioneert. U kunt onze",
+cokkie2: "wettelijke vermeldingen",
+cokkie3: "en ons",
+cokkie4: "privacybeleid",
+cokkie5: "raadplegen voor meer informatie.",
+cokkie6: "Cookies accepteren",
+cokkie7: "Cookies instellen of weigeren",
+
     website1: "Technologieën gebruikt in webontwikkeling",
     website2:
       "De technologieën die in webontwikkeling worden gebruikt, zijn veel en gevarieerd, elk met hun eigen specifieke voordelen en toepassingen:",
@@ -237,6 +246,9 @@ const translations = {
     benifits8: "Schaalbaarheid en onderhoud",
     benifits9:
       "Modulaire, duidelijke en goed gestructureerde code maakt het gemakkelijker om het project te evolueren, bugs op te lossen en snel nieuwe functies toe te voegen, wat zorgt voor langdurig succes en vermindering van de ontwikkelingskosten.",
+    sub: "J’autorise D/M digital à utiliser les données transmises via ce formulaire, y compris à des fins marketing. Voir notre",
+    sub2: "Politique de confidentialité",
+    sub3: "pour en savoir plus.",  
     state: "Waarom Kiezen voor Fronx Solutions",
     state1: "Opgeleverde Projecten",
     state2: "Bedrijven Bediend",
@@ -390,7 +402,7 @@ const translations = {
     uiuxservice37: "Schaalbare ontwerpsystemen",
     uiuxservice38:
       "Herbruikbare UI-componenten en goed gedefinieerde stijlgidsen faciliteren langetermijnschaalbaarheid en onderhoud. Ontwerpers kunnen zich snel aanpassen aan nieuwe vereisten zonder in te leveren op consistentie of kwaliteit.",
-    commerce1: "Op maat gemaakte e-commerce om uw",
+    commerce1: "Op maat gemaakte e-commerce",
     commerce2: "online",
     commerce3: "bedrijf",
     commerce4: "E-commerce Oplossingen",
@@ -421,7 +433,7 @@ const translations = {
       "Op maat gemaakte Shopify winkelontwikkeling met geavanceerde functies zoals voorraadbeheer, multi-valuta betalingen en flash sales.",
     commerce22:
       "We zijn gespecialiseerd in het creëren van hoogconverterende, volledig op maat gemaakte Shopify winkels die visueel aantrekkelijk en gemakkelijk te beheren zijn. Van thema-aanpassing en productopzet tot het integreren van betalingsgateways, apps en geavanceerde functies zoals voorraadtracking en meertalige ondersteuning, we leveren schaalbare Shopify-oplossingen. Of u nu een nieuwe winkel lanceert of een bestaande upgradet, we zorgen voor een soepele, veilige en verkoopklare platform op maat van uw merk.",
-    commerce23: "Op maat Gemaakte E-commerce Portaal",
+    commerce23: "Op maat Gemaakte E-commerce",
     commerce24:
       "Schaalbare, functierijke e-commerce platforms op maat van uw bedrijfsbehoeften, met volledige controle over ontwerp, functionaliteit en groei.",
     commerce25:
@@ -755,7 +767,7 @@ const translations = {
     drop18: "E-commerce Oplossing",
     drop19: "WooCommerce Winkelopzet",
     drop20: "Shopify Ontwikkeling",
-    drop21: "Op maat Gemaakte E-commerce Portaal",
+    drop21: "Op maat Gemaakte E-commerce",
     drop22: "Productbeheersysteem",
     drop23: "Betalingsgateway Integratie",
     drop24: "Digitale Marketing",
@@ -996,8 +1008,8 @@ const translations = {
     empover: "Renforcer le conseil informatique",
     with: "Avec",
     Expert: "Experte",
-    Access: "Contrôle d'accès et identité",
-    proces: "Processus de gestion",
+    Access: "La méthode derrière notre folie ou comment",
+    proces: "la magie opère.",
     Discussion: "Discussion",
     step1:
       "Cela peut inclure la configuration de raccourcis, de dépendances ou de paramètres système pour garantir le bon fonctionnement.",
@@ -1653,6 +1665,17 @@ const translations = {
     subject4: "créer une application mobile",
     subject5: "créer un logiciel personnalisé",
     subject6: "autre",
+      sub: "Ik geef D/M digital toestemming om de via dit formulier verzonden gegevens te gebruiken, ook voor marketingdoeleinden. Zie onze]",
+    sub2: "Privacybeleid",
+    sub3: "voor meer informatie.",
+    cokkie: "Ce site utilise des cookies",
+    cokkie1: "Nous utilisons des cookies pour assurer le bon fonctionnement du site. Vous pouvez consulter nos",
+    cokkie2: "mentions légales",
+    cokkie3: "et notre",
+    cokkie4: "politique de confidentialité",
+    cokkie5: "pour plus d'informations.",
+    cokkie6: "Accepter les cookies",
+    cokkie7: "Paramétrer ou refuser les cookies",
     servicedetail2:
       "Concevoir des applications mobiles intuitives et performantes pour iOS et Android, nous sommes spécialisés dans la création d’expériences fluides, évolutives et conviviales, adaptées à vos objectifs commerciaux. De la conception au déploiement, nos solutions mobiles garantissent rapidité, fiabilité et engagement exceptionnel des utilisateurs sur tous les appareils.",
     servicedetail3:
