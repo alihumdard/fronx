@@ -173,7 +173,7 @@ function Footer() {
                     <FaLinkedinIn />
                   </a>
                   <a
-                    href="https://wa.me/1234567890"
+                    href="https://wa.me/+32477277312"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 flex items-center justify-center bg-[#FF9B4B] rounded text-white text-lg"
