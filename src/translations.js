@@ -1,5 +1,5 @@
 const translations = {
-    en: {
+  en: {
     home: "Home",
     overOns: "Over Ons",
     services: "Diensten",
@@ -220,13 +220,14 @@ const translations = {
     web: "Web",
     development: "Ontwikkeling",
     cokkie: "Deze site gebruikt cookies",
-cokkie1: "Wij gebruiken cookies om ervoor te zorgen dat de site correct functioneert. U kunt onze",
-cokkie2: "wettelijke vermeldingen",
-cokkie3: "en ons",
-cokkie4: "privacybeleid",
-cokkie5: "raadplegen voor meer informatie.",
-cokkie6: "Cookies accepteren",
-cokkie7: "Cookies instellen of weigeren",
+    cokkie1:
+      "Wij gebruiken cookies om ervoor te zorgen dat de site correct functioneert. U kunt onze",
+    cokkie2: "wettelijke vermeldingen",
+    cokkie3: "en ons",
+    cokkie4: "privacybeleid",
+    cokkie5: "raadplegen voor meer informatie.",
+    cokkie6: "Cookies accepteren",
+    cokkie7: "Cookies instellen of weigeren",
 
     website1: "Technologieën gebruikt in webontwikkeling",
     website2:
@@ -248,7 +249,7 @@ cokkie7: "Cookies instellen of weigeren",
       "Modulaire, duidelijke en goed gestructureerde code maakt het gemakkelijker om het project te evolueren, bugs op te lossen en snel nieuwe functies toe te voegen, wat zorgt voor langdurig succes en vermindering van de ontwikkelingskosten.",
     sub: "J’autorise D/M digital à utiliser les données transmises via ce formulaire, y compris à des fins marketing. Voir notre",
     sub2: "Politique de confidentialité",
-    sub3: "pour en savoir plus.",  
+    sub3: "pour en savoir plus.",
     state: "Waarom Kiezen voor Fronx Solutions",
     state1: "Opgeleverde Projecten",
     state2: "Bedrijven Bediend",
@@ -1665,11 +1666,12 @@ cokkie7: "Cookies instellen of weigeren",
     subject4: "créer une application mobile",
     subject5: "créer un logiciel personnalisé",
     subject6: "autre",
-      sub: "Ik geef D/M digital toestemming om de via dit formulier verzonden gegevens te gebruiken, ook voor marketingdoeleinden. Zie onze]",
+    sub: "Ik geef D/M digital toestemming om de via dit formulier verzonden gegevens te gebruiken, ook voor marketingdoeleinden. Zie onze]",
     sub2: "Privacybeleid",
     sub3: "voor meer informatie.",
     cokkie: "Ce site utilise des cookies",
-    cokkie1: "Nous utilisons des cookies pour assurer le bon fonctionnement du site. Vous pouvez consulter nos",
+    cokkie1:
+      "Nous utilisons des cookies pour assurer le bon fonctionnement du site. Vous pouvez consulter nos",
     cokkie2: "mentions légales",
     cokkie3: "et notre",
     cokkie4: "politique de confidentialité",
@@ -1753,6 +1755,5 @@ cokkie7: "Cookies instellen of weigeren",
     blogDetail29:
       "Créez des blogs de qualité alimentés par l'IA qui se démarquent",
   },
-
 };
 export default translations;
