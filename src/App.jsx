@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useRoutes } from "./routes";
 import ScrollToTop from "./main/ScrollToTop";
 import "@fortawesome/fontawesome-free/css/all.min.css";
