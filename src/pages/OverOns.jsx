@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../main/Navbar";
 import PageWrapper from "../main/Pagewraper";
 import { Link } from "react-router-dom";
@@ -12,7 +11,6 @@ import { motion } from "framer-motion";
 import translations from "../translations";
 import { useLanguage } from "../LanguageContext";
 
-// Animation Variants (kept as is, assuming they are correct)
 const containerVariant = {
   hidden: {},
   visible: {
@@ -32,18 +30,15 @@ const fadeUpVariant = {
 };
 
 const OverOns = () => {
-  const { language } = useLanguage(); // Get the current language from contex
+  const { language } = useLanguage(); 
   return (
     <>
       <div className="relative w-full overflow-x-hidden">
-        {/* Navbar */}
         <Navbar />
 
-        {/* Background Image */}
         <div className="relative h-[500px] overflow-visible">
           <PageWrapper>
             <div>
-              {/* Background Image */}
               <img
                 src="/images/bg-overlay.png"
                 alt="Hero Background"

@@ -14,6 +14,7 @@ import Home from "../../pages/Home";
 import OverOns from "../../pages/OverOns";
 import Service from "../../pages/Service";
 import Submit from "../../pages/Submit";
+import NotFound from "../../pages/NotFound";
 
 export const publicRoutes = [
   {
@@ -76,8 +77,12 @@ export const publicRoutes = [
     path: "/BlogDetail",
     element: BlogDetail,
   },
-    {
+  {
     path: "/contact-us",
     element: Contact,
+  },
+  {
+    path: "*",
+    element: NotFound,
   },
 ];

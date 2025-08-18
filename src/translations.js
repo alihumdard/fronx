@@ -1,5 +1,15 @@
 const translations = {
   en: {
+    // For Dutch (nl)
+    notfound: "Pagina niet gevonden",
+    notfound1: "404",
+    notfound2: "Oeps! De pagina die u zoekt bestaat niet",
+    notfound3: "De pagina die u zoekt is mogelijk verplaatst, hernoemd of bestaat niet meer. Maak u geen zorgen, we helpen u verder!",
+    notfound4: "Terug naar startpagina",
+    notfound5: "Bekijk onze diensten",
+    notfound6: "Neem contact op",
+    notfound7: "Of bekijk onze populaire diensten:",
+
     home: "Home",
     overOns: "Over Ons",
     services: "Diensten",
@@ -879,7 +889,7 @@ const translations = {
     overOns: "À propos",
     services: "Services",
     blog: "Blogue",
-    portfolio: "Portefeuille",
+    portfolio: "Portfolio",
     contacts: "Contactez-nous",
     webDevelopment: "Développement Web",
     appDevelopment: "Développement d'applications",
@@ -918,7 +928,7 @@ const translations = {
     discover:
       "Découvrez comment FronxSolutions transforme les idées en solutions numériques de pointe permettant aux start-ups et aux entreprises d'offrir une excellence logicielle évolutive.",
     ours: "NOTRE ",
-    portfolio: "PORTEFEUILLE",
+    portfolio: "Portfolio",
     WordPressDevelopment: "Développement WordPress",
     SEOServices: "Services de référencement",
     approach:
@@ -1754,6 +1764,15 @@ const translations = {
     blogDetail28: "Comprendre vos lecteurs",
     blogDetail29:
       "Créez des blogs de qualité alimentés par l'IA qui se démarquent",
-  },
+// For French (fr)
+notfound: "Page introuvable",
+notfound1: "404",
+notfound2: "Oups ! La page que vous cherchez n'existe pas",
+notfound3: "La page que vous recherchez a peut-être été déplacée, renommée ou n'existe plus. Ne vous inquiétez pas, nous sommes là pour vous aider !",
+notfound4: "Retour à l'accueil",
+notfound5: "Voir nos services",
+notfound6: "Nous contacter",
+notfound7: "Ou découvrez nos services populaires :",
+    },
 };
 export default translations;
