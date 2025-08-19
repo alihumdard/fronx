@@ -147,7 +147,7 @@ const Portfolio = () => {
                     <motion.img
                       src={itemData.image}
                       alt={itemData.title}
-                      className="w-full h-48 object-cover"
+                      className="w-full object-cover bg-gray-50"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     />
