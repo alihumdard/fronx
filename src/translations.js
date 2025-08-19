@@ -9,7 +9,6 @@ const translations = {
     notfound5: "Bekijk onze diensten",
     notfound6: "Neem contact op",
     notfound7: "Of bekijk onze populaire diensten:",
-
     home: "Home",
     overOns: "Over Ons",
     services: "Diensten",
@@ -1762,8 +1761,7 @@ const translations = {
     blogDetail26: "Éviter les pièges courants de l'écriture avec l'IA",
     blogDetail27: "Comprendre les capacités de ChatGPT – Définir votre style",
     blogDetail28: "Comprendre vos lecteurs",
-    blogDetail29:
-      "Créez des blogs de qualité alimentés par l'IA qui se démarquent",
+    blogDetail29:"Créez des blogs de qualité alimentés par l'IA qui se démarquent",
 // For French (fr)
 notfound: "Page introuvable",
 notfound1: "404",
@@ -1774,5 +1772,6 @@ notfound5: "Voir nos services",
 notfound6: "Nous contacter",
 notfound7: "Ou découvrez nos services populaires :",
     },
+
 };
 export default translations;
