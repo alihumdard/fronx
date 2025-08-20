@@ -15,7 +15,7 @@ import OverOns from "../../pages/OverOns";
 import Service from "../../pages/Service";
 import Submit from "../../pages/Submit";
 import NotFound from "../../pages/NotFound";
-import Thankyou from "../../../pages/Thankyou";
+import ThankYou from "../../pages/ThankYou";
 
 
 export const publicRoutes = [
@@ -89,6 +89,6 @@ export const publicRoutes = [
   },
   {
   path: "/thank-you",
-  element: Thankyou,
+  element: ThankYou,
 }
 ];
