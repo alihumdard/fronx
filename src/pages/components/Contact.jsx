@@ -1,15 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ReCAPTCHA from 'react-google-recaptcha';
 import PageWrapper from '../../main/Pagewraper';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import translations from '../../translations';
-import { LanguageProvider, useLanguage } from '../../LanguageContext';
+import { useLanguage } from '../../LanguageContext';
 
 const ContactForm = () => {
   const navigate = useNavigate();
   const { language } = useLanguage();
-  const recaptchaRef = useRef(null);
   
   const [formData, setFormData] = useState({
     firstName: '',
@@ -23,7 +21,6 @@ const ContactForm = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
-  const [recaptchaToken, setRecaptchaToken] = useState('');
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -40,24 +37,14 @@ const ContactForm = () => {
     }));
   };
 
-  const handleRecaptchaChange = (token) => {
-    setRecaptchaToken(token);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Check reCAPTCHA verification
-    if (!recaptchaToken) {
-      setSubmitStatus('recaptcha_error');
-      return;
-    }
-
     setIsSubmitting(true);
     setSubmitStatus('submitting');
 
     try {
-      // Web3Forms API call - handles reCAPTCHA validation server-side
+      // Web3Forms API call
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -69,13 +56,12 @@ const ContactForm = () => {
           name: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
           phone: formData.mobileNumber,
-          website: formData.currentWebsite,
+          website: formData.currentWebsite || 'Not provided',
           service: formData.iWouldLike,
           message: formData.yourMessage,
           subject: `New Lead from Website Contact Form - ${formData.firstName} ${formData.lastName}`,
           from_name: 'Fronx Solutions Website Contact Form',
           to_email: 'info@fronxsolutions.be',
-          'g-recaptcha-response': recaptchaToken, // Web3Forms validates this automatically
           botcheck: false, 
           redirect: false,
           form_source: 'Homepage Contact Form'
@@ -101,12 +87,6 @@ const ContactForm = () => {
           yourMessage: ''
         });
 
-        // Reset reCAPTCHA
-        if (recaptchaRef.current) {
-          recaptchaRef.current.reset();
-        }
-        setRecaptchaToken('');
-
         // Redirect to thank you page after 1.5 seconds
         setTimeout(() => {
           navigate(`/thank-you?type=contact&name=${encodeURIComponent(userName)}`);
@@ -115,20 +95,10 @@ const ContactForm = () => {
       } else {
         setSubmitStatus('error');
         console.error('Web3Forms Error:', result.message);
-        // Reset reCAPTCHA on error
-        if (recaptchaRef.current) {
-          recaptchaRef.current.reset();
-        }
-        setRecaptchaToken('');
       }
     } catch (error) {
       console.error('Email sending error:', error);
       setSubmitStatus('error');
-      // Reset reCAPTCHA on error
-      if (recaptchaRef.current) {
-        recaptchaRef.current.reset();
-      }
-      setRecaptchaToken('');
     }
 
     setIsSubmitting(false);
@@ -250,16 +220,6 @@ const ContactForm = () => {
                 ></textarea>
               </div>
 
-              {/* reCAPTCHA */}
-              <div className="sm:col-span-2 flex justify-center mb-4">
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  sitekey="6LfCLqwrAAAAAKkzIjJaapVBSub--g3PzFMMLRKT" // Test key - replace with your actual key
-                  onChange={handleRecaptchaChange}
-                  theme="dark"
-                />
-              </div>
-
               {/* Status Messages */}
               {submitStatus === 'submitting' && (
                 <div className="sm:col-span-2 bg-blue-600 bg-opacity-20 border border-blue-400 text-blue-300 px-4 py-3 rounded-md flex items-center">
@@ -285,18 +245,12 @@ const ContactForm = () => {
                   Er is een fout opgetreden bij het verzenden. Probeer het opnieuw of neem direct contact met ons op.
                 </div>
               )}
-              {submitStatus === 'recaptcha_error' && (
-                <div className="sm:col-span-2 bg-yellow-600 bg-opacity-20 border border-yellow-400 text-yellow-300 px-4 py-2 rounded-md">
-                  <span className="mr-2">⚠️</span>
-                  Vul de reCAPTCHA in om te bewijzen dat u geen robot bent.
-                </div>
-              )}
 
               {/* Submit */}
               <div className="sm:col-span-2">
                 <button
                   type="submit"
-                  disabled={isSubmitting || !recaptchaToken}
+                  disabled={isSubmitting}
                   className={`inline-block mt-6 self-start text-lg hover:opacity-90 transition-opacity btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-3 rounded-lg font-semibold shadow w-full disabled:opacity-50 disabled:cursor-not-allowed ${
                     isSubmitting ? 'animate-pulse' : ''
                   }`}
