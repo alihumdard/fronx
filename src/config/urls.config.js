@@ -7,6 +7,7 @@ const URLS = {
   CONTACT: "/contact-us",
   SUBMIT: "/submit",
   THANKYOU: "/thankyou",
+  PORTFOLIO: "/portfolio",
 
   SERVICE_DETAIL: {
     WEB_DEVELOPMENT: "/web-development",
@@ -19,6 +20,10 @@ const URLS = {
     MAINTENENCE: "/maintenence",
     SEO: "/seo",
   },
+
+  PORTOLIO_DETAIL: {
+    WEB_1: "/webdevelopment1"
+  }
 };
 
 export default URLS;
