@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import URLS from "../config/urls.config";
+import { Link } from "react-router-dom";
+import translations from "../translations";
+import { useLanguage } from "../LanguageContext";
 import {
   FaFigma, FaPalette, FaPencilRuler, FaPaintBrush,
   FaRocket, FaRegLightbulb, FaLaptopCode, FaMobileAlt,
@@ -24,10 +27,31 @@ import {
   FaShoppingCart,
   FaCreditCard,
   FaUserFriends,
-  FaTools
+  FaTools,
+  FaCode,
+  FaServer,
+  FaWordpressSimple,
+  FaReact,
+  FaAppStore,
+  FaGooglePlay,
+  FaCog,
+  FaTachometerAlt,
+  FaExternalLinkAlt,
+  FaDatabase,
+  FaShieldAlt,
+  FaHeadset,
+  FaShopify,
+  FaBrain,
+  FaRegComments,
+  FaBullhorn,
+  FaChartLine,
+  FaGlobe,
+  FaHandshake,
+  FaWrench
 } from "react-icons/fa";
 
 const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
+  const { language } = useLanguage();
   const [isMainDropdownOpen, setIsMainDropdownOpen] = useState(false);
   const [openCategoryIndex, setOpenCategoryIndex] = useState(null);
 
@@ -49,128 +73,135 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
     setOpenCategoryIndex(openCategoryIndex === index ? null : index);
   };
 
-  // Menu data with page routes and section IDs
+  // Menu data with proper linking from the original dropdown
   const menuCategories = [
     {
       title: "DESIGN",
+      url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
       items: [
         { 
-          label: "UX/UI Design", 
+          label: translations[language].drop14, 
           icon: FaFigma, 
           color: "from-blue-300 to-blue-400",
-          route: "/ui-ux development#website-ui-design"
+          url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
+          hash: "#uiux-development-process"
         },
         { 
-          label: "Prototyping", 
-          icon: FaDraftingCompass, 
+          label: translations[language].drop15, 
+          icon: FaPalette, 
           color: "from-blue-300 to-blue-400",
-          route: "/ui-ux development#wireframing-prototyping"
+          url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
+          hash: "#uiux-development-process"
         },
         { 
-          label: "Wireframing", 
-          icon: FaSitemap, 
+          label: translations[language].drop16, 
+          icon: FaPencilRuler, 
           color: "from-blue-300 to-blue-400",
-          route: "/ui-ux development#wireframing-prototyping"
+          url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
+          hash: "#uiux-development-process"
         },
         { 
-          label: "Motion & Micro Interactions", 
-          icon: FaPlayCircle, 
+          label: translations[language].drop17, 
+          icon: FaRegLightbulb, 
           color: "from-blue-300 to-blue-400",
-          route: "/ui-ux development#mobile-app-ui-design"
-        },
-        { 
-          label: "Design Systems", 
-          icon: FaCubes, 
-          color: "from-blue-300 to-blue-400",
-          route: "/ui-ux development#design-system-creation"
-        },
-        { 
-          label: "Product Re-Design", 
-          icon: FaSyncAlt, 
-          color: "from-blue-300 to-blue-400",
-          route: "/ui-ux development#website-ui-design"
+          url: URLS.SERVICE_DETAIL.UIUX_DEVELOPEMENT,
+          hash: "#uiux-development-process"
         },
       ]
     },
     {
       title: "DEVELOPMENT",
+      url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
       items: [
         { 
-          label: "WebApp Development", 
+          label: translations[language].drop2, 
           icon: FaLaptopCode, 
           color: "from-orange-200 to-orange-300",
-          route: "/web-development#computer-languages"
+          url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
+          hash: "#web-development-process"
         },
         { 
-          label: "Mobile App Development", 
+          label: translations[language].drop8, 
           icon: FaMobileAlt, 
           color: "from-orange-200 to-orange-300",
-          route: "/app-development#flutter-app-development"
+          url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
+          hash: "#app-development-process"
         },
         { 
-          label: "Custom CRM Development", 
-          icon: FaUsersCog, 
+          label: translations[language].drop3, 
+          icon: FaCode, 
           color: "from-orange-200 to-orange-300",
-          route: "/software-development#crm-system-development"
+          url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
+          hash: "#web-development-process"
         },
         { 
-          label: "ERP System Development", 
+          label: translations[language].drop36, 
           icon: FaProjectDiagram, 
           color: "from-orange-200 to-orange-300",
-          route: "/software-development#erp-or-system"
+          url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
+          hash: "#software-development-process"
         },
         { 
-          label: "SaaS Platform Development", 
+          label: translations[language].drop11, 
           icon: FaCloud, 
           color: "from-orange-200 to-orange-300",
-          route: "/software-development#saas-platform-development"
+          url: URLS.SERVICE_DETAIL.APP_DEVELOPMENT,
+          hash: "#app-development-process"
         },
         { 
-          label: "API Integration", 
+          label: translations[language].drop39, 
           icon: FaPlug, 
           color: "from-orange-200 to-orange-300",
-          route: "/web-development#smart-features-tailored"
+          url: URLS.SERVICE_DETAIL.SOFTWARE_DEVELOPMENT,
+          hash: "#software-development-process"
         },
       ]
     },
     {
       title: "MARKETING",
+      url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
       items: [
         { 
-          label: "SEO", 
+          label: translations[language].drop30, 
           icon: FaSearch, 
           color: "from-green-400 to-green-400",
-          route: "/seo#keyword-research"
+          url: URLS.SERVICE_DETAIL.SEO,
+          hash: "#seo-development-process"
         },
         { 
-          label: "Google Ads", 
+          label: translations[language].drop25, 
           icon: FaRocket, 
           color: "from-green-400 to-green-400",
-          route: "/digital-markitting#google-ads-setup"
+          url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
+          hash: "#markiting-development-process"
         },
         { 
-          label: "Meta Ads", 
+          label: translations[language].drop26, 
           icon: FaFacebook, 
           color: "from-green-400 to-green-400",
-          route: "/digital-markitting#social-media-marketing"
+          url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
+          hash: "#markiting-development-process"
         },
         { 
-          label: "Local SEO", 
+          label: translations[language].drop27, 
           icon: FaMapMarkedAlt, 
           color: "from-green-400 to-green-400",
-          route: "/seo#on-page-seo"
+          url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
+          hash: "#markiting-development-process"
         },
         { 
-          label: "Email Marketing", 
+          label: translations[language].drop28, 
           icon: FaEnvelopeOpenText, 
           color: "from-green-400 to-green-400",
-          route: "/digital-markitting#email-marketing"
+          url: URLS.SERVICE_DETAIL.DIGITAL_MARKITING,
+          hash: "#markiting-development-process"
         },
         { 
-          label: "Content Writing", 
+          label: translations[language].drop33, 
           icon: FaPenNib, 
           color: "from-green-400 to-green-400",
-          route: "/digital-markitting#content-marketing"
+          url: URLS.SERVICE_DETAIL.SEO,
+          hash: "#seo-development-process"
         },
       ]
     },
@@ -180,47 +211,48 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
     title: "SOLUTIONS",
     items: [
       { 
-        label: "MVP Design & Development", 
+        label: translations[language].drop6, 
         icon: FaRocket, 
         color: "from-pink-300 to-pink-400",
-        route: "/software-development#saas-platform-development"
+        url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
+        hash: "#web-development-process"
       },
       { 
-        label: "AI & Chatbot Solutions", 
+        label: translations[language].drop46, 
         icon: FaRobot, 
         color: "from-pink-300 to-pink-400",
-        route: "/chatbot-development#website-chatbot-development"
+        url: URLS.SERVICE_DETAIL.CHATBOT_DEVELOPMENT,
+        hash: "#ai-development-process"
       },
       { 
-        label: "E-commerce Solutions (WooCommerce, Shopify)", 
+        label: translations[language].drop19, 
         icon: FaShoppingCart, 
         color: "from-pink-300 to-pink-400",
-        route: "/e-commerce development#woocommerce-store-setup"
+        url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
+        hash: "#commerce-development-process"
       },
       { 
-        label: "Payment Gateway Integration", 
+        label: translations[language].drop23, 
         icon: FaCreditCard, 
         color: "from-pink-300 to-pink-400",
-        route: "/e-commerce development#payment-gateway-integration"
+        url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
+        hash: "#commerce-development-process"
       },
       { 
-        label: "Team Extension", 
+        label: translations[language].drop23, 
         icon: FaUserFriends, 
         color: "from-pink-300 to-pink-400",
-        route: "/software-development#crm-system-development"
+        url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
+        hash: "#commerce-development-process"
       },
       { 
-        label: "Maintenance & Support", 
+        label: translations[language].drop41, 
         icon: FaTools, 
         color: "from-pink-300 to-pink-400",
-        route: "/maintenence#website-maintenance-plans"
+        url: URLS.SERVICE_DETAIL.MAINTENENCE,
+        hash: "#maintinence-development-process"
       },
     ]
-  };
-
-  const handleCloseDropdown = () => {
-    setIsMainDropdownOpen(false);
-    setOpenCategoryIndex(null);
   };
 
   return (
@@ -230,12 +262,13 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
       onMouseLeave={mobile ? undefined : () => setIsMainDropdownOpen(false)}
     >
       {/* Main Menu Link */}
-      <button
+      <Link
+        to={URLS.SERVICES}
         onClick={toggleMainDropdown}
         className={`inline-flex items-center font-semibold whitespace-nowrap tracking-wide ${mobile ? "block w-full text-left" : ""} ${textColorClass} ${linkHoverClass}`}
         aria-expanded={isMainDropdownOpen ? "true" : "false"}
       >
-        Services
+        {translations[language].services}
         <svg
           className={`ml-1 h-4 w-4 transform transition-transform duration-200 ${isMainDropdownOpen && mobile ? "rotate-180" : "rotate-0"}`}
           fill="none"
@@ -245,7 +278,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
             d={isMainDropdownOpen && mobile ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />
         </svg>
-      </button>
+      </Link>
 
       {/* Dropdown */}
       <AnimatePresence>
@@ -267,9 +300,12 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                     onClick={mobile ? () => toggleCategoryDropdown(catIndex) : undefined}
                     className="flex justify-between items-center w-full mb-4"
                   >
-                    <span className="text-lg font-bold text-gray-800 tracking-wide uppercase">
+                    <Link
+                      to={category.url}
+                      className="text-lg font-bold text-gray-800 tracking-wide uppercase hover:text-gray-600 transition-colors duration-200"
+                    >
                       {category.title}
-                    </span>
+                    </Link>
                     {mobile && (
                       <svg className={`ml-2 h-5 w-5 text-gray-600 transform transition-transform duration-200 ${openCategoryIndex === catIndex ? "rotate-180" : "rotate-0"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={openCategoryIndex === catIndex ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />
@@ -289,8 +325,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                         {category.items.map((item, itemIndex) => (
                           <li key={itemIndex}>
                             <Link 
-                              to={item.route}
-                              onClick={handleCloseDropdown}
+                              to={`${item.url}${item.hash}`}
                               className="group flex items-start space-x-4 px-3 rounded-xl hover:bg-gray-50 transition-all duration-200 w-full text-left"
                             >
                               <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-r ${item.color} text-white shadow-sm group-hover:shadow-md transition-shadow duration-200`}>
@@ -312,7 +347,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
             </div>
 
             {/* Solutions Section */}
-            <div className="mt-6 px-2">
+            <div className="mt-6 px-2 ">
               <button
                 onClick={mobile ? () => toggleCategoryDropdown("solutions") : undefined}
                 className="flex justify-between items-center w-full mb-4"
@@ -322,7 +357,8 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                 </span>
                 {mobile && (
                   <svg
-                    className={`ml-2 h-5 w-5 text-gray-600 transform transition-transform duration-200 ${openCategoryIndex === "solutions" ? "rotate-180" : "rotate-0"}`}
+                    className={`ml-2 h-5 w-5 text-gray-600 transform transition-transform duration-200 ${openCategoryIndex === "solutions" ? "rotate-180" : "rotate-0"
+                      }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -331,7 +367,11 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d={openCategoryIndex === "solutions" ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"}
+                      d={
+                        openCategoryIndex === "solutions"
+                          ? "M5 15l7-7 7 7"
+                          : "M19 9l-7 7-7-7"
+                      }
                     />
                   </svg>
                 )}
@@ -349,11 +389,12 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                     {solutionsCategory.items.map((item, itemIndex) => (
                       <div key={itemIndex} className="flex-1 min-w-[200px]">
                         <Link 
-                          to={item.route}
-                          onClick={handleCloseDropdown}
+                          to={`${item.url}${item.hash}`}
                           className="group flex px-2 items-start space-x-4 rounded-xl hover:bg-gray-50 transition-all duration-200 w-full text-left"
                         >
-                          <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-r ${item.color} text-white shadow-sm group-hover:shadow-md transition-shadow duration-200`}>
+                          <div
+                            className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-r ${item.color} text-white shadow-sm group-hover:shadow-md transition-shadow duration-200`}
+                          >
                             <item.icon className="text-lg" />
                           </div>
                           <div className="flex-1">
@@ -368,6 +409,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                 )}
               </AnimatePresence>
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>
