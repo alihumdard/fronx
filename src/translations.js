@@ -51,7 +51,7 @@ const translations = {
     discover:
       "Ontdek hoe FronxSolutions ideeën omzet in cutting-edge digitale oplossingen die startups tot ondernemingen van schaalbare software-excellentie voorzien.",
     ours: "ONZE",
-    portfolio: "PORTFOLIO",
+    portfolio: "Portfolio",
     WordPressDevelopment: "WordPress Ontwikkeling",
     SEOServices: "SEO Diensten",
     approach: "Onze strategische aanpak voor het succes van uw projecten",
