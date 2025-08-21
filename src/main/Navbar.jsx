@@ -262,10 +262,9 @@ const Navbar = () => {
                     {translations[language].overOns}
                   </Link>
                 </li>
-                <li className="border-b-2">
+                <li>
                   <DropdownMenu
                     mobile={true}
-                    textColorClass={getMobileLinkClasses(URLS.SERVICES)}
                     onCloseMobileMenu={toggleMobileMenu}
                   />
                 </li>
@@ -279,13 +278,13 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="border-b-2">
-                  <a
-                    href="#"
-                    className="px-2 py-2 block w-full text-start text-gray-800 hover:text-blue-600"
+                  <Link
+                    to={URLS.PORTFOLIO}
+                    className={getMobileLinkClasses(URLS.PORTFOLIO)}
                     onClick={toggleMobileMenu}
                   >
                     {translations[language].portfolio}
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex justify-start mt-auto pt-4">
                   <div className="flex items-center space-x-2 rounded-full">

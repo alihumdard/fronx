@@ -50,7 +50,7 @@ import {
   FaWrench
 } from "react-icons/fa";
 
-const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
+const DropdownMenu = ({ mobile, textColorClass, linkHoverClass, onCloseMobileMenu }) => {
   const { language } = useLanguage();
   const [isMainDropdownOpen, setIsMainDropdownOpen] = useState(false);
   const [openCategoryIndex, setOpenCategoryIndex] = useState(null);
@@ -62,10 +62,18 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
     }
   }, [mobile]);
 
-  const toggleMainDropdown = () => {
+  const toggleMainDropdown = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     setIsMainDropdownOpen(!isMainDropdownOpen);
     if (isMainDropdownOpen) {
       setOpenCategoryIndex(null);
+    }
+  };
+
+  const handleServiceNavigation = () => {
+    if (mobile && onCloseMobileMenu) {
+      onCloseMobileMenu();
     }
   };
 
@@ -255,30 +263,73 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
     ]
   };
 
+  // Helper function to get mobile text classes for services link
+  const getMobileServicesLinkClasses = () => {
+    const currentPath = window.location.pathname;
+    const isActive = currentPath === URLS.SERVICES;
+    return `flex-1 font-semibold whitespace-nowrap tracking-wide block text-left px-2 py-2 ${
+      isActive
+        ? "bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-transparent bg-clip-text font-medium"
+        : "text-gray-800 hover:text-blue-600"
+    }`;
+  };
+
   return (
     <li
       className="relative w-full lg:w-auto"
       onMouseEnter={mobile ? undefined : () => setIsMainDropdownOpen(true)}
       onMouseLeave={mobile ? undefined : () => setIsMainDropdownOpen(false)}
     >
-      {/* Main Menu Link */}
-      <Link
-        to={URLS.SERVICES}
-        onClick={toggleMainDropdown}
-        className={`inline-flex items-center font-semibold whitespace-nowrap tracking-wide ${mobile ? "block w-full text-left" : ""} ${textColorClass} ${linkHoverClass}`}
-        aria-expanded={isMainDropdownOpen ? "true" : "false"}
-      >
-        {translations[language].services}
-        <svg
-          className={`ml-1 h-4 w-4 transform transition-transform duration-200 ${isMainDropdownOpen && mobile ? "rotate-180" : "rotate-0"}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+      {/* Main Menu Link - Desktop and Mobile handled differently */}
+      {mobile ? (
+        // Mobile version with separate text and icon
+        <div className="flex items-center justify-between w-full border-b-2">
+          <Link
+            to={URLS.SERVICES}
+            onClick={handleServiceNavigation}
+            className={getMobileServicesLinkClasses()}
+          >
+            {translations[language].services}
+          </Link>
+          <button
+            onClick={toggleMainDropdown}
+            className="p-2 ml-2 text-gray-800 hover:text-blue-600"
+            aria-expanded={isMainDropdownOpen ? "true" : "false"}
+          >
+            <svg
+              className={`h-4 w-4 transform transition-transform duration-200 ${isMainDropdownOpen ? "rotate-180" : "rotate-0"}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2}
+                d={isMainDropdownOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} 
+              />
+            </svg>
+          </button>
+        </div>
+      ) : (
+        // Desktop version (original behavior)
+        <Link
+          to={URLS.SERVICES}
+          className={`inline-flex items-center font-semibold whitespace-nowrap tracking-wide ${textColorClass} ${linkHoverClass}`}
+          aria-expanded={isMainDropdownOpen ? "true" : "false"}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-            d={isMainDropdownOpen && mobile ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />
-        </svg>
-      </Link>
+          {translations[language].services}
+          <svg
+            className={`ml-1 h-4 w-4 transform transition-transform duration-200 rotate-0`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+              d="M19 9l-7 7-7-7" />
+          </svg>
+        </Link>
+      )}
 
       {/* Dropdown */}
       <AnimatePresence>
@@ -302,6 +353,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                   >
                     <Link
                       to={category.url}
+                      onClick={mobile ? handleServiceNavigation : undefined}
                       className="text-lg font-bold text-gray-800 tracking-wide uppercase hover:text-gray-600 transition-colors duration-200"
                     >
                       {category.title}
@@ -326,6 +378,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                           <li key={itemIndex}>
                             <Link 
                               to={`${item.url}${item.hash}`}
+                              onClick={mobile ? handleServiceNavigation : undefined}
                               className="group flex items-start space-x-4 px-3 rounded-xl hover:bg-gray-50 transition-all duration-200 w-full text-left"
                             >
                               <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-r ${item.color} text-white shadow-sm group-hover:shadow-md transition-shadow duration-200`}>
@@ -390,6 +443,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                       <div key={itemIndex} className="flex-1 min-w-[200px]">
                         <Link 
                           to={`${item.url}${item.hash}`}
+                          onClick={mobile ? handleServiceNavigation : undefined}
                           className="group flex px-2 items-start space-x-4 rounded-xl hover:bg-gray-50 transition-all duration-200 w-full text-left"
                         >
                           <div
