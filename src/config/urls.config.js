@@ -22,7 +22,8 @@ const URLS = {
   },
 
   PORTOLIO_DETAIL: {
-    WEB_1: "/webdevelopment1"
+    WEB_1: "/webdevelopment1",
+    APP_1: "/appdevelopment"
   }
 };
 

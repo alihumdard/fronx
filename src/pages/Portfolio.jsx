@@ -7,6 +7,12 @@ import PageWrapper from "../main/Pagewraper";
 import Footer from "../main/Footer";
 import { Link } from "react-router-dom";
 import URLS from "../config/urls.config";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
 
 // Animation Variants
 const containerVariant = {
@@ -37,6 +43,8 @@ const Portfolio = () => {
     { id: "commerce", label: "Woo Commerce / E Commerce " },
     { id: "design", label: "UI/UX Design" },
     { id: "consulting", label: "Digital Marketing" },
+    { id: "dash", label: "Dasgboard" },
+    { id: "logo", label: "Logo Design" },
   ];
 
   const projects = [
@@ -45,6 +53,7 @@ const Portfolio = () => {
       website: "Website Development",
       title:
         "Empowering young minds with innovative learning experiences for a brighter future ahead",
+      para: "Kidz Calendar website ",
       category: "web",
       image: "/images/w1.png",
       url: URLS.PORTOLIO_DETAIL.WEB_1,
@@ -54,24 +63,189 @@ const Portfolio = () => {
       website: "Website Development",
       title:
         "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Mobile APP - Design System - UX/UI Design - User Testing - FullStack Dev",
       category: "web",
       image: "/images/w2.png",
+      url: URLS.PORTOLIO_DETAIL.WEB_1,
+
     },
     {
       id: 3,
       website: "Website Development",
       title:
         "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Mobile APP - Design System - UX/UI Design - User Testing - FullStack Dev",
       category: "web",
       image: "/images/w3.png",
+      url: URLS.PORTOLIO_DETAIL.WEB_1,
+
     },
     {
       id: 4,
       website: "Website Development",
       title:
         "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Mobile APP - Design System - UX/UI Design - User Testing - FullStack Dev",
       category: "web",
       image: "/images/w4.png",
+      url: URLS.PORTOLIO_DETAIL.WEB_1,
+
+    },
+    {
+      id: 5,
+      website: "Website Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Mobile APP - Design System - UX/UI Design - User Testing - FullStack Dev",
+
+      category: "web",
+      image: "/images/w5.png",
+      url: URLS.PORTOLIO_DETAIL.WEB_1,
+
+    },
+    {
+      id: 6,
+      website: "Website Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Mobile APP - Design System - UX/UI Design - User Testing - FullStack Dev",
+
+      category: "web",
+      image: "/images/w6.png",
+      url: URLS.PORTOLIO_DETAIL.WEB_1,
+
+    },
+    {
+      id: 7,
+      website: "Website Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Mobile APP - Design System - UX/UI Design - User Testing - FullStack Dev",
+      category: "web",
+      image: "/images/w7.png",
+      url: URLS.PORTOLIO_DETAIL.WEB_1,
+    },
+
+    {
+      id: 8,
+      website: "Mobile App Development",
+      title:
+        "Empowering young minds with innovative learning experiences for a brighter future ahead",
+      para: "Food Ordering Application",
+      category: "mobile",
+      image: "/images/m1.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+    },
+    {
+      id: 9,
+      website: "Mobile App Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Service Booking Application",
+      category: "mobile",
+      image: "/images/m2.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 10,
+      website: "Mobile App Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "AgriCo Application",
+      category: "mobile",
+      image: "/images/m3.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 11,
+      website: "Mobile App Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Babysitter Booking Application",
+      category: "mobile",
+      image: "/images/m4.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    // wordpress
+     {
+      id: 12,
+      website: "WordPress Development",
+      title:
+        "Empowering young minds with innovative learning experiences for a brighter future ahead",
+      para: "Oracle Force ",
+      category: "word",
+      image: "/images/wp1.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+     {
+      id: 13,
+      website: "WordPress Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Mew School of Leadership",
+      category: "word",
+      image: "/images/wp2.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+      {
+      id: 14,
+      website: "WordPress Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "BiD Lock",
+      category: "word",
+      image: "/images/wp3.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+     {
+      id: 14,
+      website: "WordPress Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "BiD Lock",
+      category: "word",
+      image: "/images/wp4.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+     {
+      id: 15,
+      website: "WordPress Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "BiD Lock",
+      category: "word",
+      image: "/images/wp5.jpg",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+     {
+      id: 16,
+      website: "WordPress Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "BiD Lock",
+      category: "word",
+      image: "/images/wp6.jpg",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 17,
+      website: "WordPress Development",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "BiD Lock",
+      category: "word",
+      image: "/images/wp7.jpg",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
     },
   ];
 
@@ -161,24 +335,45 @@ const Portfolio = () => {
 
       {/* Portfolio Section */}
       <div className="min-h-screen py-10 sm:py-20">
-        {/* Nav Tabs (Desktop) */}
+        {/* Nav Tabs (Desktop with Swiper + Custom Arrows) */}
         <nav className="hidden sm:block bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="flex flex-wrap justify-center gap-3 py-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={10}
+              slidesPerView="auto"
+              navigation={{
+                nextEl: ".custom-next",
+                prevEl: ".custom-prev",
+              }}
+              className="py-4"
+            >
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  className={`${
-                    activeNav === item.id
-                      ? "bg-gradient-to-r from-[#1A61EA] to-[#6931CF] text-white"
-                      : "text-gray-600 hover:text-gray-900 bg-slate-50"
-                  } px-4 py-2 rounded-full text-sm md:text-base font-medium transition-colors duration-200`}
-                >
-                  {item.label}
-                </button>
+                <SwiperSlide key={item.id} className="!w-auto">
+                  <button
+                    onClick={() => handleNavClick(item.id)}
+                    className={`${activeNav === item.id
+                        ? "bg-gradient-to-r from-[#1A61EA] to-[#6931CF] text-white"
+                        : "text-gray-600 hover:text-gray-900 bg-slate-50"
+                      } px-4 py-2 rounded-full text-sm md:text-base font-medium transition-colors duration-200`}
+                  >
+                    {item.label}
+                  </button>
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
+
+            {/* Custom Nav Buttons */}
+            <button className="custom-prev absolute -left-5 top-1/2 z-50 -translate-y-1/2 
+      border bg-white p-2 rounded-full shadow-md 
+      hover:scale-110 transition">
+              <FaChevronLeft />
+            </button>
+            <button className="custom-next absolute -right-5 top-1/2 z-50 -translate-y-1/2 
+      border bg-white p-2 rounded-full shadow-md 
+      hover:scale-110 transition">
+              <FaChevronRight />
+            </button>
           </div>
         </nav>
 
@@ -189,11 +384,10 @@ const Portfolio = () => {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`${
-                  activeNav === item.id
-                    ? "bg-gradient-to-r from-[#1A61EA] to-[#6931CF] text-white"
-                    : "text-gray-600 hover:text-gray-900"
-                } whitespace-nowrap px-3 py-1.5 rounded-full text-sm font-medium transition-colors duration-200`}
+                className={`${activeNav === item.id
+                  ? "bg-gradient-to-r from-[#1A61EA] to-[#6931CF] text-white"
+                  : "text-gray-600 hover:text-gray-900"
+                  } whitespace-nowrap px-3 py-1.5 rounded-full text-sm font-medium transition-colors duration-200`}
               >
                 {item.label}
               </button>
@@ -207,7 +401,7 @@ const Portfolio = () => {
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white flex flex-col md:flex-row rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition duration-300"
+                className="bg-white flex flex-col md:flex-row rounded-xl overflow-hidden hover:shadow-lg transition duration-300"
               >
                 {/* Image */}
                 <div className="md:w-2/5 h-52 sm:h-64 md:h-auto overflow-hidden">
@@ -227,6 +421,7 @@ const Portfolio = () => {
                   <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">
                     {project.title}
                   </h3>
+                  <p className="text-gray-500 pb-5">{project.para}</p>
 
                   {project.url && (
                     <Link
@@ -243,7 +438,6 @@ const Portfolio = () => {
         </main>
       </div>
 
-      <Footer />
     </div>
   );
 };

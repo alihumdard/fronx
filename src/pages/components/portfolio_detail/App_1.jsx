@@ -39,7 +39,7 @@ export const staggerContainer = {
     },
 };
 
-const web1 = () => {
+const App1 = () => {
     const { language, toggleLanguage } = useLanguage();
     const [expandedCard, setExpandedCard] = useState(null);
 
@@ -127,7 +127,7 @@ const web1 = () => {
                                         to="/"
                                         className="text-blue-600 hover:text-blue-600 transition-colors"
                                     >
-                                        website development
+                                     Mobile App Development
                                     </Link>
                                 </div>
                             </motion.div>
@@ -155,7 +155,7 @@ const web1 = () => {
 
 
                 <div className="max-w-full mx-auto pt-14 flex justify-center">
-                    <img src="/images/web1.jpg" alt="" className="rounded-lg h-96 w-[80%] shadow-md" />
+                    <img src="/images/app_detail.jpg" alt="" className="rounded-lg h-96 w-[80%] shadow-md" />
                 </div>
 
 
@@ -192,7 +192,7 @@ const web1 = () => {
                     {/* Right Image */}
                     <div className="flex justify-center">
                         <img
-                            src="/images/web2.jpg"
+                            src="/images/app_detail_1.jpg"
                             alt="Challenge"
                             className="rounded-xl shadow-lg w-full max-w-md"
                         />
@@ -204,7 +204,7 @@ const web1 = () => {
                     {/* Left Content */}
                     <div className="flex justify-center">
                         <img
-                            src="/images/web3.jpg"
+                            src="/images/app_detail_2.jpg"
                             alt="Challenge"
                             className="rounded-xl shadow-lg w-full max-w-md"
                         />
@@ -297,4 +297,4 @@ const web1 = () => {
     );
 };
 
-export default web1;
+export default App1;
