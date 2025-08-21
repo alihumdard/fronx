@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PageWrapper from '../../main/Pagewraper';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import translations from '../../translations';
-import { LanguageProvider, useLanguage } from '../../LanguageContext';
+import { useLanguage } from '../../LanguageContext';
 
 const ContactForm = () => {
+  const navigate = useNavigate();
   const { language } = useLanguage();
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -15,6 +18,7 @@ const ContactForm = () => {
     iWouldLike: '',
     yourMessage: ''
   });
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
@@ -35,8 +39,9 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     setIsSubmitting(true);
-    setSubmitStatus('');
+    setSubmitStatus('submitting');
 
     try {
       // Web3Forms API call
@@ -51,14 +56,15 @@ const ContactForm = () => {
           name: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
           phone: formData.mobileNumber,
-          website: formData.currentWebsite,
+          website: formData.currentWebsite || 'Not provided',
           service: formData.iWouldLike,
           message: formData.yourMessage,
-          subject: `New Lead from Website - ${formData.firstName} ${formData.lastName}`,
-          from_name: 'Fronx Solutions Website',
+          subject: `New Lead from Website Contact Form - ${formData.firstName} ${formData.lastName}`,
+          from_name: 'Fronx Solutions Website Contact Form',
           to_email: 'info@fronxsolutions.be',
           botcheck: false, 
-          redirect: false
+          redirect: false,
+          form_source: 'Homepage Contact Form'
         })
       });
 
@@ -66,7 +72,11 @@ const ContactForm = () => {
 
       if (result.success) {
         setSubmitStatus('success');
-        // Form ko reset kar dein
+        
+        // Get user's full name for redirect
+        const userName = `${formData.firstName} ${formData.lastName}`.trim();
+        
+        // Reset form
         setFormData({
           firstName: '',
           lastName: '',
@@ -76,6 +86,12 @@ const ContactForm = () => {
           iWouldLike: '',
           yourMessage: ''
         });
+
+        // Redirect to thank you page after 1.5 seconds
+        setTimeout(() => {
+          navigate(`/thank-you?type=contact&name=${encodeURIComponent(userName)}`);
+        }, 1500);
+
       } else {
         setSubmitStatus('error');
         console.error('Web3Forms Error:', result.message);
@@ -176,15 +192,16 @@ const ContactForm = () => {
                 <select
                   value={formData.iWouldLike}
                   onChange={handleSelectChange}
+                  required
                   className="w-full px-5 py-3 bg-white bg-opacity-5 border border-gray-600 rounded-md text-white focus:ring-[#6931CF] focus:border-[#6931CF] outline-none transition-all"
                 >
                   <option value="" disabled className="bg-gray-800 text-gray-400">
                     {translations[language].subject1}
                   </option>
-                  <option value="general" className="bg-gray-800 text-white">{translations[language].subject2}</option>
-                  <option value="support" className="bg-gray-800 text-white">{translations[language].subject3}</option>
-                  <option value="feedback" className="bg-gray-800 text-white">{translations[language].subject4}</option>
-                  <option value="quote" className="bg-gray-800 text-white">{translations[language].subject5}</option>
+                  <option value="website" className="bg-gray-800 text-white">{translations[language].subject2}</option>
+                  <option value="ecommerce" className="bg-gray-800 text-white">{translations[language].subject3}</option>
+                  <option value="mobile-app" className="bg-gray-800 text-white">{translations[language].subject4}</option>
+                  <option value="custom-software" className="bg-gray-800 text-white">{translations[language].subject5}</option>
                   <option value="other" className="bg-gray-800 text-white">{translations[language].subject6}</option>
                 </select>
               </div>
@@ -204,14 +221,28 @@ const ContactForm = () => {
               </div>
 
               {/* Status Messages */}
+              {submitStatus === 'submitting' && (
+                <div className="sm:col-span-2 bg-blue-600 bg-opacity-20 border border-blue-400 text-blue-300 px-4 py-3 rounded-md flex items-center">
+                  <span className="mr-2">📤</span>
+                  <div>
+                    <p className="font-semibold">Bericht versturen...</p>
+                    <p className="text-sm">U wordt doorgestuurd naar de bedankpagina...</p>
+                  </div>
+                </div>
+              )}
               {submitStatus === 'success' && (
-                <div className="sm:col-span-2 bg-green-600 bg-opacity-20 border border-green-400 text-green-300 px-4 py-2 rounded-md">
-                  ✅ Message sent successfully! We'll get back to you soon.
+                <div className="sm:col-span-2 bg-green-600 bg-opacity-20 border border-green-400 text-green-300 px-4 py-3 rounded-md flex items-center">
+                  <span className="mr-2">✅</span>
+                  <div>
+                    <p className="font-semibold">Bericht succesvol verzonden!</p>
+                    <p className="text-sm">U wordt doorgestuurd...</p>
+                  </div>
                 </div>
               )}
               {submitStatus === 'error' && (
                 <div className="sm:col-span-2 bg-red-600 bg-opacity-20 border border-red-400 text-red-300 px-4 py-2 rounded-md">
-                  ❌ Failed to send message. Please try again or contact us directly.
+                  <span className="mr-2">❌</span>
+                  Er is een fout opgetreden bij het verzenden. Probeer het opnieuw of neem direct contact met ons op.
                 </div>
               )}
 
@@ -220,9 +251,21 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-block mt-10 self-start text-lg hover:opacity-90 transition-opacity btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-3 rounded-lg font-semibold shadow w-full disabled:opacity-50"
+                  className={`inline-block mt-6 self-start text-lg hover:opacity-90 transition-opacity btn-animate bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-white px-5 py-3 rounded-lg font-semibold shadow w-full disabled:opacity-50 disabled:cursor-not-allowed ${
+                    isSubmitting ? 'animate-pulse' : ''
+                  }`}
                 >
-                  {isSubmitting ? 'Sending...' : translations[language].submit}
+                  {isSubmitting ? (
+                    <div className="flex items-center justify-center">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Versturen...
+                    </div>
+                  ) : (
+                    translations[language].submit
+                  )}
                 </button>
               </div>
             </form>

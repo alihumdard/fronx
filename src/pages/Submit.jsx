@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 import Navbar from "../main/Navbar";
@@ -9,7 +10,7 @@ import Footer from "../main/Footer";
 import translations from "../translations";
 import { useLanguage } from "../LanguageContext";
 
-// Animation Variants (kept as is, assuming they are correct)
+// Animation Variants
 const containerVariant = {
   hidden: {},
   visible: {
@@ -39,6 +40,7 @@ export const staggerContainer = {
 };
 
 const Submit = () => {
+  const navigate = useNavigate();
   const { language } = useLanguage();
   const [expandedCard, setExpandedCard] = useState(null);
   
@@ -58,7 +60,6 @@ const Submit = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const toggleExpand = (id) => {
     setExpandedCard(expandedCard === id ? null : id);
@@ -85,40 +86,85 @@ const Submit = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
     // Check if privacy policy is agreed before submission
     if (!formData.agreeToPolicy) {
-      e.preventDefault();
       setSubmitStatus('policy_error');
       return;
     }
 
-    // Show submitting status and success modal after form submission
+    // Show submitting status
     setIsSubmitting(true);
     setSubmitStatus('submitting');
     
-    // Show success modal after a brief delay (simulating form submission)
-    setTimeout(() => {
-      setShowSuccessModal(true);
-      setIsSubmitting(false);
-      // Reset form
-      setFormData({
-        firstName: '',
-        lastName: '',
-        businessName: '',
-        phoneNumber: '',
-        email: '',
-        subject: '',
-        serviceType: '',
-        message: '',
-        file: null,
-        agreeToPolicy: false
+    try {
+      // Prepare form data for submission
+      const submitData = new FormData();
+      submitData.append('_subject', '🚀 New Project Submission from Fronx Solutions Website');
+      submitData.append('_template', 'table');
+      submitData.append('_captcha', 'false');
+      submitData.append('firstName', formData.firstName);
+      submitData.append('lastName', formData.lastName);
+      submitData.append('businessName', formData.businessName);
+      submitData.append('phoneNumber', formData.phoneNumber);
+      submitData.append('email', formData.email);
+      submitData.append('subject', formData.subject);
+      submitData.append('serviceType', formData.serviceType);
+      submitData.append('message', formData.message);
+      
+      if (formData.file) {
+        submitData.append('attachment', formData.file);
+      }
+
+      // Submit to FormSubmit.co
+      const response = await fetch('https://formsubmit.co/info@fronxsolutions.be', {
+        method: 'POST',
+        body: submitData
       });
-    }, 1500);
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        
+        // Get user's full name for redirect
+        const userName = `${formData.firstName} ${formData.lastName}`.trim();
+        
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          businessName: '',
+          phoneNumber: '',
+          email: '',
+          subject: '',
+          serviceType: '',
+          message: '',
+          file: null,
+          agreeToPolicy: false
+        });
+
+        // Redirect to thank you page after 1.5 seconds
+        setTimeout(() => {
+          navigate(`/thank-you?type=quote&name=${encodeURIComponent(userName)}`);
+        }, 1500);
+        
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitStatus('error');
+    }
+    
+    setIsSubmitting(false);
   };
 
   return (
     <>
+      <title>RFI/RFP Submission - Fronx Solutions</title>
+      <meta name="description" content="Submit your project requirements to Fronx Solutions. We provide custom web development, mobile apps, and digital solutions." />
+      
       <div className="relative w-full">
         {/* Navbar */}
         <Navbar />
@@ -141,8 +187,8 @@ const Submit = () => {
             {/* Yellow Glow Circle */}
             <span
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-      w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-[#FFC003] opacity-10 blur-3xl rounded-full
-      z-10 pointer-events-none"
+              w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-[#FFC003] opacity-10 blur-3xl rounded-full
+              z-10 pointer-events-none"
             />
 
             {/* Animated Content */}
@@ -159,11 +205,7 @@ const Submit = () => {
                 {translations[language].submit1}
               </motion.h1>
 
-              <div
-                className="
-                  flex gap-5 justify-center
-                "
-              >
+              <div className="flex gap-5 justify-center">
                 <Link
                   to="/"
                   className="text-orange-400 hover:text-orange-300 transition-colors"
@@ -171,9 +213,9 @@ const Submit = () => {
                   {translations[language].home}
                 </Link>
                 <span className="text-orange-400">››</span>
-                <Link className="text-blue-400 hover:text-blue-300 transition-colors">
+                <span className="text-blue-400">
                   {translations[language].submit1}
-                </Link>
+                </span>
               </div>
             </motion.div>
           </PageWrapper>
@@ -181,15 +223,15 @@ const Submit = () => {
 
         <div className="bg-white py-20 px-4 sm:px-6 lg:px-44">
           {/* Header Section */}
-          <div className="max-w-4xl ">
-            <h1 className="text-5xl font-extrabold text-gray-700 bg-clip-text  mb-4">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl font-extrabold text-gray-700 bg-clip-text mb-4">
               {translations[language].submit2}
             </h1>
             <p className="text-lg text-gray-600 mb-6">
-             {translations[language].submit3}
+              {translations[language].submit3}
             </p>
             <button className="bg-purple-600 btn-animate hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold shadow transition duration-300">
-             {translations[language].submit4}
+              {translations[language].submit4}
             </button>
           </div>
 
@@ -198,10 +240,10 @@ const Submit = () => {
             <div className="mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="text-gray-700 space-y-6 text-lg">
                 <p>
-               {translations[language].submit5} <span className="font-semibold text-purple-600">Fronx Solutions</span> {translations[language].submit6}
+                  {translations[language].submit5} <span className="font-semibold text-purple-600">Fronx Solutions</span> {translations[language].submit6}
                 </p>
                 <p>
-                 {translations[language].submit7}
+                  {translations[language].submit7}
                 </p>
               </div>
               <div>
@@ -216,23 +258,13 @@ const Submit = () => {
             {/* Form Section */}
             <div className="mt-24 bg-gray-50 p-10 rounded-2xl max-w-4xl mx-auto shadow-xl">
               <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
-              {translations[language].submit8}
+                {translations[language].submit8}
               </h2>
               
-              {/* FORMSUBMIT.CO FORM - Direct Submission (No CORS Issues) */}
               <form 
                 onSubmit={handleSubmit} 
-                action="https://formsubmit.co/info@fronxsolutions.be"
-                method="POST"
-                encType="multipart/form-data"
                 className="space-y-6"
               >
-                {/* Formsubmit Configuration - Stay on same page */}
-                <input type="hidden" name="_subject" value="🚀 New Project Submission from Fronx Solutions Website" />
-                <input type="hidden" name="_template" value="table" />
-                {/* <input type="hidden" name="_next" value={'https://fronxsolutions.be'} /> */}
-                <input type="hidden" name="_captcha" value="false" />
-                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <input
                     type="text"
@@ -303,22 +335,22 @@ const Submit = () => {
                     <option value="" disabled>
                       {translations[language].subject1}
                     </option>
-                    <option value="general">{translations[language].subject2}</option>
-                    <option value="support">{translations[language].subject3}</option>
-                    <option value="feedback">{translations[language].subject4}</option>
-                    <option value="quote">{translations[language].subject5}</option>
+                    <option value="website">{translations[language].subject2}</option>
+                    <option value="ecommerce">{translations[language].subject3}</option>
+                    <option value="mobile-app">{translations[language].subject4}</option>
+                    <option value="custom-software">{translations[language].subject5}</option>
                     <option value="other">{translations[language].subject6}</option>
                   </select>
                 </div>
                 
-                {/* FILE UPLOAD - NOW WORKING WITH FORMSUBMIT! */}
+                {/* FILE UPLOAD */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     {translations[language].upload}
                   </label>
                   <input
                     type="file"
-                    name="attachment"
+                    name="file"
                     onChange={handleInputChange}
                     accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.zip,.ppt,.pptx,.xls,.xlsx"
                     className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:font-semibold file:bg-purple-100 file:text-purple-700 hover:file:bg-purple-200 transition"
@@ -354,30 +386,62 @@ const Submit = () => {
                   <p className="text-sm text-gray-600">
                     {translations[language].sub}{" "}
                     <a href="#" className="underline text-purple-600 hover:text-purple-800">
-                      {translations[language].sub1}
+                      {translations[language].sub2}
                     </a>{" "}
-                    {translations[language].sub2}
+                    {translations[language].sub3}
                   </p>
                 </div>
 
                 {/* Status Messages */}
                 {submitStatus === 'submitting' && (
-                  <div className="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded">
-                    📤 Submitting your project... You'll be redirected shortly.
+                  <div className="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded flex items-center">
+                    <span className="mr-2">📤</span>
+                    <div>
+                      <p className="font-semibold">Project verzenden...</p>
+                      <p className="text-sm">U wordt doorgestuurd naar de bedankpagina...</p>
+                    </div>
+                  </div>
+                )}
+                {submitStatus === 'success' && (
+                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded flex items-center">
+                    <span className="mr-2">✅</span>
+                    <div>
+                      <p className="font-semibold">Project succesvol verzonden!</p>
+                      <p className="text-sm">U wordt doorgestuurd...</p>
+                    </div>
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                    <span className="mr-2">❌</span>
+                    Er is een fout opgetreden bij het verzenden. Probeer het opnieuw of neem direct contact met ons op.
                   </div>
                 )}
                 {submitStatus === 'policy_error' && (
                   <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded">
-                    ⚠️ Please agree to our privacy policy to continue.
+                    <span className="mr-2">⚠️</span>
+                    Ga akkoord met ons privacybeleid om verder te gaan.
                   </div>
                 )}
                 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full btn-animate bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-semibold transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className={`w-full btn-animate bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-semibold transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
+                    isSubmitting ? 'animate-pulse' : ''
+                  }`}
                 >
-                  {isSubmitting ? 'Sending Your Project...' : translations[language].send}
+                  {isSubmitting ? (
+                    <div className="flex items-center justify-center">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Project versturen...
+                    </div>
+                  ) : (
+                    translations[language].send
+                  )}
                 </button>
               </form>
             </div>
@@ -386,47 +450,6 @@ const Submit = () => {
 
         <Footer />
       </div>
-
-      {/* Success Modal */}
-      {showSuccessModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-2xl p-8 max-w-md mx-4 text-center shadow-2xl">
-            <div className="mb-6">
-              <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                {translations[language].submit2 || "Project Submitted Successfully!"}
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Thank you for your submission! We've received your project details and will get back to you within 24 hours.
-              </p>
-              <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
-                <p className="text-green-800 text-sm">
-                  📧 Confirmation email sent to: <strong>{formData.email || 'your email'}</strong>
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex gap-3 justify-center">
-              <button
-                onClick={() => setShowSuccessModal(false)}
-                className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold transition duration-300"
-              >
-                Continue
-              </button>
-              <Link
-                to="/"
-                className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-semibold transition duration-300"
-              >
-                Go to Home
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 };
