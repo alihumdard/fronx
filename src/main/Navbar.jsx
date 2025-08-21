@@ -151,13 +151,13 @@ const Navbar = () => {
                     {translations[language].blog}
                   </Link>
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className={`px-2 py-1 transition-all duration-300 ease-in-out ${getDesktopTextColor()} hover:text-blue-500 hover-underline-animation`}
+                 <li>
+                  <Link
+                  to={URLS.PORTFOLIO}
+                    className={getDesktopLinkClasses(URLS.PORTFOLIO)}
                   >
                     {translations[language].portfolio}
-                  </a>
+                  </Link>
                 </li>
                 <div className="flex items-center space-x-2 rounded-full">
                   <span
