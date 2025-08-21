@@ -461,7 +461,7 @@ const uxui = () => {
                         whileInView="visible"
                         viewport={{ once: true }}
                         custom={index}
-                      >
+                      > 
                         <h2 className="text-xl font-semibold text-white mb-4">
                           {feature.title}
                         </h2>
