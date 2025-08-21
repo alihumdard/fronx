@@ -7,7 +7,7 @@ import PageWrapper from "../main/Pagewraper";
 import Footer from "../main/Footer";
 import translations from "../translations";
 import { useLanguage } from "../LanguageContext";
-
+import { useNavigate } from "react-router-dom";
 // Animation Variants
 const containerVariant = {
   hidden: {},
@@ -38,6 +38,8 @@ export const staggerContainer = {
 };
 
 const Contact = () => {
+
+  const navigate = useNavigate();
   const { language, toggleLanguage } = useLanguage();
   const [expandedCard, setExpandedCard] = useState(null);
   
@@ -65,59 +67,123 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('');
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   setSubmitStatus('');
 
-    try {
-      // Web3Forms API call
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          access_key: '92de9d3b-4e9e-475d-b728-dbf336d29359', // Replace with your access key
-          name: `${formData.firstName} ${formData.lastName}`,
-          email: formData.email,
-          phone: formData.mobile,
-          subject: formData.subject,
-          message: formData.message,
-          subject: `Fronx Solution Contact Form  ${formData.subject} - ${formData.firstName} ${formData.lastName}`,
-          from_name: 'Fronx Solutions Contact ',
-          to_email: 'info@fronxsolutions.be',
-          botcheck: false,
-          redirect: false,
-          form_source: 'Contact Page Form'
-        })
+  //   try {
+  //     // Web3Forms API call
+  //     const response = await fetch('https://api.web3forms.com/submit', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Accept': 'application/json'
+  //       },
+  //       body: JSON.stringify({
+  //         access_key: '92de9d3b-4e9e-475d-b728-dbf336d29359', // Replace with your access key
+  //         name: `${formData.firstName} ${formData.lastName}`,
+  //         email: formData.email,
+  //         phone: formData.mobile,
+  //         subject: formData.subject,
+  //         message: formData.message,
+  //         subject: `Fronx Solution Contact Form  ${formData.subject} - ${formData.firstName} ${formData.lastName}`,
+  //         from_name: 'Fronx Solutions Contact ',
+  //         to_email: 'info@fronxsolutions.be',
+  //         botcheck: false,
+  //         redirect: false,
+  //         form_source: 'Contact Page Form'
+  //       })
+  //     });
+
+  //     const result = await response.json();
+
+  //     if (result.success) {
+  //       setSubmitStatus('success');
+  //       // Reset form
+  //       setFormData({
+  //         firstName: '',
+  //         lastName: '',
+  //         email: '',
+  //         mobile: '',
+  //         subject: '',
+  //         message: ''
+  //       });
+  //     } else {
+  //       setSubmitStatus('error');
+  //       console.error('Web3Forms Error:', result.message);
+  //     }
+  //   } catch (error) {
+  //     console.error('Email sending error:', error);
+  //     setSubmitStatus('error');
+  //   }
+
+  //   setIsSubmitting(false);
+  // };
+
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus('');
+
+  try {
+    // Web3Forms API call
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        access_key: '92de9d3b-4e9e-475d-b728-dbf336d29359', // Replace with your access key
+        name: `${formData.firstName} ${formData.lastName}`,
+        email: formData.email,
+        phone: formData.mobile,
+        subject: formData.subject,
+        message: formData.message,
+        subject: `Fronx Solution Contact Form ${formData.subject} - ${formData.firstName} ${formData.lastName}`,
+        from_name: 'Fronx Solutions Contact',
+        to_email: 'info@fronxsolutions.be',
+        botcheck: false,
+        redirect: false,
+        form_source: 'Contact Page Form'
+      })
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      setSubmitStatus('success');
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        mobile: '',
+        subject: '',
+        message: ''
       });
 
-      const result = await response.json();
+      // Redirect to thank you page with user's name after 1.5 seconds
+      const userName = `${formData.firstName} ${formData.lastName}`.trim();
+      setTimeout(() => {
+        navigate(`/thank-you?type=contact&name=${encodeURIComponent(userName)}`);
+      }, 1500);
 
-      if (result.success) {
-        setSubmitStatus('success');
-        // Reset form
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          mobile: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        setSubmitStatus('error');
-        console.error('Web3Forms Error:', result.message);
-      }
-    } catch (error) {
-      console.error('Email sending error:', error);
+    } else {
       setSubmitStatus('error');
+      console.error('Web3Forms Error:', result.message);
     }
+  } catch (error) {
+    console.error('Email sending error:', error);
+    setSubmitStatus('error');
+  }
 
-    setIsSubmitting(false);
-  };
+  setIsSubmitting(false);
+};
+
 
   return (
     <>

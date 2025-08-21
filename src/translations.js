@@ -882,7 +882,146 @@ const translations = {
       "De mogelijkheden van ChatGPT begrijpen – Uw stijl definiëren",
     blogDetail28: "Uw lezers begrijpen",
     blogDetail29: "Creëer kwaliteitsblogs aangedreven door AI die opvallen",
+    // Dutch (en) translations mein add karein:
+    thankyou_page_title: "Bedankt",
+    thankyou_page_description: "Bedankt voor uw vertrouwen in Fronx Solutions. We nemen spoedig contact met u op.",
+
+    // General Thank You
+    thankyou_title: "Bedankt!",
+    thankyou_subtitle: "Bedankt voor uw interesse in Fronx Solutions.",
+    thankyou_description: "We waarderen uw vertrouwen in ons en kijken ernaar uit om met u samen te werken.",
+    thankyou_nextsteps: "Ons team zal spoedig contact met u opnemen.",
+
+    // Contact Form
+    thankyou_contact_title: "Bedankt voor uw bericht!",
+    thankyou_contact_subtitle: "We hebben uw contactverzoek ontvangen.",
+    thankyou_contact_description: "Ons team zal binnen 24 uur contact met u opnemen om uw vragen te beantwoorden.",
+    thankyou_contact_nextsteps: "Verwacht binnen 24 uur een reactie van ons team.",
+
+    // Quote Request
+    thankyou_quote_title: "Offerteverzoek Ontvangen!",
+    thankyou_quote_subtitle: "Uw projectdetails zijn bij ons aangekomen.",
+    thankyou_quote_description: "We gaan uw vereisten analyseren en sturen u binnen 48 uur een gedetailleerde offerte.",
+    thankyou_quote_nextsteps: "Binnen 48 uur ontvangt u een uitgebreide offerte.",
+
+    // Consultation
+    thankyou_consultation_title: "Consultatie Geboekt!",
+    thankyou_consultation_subtitle: "Uw gratis consultatie is ingepland.",
+    thankyou_consultation_description: "We nemen contact met u op om de consultatie te bevestigen en voor te bereiden.",
+    thankyou_consultation_nextsteps: "Bevestigingsdetails worden binnen 2 uur verzonden.",
+
+    // Common Elements
+    thankyou_nextsteps_title: "Volgende stappen",
+    thankyou_back_home: "Terug naar Home",
+    thankyou_our_services: "Onze Diensten",
+    thankyou_email_label: "E-mail",
+    thankyou_phone_label: "Telefoon",
+    thankyou_whatsapp_text: "Chat met ons",
+    thankyou_why_choose: "Waarom kiezen voor Fronx Solutions?",
+    thankyou_satisfied_clients: "Tevreden Klanten",
+    thankyou_years_experience: "Jaar Ervaring",
+    thankyou_hours_short: "u",
+    thankyou_response_time: "Response Tijd",
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   fr: {
     home: "Accueil",
     overOns: "À propos",
@@ -1771,7 +1910,48 @@ notfound4: "Retour à l'accueil",
 notfound5: "Voir nos services",
 notfound6: "Nous contacter",
 notfound7: "Ou découvrez nos services populaires :",
+// French (fr) translations mein add karein:
+thankyou_page_title: "Merci",
+thankyou_page_description: "Merci pour votre confiance en Fronx Solutions. Nous vous contacterons bientôt.",
+
+// General Thank You
+thankyou_title: "Merci !",
+thankyou_subtitle: "Merci pour votre intérêt pour Fronx Solutions.",
+thankyou_description: "Nous apprécions votre confiance et avons hâte de travailler avec vous.",
+thankyou_nextsteps: "Notre équipe vous contactera bientôt.",
+
+// Contact Form
+thankyou_contact_title: "Merci pour votre message !",
+thankyou_contact_subtitle: "Nous avons reçu votre demande de contact.",
+thankyou_contact_description: "Notre équipe vous contactera dans les 24 heures pour répondre à vos questions.",
+thankyou_contact_nextsteps: "Attendez-vous à une réponse de notre équipe dans les 24 heures.",
+
+// Quote Request
+thankyou_quote_title: "Demande de devis reçue !",
+thankyou_quote_subtitle: "Les détails de votre projet nous sont parvenus.",
+thankyou_quote_description: "Nous allons analyser vos exigences et vous envoyer un devis détaillé dans les 48 heures.",
+thankyou_quote_nextsteps: "Vous recevrez un devis complet dans les 48 heures.",
+
+// Consultation
+thankyou_consultation_title: "Consultation réservée !",
+thankyou_consultation_subtitle: "Votre consultation gratuite est programmée.",
+thankyou_consultation_description: "Nous vous contacterons pour confirmer et préparer la consultation.",
+thankyou_consultation_nextsteps: "Les détails de confirmation seront envoyés dans les 2 heures.",
+
+// Common Elements
+thankyou_nextsteps_title: "Prochaines étapes",
+thankyou_back_home: "Retour à l'accueil",
+thankyou_our_services: "Nos Services",
+thankyou_email_label: "E-mail",
+thankyou_phone_label: "Téléphone",
+thankyou_whatsapp_text: "Chattez avec nous",
+thankyou_why_choose: "Pourquoi choisir Fronx Solutions ?",
+thankyou_satisfied_clients: "Clients Satisfaits",
+thankyou_years_experience: "Années d'Expérience",
+thankyou_hours_short: "h",
+thankyou_response_time: "Temps de Réponse",
     },
+
 
 };
 export default translations;
