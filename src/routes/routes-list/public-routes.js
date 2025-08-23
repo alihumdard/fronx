@@ -98,11 +98,6 @@ export const publicRoutes = [
     element: App1,
   },
   {
-    path: "/thankyou",
-    element: Thankyou,
-  },
-
-  {
     path: "*",
     element: NotFound,
   },

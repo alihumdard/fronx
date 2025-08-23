@@ -50,7 +50,7 @@ import {
   FaWrench
 } from "react-icons/fa";
 
-const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
+const DropdownMenu = ({ mobile, textColorClass, linkHoverClass, onCloseMobileMenu }) => {
   const { language } = useLanguage();
   const [isMainDropdownOpen, setIsMainDropdownOpen] = useState(false);
   const [openCategoryIndex, setOpenCategoryIndex] = useState(null);
@@ -62,10 +62,21 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
     }
   }, [mobile]);
 
-  const toggleMainDropdown = () => {
+  const toggleMainDropdown = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setIsMainDropdownOpen(!isMainDropdownOpen);
     if (isMainDropdownOpen) {
       setOpenCategoryIndex(null);
+    }
+  };
+
+  const handleServiceNavigation = (e) => {
+    // Just navigate, don't close dropdown or do anything else
+    if (mobile && onCloseMobileMenu) {
+      onCloseMobileMenu();
     }
   };
 
@@ -255,30 +266,78 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
     ]
   };
 
+  // Helper function to get mobile text classes for services link
+  const getMobileServicesLinkClasses = () => {
+    const currentPath = window.location.pathname;
+    const isActive = currentPath === URLS.SERVICES;
+    return `font-semibold whitespace-nowrap tracking-wide ${
+      isActive
+        ? "bg-gradient-to-r from-[#6931CF] to-[#1A61EA] text-transparent bg-clip-text font-medium"
+        : "text-gray-800 hover:text-blue-600"
+    }`;
+  };
+
   return (
     <li
       className="relative w-full lg:w-auto"
       onMouseEnter={mobile ? undefined : () => setIsMainDropdownOpen(true)}
       onMouseLeave={mobile ? undefined : () => setIsMainDropdownOpen(false)}
     >
-      {/* Main Menu Link */}
-      <Link
-        to={URLS.SERVICES}
-        onClick={toggleMainDropdown}
-        className={`inline-flex items-center font-semibold whitespace-nowrap tracking-wide ${mobile ? "block w-full text-left" : ""} ${textColorClass} ${linkHoverClass}`}
-        aria-expanded={isMainDropdownOpen ? "true" : "false"}
-      >
-        {translations[language].services}
-        <svg
-          className={`ml-1 h-4 w-4 transform transition-transform duration-200 ${isMainDropdownOpen && mobile ? "rotate-180" : "rotate-0"}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+      {/* Main Menu Link - Desktop and Mobile handled differently */}
+      {mobile ? (
+        // Mobile version - text area small, rest of area for dropdown
+        <div 
+          className="w-full border-b-2 flex items-center justify-between cursor-pointer"
+          onClick={toggleMainDropdown}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-            d={isMainDropdownOpen && mobile ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />
-        </svg>
-      </Link>
+          {/* Small text area - only navigation */}
+          <Link
+            to={URLS.SERVICES}
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent container click
+              handleServiceNavigation();
+            }}
+            className={`${getMobileServicesLinkClasses()} text-left inline-block w-auto px-2 py-2`}
+          >
+            {translations[language].services}
+          </Link>
+          
+          {/* Rest of the space + icon for dropdown */}
+          <div className="flex-1 flex justify-end items-center p-2">
+            <svg
+              className={`h-4 w-4 transform transition-transform duration-200 text-gray-800 ${isMainDropdownOpen ? "rotate-180" : "rotate-0"}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2}
+                d={isMainDropdownOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} 
+              />
+            </svg>
+          </div>
+        </div>
+      ) : (
+        // Desktop version (original behavior)
+        <Link
+          to={URLS.SERVICES}
+          className={`inline-flex items-center font-semibold whitespace-nowrap tracking-wide ${textColorClass} ${linkHoverClass}`}
+          aria-expanded={isMainDropdownOpen ? "true" : "false"}
+        >
+          {translations[language].services}
+          <svg
+            className={`ml-1 h-4 w-4 transform transition-transform duration-200 rotate-0`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+              d="M19 9l-7 7-7-7" />
+          </svg>
+        </Link>
+      )}
 
       {/* Dropdown */}
       <AnimatePresence>
@@ -296,22 +355,33 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
             <div className={`${mobile ? "grid grid-cols-1 gap-6" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"}`}>
               {menuCategories.map((category, catIndex) => (
                 <div key={catIndex} className="flex flex-col items-start">
-                  <button
-                    onClick={mobile ? () => toggleCategoryDropdown(catIndex) : undefined}
-                    className="flex justify-between items-center w-full mb-4"
-                  >
-                    <Link
-                      to={category.url}
-                      className="text-lg font-bold text-gray-800 tracking-wide uppercase hover:text-gray-600 transition-colors duration-200"
-                    >
-                      {category.title}
-                    </Link>
-                    {mobile && (
-                      <svg className={`ml-2 h-5 w-5 text-gray-600 transform transition-transform duration-200 ${openCategoryIndex === catIndex ? "rotate-180" : "rotate-0"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={openCategoryIndex === catIndex ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />
-                      </svg>
+                  <div className="flex justify-between items-center w-full mb-4">
+                    {mobile ? (
+                      <>
+                        <span className="text-lg font-bold text-gray-800 tracking-wide uppercase hover:text-gray-600 transition-colors duration-200 flex-1">
+                          {category.title}
+                        </span>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleCategoryDropdown(catIndex);
+                          }}
+                          className="p-1 ml-2"
+                        >
+                          <svg className={`h-5 w-5 text-gray-600 transform transition-transform duration-200 ${openCategoryIndex === catIndex ? "rotate-180" : "rotate-0"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={openCategoryIndex === catIndex ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />
+                          </svg>
+                        </button>
+                      </>
+                    ) : (
+                      <Link
+                        to={category.url}
+                        className="text-lg font-bold text-gray-800 tracking-wide uppercase hover:text-gray-600 transition-colors duration-200"
+                      >
+                        {category.title}
+                      </Link>
                     )}
-                  </button>
+                  </div>
 
                   <AnimatePresence>
                     {(!mobile || openCategoryIndex === catIndex) && (
@@ -326,6 +396,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                           <li key={itemIndex}>
                             <Link 
                               to={`${item.url}${item.hash}`}
+                              onClick={mobile ? handleServiceNavigation : undefined}
                               className="group flex items-start space-x-4 px-3 rounded-xl hover:bg-gray-50 transition-all duration-200 w-full text-left"
                             >
                               <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-r ${item.color} text-white shadow-sm group-hover:shadow-md transition-shadow duration-200`}>
@@ -348,34 +419,44 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
 
             {/* Solutions Section */}
             <div className="mt-6 px-2 ">
-              <button
-                onClick={mobile ? () => toggleCategoryDropdown("solutions") : undefined}
-                className="flex justify-between items-center w-full mb-4"
-              >
-                <span className="text-lg font-bold text-gray-800 tracking-wide uppercase">
-                  {solutionsCategory.title}
-                </span>
-                {mobile && (
-                  <svg
-                    className={`ml-2 h-5 w-5 text-gray-600 transform transition-transform duration-200 ${openCategoryIndex === "solutions" ? "rotate-180" : "rotate-0"
-                      }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d={
-                        openCategoryIndex === "solutions"
-                          ? "M5 15l7-7 7 7"
-                          : "M19 9l-7 7-7-7"
-                      }
-                    />
-                  </svg>
+              <div className="flex justify-between items-center w-full mb-4">
+                {mobile ? (
+                  <>
+                    <span className="text-lg font-bold text-gray-800 tracking-wide uppercase flex-1">
+                      {solutionsCategory.title}
+                    </span>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleCategoryDropdown("solutions");
+                      }}
+                      className="p-1 ml-2"
+                    >
+                      <svg
+                        className={`h-5 w-5 text-gray-600 transform transition-transform duration-200 ${openCategoryIndex === "solutions" ? "rotate-180" : "rotate-0"}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d={
+                            openCategoryIndex === "solutions"
+                              ? "M5 15l7-7 7 7"
+                              : "M19 9l-7 7-7-7"
+                          }
+                        />
+                      </svg>
+                    </button>
+                  </>
+                ) : (
+                  <span className="text-lg font-bold text-gray-800 tracking-wide uppercase">
+                    {solutionsCategory.title}
+                  </span>
                 )}
-              </button>
+              </div>
 
               <AnimatePresence>
                 {(!mobile || openCategoryIndex === "solutions") && (
@@ -390,6 +471,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass }) => {
                       <div key={itemIndex} className="flex-1 min-w-[200px]">
                         <Link 
                           to={`${item.url}${item.hash}`}
+                          onClick={mobile ? handleServiceNavigation : undefined}
                           className="group flex px-2 items-start space-x-4 rounded-xl hover:bg-gray-50 transition-all duration-200 w-full text-left"
                         >
                           <div
