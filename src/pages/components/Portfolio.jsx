@@ -131,7 +131,11 @@ const Portfolio = () => {
           </motion.div>
 
           {/* Portfolio Grid */}
-          <motion.div layout variants={container} className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div
+            layout
+            variants={container}
+            className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
             <AnimatePresence mode="wait">
               {filteredPortfolioItems.length > 0 ? (
                 filteredPortfolioItems.map((itemData) => (
@@ -144,16 +148,23 @@ const Portfolio = () => {
                     layout
                     className="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden relative group"
                   >
+                    {/* Image */}
                     <motion.img
                       src={itemData.image}
                       alt={itemData.title}
-                      className="w-full object-cover bg-gray-50"
+                      className="w-full h-64 object-cover bg-gray-50"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     />
-                    <div className="p-6">
-                      <h4 className="text-xl font-bold text-gray-800 mb-2">{itemData.title}</h4>
-                      <p className="text-gray-600 text-sm mb-4">{itemData.description}</p>
+
+                    {/* Overlay Content */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col justify-end px-3">
+                      <h4 className="text-xl font-bold text-white">
+                        {itemData.title}
+                      </h4>
+                      <p className="text-gray-200 text-sm mb-4 pr-10">
+                        {itemData.description}
+                      </p>
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -175,6 +186,7 @@ const Portfolio = () => {
               )}
             </AnimatePresence>
           </motion.div>
+
         </div>
       </PageWrapper>
     </motion.section>

@@ -83,7 +83,7 @@ function Footer() {
       >
         <PageWrapper>
           <section className="bg-gradient-to-b from-fronx-dark-bg to-fronx-darkest-bg py-16 px-4 md:px-12 mx-14 text-white overflow-hidden">
-            <div className="whitespace-nowrap animate-marquee flex gap-28">
+            <div className="whitespace-nowrap animate-marquee flex gap-5">
               {[
                 translations[language].webDevelopment,
                 translations[language].appDevelopment,
@@ -91,13 +91,17 @@ function Footer() {
                 translations[language].maintinence,
                 translations[language].service5,
               ].map((service, index) => (
-                <span
+                <div
                   key={index}
-                  className="inline-block text-base sm:text-lg md:text-xl font-semibold"
+                  className="flex items-center gap-4"
                 >
-                  {service}
-                </span>
+                  <span className="inline-block text-base sm:text-lg md:text-xl font-semibold">
+                    {service}
+                  </span>
+                  <span className="text-2xl pl-20">•</span>
+                </div>
               ))}
+
               {/* Duplicate items for seamless looping */}
               {[
                 translations[language].webDevelopment,
@@ -106,13 +110,18 @@ function Footer() {
                 translations[language].maintinence,
                 translations[language].service5,
               ].map((service, index) => (
-                <span
-                  key={index + 100}
-                  className="inline-block text-base sm:text-lg md:text-xl font-semibold"
+                <div
+                  key={index}
+                  className="flex items-center gap-4"
                 >
-                  {service}
-                </span>
+                  <span className="inline-block text-base sm:text-lg md:text-xl font-semibold">
+                    {service}
+                  </span>
+                  <span className="text-2xl pl-20">•</span>
+                </div>
               ))}
+
+
               {[
                 translations[language].webDevelopment,
                 translations[language].appDevelopment,
@@ -120,13 +129,17 @@ function Footer() {
                 translations[language].maintinence,
                 translations[language].service5,
               ].map((service, index) => (
-                <span
-                  key={index + 100}
-                  className="inline-block text-base sm:text-lg md:text-xl font-semibold"
+                <div
+                  key={index}
+                  className="flex items-center gap-4"
                 >
-                  {service}
-                </span>
+                  <span className="inline-block text-base sm:text-lg md:text-xl font-semibold">
+                    {service}
+                  </span>
+                  <span className="text-2xl pl-20">•</span>
+                </div>
               ))}
+
             </div>
           </section>
 
@@ -135,7 +148,7 @@ function Footer() {
             <div className="container mx-auto flex flex-wrap justify-between gap-y-10 pb-10 border-b border-gray-700">
               {/* About */}
               <div className="w-full md:w-1/2 lg:w-1/5">
-                <img src="/images/logo.png" alt="Fronx Solutions Logo" className="h-10 lg:h-12 mb-3"/>
+                <img src="/images/logo.png" alt="Fronx Solutions Logo" className="h-10 lg:h-12 mb-3" />
                 <p className="text-sm opacity-80 mb-6">
                   {translations[language].drive}
                 </p>
@@ -203,12 +216,12 @@ function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link to={URLS.BLOG} className="hover:text-gray-400">
+                    <Link to={URLS.BOLG} className="hover:text-gray-400">
                       {translations[language].blog}
                     </Link>
                   </li>
                   <li>
-                    <Link to="#" className="hover:text-gray-400">
+                    <Link to={URLS.PORTFOLIO} className="hover:text-gray-400">
                       {translations[language].portfolio}
                     </Link>
                   </li>

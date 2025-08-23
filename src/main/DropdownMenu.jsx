@@ -243,7 +243,7 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass, onCloseMobileMen
         hash: "#commerce-development-process"
       },
       { 
-        label: translations[language].drop23, 
+        label: translations[language].drop22, 
         icon: FaCreditCard, 
         color: "from-pink-300 to-pink-400",
         url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,

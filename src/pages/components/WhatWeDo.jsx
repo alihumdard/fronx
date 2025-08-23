@@ -268,12 +268,13 @@ const WhatWeDo = () => {
               "Our comprehensive range of digital services."}
           </p>
         </div>
-        <button
+        <Link
+        to={URLS.SERVICES}
           onClick={handleSeeMoreDetails}
           className="mt-6 md:mt-0 px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition duration-200"
         >
           {translations[language].what2 || "See More Details"}
-        </button>
+        </Link>
       </motion.div>
 
       <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 font-sans">

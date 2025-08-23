@@ -42,8 +42,7 @@ const Portfolio = () => {
     { id: "word", label: "WordPress Development" },
     { id: "commerce", label: "Woo Commerce / E Commerce " },
     { id: "design", label: "UI/UX Design" },
-    { id: "consulting", label: "Digital Marketing" },
-    { id: "dash", label: "Dasgboard" },
+    { id: "dash", label: "Dashboard" },
     { id: "logo", label: "Logo Design" },
   ];
 
@@ -170,7 +169,7 @@ const Portfolio = () => {
 
     },
     // wordpress
-     {
+    {
       id: 12,
       website: "WordPress Development",
       title:
@@ -181,7 +180,7 @@ const Portfolio = () => {
       url: URLS.PORTOLIO_DETAIL.APP_1,
 
     },
-     {
+    {
       id: 13,
       website: "WordPress Development",
       title:
@@ -192,7 +191,7 @@ const Portfolio = () => {
       url: URLS.PORTOLIO_DETAIL.APP_1,
 
     },
-      {
+    {
       id: 14,
       website: "WordPress Development",
       title:
@@ -203,7 +202,7 @@ const Portfolio = () => {
       url: URLS.PORTOLIO_DETAIL.APP_1,
 
     },
-     {
+    {
       id: 14,
       website: "WordPress Development",
       title:
@@ -214,7 +213,7 @@ const Portfolio = () => {
       url: URLS.PORTOLIO_DETAIL.APP_1,
 
     },
-     {
+    {
       id: 15,
       website: "WordPress Development",
       title:
@@ -225,7 +224,7 @@ const Portfolio = () => {
       url: URLS.PORTOLIO_DETAIL.APP_1,
 
     },
-     {
+    {
       id: 16,
       website: "WordPress Development",
       title:
@@ -247,6 +246,355 @@ const Portfolio = () => {
       url: URLS.PORTOLIO_DETAIL.APP_1,
 
     },
+    {
+      id: 18,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Empowering young minds with innovative learning experiences for a brighter future ahead",
+      para: "JZ Vapes",
+      category: "commerce",
+      image: "images/woo1.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 19,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Mettle",
+      category: "commerce",
+      image: "images/woo2.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 20,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Master & Dynamic",
+      category: "commerce",
+      image: "images/woo3.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 21,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Master & Dynamic",
+      category: "commerce",
+      image: "images/woo4.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 22,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Doctor Proctors",
+      category: "commerce",
+      image: "images/woo5.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 23,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Shwood Store",
+      category: "commerce",
+      image: "images/woo6.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 24,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Toyshades",
+      category: "commerce",
+      image: "images/woo7.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 25,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "The Paper Roll",
+      category: "commerce",
+      image: "images/woo8.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 26,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "The Paper Roll",
+      category: "commerce",
+      image: "images/woo9.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 27,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Wood Mart",
+      category: "design",
+      image: "images/uiux1.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 28,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Mettle",
+      category: "design",
+      image: "images/uiux2.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 29,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Faculty",
+      category: "design",
+      image: "images/uiux3.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 29,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Faculty",
+      category: "design",
+      image: "images/uiux4.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 30,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Faculty",
+      category: "design",
+      image: "images/ui5.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 30,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Doctors Proctors",
+      category: "design",
+      image: "images/ui6.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 31,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Shwood Store",
+      category: "design",
+      image: "images/ui7.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 32,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Toyshades",
+      category: "design",
+      image: "images/ui8.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 33,
+      website: "Woo Commerce / Ecommerce",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Toyshades",
+      category: "design",
+      image: "images/ui9.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 34,
+      website: "Dashboard",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Website Name",
+      category: "dash",
+      image: "images/dash1.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+
+    {
+      id: 35,
+      website: "Dashboard",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Doctors Proctor",
+      category: "dash",
+      image: "images/dash2.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+
+    {
+      id: 36,
+      website: "Dashboard",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Shwood Store",
+      category: "dash",
+      image: "images/dash3.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 37,
+      website: "Dashboard",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Toyshades",
+      category: "dash",
+      image: "images/dash4.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 38,
+      website: "Dashboard",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Toyshades",
+      category: "dash",
+      image: "images/dash5.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 39,
+      website: "Dashboard",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Toyshades",
+      category: "dash",
+      image: "images/dash6.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 40,
+      website: "Dashboard",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Toyshades",
+      category: "dash",
+      image: "images/dash7.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+    {
+      id: 41,
+      website: "Dashboard",
+      title:
+        "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+      para: "Toyshades",
+      category: "dash",
+      image: "images/dash8.png",
+      url: URLS.PORTOLIO_DETAIL.APP_1,
+
+    },
+
+    {
+      id: 42,
+      category: "logo",
+      image: "images/logoo1.png",
+    },
+    {
+      id: 43,
+      category: "logo",
+      image: "images/logoo2.png",
+    },
+    {
+      id: 44,
+      category: "logo",
+      image: "images/logoo3.png",
+    },
+    {
+      id: 45,
+      category: "logo",
+      image: "images/logoo4.png",
+    },
+    {
+      id: 46,
+      category: "logo",
+      image: "images/logoo5.png",
+    },
+    {
+      id: 47,
+      category: "logo",
+      image: "images/logoo6.png",
+    },
+    {
+      id: 48,
+      category: "logo",
+      image: "images/logoo7.png",
+    },
+    {
+      id: 49,
+      category: "logo",
+      image: "images/logoo8.png",
+    },
+    {
+      id: 50,
+      category: "logo",
+      image: "images/logoo9.png",
+    },
+    {
+      id: 51,
+      category: "logo",
+      image: "images/logoo10.png",
+    },
+    {
+      id: 52,
+      category: "logo",
+      image: "images/logoo11.png",
+    },
+    {
+      id: 53,
+      category: "logo",
+      image: "images/logoo12.png",
+    },
   ];
 
   const handleNavClick = (id) => setActiveNav(id);
@@ -257,6 +605,8 @@ const Portfolio = () => {
       : projects.filter((project) => project.category === activeNav);
 
   return (
+    <>
+    <title>Portfolio - Fronx Solutions</title>
     <div className="relative w-full">
       {/* Navbar */}
       <Navbar />
@@ -353,8 +703,8 @@ const Portfolio = () => {
                   <button
                     onClick={() => handleNavClick(item.id)}
                     className={`${activeNav === item.id
-                        ? "bg-gradient-to-r from-[#1A61EA] to-[#6931CF] text-white"
-                        : "text-gray-600 hover:text-gray-900 bg-slate-50"
+                      ? "bg-gradient-to-r from-[#1A61EA] to-[#6931CF] text-white"
+                      : "text-gray-600 hover:text-gray-900 bg-slate-50"
                       } px-4 py-2 rounded-full text-sm md:text-base font-medium transition-colors duration-200`}
                   >
                     {item.label}
@@ -397,48 +747,66 @@ const Portfolio = () => {
 
         {/* Projects */}
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-          <div className="grid grid-cols-1 gap-8">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-white flex flex-col md:flex-row rounded-xl overflow-hidden hover:shadow-lg transition duration-300"
-              >
-                {/* Image */}
-                <div className="md:w-2/5 h-52 sm:h-64 md:h-auto overflow-hidden">
+          {activeNav === "logo" ? (
+            // Logo wala grid (3 images per row)
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+              {filteredProjects.map((project) => (
+                <div key={project.id} className="overflow-hidden rounded-xl bg-white">
                   <img
                     src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
+                    alt="Logo"
+                    className="w-full h-96 object-contain py-6"
                   />
                 </div>
+              ))}
+            </div>
+          ) : (
+            // Normal card layout for all other categories
+            <div className="grid grid-cols-1 gap-8">
+              {filteredProjects.map((project) => (
+                <div
+                  key={project.id}
+                  className="bg-white flex flex-col md:flex-row rounded-xl overflow-hidden hover:shadow-lg transition duration-300"
+                >
+                  {/* Image */}
+                  <div className="md:w-2/5 h-52 sm:h-64 md:h-auto overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-                {/* Content */}
-                <div className="md:w-3/5 p-6 sm:p-10 flex flex-col justify-center">
-                  <p className="text-[#FF9B4B] bg-slate-50 rounded-full w-fit px-3 py-1 font-medium mb-3 text-sm sm:text-base">
-                    {project.website}
-                  </p>
+                  {/* Content */}
+                  <div className="md:w-3/5 p-6 sm:p-10 flex flex-col justify-center">
+                    <p className="text-[#FF9B4B] bg-slate-50 rounded-full w-fit px-3 py-1 font-medium mb-3 text-sm sm:text-base">
+                      {project.website}
+                    </p>
 
-                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-500 pb-5">{project.para}</p>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-500 pb-5">{project.para}</p>
 
-                  {project.url && (
-                    <Link
-                      to={project.url}
-                      className="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full shadow-sm text-white bg-gradient-to-r from-[#1A61EA] to-[#6931CF] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-colors duration-200 w-fit"
-                    >
-                      View CASE
-                    </Link>
-                  )}
+                    {project.url && (
+                      <Link
+                        to={project.url}
+                        className="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full shadow-sm text-white bg-gradient-to-r from-[#1A61EA] to-[#6931CF] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-colors duration-200 w-fit"
+                      >
+                        View CASE
+                      </Link>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </main>
+
       </div>
 
     </div>
+    </>
   );
 };
 

@@ -12,6 +12,8 @@ import Servicex from './components/service-x-scroll'
 const Home = () => {
   return (
     <div>
+      <title>Web development service - Fronx Solutions - online services</title>
+      <meta name="description" content="Fronx Solutions Service Business offers top-notch web development, app development, SEO, and UI/UX design services to help your business grow" />
       <Hero/>
       <Services/>
       <Servicex/>

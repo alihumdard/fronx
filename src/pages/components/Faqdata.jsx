@@ -138,7 +138,7 @@ const FAQ = () => {
                   className="flex justify-between items-center w-full text-left focus:outline-none"
                   onClick={() => toggleAccordion(index)}
                 >
-                  <h3 className="font-semibold text-gray-800 text-lg pr-4">
+                  <h3 className="font-semibold text-gray-800 text-lg pr-4 w-64 sm:w-full">
                     {item.question}
                   </h3>
                   {openIndex === index ? (
