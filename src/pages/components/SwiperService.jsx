@@ -13,17 +13,15 @@ import { useLanguage } from "../../LanguageContext";
 const testimonials = (language) => [
   {
     id: 1,
-    content: translations[language].success11,
-    author: "John Doe",
-    position: "Founder & CEO of xyz.com",
-    image: "/images/swiper.png",
+    content: translations[language].quote1,
+    author: "saadychohan",
+    image: "/images/testimonial_1.png",
   },
   {
     id: 2,
-    content: translations[language].success2,
-    author: "Jane Smith",
-    position: "CTO of abc.com",
-    image: "/images/men.png",
+    content: translations[language].quote2  || "An outstanding experience from start to finish. The development team delivered a high-quality product well ahead of schedule. Their communication was excellent, keeping us informed every step of the way. Highly recommend their services for anyone looking for reliable and efficient software development.",
+    author: "muhammadusaid51",
+    image: "/images/testimonial_2.webp",
   },
 ];
 
@@ -74,8 +72,7 @@ const SwiperService = () => {
                   </h2>
                   <div className="mb-6 sm:mb-8">
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
-                      <span className="text-blue-600 font-medium">Fronx Solution</span>
-                      {testimonial.content.split("Fronx Solution")[1]}
+                      {testimonial.content}
                     </p>
                   </div>
                   <div>

@@ -187,6 +187,7 @@ const Contact = () => {
 
   return (
     <>
+    <title>Obtenez un devis gratuit - Fronx Solutions</title>
       <div className="relative w-full">
         {/* Navbar */}
         <Navbar />

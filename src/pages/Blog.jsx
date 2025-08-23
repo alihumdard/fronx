@@ -186,7 +186,7 @@ const Blog = () => {
                   className="flex items-center btn-animate justify-center px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-700 text-white text-sm sm:text-lg font-semibold rounded-full shadow-md hover:shadow-xl transition"
                   aria-label="Subscribe"
                 >
-                  {translations[language].sub}
+                  {translations[language].subs}
                   <svg
                     className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"

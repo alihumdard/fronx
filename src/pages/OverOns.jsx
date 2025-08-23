@@ -33,6 +33,8 @@ const OverOns = () => {
   const { language } = useLanguage(); 
   return (
     <>
+    <title>À propos de nous - Fronx Solutions</title>
+    <meta name="description" content="" />
       <div className="relative w-full overflow-x-hidden">
         <Navbar />
 

@@ -11,7 +11,7 @@ import { useLanguage } from "../../LanguageContext"; // Import useLanguage direc
 const ALL_TESTIMONIALS = (language) => [
   {
     id: 1,
-    quote: translations[language].quote1 || "Default quote for quote1", // Added fallback
+    quote: translations[language].quote1,
     rating: 5,
     clientName: "saadychohan",
     clientAvatar: "/images/testimonial_1.png",

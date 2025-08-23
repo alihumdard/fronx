@@ -166,42 +166,44 @@ const Service = () => {
 
             </motion.p>
 
-            <motion.div
-              className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-            >
-              <div className="relative w-full sm:w-auto bg-white rounded-full shadow-lg flex items-center max-w-md p-1">
-                <input
-                  type="email"
-                  placeholder={translations[language].emailaddress}
-                  className="flex-1 px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base text-gray-700 bg-transparent outline-none placeholder-gray-500 rounded-full"
-                  aria-label="Email Address"
-                />
-                <button
-                  className="btn-animate flex items-center justify-center px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-700 text-white text-sm sm:text-lg font-semibold rounded-full shadow-md hover:shadow-xl transition"
-                  aria-label="Subscribe"
-                >
-                  {translations[language].sub}
-                  <svg
-                    className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </motion.div>
+           <motion.div
+  className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.6, duration: 0.8 }}
+>
+  {/* Email + Button wrapper */}
+  <div className="relative flex items-center w-full sm:w-auto max-w-md bg-white rounded-full shadow-lg p-1">
+    <input
+      type="email"
+      placeholder={translations[language].emailaddress}
+      className="flex-1 px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base text-gray-700 bg-transparent outline-none placeholder-gray-500 rounded-full"
+      aria-label="Email Address"
+    />
+    <button
+      className="btn-animate flex items-center justify-center px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-700 text-white text-sm sm:text-lg font-semibold rounded-full shadow-md hover:shadow-xl transition"
+      aria-label="Subscribe"
+    >
+      {translations[language].subs}
+      <svg
+        className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+        ></path>
+      </svg>
+    </button>
+  </div>
+</motion.div>
+
           </motion.div>
 
           {/* Right Image */}

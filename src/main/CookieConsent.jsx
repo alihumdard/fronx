@@ -31,12 +31,12 @@ export default function CookieConsent() {
         {translations[language].cokkie5}
       </button>
       <div className="mt-3">
-        <a
-          href="/parametres-cookies"
+        <button
+         onClick={() => setShow(false)}
           className="text-sm underline text-gray-700 hover:text-gray-900"
         >
           {translations[language].cokkie6}
-        </a>
+        </button>
       </div>
     </div>
   );
