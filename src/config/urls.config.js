@@ -8,6 +8,7 @@ const URLS = {
   SUBMIT: "/submit",
   THANKYOU: "/thankyou",
   PORTFOLIO: "/portfolio",
+  ODOO: "/odoo_integration",
 
   SERVICE_DETAIL: {
     WEB_DEVELOPMENT: "/web-development",
@@ -19,6 +20,7 @@ const URLS = {
     CHATBOT_DEVELOPMENT: "/chatbot-development",
     MAINTENENCE: "/maintenence",
     SEO: "/seo",
+    WORDPRESS: "/wordPress_development"
   },
 
   PORTOLIO_DETAIL: {

@@ -19,6 +19,8 @@ import Portfolio from "../../pages/Portfolio";
 import web1 from "../../pages/components/portfolio_detail/web_1";
 import App1 from "../../pages/components/portfolio_detail/App_1";
 import ThankYou from "../../pages/ThankYou";
+import WordPress from "../../pages/components/Service-detail/WordPress";
+import OdooIntegration from "../../pages/Odoo_integration";
 
 export const publicRoutes = [
   {
@@ -96,6 +98,14 @@ export const publicRoutes = [
   {
     path: "/appdevelopment",
     element: App1,
+  },
+   {
+    path: "/wordPress_development",
+    element: WordPress,
+  },
+   {
+    path: "/odoo_integration",
+    element: OdooIntegration,
   },
   {
     path: "*",
