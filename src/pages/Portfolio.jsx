@@ -12,6 +12,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import translations from "../translations";
+import { useLanguage } from "../LanguageContext";
 
 
 // Animation Variants
@@ -34,6 +36,7 @@ const fadeUpVariant = {
 };
 
 const Portfolio = () => {
+  const {language} = useLanguage()
   const [activeNav, setActiveNav] = useState("web");
 
   const navItems = [
@@ -606,7 +609,7 @@ const Portfolio = () => {
 
   return (
     <>
-    <title>Portfolio - Fronx Solutions</title>
+    <title>{translations[language].port1}</title>
     <div className="relative w-full">
       {/* Navbar */}
       <Navbar />
@@ -647,10 +650,10 @@ const Portfolio = () => {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-4 md:mb-6 leading-snug"
               variants={fadeUpVariant}
             >
-              Empowering IT Consulting <br />
-              <span className="mt-3">with</span>
+              {translations[language].port2}<br />
+              <span className="mt-3">{translations[language].port3}</span>
               <span className="mt-3 ml-3 relative inline-block">
-                Expert
+                {translations[language].port4}
                 <span className="absolute left-0 right-0 -bottom-2 h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></span>
               </span>
             </motion.h1>

@@ -4,7 +4,8 @@ const translations = {
     notfound: "Pagina niet gevonden",
     notfound1: "404",
     notfound2: "Oeps! De pagina die u zoekt bestaat niet",
-    notfound3: "De pagina die u zoekt is mogelijk verplaatst, hernoemd of bestaat niet meer. Maak u geen zorgen, we helpen u verder!",
+    notfound3:
+      "De pagina die u zoekt is mogelijk verplaatst, hernoemd of bestaat niet meer. Maak u geen zorgen, we helpen u verder!",
     notfound4: "Terug naar startpagina",
     notfound5: "Bekijk onze diensten",
     notfound6: "Neem contact op",
@@ -884,31 +885,39 @@ const translations = {
     blogDetail29: "Creëer kwaliteitsblogs aangedreven door AI die opvallen",
     // Dutch (en) translations mein add karein:
     thankyou_page_title: "Bedankt",
-    thankyou_page_description: "Bedankt voor uw vertrouwen in Fronx Solutions. We nemen spoedig contact met u op.",
+    thankyou_page_description:
+      "Bedankt voor uw vertrouwen in Fronx Solutions. We nemen spoedig contact met u op.",
 
     // General Thank You
     thankyou_title: "Bedankt!",
     thankyou_subtitle: "Bedankt voor uw interesse in Fronx Solutions.",
-    thankyou_description: "We waarderen uw vertrouwen in ons en kijken ernaar uit om met u samen te werken.",
+    thankyou_description:
+      "We waarderen uw vertrouwen in ons en kijken ernaar uit om met u samen te werken.",
     thankyou_nextsteps: "Ons team zal spoedig contact met u opnemen.",
 
     // Contact Form
     thankyou_contact_title: "Bedankt voor uw bericht!",
     thankyou_contact_subtitle: "We hebben uw contactverzoek ontvangen.",
-    thankyou_contact_description: "Ons team zal binnen 24 uur contact met u opnemen om uw vragen te beantwoorden.",
-    thankyou_contact_nextsteps: "Verwacht binnen 24 uur een reactie van ons team.",
+    thankyou_contact_description:
+      "Ons team zal binnen 24 uur contact met u opnemen om uw vragen te beantwoorden.",
+    thankyou_contact_nextsteps:
+      "Verwacht binnen 24 uur een reactie van ons team.",
 
     // Quote Request
     thankyou_quote_title: "Offerteverzoek Ontvangen!",
     thankyou_quote_subtitle: "Uw projectdetails zijn bij ons aangekomen.",
-    thankyou_quote_description: "We gaan uw vereisten analyseren en sturen u binnen 48 uur een gedetailleerde offerte.",
-    thankyou_quote_nextsteps: "Binnen 48 uur ontvangt u een uitgebreide offerte.",
+    thankyou_quote_description:
+      "We gaan uw vereisten analyseren en sturen u binnen 48 uur een gedetailleerde offerte.",
+    thankyou_quote_nextsteps:
+      "Binnen 48 uur ontvangt u een uitgebreide offerte.",
 
     // Consultation
     thankyou_consultation_title: "Consultatie Geboekt!",
     thankyou_consultation_subtitle: "Uw gratis consultatie is ingepland.",
-    thankyou_consultation_description: "We nemen contact met u op om de consultatie te bevestigen en voor te bereiden.",
-    thankyou_consultation_nextsteps: "Bevestigingsdetails worden binnen 2 uur verzonden.",
+    thankyou_consultation_description:
+      "We nemen contact met u op om de consultatie te bevestigen en voor te bereiden.",
+    thankyou_consultation_nextsteps:
+      "Bevestigingsdetails worden binnen 2 uur verzonden.",
 
     // Common Elements
     thankyou_nextsteps_title: "Volgende stappen",
@@ -922,107 +931,77 @@ const translations = {
     thankyou_years_experience: "Jaar Ervaring",
     thankyou_hours_short: "u",
     thankyou_response_time: "Response Tijd",
+    port1: "Portfolio - Fronx Solutions",
+    port2: "Empowering IT Consulting",
+    port3: "with",
+    port4: "Expert",
+    port5: "Portfolio",
+    web: "Websiteontwikkeling",
+    mobile: "Mobiele app-ontwikkeling",
+    word: "WordPress-ontwikkeling",
+    commerce: "WooCommerce / E-commerce",
+    design: "UI/UX Ontwerp",
+    dash: "Dashboard",
+    logo: "Logo Ontwerp",
+    t1: "Empowering young minds with innovative learning experiences for a brighter future ahead",
+    t2: "Revamping & deploying a +10 year old mobile app to more than 700k users in Belgium in 3 months",
+    p1: "Kidz Calendar website",
+    p2: "Mobile APP - Design System - UX/UI Design - User Testing - FullStack Dev",
+    p3: "Food Ordering Application",
+    p4: "Service Booking Application",
+    p5: "AgriCo Application",
+    p6: "Babysitter Booking Application",
+    p7: "Oracle Force",
+    p8: "Mew School of Leadership",
+    p9: "BiD Lock",
+    p10: "JZ Vapes",
+    p11: "Mettle",
+    p12: "Master & Dynamic",
+    p13: "Doctor Proctors",
+    p14: "Shwood Store",
+    p15: "Toyshades",
+    p16: "The Paper Roll",
+    p17: "Wood Mart",
+    p18: "Faculty",
+    p19: "Website Name",
+    p20: "Doctors Proctor",
   },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   fr: {
+    port1: "Portfolio - Fronx Solutions",
+    port2: "Renforcer le conseil en informatique",
+    port3: "avec",
+    port4: "Expert",
+    port5: "Portfolio",
+    web: "Développement de sites web",
+    mobile: "Développement d’applications mobiles",
+    word: "Développement WordPress",
+    commerce: "WooCommerce / E-commerce",
+    design: "Conception UI/UX",
+    dash: "Tableau de bord",
+    logo: "Conception de logo",
+    t1: "Donner aux jeunes esprits des expériences d’apprentissage innovantes pour un avenir plus radieux",
+    t2: "Refonte et déploiement d’une application mobile de plus de 10 ans auprès de plus de 700 000 utilisateurs en Belgique en 3 mois",
+    p1: "Site web Kidz Calendar",
+    p2: "Application mobile - Système de design - Conception UX/UI - Tests utilisateurs - Développement FullStack",
+    p3: "Application de commande de nourriture",
+    p4: "Application de réservation de services",
+    p5: "Application AgriCo",
+    p6: "Application de réservation de babysitters",
+    p7: "Oracle Force",
+    p8: "Mew School of Leadership",
+    p9: "BiD Lock",
+    p10: "JZ Vapes",
+    p11: "Mettle",
+    p12: "Master & Dynamic",
+    p13: "Doctor Proctors",
+    p14: "Boutique Shwood",
+    p15: "Toyshades",
+    p16: "The Paper Roll",
+    p17: "Wood Mart",
+    p18: "Faculty",
+    p19: "Nom du site web",
+    p20: "Doctors Proctor",
     home: "Accueil",
     overOns: "À propos",
     services: "Services",
@@ -1900,58 +1879,94 @@ const translations = {
     blogDetail26: "Éviter les pièges courants de l'écriture avec l'IA",
     blogDetail27: "Comprendre les capacités de ChatGPT – Définir votre style",
     blogDetail28: "Comprendre vos lecteurs",
-    blogDetail29:"Créez des blogs de qualité alimentés par l'IA qui se démarquent",
-// For French (fr)
-notfound: "Page introuvable",
-notfound1: "404",
-notfound2: "Oups ! La page que vous cherchez n'existe pas",
-notfound3: "La page que vous recherchez a peut-être été déplacée, renommée ou n'existe plus. Ne vous inquiétez pas, nous sommes là pour vous aider !",
-notfound4: "Retour à l'accueil",
-notfound5: "Voir nos services",
-notfound6: "Nous contacter",
-notfound7: "Ou découvrez nos services populaires :",
-// French (fr) translations mein add karein:
-thankyou_page_title: "Merci",
-thankyou_page_description: "Merci pour votre confiance en Fronx Solutions. Nous vous contacterons bientôt.",
+    blogDetail29:
+      "Créez des blogs de qualité alimentés par l'IA qui se démarquent",
+    notfound: "Page introuvable",
+    notfound1: "404",
+    notfound2: "Oups ! La page que vous cherchez n'existe pas",
+    notfound3:
+      "La page que vous recherchez a peut-être été déplacée, renommée ou n'existe plus. Ne vous inquiétez pas, nous sommes là pour vous aider !",
+    notfound4: "Retour à l'accueil",
+    notfound5: "Voir nos services",
+    notfound6: "Nous contacter",
+    notfound7: "Ou découvrez nos services populaires :",
+    thankyou_page_title: "Merci",
+    thankyou_page_description:
+      "Merci pour votre confiance en Fronx Solutions. Nous vous contacterons bientôt.",
 
-// General Thank You
-thankyou_title: "Merci !",
-thankyou_subtitle: "Merci pour votre intérêt pour Fronx Solutions.",
-thankyou_description: "Nous apprécions votre confiance et avons hâte de travailler avec vous.",
-thankyou_nextsteps: "Notre équipe vous contactera bientôt.",
+    thankyou_title: "Merci !",
+    thankyou_subtitle: "Merci pour votre intérêt pour Fronx Solutions.",
+    thankyou_description:
+      "Nous apprécions votre confiance et avons hâte de travailler avec vous.",
+    thankyou_nextsteps: "Notre équipe vous contactera bientôt.",
 
-// Contact Form
-thankyou_contact_title: "Merci pour votre message !",
-thankyou_contact_subtitle: "Nous avons reçu votre demande de contact.",
-thankyou_contact_description: "Notre équipe vous contactera dans les 24 heures pour répondre à vos questions.",
-thankyou_contact_nextsteps: "Attendez-vous à une réponse de notre équipe dans les 24 heures.",
+    thankyou_contact_title: "Merci pour votre message !",
+    thankyou_contact_subtitle: "Nous avons reçu votre demande de contact.",
+    thankyou_contact_description:
+      "Notre équipe vous contactera dans les 24 heures pour répondre à vos questions.",
+    thankyou_contact_nextsteps:
+      "Attendez-vous à une réponse de notre équipe dans les 24 heures.",
 
-// Quote Request
-thankyou_quote_title: "Demande de devis reçue !",
-thankyou_quote_subtitle: "Les détails de votre projet nous sont parvenus.",
-thankyou_quote_description: "Nous allons analyser vos exigences et vous envoyer un devis détaillé dans les 48 heures.",
-thankyou_quote_nextsteps: "Vous recevrez un devis complet dans les 48 heures.",
+    thankyou_quote_title: "Demande de devis reçue !",
+    thankyou_quote_subtitle: "Les détails de votre projet nous sont parvenus.",
+    thankyou_quote_description:
+      "Nous allons analyser vos exigences et vous envoyer un devis détaillé dans les 48 heures.",
+    thankyou_quote_nextsteps:
+      "Vous recevrez un devis complet dans les 48 heures.",
 
-// Consultation
-thankyou_consultation_title: "Consultation réservée !",
-thankyou_consultation_subtitle: "Votre consultation gratuite est programmée.",
-thankyou_consultation_description: "Nous vous contacterons pour confirmer et préparer la consultation.",
-thankyou_consultation_nextsteps: "Les détails de confirmation seront envoyés dans les 2 heures.",
+    thankyou_consultation_title: "Consultation réservée !",
+    thankyou_consultation_subtitle:
+      "Votre consultation gratuite est programmée.",
+    thankyou_consultation_description:
+      "Nous vous contacterons pour confirmer et préparer la consultation.",
+    thankyou_consultation_nextsteps:
+      "Les détails de confirmation seront envoyés dans les 2 heures.",
 
-// Common Elements
-thankyou_nextsteps_title: "Prochaines étapes",
-thankyou_back_home: "Retour à l'accueil",
-thankyou_our_services: "Nos Services",
-thankyou_email_label: "E-mail",
-thankyou_phone_label: "Téléphone",
-thankyou_whatsapp_text: "Chattez avec nous",
-thankyou_why_choose: "Pourquoi choisir Fronx Solutions ?",
-thankyou_satisfied_clients: "Clients Satisfaits",
-thankyou_years_experience: "Années d'Expérience",
-thankyou_hours_short: "h",
-thankyou_response_time: "Temps de Réponse",
-    },
-
-
+    thankyou_nextsteps_title: "Prochaines étapes",
+    thankyou_back_home: "Retour à l'accueil",
+    thankyou_our_services: "Nos Services",
+    thankyou_email_label: "E-mail",
+    thankyou_phone_label: "Téléphone",
+    thankyou_whatsapp_text: "Chattez avec nous",
+    thankyou_why_choose: "Pourquoi choisir Fronx Solutions ?",
+    thankyou_satisfied_clients: "Clients Satisfaits",
+    thankyou_years_experience: "Années d'Expérience",
+    thankyou_hours_short: "h",
+    thankyou_response_time: "Temps de Réponse",
+    port1: "Portfolio - Fronx Solutions",
+    port2: "Renforcer le conseil en informatique",
+    port3: "avec",
+    port4: "Expert",
+    port5: "Portfolio",
+    web: "Développement de sites web",
+    mobile: "Développement d’applications mobiles",
+    word: "Développement WordPress",
+    commerce: "WooCommerce / E-commerce",
+    design: "Conception UI/UX",
+    dash: "Tableau de bord",
+    logo: "Conception de logo",
+    t1: "Donner aux jeunes esprits des expériences d’apprentissage innovantes pour un avenir plus radieux",
+    t2: "Refonte et déploiement d’une application mobile de plus de 10 ans auprès de plus de 700 000 utilisateurs en Belgique en 3 mois",
+    p1: "Site web Kidz Calendar",
+    p2: "Application mobile - Système de design - Conception UX/UI - Tests utilisateurs - Développement FullStack",
+    p3: "Application de commande de nourriture",
+    p4: "Application de réservation de services",
+    p5: "Application AgriCo",
+    p6: "Application de réservation de babysitters",
+    p7: "Oracle Force",
+    p8: "Mew School of Leadership",
+    p9: "BiD Lock",
+    p10: "JZ Vapes",
+    p11: "Mettle",
+    p12: "Master & Dynamic",
+    p13: "Doctor Proctors",
+    p14: "Boutique Shwood",
+    p15: "Toyshades",
+    p16: "The Paper Roll",
+    p17: "Wood Mart",
+    p18: "Faculty",
+    p19: "Nom du site web",
+    p20: "Doctors Proctor",
+  },
 };
 export default translations;

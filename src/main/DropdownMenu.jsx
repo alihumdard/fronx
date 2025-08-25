@@ -128,8 +128,8 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass, onCloseMobileMen
           label: translations[language].drop2, 
           icon: FaLaptopCode, 
           color: "from-orange-200 to-orange-300",
-          url: URLS.SERVICE_DETAIL.WEB_DEVELOPMENT,
-          hash: "#web-development-process"
+          url: URLS.SERVICE_DETAIL.WORDPRESS,
+          hash: "#"
         },
         { 
           label: translations[language].drop8, 
@@ -253,8 +253,8 @@ const DropdownMenu = ({ mobile, textColorClass, linkHoverClass, onCloseMobileMen
         label: translations[language].drop23, 
         icon: FaUserFriends, 
         color: "from-pink-300 to-pink-400",
-        url: URLS.SERVICE_DETAIL.ECOMMERCE_DEVELOPMENT,
-        hash: "#commerce-development-process"
+        url: URLS.ODOO,
+        hash: "#"
       },
       { 
         label: translations[language].drop41, 
